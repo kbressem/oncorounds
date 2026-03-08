@@ -1,0 +1,53 @@
+site_name: OncoRounds
+site_description: Interactive benchmark for LLM clinical reasoning in oncology
+site_url: https://kbressem.github.io/oncorounds/
+repo_url: https://github.com/kbressem/oncorounds
+repo_name: kbressem/oncorounds
+
+theme:
+  name: material
+  logo: img/oncorounds-icon.svg
+  favicon: img/oncorounds-icon.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Overview: index.md
+  - Leaderboard: leaderboard/index.html
+  - Getting Started: getting-started.md
+  - Usage:
+      - Running the Benchmark: usage/running-benchmark.md
+      - Integrating LLM Clients: usage/llm-clients.md
+  - Architecture: architecture.md
+  - Reference:
+      - Schemas: reference/schemas.md
+      - Prompts: reference/prompts.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences

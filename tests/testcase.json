@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "case_id": 1001,
+  "title": "Classic nodular basal cell carcinoma on forearm in a 62-year-old female",
+  "patient": {
+    "demographics": {
+      "age": 62,
+      "sex": "female"
+    },
+    "chief_complaint": "Slowly growing skin lesion on the left forearm",
+    "vital_signs": "BP 126/78, HR 76/min, T° 36.8 °C, Respiratory rate 14/min"
+  },
+  "round_guides": {
+    "1": {
+      "setting": "Primary care visit evaluating suspicious skin lesion on the forearm.",
+      "capabilities": "History, physical examination, and close visual inspection are available."
+    },
+    "2": {
+      "setting": "Dermatology clinic with dermoscopy.",
+      "capabilities": "Can perform dermoscopic evaluation and minor procedures such as shave biopsy."
+    },
+    "3": {
+      "setting": "Follow-up after biopsy with definitive pathology available.",
+      "capabilities": "Pathology review complete and treatment planning for excision."
+    }
+  },
+  "info_items": {
+    "demographics": {
+      "available_round": 1,
+      "valid_request_if": "Asked for demographics or baseline characteristics.",
+      "content": "Age 62\nSex Female\nSkin phototype II\nNo immunosuppression\nNo anticoagulation\nNo relevant comorbidities\nLives independently"
+    },
+    "history_physical": {
+      "available_round": 1,
+      "valid_request_if": "Asked for history, HPI, review of systems, or physical examination.",
+      "content": "The patient reports a painless, slowly enlarging lesion on the left dorsal forearm present for about 8 months. No bleeding, pruritus, or rapid change. On exam there is an 8 mm pearly papule with a rolled border and central crust. Arborizing telangiectasias are visible on close inspection. The lesion is non-tender. No regional lymphadenopathy. Extensive lifetime sun exposure. No prior skin cancers."
+    },
+    "dermoscopy": {
+      "available_round": 2,
+      "valid_request_if": "Asked for dermoscopy or dermatoscopy findings.",
+      "content": "Dermoscopy shows arborizing telangiectasias, shiny white structures, and focal ulceration. No pigment network is seen."
+    },
+    "biopsy_pathology": {
+      "available_round": 3,
+      "valid_request_if": "Asked for biopsy, histopathology, or pathology report.",
+      "content": "Shave biopsy of the left forearm lesion reveals nodular basal cell carcinoma. Tumor islands with peripheral palisading and stromal retraction are present. No perineural invasion is identified. Diagnosis basal cell carcinoma, nodular type."
+    }
+  },
+  "reference_standard": {
+    "round_1": {
+      "working_diagnosis": "Suspected nonmelanoma skin cancer, likely basal cell carcinoma",
+      "differentials": [
+        "Basal cell carcinoma",
+        "Cutaneous squamous cell carcinoma",
+        "Seborrheic keratosis"
+      ],
+      "treatment_plan": [
+        {
+          "action": "Request dermoscopy of the lesion",
+          "intention": "diagnostic",
+          "priority": 1
+        },
+        {
+          "action": "Avoid destructive treatment before tissue diagnosis",
+          "intention": "supportive",
+          "priority": 1
+        },
+        {
+          "action": "Provide brief sun protection advice",
+          "intention": "supportive",
+          "priority": 3
+        }
+      ],
+      "key_findings_quotes": [
+        "a painless, slowly enlarging lesion on the left dorsal forearm",
+        "an 8 mm pearly papule with a rolled border and central crust",
+        "Arborizing telangiectasias are visible on close inspection",
+        "No regional lymphadenopathy"
+      ]
+    },
+    "round_2": {
+      "working_diagnosis": "Probable basal cell carcinoma",
+      "differentials": [
+        "Basal cell carcinoma",
+        "Cutaneous squamous cell carcinoma"
+      ],
+      "treatment_plan": [
+        {
+          "action": "Perform shave biopsy of the lesion for histologic confirmation",
+          "intention": "diagnostic",
+          "priority": 1
+        },
+        {
+          "action": "Prepare for simple surgical excision under local anesthesia if basal cell carcinoma is confirmed",
+          "intention": "therapeutic",
+          "priority": 2
+        }
+      ],
+      "key_findings_quotes": [
+        "Dermoscopy shows arborizing telangiectasias, shiny white structures, and focal ulceration",
+        "No pigment network is seen"
+      ]
+    },
+    "round_3": {
+      "working_diagnosis": "Nodular basal cell carcinoma of the left forearm, low-risk",
+      "differentials": [
+        "Basal cell carcinoma"
+      ],
+      "treatment_plan": [
+        {
+          "action": "Simple surgical excision with 4 mm clinical margins and pathology margin assessment",
+          "intention": "therapeutic",
+          "priority": 1
+        },
+        {
+          "action": "No imaging or staging tests",
+          "intention": "supportive",
+          "priority": 2
+        },
+        {
+          "action": "Schedule full skin examination follow-up at 6 to 12 months",
+          "intention": "supportive",
+          "priority": 3
+        }
+      ],
+      "key_findings_quotes": [
+        "Shave biopsy of the left forearm lesion reveals nodular basal cell carcinoma",
+        "Tumor islands with peripheral palisading and stromal retraction are present",
+        "No perineural invasion is identified"
+      ]
+    }
+  }
+}

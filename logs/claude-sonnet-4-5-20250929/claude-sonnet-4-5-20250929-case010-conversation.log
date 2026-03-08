@@ -1,0 +1,228 @@
+[Case 10 Round 1 Step 0] ENV: Case 10:
+                              Initial presentation:
+                              - Age: 21
+                              - Sex: female
+                              - Chief complaint: Post-induction consultation for T-ALL with prior sinus vein thrombosis and intracerebral hemorrhage
+                              - Vital signs: Blood pressure 122/74 mmHg, heart rate 96/min regular, respiratory rate 15/min, temperature 37.3 °C, oxygen saturation 97% on room air.
+                              Setting: Outpatient hematology clinic (post-induction consultation)
+                              Capabilities: You are evaluating a clinically stable patient after completion of induction therapy. You can review history and examination findings, request routine laboratory evaluations, and arrange standard imaging and specialist consultations appropriate to an ambulatory setting. More invasive procedures and specialized analyses usually require additional planning.
+                              Provide either a request for a single information item or solve.
+[Case 10 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 10 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 9.4 g/dL, WBC 3.3 ×10⁹/L, Plt 122 ×10⁹/L; ANC 2.4 ×10⁹/L, lymphocytes 0.6 ×10⁹/L, monocytes 0.3 ×10⁹/L; no peripheral blasts detected.
+                              Coagulation: INR 1.4, aPTT 31 sec, D-dimer 1850 µg/L FEU.
+                              Na 137 mmol/L, K 3.7 mmol/L, creatinine 1.1 mg/dL (eGFR 72 mL/min/1.73 m²), AST 86 U/L, ALT 91 U/L, bilirubin 1.2 mg/dL, LDH 285 U/L, uric acid 5.6 mg/dL.
+[Case 10 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "medical history including details of sinus vein thrombosis, intracerebral hemorrhage, and current medications"}}
+[Case 10 Round 1 Step 1] ENV: History Physical:
+                              2025-06-29: The patient presents following completion of induction chemotherapy for T-ALL, seeking discussion regarding further treatment options. During induction, she developed a sinus vein thrombosis complicated by a small left-hemispheric intracerebral hemorrhage. Neurological sequelae include mild right arm weakness and impaired fine motor skills, for which neurological rehabilitation is planned. She remains uncertain about continuing intensive therapy and expresses consideration of treatment discontinuation. On examination, her general condition is good; she is alert, oriented, and cooperative. Skin and mucous membranes are pale. Several puncture sites on the left hand show minor erythema and superficial inflammation, consistent with previous peripheral venous catheter insertions. No palpable lymphadenopathy or hepatosplenomegaly. Cardiopulmonary examination: Normal heart sounds, no murmurs; lungs clear to auscultation. Abdomen soft and non-tender. Neurological examination: Cranial nerves intact; mild weakness and reduced grip strength in the right arm, otherwise full strength with normal reflexes, preserved coordination, and intact sensation.
+                              Current medication: Levothyroxine 75 µg 1-0-0, leuprorelin monthly, enoxaparin 40 mg s.c. q12h, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), valaciclovir 500 mg 1-0-0, vitamin D supplementation. Self-medication with selenium and omega-3 fatty acids.
+[Case 10 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy results and minimal residual disease status post-induction"}}
+[Case 10 Round 1 Step 2] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow biopsy results (post‑induction morphology/flow) and MRD status are not available in this round. Consider requesting labs (CBC/chemistry) or imaging that are available now.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "brain imaging (MRI or CT) to assess current status of intracerebral hemorrhage"}}
+[Case 10 Round 1 Step 3] ENV: 'extended_diagnostics' available in round 2.
+                              Brain imaging (CT or MRI) is part of the extended diagnostics item, which is available in a later round. Consider requesting history/physical, CBC/chemistry, or other imaging available in this round instead.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "chest X-ray or CT chest"}}
+[Case 10 Round 1 Step 4] ENV: Ct Thorax Abdomen:
+                              CT scan: No pathologic lymphadenopathy. Mild residual thymic tissue consistent with rebound hyperplasia in the anterior mediastinum. Lungs clear, no infiltrates or nodules. No organomegaly apart from hepatomegaly.
+[Case 10 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "T-ALL diagnosis details including immunophenotype, cytogenetics, and induction chemotherapy regimen used"}}
+[Case 10 Round 1 Step 5] ENV: 'T-ALL diagnosis details including immunophenotype, cytogenetics, and induction chemotherapy regimen used' not available. Request a specific test or report.
+                              Cytogenetics (and related diagnostic details like immunophenotype/flow and induction treatment history) are not available in round 1. Consider requesting items that are available now such as CBC/chemistry, history/physical, demographics, or staging imaging (CT/abdomen ultrasound, echocardiogram).
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "echocardiogram"}}
+[Case 10 Round 1 Step 6] ENV: Echocardiogram:
+                              Echocardiogram: Normal chamber dimensions and preserved systolic function (LVEF 61%), no wall motion abnormalities, valves structurally and functionally normal, no pericardial effusion.
+[Case 10 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "abdominal ultrasound"}}
+[Case 10 Round 1 Step 7] ENV: Imaging Abdomen:
+                              Abdominal ultrasound: Hepatomegaly (17.8 cm) with increased echogenicity consistent with hepatic steatosis, homogeneous parenchyma, no focal lesions. Spleen and kidneys of normal size and morphology, no hydronephrosis.
+[Case 10 Round 1 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-cell acute lymphoblastic leukemia (T-ALL) status post-induction chemotherapy, complicated by cerebral sinus vein thrombosis and intracerebral hemorrhage with residual neurological deficits", "differentials": ["T-ALL with inadequate response to induction therapy requiring alternative treatment approach", "T-ALL in remission with treatment-related complications (hepatotoxicity, thrombosis) requiring supportive management"], "treatment_plan": [{"action": "Bone marrow aspiration and biopsy with flow cytometry for minimal residual disease (MRD) assessment to determine remission status and guide consolidation therapy", "intention": "diagnostic", "priority": 1}, {"action": "Brain MRI to assess current status of intracerebral hemorrhage and guide anticoagulation management decisions", "intention": "diagnostic", "priority": 1}, {"action": "Multidisciplinary team consultation including neurology, hematology, and psycho-oncology to address patient concerns, provide comprehensive counseling regarding treatment options, prognosis, and quality of life considerations", "intention": "supportive", "priority": 1}, {"action": "Continue enoxaparin anticoagulation with ongoing monitoring of coagulation parameters and reassessment based on neuroimaging findings and bleeding risk", "intention": "therapeutic", "priority": 2}, {"action": "Continue antimicrobial prophylaxis (co-trimoxazole and valaciclovir) throughout neutropenic period", "intention": "therapeutic", "priority": 2}, {"action": "Referral to physical and occupational therapy for rehabilitation of right arm weakness and fine motor skills", "intention": "supportive", "priority": 2}, {"action": "Monitor liver function tests and consider hepatology consultation if transaminases continue to rise; supportive management for chemotherapy-related hepatotoxicity", "intention": "supportive", "priority": 3}]}}}
+[Case 10 Round 1 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 1 Step 8] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital hematology workup
+                              Capabilities: The patient is undergoing structured follow-up after induction and consolidation. You can organize marrow-based assessments, extended evaluations by consulting services, and additional imaging. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 10 Round 1 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy with morphology, flow cytometry, and minimal residual disease assessment"}}
+[Case 10 Round 2 Step 9] ENV: Bone Marrow:
+                              The bone marrow was normocellular with increased erythropoiesis and granulopoiesis, and megakaryopoiesis showing occasional juvenile forms. There was no excess of blasts or plasma cells, and no morphologic evidence of relapse, dysplasia, or fibrosis. Flow cytometry demonstrated a reduced B-cell compartment with a predominantly immature phenotype (CD10⁺/CD19⁺). Granulopoiesis appeared relatively increased with a normal maturation pattern. Approximately 2% CD34⁺/CD33⁺ myeloid blasts were detected, without evidence of lymphoid blasts or aberrant antigen expression. Initial immunophenotype at first diagnosis was: ETP-ALL: CD7+, CD34+, CD38+, TdT+, partly positive for CD33+ and CD117+ no CD1a, sCD3-, CD5 or CD8.
+[Case 10 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "minimal residual disease (MRD) quantification or molecular assessment results"}}
+[Case 10 Round 2 Step 10] ENV: 'mrd_status' available in round 3.
+                               MRD results and molecular MRD markers are recorded in a later round. In this round you can request bone marrow morphology/flow cytometry or cytogenetics if those would help interim assessment.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics and molecular genetics results"}}
+[Case 10 Round 2 Step 11] ENV: Cytogenetics:
+                               46,XX
+[Case 10 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "brain MRI to assess current status of intracerebral hemorrhage and sinus vein thrombosis"}}
+[Case 10 Round 2 Step 12] ENV: Extended Diagnostics:
+                               ENT evaluation: Normal findings; no sinus or airway pathology. Gynecologic examination: Unremarkable; Pap smear negative for intraepithelial lesion or malignancy, HPV PCR negative. Ophthalmology: Normal ocular status, no retinopathy or CNS involvement. Thyroid ultrasound: Homogeneous parenchyma, no nodules, and normal vascularity. Dental status: Intact, no caries or chronic infectious focus identified.
+                               Infection screen: Serum galactomannan <0.5; β-D-glucan not performed. CMV PCR negative. Rectal swab: Colonization with ESBL-producing Klebsiella pneumoniae (OXA-48 carbapenemase); MRSA negative, VRE positive. Immunology: ELISPOT negative.
+                               Cardiology: ECG demonstrated normal sinus rhythm. Pulmonary function testing: Normal diffusion capacity (DLCO 88% predicted) and FEV₁ 91% predicted.
+                               CSF analysis: Clear fluid, no elevated cell count, no malignant cells or blasts detected.
+                               Brain MRI (06/15/2025): Demonstrated a small left parietal post-hemorrhagic lesion with hemosiderin deposition, consistent with residual changes following prior intracerebral hemorrhage. No acute bleeding, no new ischemic or demyelinating lesions, and no evidence of CNS leukemic involvement or meningeosis. Ventricular system and midline structures unremarkable.
+[Case 10 Round 2 Step 13] CANDIDATE: {"response": {"action": "request", "request": "minimal residual disease quantification by flow cytometry or PCR"}}
+[Case 10 Round 2 Step 13] ENV: 'minimal residual disease quantification by flow cytometry or PCR' not available. Request a specific test or report.
+                               MRD results are requested but MRD data are not available in this round. Consider requesting available diagnostics such as bone marrow evaluation or molecular/cytogenetic testing in later rounds.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 2 Step 14] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Early T-cell precursor acute lymphoblastic leukemia (ETP-ALL) in morphologic remission post-induction chemotherapy, complicated by cerebral sinus vein thrombosis with intracerebral hemorrhage and residual neurological sequelae", "differentials": ["ETP-ALL in complete remission requiring standard consolidation therapy with anticoagulation management", "ETP-ALL with inadequate MRD response requiring intensified or alternative consolidation approach"], "treatment_plan": [{"action": "Obtain minimal residual disease (MRD) assessment by flow cytometry or molecular methods to determine depth of remission and guide risk-stratified consolidation therapy", "intention": "diagnostic", "priority": 1}, {"action": "Proceed with consolidation chemotherapy according to risk-stratified protocol once MRD results available, with modifications for thrombotic risk (avoid L-asparaginase or use pegaspargase with close monitoring)", "intention": "therapeutic", "priority": 1}, {"action": "Continue therapeutic anticoagulation with enoxaparin with close monitoring of coagulation parameters and clinical status", "intention": "therapeutic", "priority": 1}, {"action": "Multidisciplinary consultation including hematology, neurology, and psycho-oncology to address patient concerns about treatment continuation and provide comprehensive counseling", "intention": "supportive", "priority": 1}, {"action": "Continue antimicrobial prophylaxis with co-trimoxazole and valaciclovir, with infection surveillance given ESBL Klebsiella and VRE colonization", "intention": "therapeutic", "priority": 2}, {"action": "Monitor hepatic function and provide supportive care for chemotherapy-related hepatotoxicity", "intention": "supportive", "priority": 2}, {"action": "Continue physical and occupational therapy for rehabilitation of right upper extremity weakness and fine motor deficits", "intention": "supportive", "priority": 2}]}}}
+[Case 10 Round 2 Step 14] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 2 Step 14] ENV: Round 3 begins.
+                               Setting: Specialist conference focusing on MRD status and transplant planning
+                               Capabilities: You now have access to specialized molecular assessments, measurable residual disease data, and a detailed treatment history. You are expected to integrate these findings with donor availability and comorbidities to define prognosis and formulate a definitive strategy, including potential allogeneic transplantation or trial participation.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 10 Round 2 Step 14] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 10 Round 3 Step 15] CANDIDATE: {"response": {"action": "request", "request": "minimal residual disease status and quantification results"}}
+[Case 10 Round 3 Step 15] ENV: Mrd Status:
+                               MRD positive (0.1%). IGH D1–7 J4 and TCR D2–D3 rearrangements. NRAS mutation.
+[Case 10 Round 3 Step 16] CANDIDATE: {"response": {"action": "request", "request": "HLA typing and donor search results including matched sibling or unrelated donor availability"}}
+[Case 10 Round 3 Step 16] ENV: 'HLA typing and donor search results including matched sibling or unrelated donor availability' not available. Request a specific test or report.
+                               This case does not include HLA typing or donor search results. If you are evaluating transplant eligibility or planning, consider requesting 'special_considerations' for factors that influence transplant decisions or 'treatment_history' for prior therapies and complications.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 3 Step 17] CANDIDATE: {"response": {"action": "request", "request": "treatment history including induction regimen details and response timeline"}}
+[Case 10 Round 3 Step 17] ENV: Treatment History:
+                               2025-03-02: The patient was newly diagnosed with early T-cell precursor acute lymphoblastic leukemia (ETP-ALL). A pre-phase regimen was initiated consisting of dexamethasone 10 mg/m² p.o. daily for 5 days and cyclophosphamide 200 mg/m² i.v. for 3 days, with good tolerability and rapid improvement of constitutional symptoms. A donor search was initiated, and an HLA-matched sibling was identified as a potential stem cell donor.
+                               2025-03-10: Induction chemotherapy was started according to a standard adult ALL protocol. Dexamethasone p.o. 10 mg/m² (20 mg/day, divided into three doses) administered on days 6–7 and 13–16. Daunorubicin 45 mg/m² (86 mg i.v.) on days 6–7 and 13–14. Vincristine 2 mg i.v. (absolute dose) on days 6, 13, 20. PEG-asparaginase 500 U/m² (950 U absolute) on day 20. The regimen was tolerated initially; however, on day 17, the patient developed febrile neutropenia with Escherichia coli bacteremia, requiring intravenous meropenem 1 g q8h and short-course vancomycin (1.5 g q12h x 3 days) until cultures cleared. No hemodynamic instability occurred. Mild hyperglycemia was noted under steroids, managed conservatively.
+                               2025-03-31: Bone marrow evaluation demonstrated blasts < 5%, consistent with hematologic remission. Intrathecal methotrexate 15 mg was administered on days 25, 32, and 39 as CNS prophylaxis. 6-Mercaptopurine 60 mg/m² (110 mg/day p.o.) was given on days 31–44. Cyclophosphamide 1000 mg/m² (1900 mg i.v.) was administered on days 24 and 44. Cytarabine 75 mg/m² (140 mg i.v.) was administered on days 26–29, 33–36, and 40–43. The patient experienced transient grade 2 mucositis and fatigue, but no neurotoxicity.
+                               2025-04-14: CNS prophylaxis with cranial irradiation (24 Gy in fractionated doses) was initiated without acute toxicity.
+                               2025-05-02: Bone marrow puncture after Induction I confirmed ongoing hematologic complete remission, pending molecular MRD assessment. 2025-05-14: The patient was discharged home in stable clinical condition.
+                               2025-05-18: The patient was readmitted due to sudden severe headache and nausea. Cranial MRI revealed cerebral sinus venous thrombosis (superior sagittal sinus) with a small left-hemispheric intracerebral hemorrhage. She was admitted to the stroke unit for monitoring and received therapeutic-dose low-molecular-weight heparin (enoxaparin 90mg q12h s.c.). Neurological symptoms improved gradually, leaving a mild residual weakness of the right arm. PEG-asparaginase therapy was considered the most likely contributing factor to the thrombotic event.
+                               2025-05-27: After multidisciplinary discussion, consolidation chemotherapy was initiated with modifications to reduce CNS risk. Treatment consisted of: Dexamethasone 10 mg/m² (20 mg/day p.o., divided) on days 61–65. Vindesine 5mg on day 61. Methotrexate 1500 mg/m² (2850 mg i.v.) on day 61 with standard hydration and folinic acid rescue. Etoposide 250 mg/m² (475 mg i.v.) on days 64–65. Cytarabine 2000 mg/m² (3800 mg i.v. twice daily) on day 65. Intrathecal triple prophylaxis (methotrexate + cytarabine + hydrocortisone) was omitted due to the history of sinus venous thrombosis and prior intracerebral hemorrhage. The course was complicated by cytopenia (transfusion dependent) and grade 2 increase of liver entymes, but no infectious events or neurologic deterioration.
+                               The patient was discharged for follow-up and neurological rehabilitation, with continuation of therapeutic anticoagulation and infection prophylaxis (valaciclovir, co-trimoxazole).
+[Case 10 Round 3 Step 18] CANDIDATE: {"response": {"action": "request", "request": "special considerations including transplant eligibility assessment and patient decision-making factors"}}
+[Case 10 Round 3 Step 18] ENV: Special Considerations:
+                               Young patient with early T-cell precursor acute lymphoblastic leukemia in hematologic complete remission following induction chemotherapy, yet with persistently MRD positivity. The clinical course was complicated by cerebral sinus venous thrombosis with a small left-hemispheric intracerebral hemorrhage. Current performance status remains favorable (ECOG 0). Neurologically, the patient exhibits only mild residual weakness and reduced fine motor function of the right arm. She expresses hesitation to proceed with further intensive therapy and is considering temporary interruption of oncologic treatment in favor of neurological rehabilitation. Bone marrow reserve is preserved, organ function remains stable, and there is no clinical or laboratory evidence of active infection at present.
+[Case 10 Round 3 Step 19] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Early T-cell precursor acute lymphoblastic leukemia (ETP-ALL) in morphologic complete remission with persistent minimal residual disease (MRD positive 0.1%), complicated by treatment-related cerebral sinus vein thrombosis with intracerebral hemorrhage and residual neurological sequelae", "differentials": ["ETP-ALL with MRD persistence requiring allogeneic stem cell transplantation from matched sibling donor", "ETP-ALL with inadequate treatment response requiring alternative intensification strategy or clinical trial enrollment"], "treatment_plan": [{"action": "Proceed with allogeneic hematopoietic stem cell transplantation from matched sibling donor given high-risk ETP-ALL biology with persistent MRD positivity", "intention": "therapeutic", "priority": 1}, {"action": "Develop peritransplant anticoagulation management strategy in consultation with hematology and neurology to balance thrombotic risk and bleeding risk during conditioning and transplant", "intention": "therapeutic", "priority": 1}, {"action": "Comprehensive patient and family counseling regarding transplant rationale, risks, benefits, and prognosis to facilitate informed decision-making", "intention": "therapeutic", "priority": 1}, {"action": "Continue therapeutic anticoagulation with enoxaparin with monitoring of coagulation parameters until transplant conditioning begins", "intention": "therapeutic", "priority": 2}, {"action": "Implement infection prevention strategy including continuation of antimicrobial prophylaxis and surveillance for ESBL-producing Klebsiella pneumoniae and VRE colonization with decolonization measures if feasible prior to transplant", "intention": "therapeutic", "priority": 2}, {"action": "Consider bridging chemotherapy or maintenance therapy if delay to transplant, avoiding asparaginase-containing regimens due to thrombotic history", "intention": "therapeutic", "priority": 2}]}}}
+[Case 10 Round 3 Step 19] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 10 Round 3 Step 19] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }

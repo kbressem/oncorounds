@@ -1,0 +1,52 @@
+[Case 17 Round 1 Step 0] ENV: Case 17:
+                              Initial presentation:
+                              - Age: 44
+                              - Sex: male
+                              - Chief complaint: Scheduled follow-up after alloSCT and CD19 CAR-T for B-ALL, with interest in outpatient treatment options
+                              - Vital signs: Temp 36.9 °C, BP not reported at this visit, HR not reported at this visit, RR not reported at this visit, SpO₂ not reported at this visit.
+                              Setting: Outpatient hematology/oncology follow-up after alloSCT and CAR-T
+                              Capabilities: You are evaluating a clinically stable patient in a routine follow-up setting after intensive leukemia therapy. You can review prior history and recent clinical course, perform a targeted examination, and request standard follow-up evaluations appropriate to an ambulatory visit. Decisions focus on surveillance and whether further workup for relapse or complications is indicated.
+                              Provide either a request for a single information item or solve.
+[Case 17 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "interval history and recent clinical course since last visit"}}
+[Case 17 Round 1 Step 0] ENV: History Physical:
+                              2024-07-04: The patient presented for scheduled follow-up, reporting stable overall condition. He denied fever, night sweats, or weight loss. No exertional dyspnea, abdominal pain, or neurological complaints were reported. The patient informed the team that he had stopped some medications. He actively inquired about “next treatment options,” emphasizing his preference for outpatient-based regimens.
+                              Current medication: aciclovir 400 mg 1-0-1, posaconazole stopped, 1-0-0, cotrimoxazole 960 mg three times per week (taken irregularly), bisoprolol 2.5 mg 1-0-1, ramipril 5 mg 1-0-1, amlodipine 5 mg 1-0-1, atorvastatin 10 mg (stopped), folic acid 5 mg 1-0-0, magnesium 300 mg 1-0-0, and various nutritional supplements.
+[Case 17 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 17 Round 1 Step 1] ENV: Cbc Chemistry:
+                              Hb 10.6 g/dL, WBC 3.1 × 10⁹/L, Plt 98 × 10⁹/L; MCV 92 fL, MCH 29 pg.
+                              Differential: neutrophils 42%, lymphocytes 48%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: INR 1.1, aPTT 30 sec.
+                              Chemistry: Na 138 mmol/L, K 4.5 mmol/L, creatinine 1.4 mg/dL, BUN 19 mg/dL, AST 28 U/L, ALT 32 U/L, bilirubin 0.9 mg/dL, LDH 220 U/L, uric acid 5.2 mg/dL, CRP 0.6 mg/dL.
+                              Cardiac biomarkers: NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL.
+[Case 17 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and flow cytometry results"}}
+[Case 17 Round 1 Step 2] ENV: 'bone_marrow' available in round 2.
+                              The bone marrow morphology and flow cytometry report are not available in round 1. Consider requesting CBC/chemistry, history & physical, or baseline imaging which are available now.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "physical examination findings"}}
+[Case 17 Round 1 Step 3] ENV: 'history_physical' already provided.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "recent imaging studies"}}
+[Case 17 Round 1 Step 4] ENV: Baseline Imaging:
+                              2024-07-09: Abdominal ultrasound showed normal liver and spleen size, no lymphadenopathy, and no ascites.
+                              Echocardiography demonstrated preserved left ventricular function (LVEF 62%), without pericardial effusion.
+                              Sinus CT revealed bilateral maxillary sinus opacification with suspicion of fungal superinfection.
+[Case 17 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and flow cytometry results"}}
+[Case 17 Round 1 Step 5] ENV: 'bone marrow biopsy and flow cytometry results' not available. Request a specific test or report.
+                              Bone marrow morphology and flow cytometry are part of the bone_marrow report, which is not available in this round. Consider requesting items available now such as CBC/chemistry, history/physical, or baseline imaging.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "prior oncologic history and treatment timeline"}}
+[Case 17 Round 1 Step 6] ENV: 'prior oncologic history and treatment timeline' not available. Request a specific test or report.
+                              The detailed prior oncology treatment timeline is not available in round 1. In this round you can request the history and physical or demographics for clinical background and current symptoms.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "peripheral blood flow cytometry and minimal residual disease testing"}}
+[Case 17 Round 1 Step 7] ENV: 'mrd_status' available in round 3.
+                              This case includes a measurable residual disease (MRD) report, but it is not available until a later round. In the meantime you could request current labs (CBC/chemistry) or the history/physical available this round.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "infectious disease workup including fungal markers"}}
+[Case 17 Round 1 Step 8] ENV: 'infectious disease workup including fungal markers' not available. Request a specific test or report.
+                              This case defines an infectious workup (including fungal testing) under 'extended_diagnostics', which becomes available in a later round. In the current round you can request history/physical, CBC/chemistry, or baseline imaging instead.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 9] CANDIDATE: {"response": {"action": "request", "request": "donor chimerism analysis"}}
+[Case 17 Round 1 Step 9] ENV: 'cytogenetics_chimerism' available in round 2.
+                              Chimerism status is recorded under 'cytogenetics_chimerism', but that item is not available in round 1. Consider requesting items available now (e.g., CBC/chemistry, history and physical, or baseline imaging).
+                              (0 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)

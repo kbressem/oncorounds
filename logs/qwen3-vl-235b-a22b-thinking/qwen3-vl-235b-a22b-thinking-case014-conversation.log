@@ -1,0 +1,187 @@
+[Case 14 Round 1 Step 0] ENV: Case 14:
+                              Initial presentation:
+                              - Age: 27
+                              - Sex: female
+                              - Chief complaint: Worsening cytopenia, dyspnea, and pleuritic chest pain in a post-alloSCT patient
+                              - Vital signs: BP 105/70 mmHg, HR 110/min, RR 18/min, T° 37.9 °C, SpO₂ 91% on room air.
+                              Setting: Acute hematology / transplant follow-up (post-alloSCT with new respiratory symptoms)
+                              Capabilities: You are evaluating a clinically fragile, immunocompromised patient after allogeneic stem cell transplantation who presents with new respiratory symptoms and cytopenias. You can obtain a focused history and examination, request routine laboratory testing, and arrange appropriate non-invasive imaging and specialist assessments. Invasive procedures and systemic treatment decisions are guided by these initial findings and the patient’s clinical stability.
+                              Provide either a request for a single information item or solve.
+[Case 14 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "D-dimer level"}}
+[Case 14 Round 1 Step 0] ENV: Cbc Chemistry:
+                              CBC: Hb 9.7 g/dL, WBC 1.8 × 10⁹/L, Plt 42 × 10⁹/L; ANC 0.3´8 × 10⁹/L, lymphocytes 0.4 × 10⁹/L, monocytes 0.5 × 10⁹/L. No peripheral blasts.
+                              Chemistry: Na 133 mmol/L, K 4.9 mmol/L, creatinine 1.6 mg/dL, BUN 25 mg/dL, bilirubin 1.9 mg/dL, AST 144 U/L, ALT 152 U/L, GGT 165 U/L, ALP 140 U/L, albumin 2.9 g/dL, LDH 568 U/L, CRP 9.7 mg/dL, procalcitonin 0.6 ng/mL, INR 1.5, aPTT 42 sec.
+[Case 14 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Chest X-ray"}}
+[Case 14 Round 1 Step 1] ENV: 'Chest X-ray' not available. Try 'ct_thorax_pns' instead.
+                              This case does not list a chest X‑ray report specifically. Thoracic imaging is available as CT of the thorax and paranasal sinuses, which may satisfy your need for chest imaging.
+[Case 14 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "ct_thorax_pns"}}
+[Case 14 Round 1 Step 2] ENV: Ct Thorax Pns:
+                              CT thorax/PNH: Progression of a left-sided pleura-near fungal lesion (3.2 cm, cavitary with halo sign) and several smaller bilateral nodules. Mediastinum without lymphadenopathy. Chronic sinusitis with mucosal thickening in the ethmoidal and maxillary sinuses.
+[Case 14 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Invasive pulmonary aspergillosis (IPA) in an alloSCT patient with persistent neutropenia", "differentials": ["Bacterial pneumonia (less likely given normal procalcitonin)", "CMV pneumonitis", "Engraftment syndrome", "Recurrent malignancy"], "treatment_plan": [{"action": "Start empiric antifungal therapy", "intention": "therapeutic", "priority": 1}, {"action": "Infectious Disease consultation", "intention": "diagnostic", "priority": 2}, {"action": "Bronchoscopy with BAL for galactomannan, fungal culture, and PCR", "intention": "diagnostic", "priority": 2}, {"action": "Voriconazole 6 mg/kg IV q12h x2, then 4 mg/kg q12h", "intention": "therapeutic", "priority": 1}, {"action": "Monitor liver function closely", "intention": "supportive", "priority": 3}, {"action": "Transfuse platelets to >50 x10\u2079/L prior to bronchoscopy", "intention": "supportive", "priority": 3}, {"action": "Consider G-CSF for neutropenia", "intention": "supportive", "priority": 3}]}}}
+[Case 14 Round 2 Step 3] ENV: {"case_id": 14, "round": 1, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "incorrect", "incorrect", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 14 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and infectious evaluation after alloSCT)
+                              Capabilities: The patient is admitted for clarification of suspected relapse and concurrent infection. You can organize bone marrow assessment, extended laboratory and microbiologic workup, advanced imaging, and multidisciplinary consultations. Some specialized molecular or cytogenetic tests may still be pending.
+                              Request additional information or solve.
+[Case 14 Round 2 Step 3] JUDGE: {
+                                  "case_id": 14,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 14 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow biopsy with flow cytometry and cytogenetics"}}
+[Case 14 Round 2 Step 4] ENV: Bone Marrow:
+                              Cytology: Hypocellular marrow (cellularity 25%). Megakaryopoiesis markedly reduced, consisting mainly of juvenile forms with nuclear budding and fragmentation. The erythropoiesis-to-granulopoiesis ratio is shifted toward erythropoiesis, which displays dysplastic features with frequent mitotic figures. Granulopoiesis shows toxic granulation and matures to segmented forms. Increased numbers of macrophages and plasma cells are present but not expanded. Approximately 10% blasts with deeply basophilic cytoplasm, prominent nucleoli, and occasional Auer rods.
+                              Flow cytometry: B-cell compartment depleted, relative increase in NK/T cells, and reduced granulocytes. No plasma cell expansion. Blasts comprise 13% of nucleated cells, positive for CD34, CD117, CD123 HLA-DR, CD13, and negative for CD33, CD7 and CD56.
+                              Histology: Hypocellular marrow with dysplastic changes in all hematopoietic lineages. Reticulin staining shows focal fibrosis (MF-1). CD34 immunohistochemistry demonstrates focal infiltration by blasts up to 15%.
+[Case 14 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (AML) relapse with concurrent invasive pulmonary aspergillosis (IPA)", "differentials": ["Engraftment syndrome", "Graft-versus-host disease (GVHD)-related marrow suppression", "Viral infection (e.g., CMV) causing marrow suppression"], "treatment_plan": [{"action": "Initiate salvage chemotherapy for AML relapse (e.g., azacitidine + venetoclax)", "intention": "therapeutic", "priority": 1}, {"action": "Continue voriconazole for IPA", "intention": "therapeutic", "priority": 1}, {"action": "Perform molecular testing for FLT3/NPM1 mutations", "intention": "diagnostic", "priority": 2}, {"action": "Monitor for tumor lysis syndrome", "intention": "supportive", "priority": 3}, {"action": "Transfuse platelets to >50 x10\u2079/L and maintain Hb >8 g/dL", "intention": "supportive", "priority": 3}, {"action": "Reduce immunosuppression if GVHD is present", "intention": "therapeutic", "priority": 2}, {"action": "Repeat bone marrow in 14 days to assess response", "intention": "diagnostic", "priority": 3}]}}}
+[Case 14 Round 3 Step 5] ENV: {"case_id": 14, "round": 2, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 14 Round 3 Step 5] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse and infection conference
+                              Capabilities: You now have access to bone marrow morphology and flow cytometry, full cytogenetics and molecular profiling, detailed infectious workup, and a complete longitudinal treatment history including two allogeneic transplants and prior FLT3 inhibitor therapy. You are expected to integrate these data to define the relapse type and risk, and to formulate a realistic treatment and supportive care plan that addresses both leukemia and active infections.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 14 Round 3 Step 5] JUDGE: {
+                                  "case_id": 14,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 14 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed FLT3-mutated AML with concurrent invasive pulmonary aspergillosis after two allogeneic stem cell transplants", "differentials": ["Infection-related marrow suppression (e.g., CMV or HHV-6)", "Graft-versus-host disease (GVHD)-induced bone marrow failure", "Sinusoidal obstruction syndrome (SOS)"], "treatment_plan": [{"action": "Switch antifungal to isavuconazole 372 mg IV/PO daily", "intention": "therapeutic", "priority": 1}, {"action": "Initiate gilteritinib 120 mg PO daily for FLT3-mutated AML relapse", "intention": "therapeutic", "priority": 1}, {"action": "Monitor for drug interactions and toxicity (liver, QTc)", "intention": "supportive", "priority": 2}, {"action": "Transfuse platelets to maintain >30 x10\u2079/L and Hb >8 g/dL", "intention": "supportive", "priority": 2}, {"action": "Repeat bone marrow in 14 days to assess response to gilteritinib", "intention": "diagnostic", "priority": 3}, {"action": "Consult infectious disease for antifungal optimization", "intention": "diagnostic", "priority": 2}, {"action": "Consider palliative care involvement for goals of care discussion", "intention": "supportive", "priority": 3}]}}}
+[Case 14 Round 3 Step 6] ENV: {"case_id": 14, "round": 3, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 14 Round 3 Step 6] JUDGE: {
+                                  "case_id": 14,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

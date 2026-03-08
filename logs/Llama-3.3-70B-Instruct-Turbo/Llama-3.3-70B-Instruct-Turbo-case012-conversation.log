@@ -1,0 +1,138 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "What is the patient's past medical history, including the type of lymphoma, date of diagnosis, treatments received, and date of allogeneic stem cell transplantation (alloSCT)?"}}
+[Case 12 Round 1 Step 0] ENV: 'What is the patient's past medical history, including the type of lymphoma, date of diagnosis, treatments received, and date of allogeneic stem cell transplantation (alloSCT)?' not available. Request a specific test or report.
+                              This item (prior lymphoma treatments and transplant history) is not available in Round 1. In this round you can request demographics, history and physical, labs (CBC/chemistry), staging CT, ultrasound, or echocardiogram to gather relevant clinical context.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Complete Blood Count (CBC)"}}
+[Case 12 Round 1 Step 1] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Chest and Abdomen CT scan with contrast"}}
+[Case 12 Round 1 Step 2] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Echocardiogram"}}
+[Case 12 Round 1 Step 3] ENV: Echocardiogram:
+                              2025-04-24:  Echocardiogram: Sinus rhythm, mildly reduced LVEF 48%, no pericardial effusion or significant valvular disease.
+[Case 12 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Blood cultures"}}
+[Case 12 Round 1 Step 4] ENV: 'Blood cultures' not available. Request a specific test or report.
+                              Blood cultures fall under the infectious workup category, which is scheduled for a later round. In this round you can request available labs (e.g., CBC/chemistry) or imaging (CT/ultrasound/echo).
+[Case 12 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Liver Ultrasound"}}
+[Case 12 Round 1 Step 5] ENV: Abdominal Ultrasound:
+                              2025-04-22: Abdominal ultrasound: Mild hepatomegaly with diffuse hyperechogenicity, consistent with hepatic steatosis. Status post cholecystectomy, with mildly prominent intrahepatic bile ducts; common bile duct 9 mm. Spleen with small calcifications but normal in size. No retroperitoneal or mesenteric lymphadenopathy. Kidneys normal in size and morphology (left 11.2 cm, right 11.6 cm).
+[Case 12 Round 1 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapse of lymphoma", "differentials": ["Graft-versus-host disease", "Infection", "Drug toxicity"], "treatment_plan": [{"action": "Biopsy of the enlarged cervical lymph node", "intention": "diagnostic", "priority": 1}, {"action": "Immunosuppressant adjustment", "intention": "therapeutic", "priority": 2}, {"action": "Antimicrobial prophylaxis", "intention": "therapeutic", "priority": 3}]}}}
+[Case 12 Round 2 Step 6] ENV: {"case_id": 12, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "partially_correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 2 Step 6] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected relapse. You can organize bone marrow and tissue sampling, comprehensive staging including whole-body imaging, and extended infectious and virologic workup. Multidisciplinary input is available. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 12 Round 2 Step 6] JUDGE: {
+                                  "case_id": 12,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 2 Step 7] CANDIDATE: {"response": {"action": "request", "request": "Biopsy of the enlarged left cervical lymph node"}}
+[Case 12 Round 2 Step 7] ENV: Lymphoid Biopsy:
+                              Lymphoid tissue biopsy: Multiple fragments showed dense, sheet-like infiltrates of lymphoid-appearing cells with open chromatin and prominent nucleoli, sometimes central, eccentric, or multiple. Frequent mitotic and scattered apoptotic figures were present. The infiltrates extended to the subepithelial zone and occasionally formed intraepidermal aggregates. Immunohistochemistry demonstrated strong CD3 expression and weak but diffuse positivity for CD30 and MUM1. CD4 was variably expressed, mostly weak, while EMA was positive in scattered individual cells. The blasts were negative for CD8, CD20, PAX5, BCL6, CD10, TdT, CD56, CD138, and ALK1. The Ki-67 proliferation index was approximately 25, EBV in-situ hybridization negative. Morphologically, the infiltrate consisted of large blastoid cells with prominent nucleoli, occasional multinucleation, and some elongated nuclei, though classic hallmark cells were not identified. PD-L1 was expressed in about 10% of tumor cells. T-cell receptor gene rearrangement analysis revealed a monoclonal peak in the Jγ-fragment (80 bp), consistent with clonal T-cell expansion, while the Jβ-fragment demonstrated an oligoclonal pattern. ALK negative.
+[Case 12 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "Bone Marrow Biopsy and Aspiration"}}
+[Case 12 Round 2 Step 8] ENV: Bone Marrow:
+                              2025-04-25: Bone marrow biopsy revealed eight marrow spaces with reduced overall cellularity of approximately 25%. Fat distribution was uneven, with mild interstitial edema and focal fresh hemorrhage. Granulopoiesis was decreased but showed preserved maturation. Erythropoiesis was slightly increased, partly confluent, and morphologically unremarkable. Megakaryocytes were evenly distributed but frequently small and hypolobulated. Reticulin fibers were diffusely accentuated (MF 0-1), and increased hemosiderin deposition was noted within macrophages. Immunohistochemistry demonstrated scattered CD3-positive T lymphocytes and small mature B cells/plasma cells. Approximately 5–10% of marrow cells were CD30-positive with blastoid morphology, whereas CD34-positive blasts comprised <1% of nucleated cells. Flow cytometry identified an abnormal T-cell population accounting for approximately 10% of lymphoid events, characterized by CD45 bright expression and increased forward and side scatter. The abnormal CD4⁺ population was CD3⁺, CD2⁺, CD6⁺, CD25⁺, with dim CD5 and CD7, and dim CD30. The phenotype was TCRγδ⁺ / TCRαβ⁻.
+                              Negative markers: CD8, CD10, CD19, CD20, CD16, CD34, CD56, CD117, and TdT.
+[Case 12 Round 2 Step 9] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Peripheral T-cell lymphoma, not otherwise specified (PTCL-NOS) with relapse after allogeneic stem cell transplantation", "differentials": ["Graft-versus-host disease", "Graft-versus-lymphoma effect", "Infection"], "treatment_plan": [{"action": "Salvage chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Consider donor lymphocyte infusion", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care and symptom management", "intention": "therapeutic", "priority": 3}]}}}
+[Case 12 Round 3 Step 9] ENV: {"case_id": 12, "round": 2, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 9] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse conference (treatment planning after alloSCT)
+                              Capabilities: You now have access to detailed histopathology, immunophenotyping, molecular findings, chimerism data, and full staging, together with a complete treatment history including prior cellular therapies. You are expected to integrate these data to define relapse type, stage, and comorbidity risk and to formulate a realistic treatment and monitoring strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 12 Round 3 Step 9] JUDGE: {
+                                  "case_id": 12,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 3 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed peripheral T-cell lymphoma (PTCL) after allogeneic stem cell transplantation (alloSCT)", "differentials": ["None"], "treatment_plan": [{"action": "Brentuximab vedotin", "intention": "therapeutic", "priority": 1}, {"action": "Consider palliative care and symptom management", "intention": "therapeutic", "priority": 2}, {"action": "Regular monitoring with PET-CT and blood work", "intention": "diagnostic", "priority": 3}]}}}
+[Case 12 Round 3 Step 10] ENV: {"case_id": 12, "round": 3, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 10] JUDGE: {
+                                   "case_id": 12,
+                                   "round": 3,
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }

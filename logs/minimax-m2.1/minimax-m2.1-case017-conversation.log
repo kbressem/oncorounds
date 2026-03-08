@@ -1,0 +1,239 @@
+[Case 17 Round 1 Step 0] ENV: Case 17:
+                              Initial presentation:
+                              - Age: 44
+                              - Sex: male
+                              - Chief complaint: Scheduled follow-up after alloSCT and CD19 CAR-T for B-ALL, with interest in outpatient treatment options
+                              - Vital signs: Temp 36.9 °C, BP not reported at this visit, HR not reported at this visit, RR not reported at this visit, SpO₂ not reported at this visit.
+                              Setting: Outpatient hematology/oncology follow-up after alloSCT and CAR-T
+                              Capabilities: You are evaluating a clinically stable patient in a routine follow-up setting after intensive leukemia therapy. You can review prior history and recent clinical course, perform a targeted examination, and request standard follow-up evaluations appropriate to an ambulatory visit. Decisions focus on surveillance and whether further workup for relapse or complications is indicated.
+                              Provide either a request for a single information item or solve.
+[Case 17 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential and review of recent peripheral blood flow cytometry or minimal residual disease (MRD) results"}}
+[Case 17 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 10.6 g/dL, WBC 3.1 × 10⁹/L, Plt 98 × 10⁹/L; MCV 92 fL, MCH 29 pg.
+                              Differential: neutrophils 42%, lymphocytes 48%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: INR 1.1, aPTT 30 sec.
+                              Chemistry: Na 138 mmol/L, K 4.5 mmol/L, creatinine 1.4 mg/dL, BUN 19 mg/dL, AST 28 U/L, ALT 32 U/L, bilirubin 0.9 mg/dL, LDH 220 U/L, uric acid 5.2 mg/dL, CRP 0.6 mg/dL.
+                              Cardiac biomarkers: NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL.
+[Case 17 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "physical examination including cardiovascular assessment, weight, edema evaluation, and pulmonary examination"}}
+[Case 17 Round 1 Step 1] ENV: History Physical:
+                              2024-07-04: The patient presented for scheduled follow-up, reporting stable overall condition. He denied fever, night sweats, or weight loss. No exertional dyspnea, abdominal pain, or neurological complaints were reported. The patient informed the team that he had stopped some medications. He actively inquired about “next treatment options,” emphasizing his preference for outpatient-based regimens.
+                              Current medication: aciclovir 400 mg 1-0-1, posaconazole stopped, 1-0-0, cotrimoxazole 960 mg three times per week (taken irregularly), bisoprolol 2.5 mg 1-0-1, ramipril 5 mg 1-0-1, amlodipine 5 mg 1-0-1, atorvastatin 10 mg (stopped), folic acid 5 mg 1-0-0, magnesium 300 mg 1-0-0, and various nutritional supplements.
+[Case 17 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "echocardiogram to evaluate cardiac function given elevated NT-proBNP and troponin levels, and review of any prior cardiac imaging studies"}}
+[Case 17 Round 1 Step 2] ENV: Baseline Imaging:
+                              2024-07-09: Abdominal ultrasound showed normal liver and spleen size, no lymphadenopathy, and no ascites.
+                              Echocardiography demonstrated preserved left ventricular function (LVEF 62%), without pericardial effusion.
+                              Sinus CT revealed bilateral maxillary sinus opacification with suspicion of fungal superinfection.
+[Case 17 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "otorhinolaryngology consultation or sinus aspiration/biopsy for fungal culture and sensitivity given the bilateral maxillary sinus opacification with suspicion of fungal superinfection on CT, along with fungal biomarkers such as galactomannan"}}
+[Case 17 Round 1 Step 3] ENV: 'extended_diagnostics' available in round 2.
+                              ENT procedures (sinus aspiration/biopsy) and fungal biomarker testing are categorized under extended diagnostics, which is not available in this round. You can instead request the available baseline sinus imaging report or blood tests (CBC/chemistry) and inflammatory markers now while you wait.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "detailed sinus CT imaging report including extent of opacification, any bony erosion, or specific features suggesting invasive fungal sinusitis versus non-invasive disease"}}
+[Case 17 Round 1 Step 4] ENV: 'baseline_imaging' already provided.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "review of prior cardiac history including any echocardiograms, ECGs, or cardiac biomarkers before this visit, and current assessment of cardiac function including whether heart failure is suspected given the elevated NT-proBNP"}}
+[Case 17 Round 1 Step 5] ENV: 'review of prior cardiac history including any echocardiograms, ECGs, or cardiac biomarkers before this visit, and current assessment of cardiac function including whether heart failure is suspected given the elevated NT-proBNP' not available. Try 'baseline_imaging' instead.
+                              Echocardiography is available (request as 'baseline_imaging'). Cardiac biomarkers (eg, NT‑proBNP) are in 'cbc_chemistry' and prior cardiac history/clinical assessment would be in 'history_physical' — please request those specific items if you want the full set of data (ECG is not covered by a single canonical item here).
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "minimal residual disease (MRD) assessment by flow cytometry or molecular methods to confirm remission status post-alloSCT and CAR-T"}}
+[Case 17 Round 1 Step 6] ENV: 'minimal residual disease (MRD) assessment by flow cytometry or molecular methods to confirm remission status post-alloSCT and CAR-T' not available. Request a specific test or report.
+                              MRD results are not available in this round. You can request current labs (CBC/chemistry) or a history/physical now; bone marrow and flow results become available in later rounds.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "electrocardiogram (ECG) to evaluate for any arrhythmias or ischemic changes given the elevated cardiac biomarkers"}}
+[Case 17 Round 1 Step 7] ENV: 'electrocardiogram (ECG) to evaluate for any arrhythmias or ischemic changes given the elevated cardiac biomarkers' not available. Try 'baseline_imaging' instead.
+                              This case does not include an ECG report. You can request baseline_imaging (e.g., recent echocardiography) or cbc_chemistry (which includes cardiac biomarkers) to help evaluate cardiac status.
+                              (0 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Status post-alloSCT and CD19 CAR-T for B-ALL, currently in remission with mild cytopenias; elevated cardiac biomarkers (NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL) with preserved LVEF on echocardiography; bilateral maxillary sinus opacification concerning for fungal superinfection; medication non-adherence including cessation of posaconazole antifungal prophylaxis", "differentials": ["Cardiac dysfunction/cardiotoxicity (anthracycline or other therapy-related)", "Early heart failure with preserved ejection fraction", "Invasive or non-invasive fungal sinusitis (mucormycosis vs aspergillosis)", "Relapsed B-ALL (pending MRD confirmation)", "Chronic graft-versus-host disease", "Medication-related adverse effects from polytherapy"], "treatment_plan": [{"action": "Obtain MRD assessment via bone marrow biopsy with flow cytometry and molecular testing to confirm ongoing remission", "intention": "diagnostic", "priority": 1}, {"action": "Cardiology consultation for elevated cardiac biomarkers; consider cardiac MRI if echocardiography inconclusive or symptoms develop", "intention": "diagnostic", "priority": 1}, {"action": "ENT evaluation with urgent sinus aspiration/biopsy for fungal culture, histopathology, and galactomannan testing given sinus opacification and immunocompromised status", "intention": "diagnostic", "priority": 1}, {"action": "Reinstate posaconazole antifungal prophylaxis and provide adherence counseling given prior cessation", "intention": "therapeutic", "priority": 2}, {"action": "Optimize cardiac medications including beta-blocker and ACE-inhibitor therapy; monitor NT-proBNP trend", "intention": "therapeutic", "priority": 2}, {"action": "Restart appropriate statin therapy for cardiovascular risk reduction", "intention": "therapeutic", "priority": 3}, {"action": "Patient education regarding outpatient treatment options, medication adherence importance, and signs of infection or cardiac decompensation requiring immediate attention", "intention": "supportive", "priority": 2}]}}}
+[Case 17 Round 1 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "correct", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}]}}
+[Case 17 Round 1 Step 8] ENV: Round 2 begins.
+                              Setting: Hematology follow-up with bone marrow reassessment
+                              Capabilities: The patient is undergoing more detailed evaluation because of his leukemia history and evolving laboratory findings. You can organize marrow-based assessments and additional consultations to clarify disease status. Some specialized tests are still pending.
+                              Request additional information or solve.
+[Case 17 Round 1 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "correct",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 17 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy results including cellularity, morphology, immunophenotyping by flow cytometry, and minimal residual disease (MRD) assessment"}}
+[Case 17 Round 2 Step 9] ENV: Bone Marrow:
+                              Bone marrow biopsy (2024-07-09): The marrow was hypocellular (cellularity 25%) with therapy-related toxic changes. Trilineage hematopoiesis was present but displayed dysplastic features: megakaryopoiesis was reduced with small, hypolobulated forms; erythropoiesis showed megaloblastoid maturation; and granulopoiesis exhibited toxic granulation and nuclear irregularities. There was no blast excess (<5% by morphology).
+                              Flow cytometry revealed a normal distribution of myeloid and lymphoid populations with T-cells showing mild inversion of the CD4/CD8 ratio. A small blast population (0.1%) was detected, characterized by CD19-/CD22-, CD34^dim, CD33-, CD10-, CD20-, CD117+, CD5+, CD7+, CD56-, cyMPO-, cyTdT-, cyCD3-.
+[Case 17 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "molecular genetic testing including karyotype, FISH for common abnormalities, and next-generation sequencing panel to characterize the unusual blast population (CD117+, CD5+, CD7+, CD34dim) and assess for clonal evolution or emerging leukemia"}}
+[Case 17 Round 2 Step 10] ENV: 'molecular genetic testing including karyotype, FISH for common abnormalities, and next-generation sequencing panel to characterize the unusual blast population (CD117+, CD5+, CD7+, CD34dim) and assess for clonal evolution or emerging leukemia' not available. Try 'cytogenetics_chimerism' instead.
+                               The full molecular panel (NGS for leukemia-associated mutations) is not available in this round. You can request cytogenetics (karyotype/chimerism) or the bone marrow morphology/flow cytometry now; cytogenetics_chimerism is the closest available item for karyotype/FISH-type data in round 2.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics and chimerism analysis including karyotype, FISH for B-ALL abnormalities, and donor-recipient chimerism percentage to assess for engraftment status and potential clonal evolution"}}
+[Case 17 Round 2 Step 11] ENV: Cytogenetics Chimerism:
+                               Karyotype: 46, XX.
+                               Chimerism: 0.06% recipient.
+[Case 17 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "review of prior disease history including original B-ALL diagnosis, cytogenetics at initial presentation, prior treatment lines, and comparison of current blast immunophenotype to original leukemia phenotype to determine if this represents relapsed disease or aberrant regenerating marrow"}}
+[Case 17 Round 2 Step 12] ENV: 'bone_marrow' already provided.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 13] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Status post-alloSCT and CD19 CAR-T for B-ALL with documented complete molecular remission; hypocellular marrow (25%) with therapy-related toxic changes and regenerating trilineage hematopoiesis; unusual minor blast population (0.1%, CD117+/CD5+/CD7+/CD34dim/CD19-/CD22-) consistent with aberrant regenerative hematopoiesis rather than relapse; excellent donor chimerism (99.94%); bilateral maxillary sinusitis requiring evaluation; elevated cardiac biomarkers (NT-proBNP 460 pg/mL, troponin 0.012 ng/mL) with preserved LVEF; medication non-adherence", "differentials": ["Regenerating bone marrow post-alloSCT/CAR-T with aberrant immunophenotype (most likely)", "Early relapse with unusual immunophenotype (CD19-negative relapse possible post-CAR-T)", "Therapy-related myeloid neoplasm (evolution to MDS/AML given dysplastic features)", "Cardiac dysfunction/cardiotoxicity (asymptomatic with preserved EF)", "Invasive fungal sinusitis vs non-invasive sinus disease", "Chronic GVHD (mild CD4/CD8 ratio inversion noted)"], "treatment_plan": [{"action": "Bone marrow flow cytometry and morphology are consistent with regenerative changes; however, given the unusual CD117+/CD5+/CD7+ immunophenotype, close surveillance with repeat bone marrow in 4-6 weeks is recommended to ensure resolution of the minor blast population", "intention": "diagnostic", "priority": 1}, {"action": "Urgent ENT consultation for sinus aspiration/biopsy to evaluate for invasive fungal infection given bilateral maxillary opacification on CT and immunocompromised status; obtain galactomannan and fungal culture from sinus specimens", "intention": "diagnostic", "priority": 1}, {"action": "Cardiology evaluation for elevated NT-proBNP and troponin; consider cardiac MRI to assess for myocardial injury or fibrosis despite preserved LVEF; optimize heart failure prevention therapy with beta-blocker and ACE-inhibitor continuation", "intention": "diagnostic", "priority": 2}, {"action": "Reinstate posaconazole prophylaxis immediately and provide adherence counseling; ensure compliance with antimicrobial prophylaxis given immunocompromised status", "intention": "therapeutic", "priority": 1}, {"action": "Continue current immunosuppressive regimen as needed for GVHD prophylaxis; monitor for chronic GVHD manifestations", "intention": "therapeutic", "priority": 2}, {"action": "Repeat cardiac biomarkers in 2-4 weeks to assess trend; monitor for development of cardiac symptoms", "intention": "diagnostic", "priority": 3}, {"action": "Discuss outpatient treatment options with patient including maintenance strategies and surveillance schedule; emphasize importance of medication adherence, infection precautions, and reporting of new symptoms promptly", "intention": "supportive", "priority": 2}]}}}
+[Case 17 Round 2 Step 13] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "correct", "correct", "incorrect", "correct", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 17 Round 2 Step 13] ENV: Round 3 begins.
+                               Setting: Relapse and transplant planning conference in a heavily pretreated leukemia patient
+                               Capabilities: You now have results from bone marrow morphology, flow cytometry, clonality assays, and broad molecular profiling together with a comprehensive treatment history including alloSCT, bispecifics, inotuzumab, blinatumomab, and CD19 CAR-T. You are expected to interpret the pattern of MRD relapse, phenotypic evolution, and donor-derived CHIP, and to formulate a realistic outpatient-oriented salvage and transplant-bridging strategy.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 17 Round 2 Step 13] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "partially_correct",
+                                     "differentials": [
+                                       "partially_correct",
+                                       "correct",
+                                       "correct",
+                                       "incorrect",
+                                       "correct",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 17 Round 3 Step 14] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Therapy-related myeloid neoplasm (likely t-MDS) emerging post-alloSCT and CD19 CAR-T for B-ALL, characterized by hypocellular bone marrow with dysplastic trilineage hematopoiesis and a minor aberrant blast population (0.1%, CD117+/CD5+/CD7+/CD34dim/CD19-/CD22-) with donor-derived genotype (46,XX karyotype, 0.06% recipient chimerism), raising concern for donor-derived myeloid neoplasm or therapy-related clonal evolution; concurrent bilateral maxillary sinusitis with fungal superinfection concern; cardiac biomarker elevation with preserved LVEF; medication non-adherence including cessation of antifungal prophylaxis", "differentials": ["Donor-derived myeloid neoplasm (most likely given 46,XX karyotype and unusual myeloid immunophenotype)", "Therapy-related myeloid neoplasm (t-MDS) from prior leukemia therapy", "Regenerating bone marrow with aberrant immunophenotype (less likely given myeloid marker expression)", "CD19-negative B-ALL relapse (unlikely given CD19-/CD22- and myeloid marker profile)", "Invasive fungal sinusitis complicating myeloid neoplasm", "Cardiac dysfunction secondary to prior therapies"], "treatment_plan": [{"action": "Urgent hematology consultation for suspected donor-derived myeloid neoplasm/t-MDS; refer to transplant center for consideration of second allogeneic stem cell transplant using alternative donor source if disease progression documented", "intention": "therapeutic", "priority": 1}, {"action": "Urgent ENT evaluation with sinus biopsy/aspiration for histopathology, fungal culture, and galactomannan to evaluate for invasive fungal sinusitis; obtain fungal PCR if available; start empiric liposomal amphotericin B or voriconazole pending results given immunocompromised status and sinus opacification", "intention": "diagnostic", "priority": 1}, {"action": "Cardiology consultation for elevated cardiac biomarkers (NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL); obtain cardiac MRI to assess for myocardial inflammation, fibrosis, or early cardiotoxicity; optimize cardioprotective medications", "intention": "diagnostic", "priority": 1}, {"action": "Reinstate appropriate antifungal prophylaxis (posaconazole or alternative) and ensure strict medication adherence; provide patient education on importance of prophylaxis compliance", "intention": "therapeutic", "priority": 1}, {"action": "Repeat bone marrow biopsy in 2-3 weeks with comprehensive workup including flow cytometry, cytogenetics, and NGS panel to assess for disease progression and clonal evolution; track blast percentage trend", "intention": "diagnostic", "priority": 1}, {"action": "Given patient's preference for outpatient-based treatment, consider oral hypomethylating agents (azacitidine or decitabine) as salvage therapy for myeloid neoplasm if transplant not immediately feasible; these can be administered in outpatient setting", "intention": "therapeutic", "priority": 2}, {"action": "Discuss clinical trial options for relapsed/refractory myeloid neoplasm post-alloSCT; referral to tertiary center for experimental therapies (e.g., venetoclax-based combinations, IDH inhibitors if mutations present)", "intention": "therapeutic", "priority": 2}, {"action": "Optimize supportive care: continue growth factor support if needed, transfusional support per guidelines, infection prophylaxis, and glycemic control; ensure patient has access to outpatient infusion center for supportive treatments", "intention": "supportive", "priority": 2}, {"action": "Establish clear follow-up schedule with weekly CBC monitoring, bi-weekly cardiac biomarkers, and monthly bone marrow reassessment; provide patient with clear instructions for escalation of care if symptoms develop", "intention": "supportive", "priority": 2}, {"action": "Palliative care consultation for advance care planning, symptom management, and goals-of-care discussion given complex disease trajectory and heavily pretreated status", "intention": "supportive", "priority": 3}]}}}
+[Case 17 Round 3 Step 14] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 17 Round 3 Step 14] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "incorrect",
+                                     "differentials": [
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect",
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }

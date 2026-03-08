@@ -1,0 +1,232 @@
+[Case 14 Round 1 Step 0] ENV: Case 14:
+                              Initial presentation:
+                              - Age: 27
+                              - Sex: female
+                              - Chief complaint: Worsening cytopenia, dyspnea, and pleuritic chest pain in a post-alloSCT patient
+                              - Vital signs: BP 105/70 mmHg, HR 110/min, RR 18/min, T° 37.9 °C, SpO₂ 91% on room air.
+                              Setting: Acute hematology / transplant follow-up (post-alloSCT with new respiratory symptoms)
+                              Capabilities: You are evaluating a clinically fragile, immunocompromised patient after allogeneic stem cell transplantation who presents with new respiratory symptoms and cytopenias. You can obtain a focused history and examination, request routine laboratory testing, and arrange appropriate non-invasive imaging and specialist assessments. Invasive procedures and systemic treatment decisions are guided by these initial findings and the patient’s clinical stability.
+                              Provide either a request for a single information item or solve.
+[Case 14 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 14 Round 1 Step 0] ENV: Cbc Chemistry:
+                              CBC: Hb 9.7 g/dL, WBC 1.8 × 10⁹/L, Plt 42 × 10⁹/L; ANC 0.3´8 × 10⁹/L, lymphocytes 0.4 × 10⁹/L, monocytes 0.5 × 10⁹/L. No peripheral blasts.
+                              Chemistry: Na 133 mmol/L, K 4.9 mmol/L, creatinine 1.6 mg/dL, BUN 25 mg/dL, bilirubin 1.9 mg/dL, AST 144 U/L, ALT 152 U/L, GGT 165 U/L, ALP 140 U/L, albumin 2.9 g/dL, LDH 568 U/L, CRP 9.7 mg/dL, procalcitonin 0.6 ng/mL, INR 1.5, aPTT 42 sec.
+[Case 14 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "chest CT scan"}}
+[Case 14 Round 1 Step 1] ENV: Ct Thorax Pns:
+                              CT thorax/PNH: Progression of a left-sided pleura-near fungal lesion (3.2 cm, cavitary with halo sign) and several smaller bilateral nodules. Mediastinum without lymphadenopathy. Chronic sinusitis with mucosal thickening in the ethmoidal and maxillary sinuses.
+[Case 14 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "serum ferritin and triglycerides"}}
+[Case 14 Round 1 Step 2] ENV: 'cbc_chemistry' already provided.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 14 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 14 Round 1 Step 3] ENV: History Physical:
+                              2025-01-30: The patient presented with worsening cytopenia, dyspnea, and pleuritic chest pain. She reported low-grade fevers and cough for one week, with one episode of blood-tinged sputum. Physical examination: Fatigued, pale, and mildly tachypneic. No signs of acute graft-versus-host disease: skin without rash, no oral ulcers, abdomen soft and non-tender, no diarrhea, and no hepatobiliary tenderness. Lungs with crackles and pleuritic pain over the left base. Irregular heart rhythm without murmurs. Vitals: BP 105/70 mmHg, HR 110/min, RR 18/min, T° 37.9 °C, SpO₂ 91% on room air.
+                              Current medication: Valaciclovir 500 mg 1-0-1, posaconazole 300 mg 1-0-0, cotrimoxazole 960 mg 3×/week, ramipril 2.5 mg 1-0-0, mycophenolate mofetil 360 mg 1-0-1, letermovir 480 mg 1-0-0, vitamin D 20,000 IU twice weekly, levothyroxine 125 µg 1-0-0, folic acid 5 mg daily, ursodeoxycholic acid 250 mg 3×/day.
+[Case 14 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "ferritin level"}}
+[Case 14 Round 1 Step 4] ENV: 'extended_diagnostics' available in round 2.
+                              Ferritin is part of the iron/vitamin status included in extended diagnostics, which becomes available in a later round. In this round you can request the CBC/chemistry or other labs/imaging that are available now.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 14 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy"}}
+[Case 14 Round 1 Step 5] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow biopsy/aspirate results (morphology, flow, histology) are part of the case but are not available in this round. Consider requesting available items such as the CBC/chemistry, history and physical, or relevant imaging instead.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 14 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "extended diagnostics"}}
+[Case 14 Round 1 Step 6] ENV: 'extended_diagnostics' available in round 2.
+                              This item (extended_diagnostics) is not available in round 1. In this round you can request demographics, history/physical, CBC/chemistry, abdominal ultrasound, or CT thorax/PNS instead.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 14 Round 1 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hemophagocytic lymphohistiocytosis (HLH), secondary to invasive fungal infection (infection-associated HLH/IAHS) in the post-allogeneic stem cell transplant setting", "differentials": ["Severe invasive fungal sepsis with multi-organ failure and bone marrow suppression", "Sinusoidal obstruction syndrome (SOS/VOD) - Baltimore criteria pending", "Graft failure with viral reactivation (CMV/EBV)", "Acute graft-versus-host disease with overlap syndrome"], "treatment_plan": [{"action": "Initiate high-dose corticosteroids (dexamethasone 10 mg/m\u00b2 daily or methylprednisolone 1-2 mg/kg) for presumed HLH", "intention": "therapeutic", "priority": 1}, {"action": "Reduce immunosuppression - discontinue mycophenolate mofetil and discuss stopping/tapering other agents with transplant team", "intention": "therapeutic", "priority": 1}, {"action": "Escalate antifungal therapy - check posaconazole serum level and consider switching to liposomal amphotericin B 3 mg/kg or voriconazole given progression of fungal lesions", "intention": "therapeutic", "priority": 1}, {"action": "Emergent bone marrow biopsy with flow cytometry and hemophagocytosis assessment to confirm HLH diagnosis", "intention": "diagnostic", "priority": 1}, {"action": "Check serum ferritin, fasting triglycerides, and fibrinogen for HLH-2004 diagnostic criteria scoring", "intention": "diagnostic", "priority": 1}, {"action": "Supportive care: G-CSF for severe neutropenia (ANC <0.5), blood product support (platelet transfusion threshold <10), IVIG 0.4 g/kg", "intention": "supportive", "priority": 2}, {"action": "Send CMV/EBV/HSV PCR to evaluate for viral triggers and perform infectious disease consultation", "intention": "diagnostic", "priority": 2}, {"action": "If refractory to steroids or severe/progressive disease, consider adding etoposide 150 mg/m\u00b2 twice weekly or anakinra (IL-1 receptor antagonist)", "intention": "therapeutic", "priority": 3}]}}}
+[Case 14 Round 2 Step 7] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 14 Round 2 Step 7] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and infectious evaluation after alloSCT)
+                              Capabilities: The patient is admitted for clarification of suspected relapse and concurrent infection. You can organize bone marrow assessment, extended laboratory and microbiologic workup, advanced imaging, and multidisciplinary consultations. Some specialized molecular or cytogenetic tests may still be pending.
+                              Request additional information or solve.
+[Case 14 Round 2 Step 7] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 14 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "extended diagnostics"}}
+[Case 14 Round 2 Step 8] ENV: Extended Diagnostics:
+                              Peripheral virus PCR: CMV negative, EBV negative, adenovirus detected (CT 17). Serum β-D-glucan negative, galactomannan positive (1.7). BAL performed on 01/31/25: Pseudomonas aeruginosa (resistant to cephalosporins, penicillins, and fluoroquinolones) and Aspergillus fumigatus detected in culture. Adenovirus-PCR positive. Galactomannan 2.1.
+                              Echocardiography: Normal left ventricular size and function, LVEF 62%, no wall motion abnormalities, no significant valvular disease, no pericardial effusion.
+                              ECG: Sinus rhythm 86/min, QTc 460 ms.
+                              Pulmonary function tests: FVC 2.3 L (65% predicted), FEV1 1.7 L (58% predicted), DLCO 55% predicted.
+                              Blood cultures: Negative (multiple sets).
+                              Vitamins: Folic acid 13 ng/mL, vitamin B12 890 pg/mL.
+                              Ferritin: 6800 µg/L.
+[Case 14 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy"}}
+[Case 14 Round 2 Step 9] ENV: Bone Marrow:
+                              Cytology: Hypocellular marrow (cellularity 25%). Megakaryopoiesis markedly reduced, consisting mainly of juvenile forms with nuclear budding and fragmentation. The erythropoiesis-to-granulopoiesis ratio is shifted toward erythropoiesis, which displays dysplastic features with frequent mitotic figures. Granulopoiesis shows toxic granulation and matures to segmented forms. Increased numbers of macrophages and plasma cells are present but not expanded. Approximately 10% blasts with deeply basophilic cytoplasm, prominent nucleoli, and occasional Auer rods.
+                              Flow cytometry: B-cell compartment depleted, relative increase in NK/T cells, and reduced granulocytes. No plasma cell expansion. Blasts comprise 13% of nucleated cells, positive for CD34, CD117, CD123 HLA-DR, CD13, and negative for CD33, CD7 and CD56.
+                              Histology: Hypocellular marrow with dysplastic changes in all hematopoietic lineages. Reticulin staining shows focal fibrosis (MF-1). CD34 immunohistochemistry demonstrates focal infiltration by blasts up to 15%.
+[Case 14 Round 2 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed acute myeloid leukemia (AML) post-allogeneic stem cell transplantation", "differentials": ["Secondary AML with multilineage dysplasia post-transplant", "Myelodysplastic syndrome with excess blasts (MDS-EB2)", "Primary graft failure with dysplastic evolution", "Invasive fungal infection with marrow suppression", "Virus-associated bone marrow failure (adenovirus) with evolving dysplasia"], "treatment_plan": [{"action": "Start re-induction chemotherapy for relapsed AML (FLAG-Ida: fludarabine, cytarabine, G-CSF, idarubicin)", "intention": "therapeutic", "priority": 1}, {"action": "Discontinue mycophenolate mofetil and reduce immunosuppression to allow graft-versus-leukemia effect", "intention": "therapeutic", "priority": 1}, {"action": "Switch antifungal therapy to liposomal amphotericin B 3 mg/kg IV daily for confirmed invasive aspergillosis with pleuropulmonary involvement", "intention": "therapeutic", "priority": 1}, {"action": "Send molecular profiling (FLT3-ITD/TKD, NPM1, CEBPA, IDH1/2) for risk stratification and potential targeted therapy", "intention": "diagnostic", "priority": 1}, {"action": "Supportive care with prophylactic levofloxacin/fungal coverage, transfusion thresholds Hb >8 g/dL and Plt >10, consider G-CSF if prolonged neutropenia", "intention": "supportive", "priority": 2}, {"action": "Evaluate candidate for donor lymphocyte infusion (DLI) 3-6 weeks post-chemotherapy if engrafted and minimal residual disease responsive", "intention": "therapeutic", "priority": 2}, {"action": "Consider clinical trial enrollment or CAR-T approaches for relapsed AML post-transplant if standard chemotherapy refractory", "intention": "therapeutic", "priority": 3}]}}}
+[Case 14 Round 3 Step 10] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 14 Round 3 Step 10] ENV: Round 3 begins.
+                               Setting: Post-transplant relapse and infection conference
+                               Capabilities: You now have access to bone marrow morphology and flow cytometry, full cytogenetics and molecular profiling, detailed infectious workup, and a complete longitudinal treatment history including two allogeneic transplants and prior FLT3 inhibitor therapy. You are expected to integrate these data to define the relapse type and risk, and to formulate a realistic treatment and supportive care plan that addresses both leukemia and active infections.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 14 Round 3 Step 10] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 14 Round 3 Step 11] CANDIDATE: {"response": {"action": "request", "request": "molecular profiling and cytogenetics"}}
+[Case 14 Round 3 Step 11] ENV: Molecular Panel:
+                               FLT3-ITD ratio 0.031, DNMT3A (VAF 24%), TP53 mutation (VAF 12%). No mutations detected in ASXL1, RUNX1, BCOR, CEBPA, DDX41, IDH1, IDH2, NPM1, SRSF2, STAG2, U2AF1, ZRSR2, or MECOM. No KMT2-, MECOM- or NUP98-rearrangements identified.
+[Case 14 Round 3 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed FLT3-ITD positive acute myeloid leukemia with TP53 and DNMT3A co-mutations, post-second allogeneic stem cell transplantation, complicated by invasive pulmonary aspergillosis, adenoviremia/respiratory adenovirus infection, and multidrug-resistant Pseudomonas aeruginosa pneumonia", "differentials": ["Therapy-related myeloid neoplasm with complex karyotype", "Primary engraftment failure with leukemic evolution", "Virus-driven myelosuppression with secondary AML transformation", "Relapse of original AML with acquisition of new TP53 mutation"], "treatment_plan": [{"action": "Start gilteritinib 120 mg daily for FLT3-ITD positive relapsed AML with low-intensity chemotherapy backbone planned once infection controlled", "intention": "therapeutic", "priority": 1}, {"action": "Switch to liposomal amphotericin B 5 mg/kg daily and add isavuconazole 372 mg loading then 372 mg daily for refractory invasive aspergillosis; consider surgical resection of cavitary lesion if feasible post-stabilization", "intention": "therapeutic", "priority": 1}, {"action": "Initiate cidofovir 5 mg/kg weekly IV with probenecid and aggressive hydration for adenoviremia (CT 17) and adenovirus pneumonia; consider brincidofovir if available", "intention": "therapeutic", "priority": 1}, {"action": "Treat MDR Pseudomonas with combination therapy: ceftolozane-tazobactam or ceftazidime-avibactam plus amikacin based on susceptibilities; avoid carbapenems given Aspergillus risk", "intention": "therapeutic", "priority": 2}, {"action": "Reduce immunosuppression completely (stop mycophenolate, tacrolimus/cyclosporine if still on) to allow graft-versus-leukemia effect, with close monitoring for GVHD", "intention": "therapeutic", "priority": 2}, {"action": "Add venetoclax ramp-up (start 100 mg day 1-3, then 200 mg, then 400 mg) with G-CSF priming for TP53-mutated AML once infections stabilized and patient afebrile for 72 hours", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care: G-CSF 300 mcg daily until ANC >1.0, platelet threshold <10 for prophylaxis or <20 with bleeding, CMV monitoring weekly, IVIG replacement if hypogammaglobulinemia", "intention": "supportive", "priority": 2}, {"action": "Enroll in clinical trial targeting TP53-mutated AML (e.g., APR-246/eprenetapopt plus azacitidine, or menin inhibitor if MLL-rearranged which appears negative) given dismal prognosis with standard therapy", "intention": "therapeutic", "priority": 1}, {"action": "Consider donor lymphocyte infusion (DLI) CD3+ cells escalating from 1\u00d710e6 to 1\u00d710e7/kg once PCR negative for adenovirus and if achievement of morphologic remission or significant response", "intention": "therapeutic", "priority": 3}, {"action": "Palliative care consultation and advance care planning given poor-risk molecular profile (TP53 + FLT3-ITD) and high treatment-related mortality risk with active infections", "intention": "supportive", "priority": 3}]}}}
+[Case 14 Round 3 Step 12] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 14 Round 3 Step 12] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }

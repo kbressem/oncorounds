@@ -1,0 +1,164 @@
+[Case 8 Round 1 Step 0] ENV: Case 8:
+                             Initial presentation:
+                             - Age: 78
+                             - Sex: male
+                             - Chief complaint: Progressive fatigue, dyspnea on exertion, reduced appetite, and high fever with productive cough
+                             - Vital signs: BP 86/54 mmHg, HR 128/min regular, T° 39.2 °C, RR 28/min, O₂ saturation 89% on room air.
+                             Setting: Emergency Department / Acute Care (Initial Septic Presentation)
+                             Capabilities: You are assessing an acutely ill patient with sepsis in an acute-care environment. You can perform urgent clinical evaluation, obtain baseline investigations, and arrange emergent non-invasive imaging appropriate for the acute situation. Invasive procedures and complex diagnostic evaluations usually follow once the patient is at least partially stabilized.
+                             Provide either a request for a single information item or solve.
+[Case 8 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Given the patient's presentation suggestive of sepsis with hypotension, tachycardia, fever, and hypoxia, I request the results of the following urgent baseline investigations: complete blood count (CBC) with differential, basic metabolic panel (BMP), lactate level, blood cultures, urine analysis and culture, chest X-ray, and arterial blood gas (ABG) to assess oxygenation and acid-base status."}}
+[Case 8 Round 1 Step 0] ENV: 'Given the patient's presentation suggestive of sepsis with hypotension, tachycardia, fever, and hypoxia, I request the results of the following urgent baseline investigations: complete blood count (CBC) with differential, basic metabolic panel (BMP), lactate level, blood cultures, urine analysis and culture, chest X-ray, and arterial blood gas (ABG) to assess oxygenation and acid-base status.' not available. Try 'chemistry_inflammation' instead.
+                             This request spans multiple distinct items. For urgent labs, you can request the CBC and serum chemistry/inflammatory panel now (these will include CBC, basic chemistries, renal function, electrolytes, and inflammatory markers). Microbiology (blood/urine cultures) and arterial blood gas are part of the extended diagnostics item, which is not available in this round; chest X‑ray is not defined in this case (CT chest is available if you want cross‑sectional imaging). Consider requesting 'cbc' and 'chemistry_inflammation' separately if you want immediate lab results.
+[Case 8 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Provide the results of the chemistry and inflammation panel, including electrolytes, renal function, glucose, liver enzymes, lactate, C-reactive protein (CRP), and procalcitonin (if available)."}}
+[Case 8 Round 1 Step 1] ENV: Chemistry Inflammation:
+                             Na 129 mmol/L, K 4.6 mmol/L, creatinine 2.1 mg/dL, BUN 42 mg/dL, AST 98 U/L, ALT 76 U/L, bilirubin 2.1 mg/dL, LDH 435 U/L, uric acid 7.2 mg/dL, Ca²⁺ 2.42 mmol/L, phosphate 3.9 mg/dL, lactate 4.5 mmol/L, CK 72 U/L, CRP 25.7 mg/dL, PCT 3.5 ng/mL.
+[Case 8 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Severe sepsis with possible pneumonia as the source of infection, complicated by acute kidney injury and lactic acidosis.", "differentials": ["Community-acquired pneumonia with septic shock", "Urinary tract infection with urosepsis", "Intra-abdominal infection (e.g., diverticulitis, cholangitis)", "Endocarditis with septic emboli"], "treatment_plan": [{"action": "Administer intravenous broad-spectrum antibiotics (e.g., piperacillin-tazobactam or ceftriaxone plus azithromycin) immediately after blood cultures are drawn.", "intention": "therapeutic", "priority": 1}, {"action": "Initiate aggressive fluid resuscitation with crystalloids (e.g., normal saline or lactated Ringer's) to target a mean arterial pressure (MAP) \u2265 65 mmHg.", "intention": "therapeutic", "priority": 1}, {"action": "Administer supplemental oxygen to maintain O\u2082 saturation \u2265 92% and consider non-invasive ventilation if respiratory distress persists.", "intention": "supportive", "priority": 1}, {"action": "Obtain a CT chest to evaluate for pneumonia, pleural effusion, or other pulmonary pathology if the patient stabilizes.", "intention": "diagnostic", "priority": 2}, {"action": "Monitor urine output and renal function closely; consider vasopressors (e.g., norepinephrine) if hypotension persists despite fluid resuscitation.", "intention": "supportive", "priority": 2}, {"action": "Repeat lactate measurement within 2-4 hours to assess response to resuscitation.", "intention": "diagnostic", "priority": 3}]}}}
+[Case 8 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 8 Round 2 Step 2] ENV: Round 2 begins.
+                             Setting: Inpatient Ward / Intensive Care Unit (Early Hematologic Workup)
+                             Capabilities: The patient is now hospitalized for ongoing management. You can organize invasive diagnostic procedures such as bone marrow assessment, extend laboratory and imaging evaluation, and obtain interdisciplinary consultations. Some specialized analyses may still be pending or require referral.
+                             Request additional information or solve.
+[Case 8 Round 2 Step 2] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Given the incorrect initial working diagnosis and differentials, I request the results of the following hematologic investigations: complete blood count (CBC) with peripheral blood smear review, coagulation profile (PT/INR, aPTT, fibrinogen), ferritin level, haptoglobin, LDH, vitamin B12, folate, and a hematology consultation to evaluate for possible hematologic malignancy or other bone marrow pathology."}}
+[Case 8 Round 2 Step 3] ENV: 'Given the incorrect initial working diagnosis and differentials, I request the results of the following hematologic investigations: complete blood count (CBC) with peripheral blood smear review, coagulation profile (PT/INR, aPTT, fibrinogen), ferritin level, haptoglobin, LDH, vitamin B12, folate, and a hematology consultation to evaluate for possible hematologic malignancy or other bone marrow pathology.' not available. Try 'cbc' instead.
+                             This request bundles multiple distinct items. Please request each report separately (e.g., 'cbc', 'coagulation', and relevant labs such as ferritin/LDH/B12/folate which fall under chemistry/lab testing). If you want bone marrow evaluation or hematology consultation, request 'bone_marrow' (available this round) or explicitly ask for a hematology consult note.
+[Case 8 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Provide the results of the complete blood count (CBC) with differential and peripheral blood smear findings."}}
+[Case 8 Round 2 Step 4] ENV: Cbc:
+                             CBC: Hb 7.8 g/dL, WBC 1.1 ×10⁹/L, ANC 0.3 ×10⁹/L, Plt 18 ×10⁹/L; MCV normal, MCH normal; differential: 22% neutrophils, 10% monocytes, 60% lymphocytes, 8% blasts.
+[Case 8 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (AML) with pancytopenia, presenting as sepsis secondary to neutropenia.", "differentials": ["Acute lymphoblastic leukemia (ALL)", "Myelodysplastic syndrome (MDS) with excess blasts", "Aplastic anemia", "Severe vitamin B12 or folate deficiency with pancytopenia"], "treatment_plan": [{"action": "Initiate broad-spectrum antibiotics (e.g., piperacillin-tazobactam or meropenem) immediately to treat neutropenic sepsis.", "intention": "therapeutic", "priority": 1}, {"action": "Transfuse packed red blood cells (PRBCs) to maintain hemoglobin > 7\u20138 g/dL and platelet transfusion to maintain platelets > 10\u201320 \u00d710\u2079/L (or higher if bleeding).", "intention": "supportive", "priority": 1}, {"action": "Perform urgent bone marrow aspiration and biopsy for cytogenetic and molecular analysis to confirm AML and guide treatment.", "intention": "diagnostic", "priority": 1}, {"action": "Consult hematology/oncology for initiation of induction chemotherapy (e.g., 7+3 regimen with cytarabine and daunorubicin) once stabilized.", "intention": "therapeutic", "priority": 2}, {"action": "Monitor for tumor lysis syndrome (TLS) with frequent electrolyte and renal function checks, and initiate prophylaxis (e.g., allopurinol or rasburicase) if high-risk.", "intention": "supportive", "priority": 2}, {"action": "Place the patient in protective isolation (neutropenic precautions) to prevent further infections.", "intention": "supportive", "priority": 3}]}}}
+[Case 8 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 8 Round 3 Step 5] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Hematology Consultation (Definitive Relapse Characterization and Planning)
+                             Capabilities: You now have access to the results of specialized tests with longer turnaround times, including mutational profiling, measurable residual disease characterization, and a detailed prior treatment history. You are expected to integrate these data with comorbidities and transplant history to define prognosis and formulate a realistic treatment and supportive care strategy.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 8 Round 3 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed/refractory acute myeloid leukemia (AML) with FLT3-ITD mutation, pancytopenia, and neutropenic sepsis", "differentials": ["Therapy-related myeloid neoplasm (t-MN) post-prior chemotherapy", "High-risk myelodysplastic syndrome (MDS) with excess blasts-2", "Acute promyelocytic leukemia (APL) with atypical presentation (though unlikely given blast morphology and absence of coagulopathy)"], "treatment_plan": [{"action": "Initiate targeted therapy with a FLT3 inhibitor (e.g., gilteritinib or midostaurin) in combination with hypomethylating agent (e.g., azacitidine or decitabine) for relapsed/refractory AML with FLT3-ITD mutation.", "intention": "therapeutic", "priority": 1}, {"action": "Administer granulocyte colony-stimulating factor (G-CSF) to accelerate neutrophil recovery and reduce infection risk, if clinically appropriate (avoid in APL or if concern for leukemic proliferation).", "intention": "supportive", "priority": 1}, {"action": "Proceed with HLA typing and donor search for allogeneic hematopoietic stem cell transplantation (HSCT) as the only curative option, with reduced-intensity conditioning (RIC) given patient age and comorbidities.", "intention": "therapeutic", "priority": 2}, {"action": "Continue broad-spectrum antimicrobial prophylaxis (e.g., levofloxacin, posaconazole, and acyclovir) and monitor for opportunistic infections in the setting of prolonged neutropenia.", "intention": "supportive", "priority": 2}, {"action": "Enroll in a clinical trial evaluating novel agents (e.g., venetoclax, IDH inhibitors, or immunotherapy) if standard therapies fail or if molecular profiling identifies additional actionable targets.", "intention": "therapeutic", "priority": 3}, {"action": "Provide palliative care consultation to address symptom management (e.g., fatigue, dyspnea, pain) and goals-of-care discussions, particularly if HSCT is not feasible.", "intention": "supportive", "priority": 3}]}}}
+[Case 8 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "partially_correct", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 8 Round 3 Step 6] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "partially_correct",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }

@@ -1,0 +1,148 @@
+[Case 6 Round 1 Step 0] ENV: Case 6:
+                             Initial presentation:
+                             - Age: 67
+                             - Sex: male
+                             - Chief complaint: New painful nodular skin lesions on the left forearm with systemic symptoms
+                             - Vital signs: BP 128/76 mmHg, HR 82/min (regular), Temp 36.8 °C, RR 16/min, SpO₂ 96% on room air.
+                             Setting: Outpatient/Day Unit (Initial Presentation in a Post-transplant Patient)
+                             Capabilities: You are evaluating a clinically stable but symptomatic patient in an ambulatory or day-unit setting. You can obtain a focused history and examination, request routine blood tests, and arrange standard non-invasive imaging. Invasive tissue sampling and complex diagnostics usually require further coordination and are not performed at the first contact.
+                             Provide either a request for a single information item or solve.
+[Case 6 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Can you provide more details about the patient's medical history, specifically any history of organ transplant, immunosuppression, or other chronic illnesses?"}}
+[Case 6 Round 1 Step 0] ENV: Demographics:
+                             Age: 67 years
+                             Sex: Male
+                             Performance status: ECOG 2–3 (fluctuating during treatment)
+                             Comorbidities: Arterial hypertension, chronic kidney disease stage 2, tachyarrhythmia (episodes of atrial flutter), and a history of acute renal failure during sepsis, post alloSCT & cGvHD.
+                             Social: Married, lives with his wife, two adult children. Former smoker (20 pack-years). No alcohol or illicit drug use.
+                             Family history: Father died of myocardial infarction; mother alive (89 years) with hypertension.
+                             Height/Weight: 179 cm, 86 kg
+[Case 6 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please describe the characteristics of the skin lesions on the patient's left forearm, including size, color, texture, and any signs of infection or inflammation."}}
+[Case 6 Round 1 Step 1] ENV: History Physical:
+                             January 7, 2024: The patient presented to the clinic with new, painful nodular skin lesions on the left forearm that had developed over the previous two weeks, associated with erythema, tenderness, and occasional pruritus. He reported progressive fatigue, decreased exercise tolerance, and mild exertional dyspnea. Additional symptoms included night sweats and an unintentional weight loss of approximately 3 kg over the past two months. During the last week, the patient experienced intermittent headaches, transient blurred vision while reading, and occasional tingling around the right corner of the mouth. He denied any seizures or focal motor deficits.
+                             Physical examination: Multiple violaceous, indurated nodules (2-2.5 cm) were noted on the left forearm, tender to palpation, with additional smaller papular lesions on the anterior chest wall. The skin was otherwise dry, without ulcerations. The conjunctivae appeared pale. No oral mucosal lesions were observed. Bilateral axillary lymphadenopathy (1-1.5 cm), hepatomegaly, and a palpable spleen were present.
+                             Neurological examination: Mildly slowed saccadic eye movements to the right, hypoesthesia in the right infraorbital region, and subtle unsteadiness when walking heel-to-toe. Cranial nerves otherwise intact; no motor weakness or dysarthria. Lungs were clear on auscultation.
+                             Current medication: Amlodipine 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, atorvastatin 20 mg 0-0-1, pantoprazole 40 mg 1-0-0, escitalopram 10 mg 1-0-0, tiotropium inhaler 1-0-0, vitamin D 20,000 IU weekly, belumosudil 200mg 1-0-1, valaciclovir 500mg 1-0-0, co-trimoxazole 480 mg 1-0-0 (Mo/Wed/Fr), apixiban 2.5mg 1-0-1.
+[Case 6 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Cutaneous and systemic involvement of chronic graft-versus-host disease (cGvHD) with possible overlap syndrome and secondary infections or malignancies.", "differentials": ["Cutaneous lymphoma", "Disseminated fungal or viral infection", "Leukemia cutis"], "treatment_plan": [{"action": "Skin biopsy of the nodular lesion on the left forearm", "intention": "diagnostic", "priority": 1}, {"action": "Complete blood count (CBC) with differential, comprehensive metabolic panel, and inflammatory markers", "intention": "diagnostic", "priority": 1}, {"action": "Blood cultures and viral serology (e.g., CMV, EBV, HSV)", "intention": "diagnostic", "priority": 2}, {"action": "CT scan of the chest, abdomen, and pelvis", "intention": "diagnostic", "priority": 2}, {"action": "Symptomatic management with analgesics for pain and topical steroids for skin lesions", "intention": "supportive", "priority": 3}]}}}
+[Case 6 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 6 Round 2 Step 2] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Hematologic and Dermatologic Workup)
+                             Capabilities: The patient is now admitted for further evaluation of suspected systemic disease. You can organize invasive diagnostic procedures such as marrow and tissue sampling, detailed histopathology and immunophenotyping, and cross-sectional imaging review. Interdisciplinary consultations are available. Some specialized analyses may still be pending.
+                             Request additional information or solve.
+[Case 6 Round 2 Step 2] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "partially_correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 6 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "What were the results of the skin biopsy of the nodular lesion on the left forearm?"}}
+[Case 6 Round 2 Step 3] ENV: Skin Biopsy:
+                             Dermatopathology (skin biopsy, left forearm): Dense dermal infiltrate of medium-sized, atypical, monomorphic cells with irregular nuclei, fine chromatin, and scant cytoplasm, sparing the epidermis. Immunohistochemistry revealed strong positivity for CD123, CD4, CD56, and TCL1, while markers of myeloid or stem cell lineage (MPO, CD34, CD117) were negative.
+[Case 6 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Blastic Plasmacytoid Dendritic Cell Neoplasm (BPDCN)", "differentials": ["Cutaneous T-cell lymphoma", "Leukemia cutis", "Disseminated fungal infection"], "treatment_plan": [{"action": "Bone marrow biopsy and immunophenotyping", "intention": "diagnostic", "priority": 1}, {"action": "PET-CT scan to evaluate the extent of systemic involvement", "intention": "diagnostic", "priority": 1}, {"action": "Consultation with hematology-oncology for further management and potential chemotherapy or targeted therapy", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care with analgesics for pain management and monitoring of vital signs", "intention": "supportive", "priority": 3}]}}}
+[Case 6 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 6 Round 3 Step 4] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Post-transplant Relapse Strategy Discussion
+                             Capabilities: You now have results from specialized tests with longer turnaround times, including molecular profiling, chimerism and mutation status, and a comprehensive treatment history. You are expected to integrate these data with comorbidities and prior transplant course to define prognosis and formulate a definitive treatment and supportive care strategy.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 6 Round 3 Step 4] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 6 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed Blastic Plasmacytoid Dendritic Cell Neoplasm (BPDCN) in a post-allogeneic stem cell transplant patient with chronic graft-versus-host disease (cGvHD)", "differentials": ["Secondary skin involvement by acute myeloid leukemia (AML) relapse", "Aggressive cutaneous T-cell lymphoma", "Disseminated fungal infection with atypical presentation"], "treatment_plan": [{"action": "Initiate targeted therapy with Tagraxofusp, a CD123-directed therapy", "intention": "therapeutic", "priority": 1}, {"action": "Consultation with a multidisciplinary team including hematology-oncology, dermatology, and infectious disease specialists", "intention": "therapeutic", "priority": 1}, {"action": "Regular monitoring of complete blood count (CBC), comprehensive metabolic panel, and inflammatory markers", "intention": "diagnostic", "priority": 2}, {"action": "Supportive care with analgesics for pain management, antimicrobial prophylaxis, and nutritional support", "intention": "supportive", "priority": 2}, {"action": "Consider enrollment in clinical trials for novel therapeutic agents or combination therapies", "intention": "therapeutic", "priority": 3}]}}}
+[Case 6 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 6 Round 3 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "partially_correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }

@@ -1,0 +1,262 @@
+[Case 7 Round 1 Step 0] ENV: Case 7:
+                             Initial presentation:
+                             - Age: 70
+                             - Sex: male
+                             - Chief complaint: New nodular lesion on the left ankle with swelling and discoloration
+                             - Vital signs: BP 128/76 mmHg, HR 82/min (regular), T° 36.8 °C, RR 16/min, SpO₂ 96% on room air.
+                             Setting: Outpatient clinic (initial presentation with localized nodular lesion)
+                             Capabilities: You are evaluating a clinically stable patient in an ambulatory setting. You can obtain a focused history and examination, request standard laboratory tests, and arrange initial non-invasive imaging appropriate for a first diagnostic assessment. Invasive tissue sampling and more complex diagnostic procedures usually require additional planning.
+                             Provide either a request for a single information item or solve.
+[Case 7 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Detailed history of the lesion including duration, rate of growth, any changes in color or size, associated symptoms (pain, bleeding, itching), and relevant medical history (immunosuppression, HIV status, prior malignancies, sun exposure history)"}}
+[Case 7 Round 1 Step 0] ENV: History Physical:
+                             January 15, 2025: The patient presented to the clinic with a newly developed nodular lesion on the left ankle, measuring approximately 3-4 cm in diameter, associated with swelling and dark brown discoloration. He reported mild localized pain at the site but was otherwise in good general condition. The patient described intermittent low-grade fevers at night but denied night sweats or significant weight loss. Chronic headaches were noted, unchanged in character or intensity over several years.
+                             Physical examination: Single firm, slightly tender, nodular lesion (3-4 cm) on the left ankle with dark brown pigmentation and mild surrounding edema. No additional cutaneous lesions were observed. No palpable lymphadenopathy. Abdomen soft and non-tender, no hepatosplenomegaly. Lungs clear on auscultation, heart sounds regular, no peripheral edema.
+                             Neurological examination: Patient alert and fully oriented. Cranial nerves II–XII intact: pupils equal and reactive, extraocular movements full, visual fields intact, facial sensation and symmetry normal, palate elevation symmetrical, tongue midline, and hearing preserved. Motor exam: Normal tone and bulk, 5/5 strength in all extremities. Reflexes: 2+ and symmetric. Sensation: Intact to light touch, pinprick, vibration, and proprioception throughout. Coordination: Normal finger-to-nose and heel-to-shin testing.
+                             Current medication: Amlodipine 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-1, atorvastatin 20 mg 0-0-1, pantoprazole 40 mg 1-0-0, vitamin D 20,000 IU weekly, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), metformin 1000 mg 1-0-0, apixaban 5 mg 1-0-1.
+[Case 7 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "HIV status and if positive, most recent CD4 count and viral load"}}
+[Case 7 Round 1 Step 1] ENV: 'extended_diagnostics' available in round 2.
+                             HIV serology and related labs (CD4 count, viral load) are part of the extended infection/serologic screen in this case; those data are not available in round 1. Consider requesting items available now such as history/physical, demographics, or baseline labs (CBC/chemistry).
+[Case 7 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Complete blood count with differential"}}
+[Case 7 Round 1 Step 2] ENV: Cbc:
+                             CBC: Hb 10.7 g/dL, WBC 2.7 ×10⁹/L, ANC 1.7 ×10⁹/L, Plt 103 ×10⁹/L; MCV normal, MCH normal; differential: 63% neutrophils, 10% monocytes, 25% lymphocytes, 2% nuclear debris.
+[Case 7 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Comprehensive metabolic panel including renal function, liver function tests, and electrolytes"}}
+[Case 7 Round 1 Step 3] ENV: Chemistry:
+                             Na 126 mmol/L, K 4.1 mmol/L, creatinine 1.2 mg/dL, BUN 23 mg/dL, AST 76 U/L, ALT 86 U/L, bilirubin 1.3 mg/dL, LDH 260 U/L, uric acid 7.2 mg/dL, Ca²⁺ 2.55 mmol/L, phosphate 3.4 mg/dL, lactate 1.3 mmol/L, CK 89 U/L, Troponin T 0.012 ng/mL, NT-proBNP 235 pg/mL.
+[Case 7 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "HIV serology, CD4 count, and viral load"}}
+[Case 7 Round 1 Step 4] ENV: 'extended_diagnostics' available in round 2.
+                             This case defines serologic and extended infection screening under 'extended_diagnostics', which becomes available in a later round. Consider requesting labs or imaging available in this round (for example: CBC, chemistry, coagulation, or abdominal ultrasound).
+[Case 7 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Abdominal ultrasound to assess for lymphadenopathy, hepatosplenomegaly, or other visceral involvement"}}
+[Case 7 Round 1 Step 5] ENV: Abdominal Ultrasound:
+                             January 15, 2025 – Abdominal ultrasound: Normal-sized liver and spleen, no hepatosplenomegaly, no retroperitoneal or mesenteric lymphadenopathy.
+[Case 7 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "Extended infection/serologic screening including HIV serology, CD4 count, and viral load"}}
+[Case 7 Round 1 Step 6] ENV: 'extended_diagnostics' available in round 2.
+                             This item (extended infection/serologic screening) is part of the case but is scheduled for a later round. Consider requesting laboratory tests or imaging that are available in this round (for example: CBC, chemistry, coagulation, or abdominal ultrasound).
+[Case 7 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "Coagulation studies (PT, INR, aPTT, fibrinogen)"}}
+[Case 7 Round 1 Step 7] ENV: Coagulation:
+                             Coagulation: aPTT 32 sec, INR 1.6.
+[Case 7 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "Doppler ultrasound of left lower extremity to evaluate for vascular abnormalities or deep vein thrombosis"}}
+[Case 7 Round 1 Step 8] ENV: 'Doppler ultrasound of left lower extremity to evaluate for vascular abnormalities or deep vein thrombosis' not available. Request a specific test or report.
+                             This case does not include a lower-extremity Doppler study. You could request available items in this round such as the history and physical exam (including vascular exam) or other imaging available here (e.g., abdominal ultrasound or echocardiography) if relevant.
+[Case 7 Round 1 Step 9] CANDIDATE: {"response": {"action": "request", "request": "Inflammatory markers (CRP, ESR) and serum protein electrophoresis"}}
+[Case 7 Round 1 Step 9] ENV: 'Inflammatory markers (CRP, ESR) and serum protein electrophoresis' not available. Try 'chemistry' instead.
+                             CRP/ESR and serum protein electrophoresis are not listed as separate items in this case. You can request the laboratory panel under 'chemistry' (available this round) to get relevant serum tests; if you specifically need SPEP or inflammatory markers, ask for 'chemistry' or request specific labs and I will map them.
+[Case 7 Round 1 Step 10] CANDIDATE: {"response": {"action": "request", "request": "extended_diagnostics"}}
+[Case 7 Round 1 Step 10] ENV: 'extended_diagnostics' available in round 2.
+                              This item is not available in round 1. Consider requesting items available now such as CBC, serum chemistry, coagulation, abdominal ultrasound, or echocardiography.
+[Case 7 Round 1 Step 11] CANDIDATE: {"response": {"action": "request", "request": "Echocardiography"}}
+[Case 7 Round 1 Step 11] ENV: Echocardiography:
+                              Echocardiogram: Normal left ventricular systolic function (LVEF 53%), mild aortic stenosis (grade I/III), atrial fibrillation, no pericardial effusion.
+[Case 7 Round 1 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Kaposi sarcoma (likely AIDS-related)", "differentials": ["Melanoma", "Bacillary angiomatosis", "Cutaneous lymphoma"], "treatment_plan": [{"action": "Punch or excisional biopsy of ankle lesion for histopathological examination including immunohistochemistry for HHV-8", "intention": "diagnostic", "priority": 1}, {"action": "Confirm HIV status with CD4 count and viral load (patient on PCP and herpes prophylaxis suggesting underlying immunosuppression)", "intention": "diagnostic", "priority": 1}, {"action": "If HIV-positive, initiate or optimize antiretroviral therapy as primary treatment for AIDS-related Kaposi sarcoma", "intention": "therapeutic", "priority": 1}, {"action": "CT chest/abdomen/pelvis for staging to evaluate for visceral involvement", "intention": "diagnostic", "priority": 2}, {"action": "Referral to oncology for consideration of systemic chemotherapy (liposomal doxorubicin) if extensive or progressive disease", "intention": "therapeutic", "priority": 2}, {"action": "Pain management and local wound care for ankle lesion", "intention": "supportive", "priority": 3}]}}}
+[Case 7 Round 2 Step 12] ENV: {"case_id": 7, "round": 1, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "partially_correct", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 7 Round 2 Step 12] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital workup (histologic and staging evaluation)
+                              Capabilities: The patient is now undergoing further diagnostic clarification. You can organize tissue sampling, detailed histopathology and immunophenotyping, comprehensive staging procedures, and extended evaluations by consulting services. Some specialized results may still be in progress.
+                              Request additional information or solve.
+[Case 7 Round 2 Step 12] JUDGE: {
+                                  "case_id": 7,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "partially_correct",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 7 Round 2 Step 13] CANDIDATE: {"response": {"action": "request", "request": "HIV serology, CD4 count, and viral load"}}
+[Case 7 Round 2 Step 13] ENV: Extended Diagnostics:
+                              ECG: Atrial fibrillation with a controlled ventricular rate (87/min). Pulmonary function testing: FEV₁ 82% of predicted, DLCO 78% of predicted. Serology: CMV IgG negative, EBV IgG positive, HIV negative, hepatitis B surface antigen negative (HBsAb positive), hepatitis C antibody negative.
+                              Dental, urological, and dermatological evaluations completed: no infectious foci identified.
+                              Infection screen: CRP 4.3 mg/L, PCT <0.1 ng/mL, blood cultures negative, serum galactomannan negative. CT paranasal sinuses: Normal mucosa, no sinus pathology or infiltration detected.
+[Case 7 Round 2 Step 14] CANDIDATE: {"response": {"action": "request", "request": "Biopsy and histopathology of the ankle lesion with immunohistochemistry including HHV-8 staining"}}
+[Case 7 Round 2 Step 14] ENV: Soft Tissue Biopsy:
+                              Core biopsy from the soft tissue mass of the left ankle revealed a diffuse, dense infiltrate of atypical lymphoid cells, completely effacing the normal tissue architecture. The infiltrate was composed of large lymphoid cells with round to oval nuclei, vesicular chromatin, and prominent nucleoli, exhibiting moderate basophilic cytoplasm, frequent mitoses, and scattered apoptotic bodies. No follicular, nodular, or germinal center pattern was identified.
+                              Immunohistochemistry:
+                              Tumor cells showed strong diffuse positivity for CD19, CD79a, and PAX5, but were negative for CD20, consistent with CD20-negative high-grade B-cell lymphoma. Cells were positive for CD10 and BCL6, but negative for MUM1/IRF4, CD3, CD5, CD30, CD15, and cyclin D1. BCL2 was positive, and MYC was expressed in approximately 50% of tumor cells. Ki-67 proliferation index was around 80%.
+                              EBER in situ hybridization was negative.
+[Case 7 Round 2 Step 15] CANDIDATE: {"response": {"action": "request", "request": "FISH analysis for MYC, BCL2, and BCL6 rearrangements"}}
+[Case 7 Round 2 Step 15] ENV: Cytogenetics:
+                              FISH: IGH::MYC and IGH::BCL2 rearrangements
+[Case 7 Round 2 Step 16] CANDIDATE: {"response": {"action": "request", "request": "PET-CT scan for staging"}}
+[Case 7 Round 2 Step 16] ENV: Pet Ct:
+                              January 21, 2025: FDG PET-CT: Demonstrated a solitary, intensely FDG-avid soft-tissue lesion at the left ankle (SUVmax 11.4; Deauville score 5), correlating with the clinically visible nodule. No lymphadenopathy, bone marrow uptake, or visceral involvement. Mild calcification of the aortic valve leaflets was incidentally noted, consistent with early aortic sclerosis. Mild centrilobular pulmonary emphysema was also present.
+                              Lumbar puncture and CSF analysis: Clear cerebrospinal fluid; cytology and flow cytometry negative for malignant lymphoid cells.
+[Case 7 Round 2 Step 17] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow biopsy for staging"}}
+[Case 7 Round 2 Step 17] ENV: 'Bone marrow biopsy for staging' not available. Try 'pet_ct' instead.
+                              This case does not include a dedicated bone marrow biopsy result. For staging/extent of disease in this round you can request the PET-CT (available in round 2) or the soft tissue biopsy of the ankle lesion if you want pathology from the primary site.
+[Case 7 Round 2 Step 18] CANDIDATE: {"response": {"action": "request", "request": "Medical history clarifying reason for immunosuppressive prophylaxis (co-trimoxazole and valaciclovir) if HIV negative - transplant history or other immunosuppressive condition"}}
+[Case 7 Round 2 Step 18] ENV: 'history_physical' already provided.
+[Case 7 Round 2 Step 19] CANDIDATE: {"response": {"action": "request", "request": "LDH level and serum beta-2 microglobulin for prognostic assessment"}}
+[Case 7 Round 2 Step 19] ENV: 'chemistry' already provided.
+[Case 7 Round 2 Step 20] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma), CD20-negative, Stage IE (localized to left ankle)", "differentials": ["Diffuse large B-cell lymphoma, NOS with concurrent MYC and BCL2 expression", "Burkitt lymphoma with atypical features", "High-grade B-cell lymphoma, NOS"], "treatment_plan": [{"action": "Initiate intensive chemotherapy with DA-EPOCH regimen (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin) - rituximab omitted due to CD20 negativity", "intention": "therapeutic", "priority": 1}, {"action": "Tumor lysis syndrome prophylaxis with aggressive hydration, allopurinol, and electrolyte monitoring", "intention": "supportive", "priority": 1}, {"action": "CNS prophylaxis with intrathecal methotrexate given high-risk double-hit genetics", "intention": "therapeutic", "priority": 1}, {"action": "Continue PCP prophylaxis (co-trimoxazole) and antiviral prophylaxis (valaciclovir) during chemotherapy", "intention": "supportive", "priority": 2}, {"action": "Interim PET-CT after 2-3 cycles to assess treatment response", "intention": "diagnostic", "priority": 2}, {"action": "Consider CD19-directed therapy (polatuzumab vedotin, blinatumomab, or CAR-T cell therapy) if inadequate response or relapse", "intention": "therapeutic", "priority": 3}]}}}
+[Case 7 Round 3 Step 20] ENV: {"case_id": 7, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "incorrect", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 7 Round 3 Step 20] ENV: Round 3 begins.
+                              Setting: Specialist conference (definitive diagnosis and treatment planning)
+                              Capabilities: You now have access to definitive pathology, molecular findings, prior treatment history, and full staging results. You are expected to integrate these data with comorbidity and transplant scores to establish the final diagnosis, characterize risk, and propose an evidence-based treatment and follow-up strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 7 Round 3 Step 20] JUDGE: {
+                                  "case_id": 7,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 7 Round 3 Step 21] CANDIDATE: {"response": {"action": "request", "request": "Complete past medical history including reason for PCP and antiviral prophylaxis, any transplant history, and detailed comorbidity assessment"}}
+[Case 7 Round 3 Step 21] ENV: 'history_physical' already provided.
+[Case 7 Round 3 Step 22] CANDIDATE: {"response": {"action": "request", "request": "Molecular testing for any additional genetic abnormalities (BCL6 rearrangement status) and flow cytometry panel confirming CD79b expression for targeted therapy options"}}
+[Case 7 Round 3 Step 22] ENV: Molecular Panel:
+                              IGH::MYC and IGH::BCL2 rearrangement
+[Case 7 Round 3 Step 23] CANDIDATE: {"response": {"action": "request", "request": "IPI score calculation and ECOG performance status"}}
+[Case 7 Round 3 Step 23] ENV: Demographics:
+                              Age: 70 years
+                              Sex: Male
+                              Performance status: ECOG 0-1
+                              Comorbidities: Arterial hypertension, type 2 diabetes mellitus, aortic stenosis, tachyarrhythmia with episodes of atrial flutter, and a history of acute renal failure during a prior septic episode.
+                              Social: Married, lives alone, three adult children. Former smoker (35 pack-years). Denies current alcohol or illicit drug use.
+                              Family history: Mother deceased (lung cancer), father deceased (natural causes).
+                              Height: 181 cm; Weight: 102 kg
+[Case 7 Round 3 Step 24] CANDIDATE: {"response": {"action": "request", "request": "Prior treatment history - has patient received prior chemotherapy or transplant that would explain PCP and antiviral prophylaxis while being HIV negative"}}
+[Case 7 Round 3 Step 24] ENV: Treatment History:
+                              Diagnosis: Diffuse large B-cell lymphoma (DLBCL), first diagnosis March 2017, stage IAE, initial involvement: left elbow.
+                              Treatment history: January–May 2017: Six cycles of R-CHOP (rituximab 375 mg/m² IV d1, cyclophosphamide 750 mg/m² IV d1, doxorubicin 50 mg/m² IV d1, vincristine 1.4 mg/m² IV d1 [max 2 mg], prednisone 100 mg PO d1–5) plus two additional cycles of rituximab monotherapy.
+                              Result: Metabolic complete remission (CR). June–August 2017: Additive radiotherapy to the left elbow, total dose 39.6 Gy.
+                              January 2019: Abdominal mass detected. Biopsy: DLBCL, GCB type, MYC and BCL2 rearranged.
+                              February 2020: One cycle of R-CHOEP (rituximab 375 mg/m² IV d1, cyclophosphamide 750 mg/m² IV d1, doxorubicin 50 mg/m² IV d1, vincristine 1.4 mg/m² IV d1 [max 2 mg], etoposide 100 mg/m² IV d1–3, prednisone 100 mg PO d1–5). Course: Poor tolerability with clinical signs of cardiac decompensation, grade IV thrombocytopenia (8 × 10⁹/L) and pneumonia requiring in-patient treatment for seven days (moxifloxacin 400 mg daily).
+                              March 2020: One cycle of R-GDP (rituximab 375 mg/m² IV d1, gemcitabine 1000 mg/m² IV d1 & d8, cisplatin 75 mg/m² IV d1, dexamethasone 40 mg PO/IV d1–4) and stem cell apheresis.
+                              April 2020: Second cycle R-GDP.
+                              June 2020: High-dose R-BEAM (rituximab 375 mg/m² IV d-7, carmustine 300 mg/m² IV d-6, etoposide 100 mg/m² IV bid d-5 to -3, cytarabine 200 mg/m² IV bid d-5 to -3, melphalan 140 mg/m² IV d-2) followed by autologous stem cell transplantation. Complications: Mucositis (oral, GI), diarrhea, nausea, neutropenic fever. Result: Metabolic CR on PET/CT (07/31/2020).
+                              October 2021: Second relapse (predominantly infradiaphragmatic lymph node and cutaneous involvement).
+                              October 2021: Two cycles rituximab + polatuzumab vedotin (polatuzumab 1.8 mg/kg IV d1, rituximab 375 mg/m² IV d1, q21).
+                              October 22, 2021: Lymphocyte apheresis performed.
+                              November 2021: One cycle Pola-BR (bendamustine 70 mg/m² IV d1–2), achieving metabolic CR.
+                              December 5, 2021: Lymphodepletion with cyclophosphamide (500 mg/m²) and fludarabine (30 mg/m²).
+                              December 10, 2021: Axicabtagene ciloleucel CAR-T cell therapy.
+                              December 25, 2021: Neutropenic fever and cytokine release syndrome (CRS) grade 2, treated with four doses of tocilizumab (8 mg/kg).
+                              February 1, 2022: PET/CT confirmed ongoing metabolic CR.
+                              September 23, 2024: Clinical suspicion of relapse with cutaneous lesions on the right thigh and lower leg. Biopsy: Blastoid lymphoid neoplasm, CD20+, CD19+.
+                              September 24, 2024: PET/CT showed lymphoma involvement (Deauville 5) with new highly metabolic cutaneous and subcutaneous lesions, new intramuscular and disseminated bone marrow involvement (pelvis, thoracic cage with erosion of the right 5th rib), and a new solitary hepatic lesion consistent with lymphoma infiltration.
+                              September 25, 2024: Pre-phase with prednisolone 100 mg daily.
+                              September 30, 2024: First cycle obinutuzumab-GemOx (obinutuzumab split dose: d1 100 mg, d2 900 mg; gemcitabine 1000 mg/m² IV d1 & d8, oxaliplatin 100 mg/m² IV d1). Donor search initiated: One HLA-haploidentical son (31 years), crossmatch negative. Patient reluctant toward allo-HSCT due to advanced age.
+                              October 4, 2024: Glofitamab 2.5 mg (dose 1).
+                              October 11, 2024: Glofitamab 10 mg (dose 2).
+                              October 18, 2024: Glofitamab 30 mg (dose 3).
+                              November 10, 2024: Glofitamab 30 mg (dose 4).
+                              December 3, 2024: PET/CT: Metabolic CR (Deauville 2).
+                              December 6, 2024: Glofitamab 30 mg (dose 5).
+                              December 28, 2024: Glofitamab 30 mg (dose 6).
+[Case 7 Round 3 Step 25] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed/refractory high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma), CD20-negative, Stage IE, fourth relapse post-autologous SCT, post-CAR-T (axicabtagene ciloleucel), with early progression on glofitamab maintenance", "differentials": ["High-grade B-cell lymphoma, NOS with double-hit genetics and therapy-induced CD20 loss", "Transformed lymphoma with clonal evolution and antigen escape"], "treatment_plan": [{"action": "Involved-site radiotherapy to left ankle lesion (30-40 Gy) for local control given localized stage IE disease", "intention": "therapeutic", "priority": 1}, {"action": "Initiate loncastuximab tesirine (CD19-targeted antibody-drug conjugate) as CD20-independent systemic therapy", "intention": "therapeutic", "priority": 1}, {"action": "Re-discuss allogeneic HSCT with haploidentical son as donor - only potentially curative option in this heavily pretreated setting if adequate response achieved", "intention": "therapeutic", "priority": 2}, {"action": "Continue PCP prophylaxis (co-trimoxazole) and antiviral prophylaxis (valaciclovir) given profound immunosuppression from prior therapies", "intention": "supportive", "priority": 1}, {"action": "PET-CT restaging after 2-3 cycles of loncastuximab tesirine to assess response and transplant eligibility", "intention": "diagnostic", "priority": 2}, {"action": "Consider clinical trial enrollment for novel CD19-directed or alternative targeted therapies if progression occurs", "intention": "therapeutic", "priority": 3}]}}}
+[Case 7 Round 3 Step 25] ENV: {"case_id": 7, "round": 3, "evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 7 Round 3 Step 25] JUDGE: {
+                                  "case_id": 7,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

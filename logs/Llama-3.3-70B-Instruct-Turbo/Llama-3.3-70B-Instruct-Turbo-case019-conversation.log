@@ -1,0 +1,146 @@
+[Case 19 Round 1 Step 0] ENV: Case 19:
+                              Initial presentation:
+                              - Age: 76
+                              - Sex: female
+                              - Chief complaint: Incidentally detected leukocytosis with blasts and pancytopenia during stroke-unit admission for traumatic intracerebral hemorrhage.
+                              - Vital signs: Temp 37.8 °C, BP 98/60 mmHg, HR 112/min (irregular), RR 21/min, SpO₂ 93% on room air.
+                              Setting: Acute stroke-unit admission with incidentally discovered cytopenia and evolving leukocytosis with circulating blasts.
+                              Capabilities: You can review clinical presentation, recent trauma and ICH, initial blood counts, chemistry, and baseline imaging. You should recognize hyperleukocytic acute leukemia with laboratory tumor lysis and coagulopathy in a frail patient and decide on immediate stabilization, diagnostic workup, and whether intensive induction is realistic.
+                              Provide either a request for a single information item or solve.
+[Case 19 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "What are the patient's initial blood counts, including white blood cell count, hemoglobin, and platelet count?"}}
+[Case 19 Round 1 Step 0] ENV: Cbc Chemistry:
+                              CBC: Hb 8.6 g/dL, WBC 44 × 10⁹/L, Plt 12 × 10⁹/L; MCV 89 fL, MCH 29 pg; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes.
+                              Coagulation: aPTT 42 sec, INR 2.1, fibrinogen 333 mg/dL, AT3 77%, FXIII 54%.
+                              Na 124 mmol/L, K 5.1 mmol/L, creatinine 1.6 mg/dL, BUN 25 mg/dL, AST 132 U/L, ALT 163 U/L, bilirubin 2.4 mg/dL, LDH 1289 U/L, uric acid 9.9 mg/dL, Ca²⁺ 2.85 mmol/L, phosphate 4.2 mg/dL, lactate 5.3 mmol/L, CK 320 U/L, Troponin T 0.002 ng/mL, NT-proBNP 461 pg/mL.
+[Case 19 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Leukemia (likely Acute Myeloid Leukemia) with tumor lysis syndrome and coagulopathy", "differentials": ["Acute Myeloid Leukemia", "Acute Lymphoblastic Leukemia"], "treatment_plan": [{"action": "Immediate stabilization", "intention": "supportive", "priority": 1}, {"action": "Hydration and rasburicase for tumor lysis syndrome", "intention": "therapeutic", "priority": 2}, {"action": "Transfusion of blood products (RBCs, platelets) as needed", "intention": "supportive", "priority": 3}, {"action": "Coagulopathy management (e.g., fresh frozen plasma, cryoprecipitate)", "intention": "supportive", "priority": 3}, {"action": "Consideration of intensive induction chemotherapy", "intention": "therapeutic", "priority": 3}, {"action": "Consultation with hematology/oncology team", "intention": "diagnostic", "priority": 2}]}}}
+[Case 19 Round 2 Step 1] ENV: {"case_id": 19, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 19 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Hematologic workup after bone marrow biopsy and cytogenetics.
+                              Capabilities: You now have full marrow morphology, flow cytometry defining an AML with monocytic component, and complex karyotype. You should classify the leukemia, integrate recent intracerebral hemorrhage and comorbidities, and select an induction concept (intensive vs lower-intensity) while considering bleeding risk.
+                              Request additional information or solve.
+[Case 19 Round 2 Step 1] JUDGE: {
+                                  "case_id": 19,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "What are the specific results of the bone marrow biopsy, flow cytometry, and cytogenetics, including the complex karyotype and any notable molecular mutations (e.g., FLT3, NPM1, TP53)?"}}
+[Case 19 Round 2 Step 2] ENV: Bone Marrow:
+                              The bone marrow was hypercellular (80%), showing extensive blast infiltration (35% of nucleated cells). The blasts were medium to large in size, with irregular nuclear contours, open chromatin, and prominent nucleoli. Auer rods were occasionally seen. Cytoplasm was moderately abundant, with fine azurophilic granules and sporadic pseudopodia. A second population of promonocytes and immature monocytoid cells was abundant, characterized by irregularly folded nuclei and basophilic cytoplasm. Residual trilineage hematopoiesis was markedly reduced; megakaryocytes were rare and predominantly dysplastic (micromegakaryocytes, hypolobated forms). Erythropoiesis was markedly suppressed with megaloblastoid changes, and granulocytic dysplasia was evident (hypogranulated and pseudo–Pelger-Huët forms). No significant lymphoid or plasma-cell increase was observed.
+                              Flow cytometry revealed a blast population (CD34⁺/CD33⁺) co-expressing CD117, HLA-DR, CD13, CD33, MPO, and showing aberrant CD19 positivity; negative for CD23, cyCD3, CD20.
+                              A second population consisted of CD34^dim/CD33⁺ cells with CD117⁺, CD64⁺, CD11c⁺, partial CD14^dim, CD7⁺, and CD56⁺. Among lymphocytes, T cells accounted for 73% (CD3⁺), with CD4⁺ 43% and CD8⁺ 35% (CD4/CD8 = 1.2), without aberrant expression. B cells represented 12% (CD19⁺/CD20⁺, polyclonal with balanced κ/λ). NK cells comprised 15% (CD16⁺/CD56⁺).
+                              Histology confirmed a hypercellular marrow (>80%) with diffuse and interstitial infiltration by blasts of immature monocytic morphology, largely replacing normal architecture. Scattered small lymphoid aggregates were present but not dominant. Reticulin staining demonstrated a mild-to-moderate increase in fibers (MF-2). Immunohistochemistry confirmed blast positivity for CD34, CD117, MPO, CD68 (subset), CD7 (partial), and CD56 (strong membranous).
+[Case 19 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the cytogenetic analysis, including any chromosomal abnormalities, translocations, or deletions, and are there any notable molecular mutations (e.g., NPM1, FLT3, TP53) detected by PCR or next-generation sequencing?"}}
+[Case 19 Round 2 Step 3] ENV: Cytogenetics Chimerism:
+                              Karyotype: 46,XX,del(3)(q26q29),der(3)ins(3;12)(q26;p13),del(11)(q11q25),der(12)t(11;12)(q11;p13),der(13)t(12;13)(p13;p13)[20].
+[Case 19 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Myeloid Leukemia (AML) with monocytic differentiation and complex karyotype", "differentials": ["Therapy-related AML", "AML with myelodysplasia-related changes"], "treatment_plan": [{"action": "Lower-intensity induction chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Supportive care with transfusions and growth factor support", "intention": "supportive", "priority": 2}, {"action": "Consideration of venetoclax-based regimen or other novel therapies", "intention": "therapeutic", "priority": 3}, {"action": "Close monitoring for bleeding complications and adjustment of treatment plan accordingly", "intention": "supportive", "priority": 2}]}}}
+[Case 19 Round 3 Step 4] ENV: {"case_id": 19, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 19 Round 3 Step 4] ENV: Round 3 begins.
+                              Setting: Post-NGS risk stratification and definitive treatment planning.
+                              Capabilities: You know the NGS profile including TP53, EZH2, and CBL mutations with low-level FLT3-TKD, confirming ELN 2024 adverse risk AML-pCT. You should finalize the non-transplant treatment strategy (including venetoclax-based low-intensity regimens), define consolidation, and outline supportive care, explicitly arguing against alloSCT.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 19 Round 3 Step 4] JUDGE: {
+                                  "case_id": 19,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Myeloid Leukemia with adverse risk genetics (ELN 2024), including TP53, EZH2, and CBL mutations, and low-level FLT3-TKD", "differentials": ["None"], "treatment_plan": [{"action": "Venetoclax-based low-intensity regimen (e.g., venetoclax + azacitidine or venetoclax + decitabine)", "intention": "therapeutic", "priority": 1}, {"action": "Consolidation with continued venetoclax-based therapy", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care with transfusions, growth factor support, and prophylactic platelet transfusions to mitigate bleeding risk", "intention": "supportive", "priority": 3}, {"action": "Argument against alloSCT: patient's age, comorbidities, and adverse risk genetics make alloSCT a high-risk procedure with limited benefit; focus on optimizing quality of life and disease control with non-transplant strategies", "intention": "therapeutic", "priority": 1}]}}}
+[Case 19 Round 3 Step 5] ENV: {"case_id": 19, "round": 3, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 19 Round 3 Step 5] JUDGE: {
+                                  "case_id": 19,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

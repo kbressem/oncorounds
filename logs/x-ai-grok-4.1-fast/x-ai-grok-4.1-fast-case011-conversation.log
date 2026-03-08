@@ -1,0 +1,187 @@
+[Case 11 Round 1 Step 0] ENV: Case 11:
+                              Initial presentation:
+                              - Age: 32
+                              - Sex: female
+                              - Chief complaint: Rapidly progressive swelling of the left cervical region with exertional dyspnea and intermittent inspiratory stridor
+                              - Vital signs: BP 108/68 mmHg, HR 118/min, RR 24/min with mild stridor, Temp 37.8 °C, SpO₂ 93% on room air.
+                              Setting: Acute hematology / emergency assessment for symptomatic cervical mass
+                              Capabilities: You are evaluating a patient with rapidly progressive neck swelling and early airway compromise in an acute-care setting. You can obtain detailed history and examination, request baseline laboratory evaluations, and arrange urgent non-invasive imaging and airway assessments. Invasive diagnostic procedures and complex therapeutic decisions typically follow once initial stabilization and basic staging are completed.
+                              Provide either a request for a single information item or solve.
+[Case 11 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Urgent fiberoptic nasolaryngoscopy or otolaryngology consultation to assess the degree of upper airway obstruction and plan for airway protection."}}
+[Case 11 Round 1 Step 0] ENV: 'Urgent fiberoptic nasolaryngoscopy or otolaryngology consultation to assess the degree of upper airway obstruction and plan for airway protection.' not available. Request a specific test or report.
+                              Airway assessment / ENT consult is listed in the extended diagnostics but is not available in round 1. Consider requesting history and physical (including airway exam), CT neck imaging (cross‑sectional neck imaging is available this round), or arterial blood gas to help triage airway risk now.
+[Case 11 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "CT neck with contrast to evaluate the extent and characteristics of the left cervical mass and assess for airway compression."}}
+[Case 11 Round 1 Step 1] ENV: Ct Staging:
+                              CT neck/chest/abdomen/pelvis showed bulky left cervical lymphadenopathy (levels II-IV) with confluent nodes up to 4.2 cm short axis, encasing the left carotid sheath. Bulky anterior mediastinal and paratracheal lymphadenopathy (largest 7.6 ×x4.8 cm) causing eccentric tracheal compression with luminal narrowing and mild rightward tracheal deviation. Multiple bilateral pulmonary round nodules (3-8 mm) without cavitation; no pleural effusion. No pathologic lymphadenopathy was seen below the diaphragm, liver and spleen were in normal size and attenuation.
+[Case 11 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Primary mediastinal large B-cell lymphoma (PMBCL) or classical Hodgkin lymphoma with bulky cervical and mediastinal lymphadenopathy causing airway compression", "differentials": ["Diffuse large B-cell lymphoma (non-mediastinal)", "Thymoma", "Metastatic germ cell tumor", "Anaplastic large cell lymphoma"], "treatment_plan": [{"action": "Administer high-dose dexamethasone (e.g., 10 mg IV q6h) to reduce lymphatic mass effect and edema", "intention": "therapeutic", "priority": 1}, {"action": "Supplemental oxygen to maintain SpO2 >94% and continuous airway monitoring with preparation for intubation if deterioration", "intention": "supportive", "priority": 1}, {"action": "Urgent excisional biopsy of accessible cervical lymph node under local anesthesia for histopathological diagnosis and flow cytometry", "intention": "diagnostic", "priority": 1}, {"action": "Baseline blood tests: CBC with differential, comprehensive metabolic panel, LDH, uric acid, beta-HCG, AFP, HIV serology", "intention": "diagnostic", "priority": 2}, {"action": "Consult cardiothoracic surgery or interventional radiology for potential core biopsy if excisional not feasible, and radiation oncology for emergent radiotherapy if biopsy delay", "intention": "diagnostic", "priority": 2}, {"action": "Prophylactic allopurinol for tumor lysis syndrome prevention", "intention": "supportive", "priority": 3}]}}}
+[Case 11 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 2 Step 2] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (diagnostic clarification and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected lymphoma. You can organize tissue biopsies, bone marrow assessment, comprehensive staging including advanced imaging, and multidisciplinary consultations. Some specialized tests may still be in progress or pending external analysis.
+                              Request additional information or solve.
+[Case 11 Round 2 Step 2] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Histopathology report including immunohistochemistry and flow cytometry from excisional biopsy of the left cervical lymph node."}}
+[Case 11 Round 2 Step 3] ENV: Lymph Node Biopsy:
+                              Lymph node biopsy:
+                              Match 15th 2025: Sections showed a diffuse effacement of the nodal architecture by a polymorphous infiltrate of atypical large lymphoid cells arranged in a diffuse growth pattern. The tumor cells exhibited vesicular chromatin, prominent nucleoli, and moderate amounts of amphophilic cytoplasm. Occasional multinucleated forms and apoptotic bodies were observed.
+                              Immunohistochemistry:
+                              The neoplastic cells demonstrated strong nuclear expression of PAX5, partial membranous expression of CD20, and variable nuclear expression of BCL6 and MUM1, ranging from moderate to strong across different tumor areas. The proliferation index (Ki-67) was approximately 60–70%. BCL2 was strongly expressed in the majority of tumor cells. CD30 showed moderate positivity in approximately 40% of cells, while CD15 demonstrated focal, partial expression. CD10 expression was restricted to stromal and reactive elements only. EBER in situ hybridization was negative for Epstein–Barr virus.
+                              Immunostains confirmed B-cell lineage with strong expression of CD45 and CD79a. ALK1 was negative.
+[Case 11 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Primary mediastinal (thymic) large B-cell lymphoma", "differentials": ["Diffuse large B-cell lymphoma, NOS", "B-cell lymphoma, unclassifiable, with features intermediate between DLBCL and classical Hodgkin lymphoma"], "treatment_plan": [{"action": "Escalate corticosteroids (e.g., methylprednisolone 1g IV daily x3 days) if not already started, to urgently reduce mass effect on airway", "intention": "therapeutic", "priority": 1}, {"action": "Dose-adjusted R-EPOCH chemotherapy initiation after staging completion, given bulky disease and airway compromise", "intention": "therapeutic", "priority": 1}, {"action": "Intensive airway monitoring in ICU setting with ENT and anesthesia on standby for potential intubation or tracheostomy", "intention": "supportive", "priority": 1}, {"action": "PET-CT whole body for complete staging and baseline response assessment", "intention": "diagnostic", "priority": 1}, {"action": "Bone marrow biopsy and aspirate for staging", "intention": "diagnostic", "priority": 2}, {"action": "Echocardiogram to assess for pericardial effusion or SVC syndrome", "intention": "diagnostic", "priority": 2}, {"action": "Labs: CBC, CMP, LDH, uric acid, beta-2 microglobulin, HIV, Hep B/C serologies", "intention": "diagnostic", "priority": 2}, {"action": "Multidisciplinary tumor board discussion with radiation oncology for potential involved-field radiotherapy if chemoresistant", "intention": "therapeutic", "priority": 3}, {"action": "Allopurinol and IV hydration for TLS prophylaxis", "intention": "supportive", "priority": 3}]}}}
+[Case 11 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 3 Step 4] ENV: Round 3 begins.
+                              Setting: Specialist lymphoma conference (definitive diagnosis and treatment strategy)
+                              Capabilities: You now have access to definitive histopathology, cytogenetics, molecular studies, complete staging, and detailed prior treatment history. You are expected to integrate these data with comorbidities and donor availability to establish the final diagnosis, risk stratification, and a long-term treatment plan including systemic therapy and possible cellular therapies.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 11 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "B-cell lymphoma, unclassifiable, with features intermediate between diffuse large B-cell lymphoma and classical Hodgkin lymphoma", "differentials": ["Primary mediastinal large B-cell lymphoma", "Diffuse large B-cell lymphoma, not otherwise specified"], "treatment_plan": [{"action": "Dose-adjusted R-EPOCH (etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin, rituximab) as frontline systemic therapy", "intention": "therapeutic", "priority": 1}, {"action": "Involved-site radiation therapy (ISRT) to bulky mediastinal and cervical disease after 4-6 cycles of chemotherapy if partial response", "intention": "therapeutic", "priority": 1}, {"action": "Close respiratory monitoring with low threshold for ICU transfer and multidisciplinary airway management plan (ENT, thoracic surgery)", "intention": "supportive", "priority": 1}, {"action": "Confirm complete staging with PET-CT, bone marrow biopsy (if not done), echocardiogram, and pulmonary function tests", "intention": "diagnostic", "priority": 1}, {"action": "Baseline HIV, hepatitis B/C serologies, and fertility preservation counseling", "intention": "diagnostic", "priority": 2}, {"action": "Prophylaxis for tumor lysis syndrome: allopurinol or rasburicase, aggressive IV hydration", "intention": "supportive", "priority": 2}, {"action": "G-CSF prophylaxis for neutropenia and infection prevention", "intention": "supportive", "priority": 2}, {"action": "Autologous stem cell transplant consideration in relapsed/refractory setting", "intention": "therapeutic", "priority": 3}]}}}
+[Case 11 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 11 Round 3 Step 5] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

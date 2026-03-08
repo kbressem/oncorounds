@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "parser-output",
+    "type": "object",
+    "properties": {
+        "request": {
+            "type": "object",
+            "properties": {
+                "valid": {
+                    "type": "boolean",
+                    "description": "Whether the request matched an available item"
+                },
+                "info_item": {
+                    "type": "string",
+                    "description": "The exact name of the matched item from the available list. Return 'NO_MATCH' when no match is found."
+                },
+                "feedback_category": {
+                    "type": "string",
+                    "description": "Parser guidance category for candidate feedback.",
+                    "enum": [
+                        "available",
+                        "not_available",
+                        "similar_available",
+                        "not_yet_available"
+                    ]
+                },
+                "feedback": {
+                    "type": "string",
+                    "description": "Short, high-level explanation that helps the candidate understand why a request failed or how to proceed next. Must not reveal any unreleased case findings."
+                },
+                "suggested_item": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Optional name of a closely related info item that could satisfy the candidate's intent when the original request is unavailable."
+                }
+            },
+            "required": [
+                "valid",
+                "info_item",
+                "feedback_category",
+                "feedback",
+                "suggested_item"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "request"
+    ],
+    "additionalProperties": false
+}

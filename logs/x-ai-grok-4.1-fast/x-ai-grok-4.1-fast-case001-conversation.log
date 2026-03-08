@@ -1,0 +1,175 @@
+[Case 1 Round 1 Step 0] ENV: Case 1:
+                             Initial presentation:
+                             - Age: 35
+                             - Sex: male
+                             - Chief complaint: Shortness of breath and palpitations
+                             - Vital signs: BP 98/60, HR 112/min, T° 37,8 °C, Respiratory rate: 21/min.
+                             Setting: Emergency Department (Presentation)
+                             Capabilities: Immediate assessment of acute physiology. You have access to point-of-care diagnostics, standard laboratory panels, bedside imaging, and emergency cross-sectional imaging (CT). Specialized tissue sampling (biopsies) or molecular diagnostics are not yet available.
+                             Provide either a request for a single information item or solve.
+[Case 1 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "12-lead ECG results"}}
+[Case 1 Round 1 Step 0] ENV: '12-lead ECG results' not available. Try 'echocardiography' instead.
+                             This case does not include an ECG report. If you want cardiac information available in round 1, consider requesting an echocardiogram (transthoracic echo) or cardiac biomarkers (troponin) via the chemistry panel.
+[Case 1 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "echocardiography"}}
+[Case 1 Round 1 Step 1] ENV: Echocardiography:
+                             Echocardiogram: Mitral valve prolapse, tricuspid regurgitation II/III°, EF 54%. TAPSE 10 mm, FAC 30%.
+[Case 1 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "CT pulmonary angiogram"}}
+[Case 1 Round 1 Step 2] ENV: Ct Chest:
+                             CT scan revealed a pulmonary segmental embolism in the right lower lobe, with partial occlusion of segmental branches. No central emboli were identified. The surrounding lung parenchyma showed no infarction or consolidation, and there was no pleural effusion or mediastinal lymphadenopathy.
+[Case 1 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute pulmonary embolism with right ventricular strain", "differentials": ["Pneumonia", "Acute coronary syndrome", "Acute decompensated heart failure"], "treatment_plan": [{"action": "Initiate anticoagulation with unfractionated heparin infusion", "intention": "therapeutic", "priority": 1}, {"action": "Supplemental oxygen to maintain SpO2 >92%", "intention": "supportive", "priority": 1}, {"action": "Cautious IV fluid bolus (e.g., 500 mL normal saline) with close monitoring of RV function", "intention": "supportive", "priority": 2}, {"action": "Measure serum troponin and NT-proBNP", "intention": "diagnostic", "priority": 2}, {"action": "Admit to intensive care unit for close monitoring", "intention": "supportive", "priority": 1}]}}}
+[Case 1 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 1 Round 2 Step 3] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Day 1-7)
+                             Capabilities: The patient is admitted and stable enough for more detailed or invasive diagnostic procedures. You have access to tissue acquisition, comprehensive laboratory or microbiology workup, more detailed and focused imaging, and immunophenotyping. Long-term culture and molecular results are still pending processing.
+                             Request additional information or solve.
+[Case 1 Round 2 Step 3] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "bilateral lower extremity venous duplex ultrasound"}}
+[Case 1 Round 2 Step 4] ENV: 'bilateral lower extremity venous duplex ultrasound' not available. Request a specific test or report.
+                             This case does not include a peripheral venous duplex/leg Doppler report. You could request the history and physical exam for findings of leg swelling or consider requesting thoracic imaging (e.g., CT chest) if you are concerned about pulmonary embolism.
+[Case 1 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "physical examination findings for lower extremity swelling"}}
+[Case 1 Round 2 Step 5] ENV: History Physical:
+                             On May 26, 2025, the patient presented to the emergency department with shortness of breath and palpitations. He additionally reported swelling, redness, and hardening of the skin in the left elbow region. Other symptoms included difficulty sleeping, exertional dyspnea, and a mild unintentional weight loss. Chest pain was denied. On examination, the patient appeared pale with scattered petechiae on the legs, hematomas on the forearms, and white lesions on the oral mucosa. Hepatomegaly was noted, while no lymphadenopathy was present. The skin appeared dry, and the left antecubital region showed painful erythema with induration. Bilateral lower leg edema was present, while neurological status was unremarkable.
+                             Current medication: pantoprazole 40 mg 1-0-0, torsemide 5 mg 1-0-0, vitamin D 20.000 IE 1×/week, posaconazole 300 mg 1×/d, beclomethasone/formoterol inhaler p.r.n., dapagliflozin 10 mg 1-0-0.
+[Case 1 Round 2 Step 6] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential and peripheral blood smear"}}
+[Case 1 Round 2 Step 6] ENV: Cbc:
+                             CBC: Hb 8.3 g/dL, WBC 104 ×10⁹/L, Plt 12 ×10⁹/L; MCV normal, MCH normal; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes
+[Case 1 Round 2 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (monocytic differentiation)", "differentials": ["Acute promyelocytic leukemia", "Chronic myelomonocytic leukemia blast crisis"], "treatment_plan": [{"action": "Platelet transfusion to maintain plt >10-20k", "intention": "supportive", "priority": 1}, {"action": "PRBC transfusion if symptomatic anemia", "intention": "supportive", "priority": 1}, {"action": "Hydroxyurea 50-100 mg/kg/day for cytoreduction", "intention": "therapeutic", "priority": 1}, {"action": "Bone marrow aspiration and biopsy with flow cytometry, cytogenetics, and molecular studies", "intention": "diagnostic", "priority": 1}, {"action": "Broad-spectrum antibiotics (e.g., piperacillin-tazobactam) for left antecubital cellulitis", "intention": "therapeutic", "priority": 2}, {"action": "Continue anticoagulation cautiously or hold given thrombocytopenia", "intention": "therapeutic", "priority": 2}, {"action": "Tumor lysis syndrome prophylaxis (allopurinol, hydration)", "intention": "supportive", "priority": 2}]}}}
+[Case 1 Round 3 Step 7] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 1 Round 3 Step 7] ENV: Round 3 begins.
+                             Setting: Inpatient Ward (Day >7)
+                             Capabilities: Definitive diagnostic characterization phase. Results from long-turnaround tests are now available. You have access to cytogenetics, molecular panels, and Measurable Residual Disease (MRD) assessments. You may also request data on response to initial therapeutic interventions or prior therapy courses.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 1 Round 3 Step 7] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 3 Step 8] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy results including flow cytometry, cytogenetics, cytogenetics, and molecular studies"}}
+[Case 1 Round 3 Step 8] ENV: Bone Marrow:
+                             On repeat bone marrow examination, morphology revealed hypercellular bone marrow with diffuse infiltration by myeloid blasts (50%) and monocytic blasts (40%) with Auer rods. The blasts showed dysmorphic nuclei with nucleoli and occasional nuclear shadows. Residual hematopoiesis was markedly reduced but showed normal maturation.
+[Case 1 Round 3 Step 9] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myelomonocytic leukemia", "differentials": ["Acute monoblastic leukemia", "Acute promyelocytic leukemia"], "treatment_plan": [{"action": "Induction chemotherapy with cytarabine and anthracycline (7+3 regimen)", "intention": "therapeutic", "priority": 1}, {"action": "Leukapheresis for hyperleukocytosis", "intention": "therapeutic", "priority": 1}, {"action": "Biopsy of left antecubital lesion", "intention": "diagnostic", "priority": 1}, {"action": "Tumor lysis syndrome prophylaxis including rasburicase if indicated and aggressive hydration", "intention": "supportive", "priority": 1}, {"action": "Prophylactic platelet transfusions to keep platelets >10 \u00d710\u2079/L", "intention": "supportive", "priority": 2}, {"action": "Inferior vena cava filter placement for pulmonary embolism given thrombocytopenia", "intention": "therapeutic", "priority": 2}, {"action": "Skin-directed therapy if myeloid sarcoma confirmed (e.g., low-dose cytarabine)", "intention": "therapeutic", "priority": 3}]}}}
+[Case 1 Round 3 Step 9] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 1 Round 3 Step 9] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "partially_correct",
+                                     "partially_correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }

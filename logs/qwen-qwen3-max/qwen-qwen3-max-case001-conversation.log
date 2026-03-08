@@ -1,0 +1,131 @@
+[Case 1 Round 1 Step 0] ENV: Case 1:
+                             Initial presentation:
+                             - Age: 35
+                             - Sex: male
+                             - Chief complaint: Shortness of breath and palpitations
+                             - Vital signs: BP 98/60, HR 112/min, T° 37,8 °C, Respiratory rate: 21/min.
+                             Setting: Emergency Department (Presentation)
+                             Capabilities: Immediate assessment of acute physiology. You have access to point-of-care diagnostics, standard laboratory panels, bedside imaging, and emergency cross-sectional imaging (CT). Specialized tissue sampling (biopsies) or molecular diagnostics are not yet available.
+                             Provide either a request for a single information item or solve.
+[Case 1 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Obtain an electrocardiogram (ECG) and serum troponin level to evaluate for acute coronary syndrome or arrhythmia."}}
+[Case 1 Round 1 Step 0] ENV: 'Obtain an electrocardiogram (ECG) and serum troponin level to evaluate for acute coronary syndrome or arrhythmia.' not available. Try 'chemistry' instead.
+                             This case does not include an ECG report. Cardiac troponin is available as part of the chemistry panel; you could request 'chemistry'. If you want cardiac functional imaging, consider requesting 'echocardiography'.
+[Case 1 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Obtain a chemistry panel to assess cardiac troponin, electrolytes, renal function, and inflammatory markers."}}
+[Case 1 Round 1 Step 1] ENV: Chemistry:
+                             Chemistry: Na 135 mmol/L, K 5.3 mmol/L, creatinine 2.4 mg/dL, BUN 25 mg/dL, AST 132 U/L, ALT 163 U/L, bilirubin 2.4 mg/dL, LDH 1289 U/L, uric acid 12.9 mg/dL, Ca²⁺ 2.65 mmol/L, phosphate 4.2 mg/dL, lactate 4.3 mmol/L, CK 120 U/L, Troponin T 0.002 ng/mL, NT-proBNP 4612 pg/mL.
+[Case 1 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Obtain a chest X-ray and echocardiography to assess for cardiomegaly, pulmonary congestion, and cardiac function."}}
+[Case 1 Round 1 Step 2] ENV: Echocardiography:
+                             Echocardiogram: Mitral valve prolapse, tricuspid regurgitation II/III°, EF 54%. TAPSE 10 mm, FAC 30%.
+[Case 1 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Obtain a D-dimer level and CT pulmonary angiography to evaluate for pulmonary embolism given elevated NT-proBNP, tachycardia, hypotension, and right ventricular dysfunction on echocardiography."}}
+[Case 1 Round 1 Step 3] ENV: Ct Chest:
+                             CT scan revealed a pulmonary segmental embolism in the right lower lobe, with partial occlusion of segmental branches. No central emboli were identified. The surrounding lung parenchyma showed no infarction or consolidation, and there was no pleural effusion or mediastinal lymphadenopathy.
+[Case 1 Round 1 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute segmental pulmonary embolism", "differentials": ["Acute heart failure", "Myocarditis", "Sepsis-induced cardiomyopathy"], "treatment_plan": [{"action": "Initiate anticoagulation with low-molecular-weight heparin (e.g., enoxaparin)", "intention": "therapeutic", "priority": 1}, {"action": "Administer supplemental oxygen to maintain SpO2 >90%", "intention": "supportive", "priority": 2}, {"action": "Admit to hospital for monitoring and transition to oral anticoagulant (e.g., DOAC)", "intention": "therapeutic", "priority": 2}]}}}
+[Case 1 Round 2 Step 4] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 1 Round 2 Step 4] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Day 1-7)
+                             Capabilities: The patient is admitted and stable enough for more detailed or invasive diagnostic procedures. You have access to tissue acquisition, comprehensive laboratory or microbiology workup, more detailed and focused imaging, and immunophenotyping. Long-term culture and molecular results are still pending processing.
+                             Request additional information or solve.
+[Case 1 Round 2 Step 4] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Obtain a lower extremity venous Doppler ultrasound to evaluate for deep vein thrombosis as a source of the pulmonary embolism."}}
+[Case 1 Round 2 Step 5] ENV: 'Obtain a lower extremity venous Doppler ultrasound to evaluate for deep vein thrombosis as a source of the pulmonary embolism.' not available. Request a specific test or report.
+                             This case does not include a lower-extremity venous Doppler/venous ultrasound report. You could request thoracic imaging already available in this round (e.g., CT chest/CTPA) or echocardiography if you want cardiac/strain assessment related to the PE.
+[Case 1 Round 2 Step 6] CANDIDATE: {"response": {"action": "request", "request": "Review CT pulmonary angiography images for signs of right ventricular strain, such as septal bowing, RV/LV ratio >0.9, or pulmonary artery enlargement."}}
+[Case 1 Round 2 Step 6] ENV: 'ct_chest' already provided.
+[Case 1 Round 2 Step 7] CANDIDATE: {"response": {"action": "request", "request": "Obtain a comprehensive coagulation workup including D-dimer, protein C, protein S, antithrombin III, factor V Leiden, prothrombin G20210A mutation, and antiphospholipid antibodies to evaluate for underlying thrombophilia."}}
+[Case 1 Round 2 Step 7] ENV: 'Obtain a comprehensive coagulation workup including D-dimer, protein C, protein S, antithrombin III, factor V Leiden, prothrombin G20210A mutation, and antiphospholipid antibodies to evaluate for underlying thrombophilia.' not available. Try 'coagulation' instead.
+                             This case includes general coagulation studies (e.g., PT/INR, aPTT, fibrinogen, D-dimer) but does not list a dedicated thrombophilia/genetic panel or specialized assays by name. If you want the available coagulation tests, request: "coagulation."
+[Case 1 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "Obtain coagulation studies including PT/INR, aPTT, fibrinogen, and D-dimer."}}
+[Case 1 Round 2 Step 8] ENV: Coagulation:
+                             Coagulation: aPTT 42 sec, INR 2.1, fibrinogen 2.1 g/L, D-dimer normal
+[Case 1 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "Obtain a complete blood count (CBC) with peripheral smear to assess for signs of hemolysis, thrombocytopenia, or other hematologic abnormalities."}}
+[Case 1 Round 2 Step 9] ENV: Cbc:
+                             CBC: Hb 8.3 g/dL, WBC 104 ×10⁹/L, Plt 12 ×10⁹/L; MCV normal, MCH normal; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes
+[Case 1 Round 2 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (AML) with leukostasis and secondary pulmonary embolism", "differentials": ["Chronic myelomonocytic leukemia (CMML) with accelerated phase", "Myelodysplastic syndrome with excess blasts", "Acute monocytic leukemia (AML-M5)"], "treatment_plan": [{"action": "Initiate urgent cytoreduction with hydroxyurea and consider leukapheresis", "intention": "therapeutic", "priority": 1}, {"action": "Continue anticoagulation for pulmonary embolism with close monitoring for bleeding risk", "intention": "therapeutic", "priority": 2}, {"action": "Consult hematology for bone marrow biopsy and definitive AML management", "intention": "diagnostic", "priority": 1}]}}}
+[Case 1 Round 3 Step 10] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}]}}
+[Case 1 Round 3 Step 10] ENV: Round 3 begins.
+                              Setting: Inpatient Ward (Day >7)
+                              Capabilities: Definitive diagnostic characterization phase. Results from long-turnaround tests are now available. You have access to cytogenetics, molecular panels, and Measurable Residual Disease (MRD) assessments. You may also request data on response to initial therapeutic interventions or prior therapy courses.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 1 Round 3 Step 10] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 1 Round 3 Step 11] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (AML) with monocytic differentiation (AML-M5) and associated disseminated intravascular coagulation (DIC) presenting with pulmonary embolism", "differentials": ["Chronic myelomonocytic leukemia (CMML) in transformation", "Acute leukemia of mixed phenotype", "Myeloid sarcoma with leukemic phase"], "treatment_plan": [{"action": "Initiate induction chemotherapy with cytarabine and anthracycline (e.g., 7+3 regimen)", "intention": "therapeutic", "priority": 1}, {"action": "Support with transfusion of platelets and cryoprecipitate to manage DIC and prevent bleeding", "intention": "supportive", "priority": 2}, {"action": "Monitor for tumor lysis syndrome and provide prophylaxis with hydration and rasburicase if indicated", "intention": "supportive", "priority": 2}]}}}
+[Case 1 Round 3 Step 11] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 1 Round 3 Step 11] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

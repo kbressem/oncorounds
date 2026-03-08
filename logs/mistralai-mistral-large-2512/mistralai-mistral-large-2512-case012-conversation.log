@@ -1,0 +1,208 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following details: 1) A complete review of systems, focusing on symptoms such as night sweats, weight loss, lymphadenopathy, hepatosplenomegaly, skin changes, or gastrointestinal symptoms; 2) Current medications, including immunosuppressive agents, antimicrobial prophylaxis, or other relevant therapies; 3) Results of recent blood tests, including complete blood count (CBC), inflammatory markers (e.g., CRP, ESR), liver and kidney function tests, and any prior microbiological or virological investigations; 4) Findings from the physical examination, particularly focusing on signs of infection, GVHD, or lymphoma recurrence (e.g., lymphadenopathy, organomegaly, skin rashes)."}}
+[Case 12 Round 1 Step 0] ENV: History Physical:
+                              2025-04-22: The patient presented with recurrent fevers up to 38.7 °C, progressive fatigue, and reduced physical capacity. She reported intermittent night sweats during the previous week and mild, unintentional weight loss of 1.5 kg over the past month. On examination: pale conjunctivae, mild tachycardia, and a single firm, tender left-sided cervical lymph node (approx. 1.5 cm). Lungs were clear to auscultation; cardiac examination showed a regular rhythm without murmurs. Abdomen was soft and non-tender. No peripheral edema. Surgical scars from prior cholecystectomy were well healed. Neurological exam unremarkable, with no recurrence of seizure activity, however the patient reported gait disturbance and impaired mobility.
+                              Current medication:
+                              Apixaban 5 mg 1-0-1, levetiracetam 500 mg 1-0-1, ramipril 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, atorvastatin 20 mg 0-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), tenofovir 245 mg 0-1-0, pregabalin 150 mg 1-0-1, sitagliptin 100 mg 1-0-0, metformin 1000 mg 1-0-1.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the following baseline investigations: 1) Complete blood count (CBC) with differential, including hemoglobin, white blood cell count (WBC) with neutrophil and lymphocyte subsets, and platelet count; 2) Inflammatory markers such as C-reactive protein (CRP) and erythrocyte sedimentation rate (ESR); 3) Liver and kidney function tests, including electrolytes, creatinine, and liver enzymes; 4) Lactate dehydrogenase (LDH) levels; 5) Blood cultures, viral PCR panels (e.g., CMV, EBV, HHV-6), and fungal markers (e.g., galactomannan, beta-D-glucan) if not already performed; 6) Urinalysis and urine culture; 7) Chest X-ray or CT scan of the chest/abdomen/pelvis to evaluate for lymphadenopathy, organomegaly, or other abnormalities."}}
+[Case 12 Round 1 Step 1] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Post-allogeneic stem cell transplant (alloSCT) complications, likely **infection (viral or fungal) or relapse of lymphoma**, with possible contributions from graft-versus-host disease (GVHD) or drug toxicity.", "differentials": ["Viral reactivation (e.g., CMV, EBV, HHV-6) in the context of immunosuppression", "Bacterial or fungal infection (e.g., *Pneumocystis jirovecii*, invasive fungal infection)", "Relapse of underlying lymphoma", "Chronic GVHD with systemic involvement (e.g., hepatic, gastrointestinal)", "Drug-induced toxicity (e.g., valganciclovir, co-trimoxazole, or other medications contributing to cytopenias or organ dysfunction)"], "treatment_plan": [{"action": "Initiate broad-spectrum antimicrobial coverage with **piperacillin-tazobactam** (or meropenem if concern for resistant organisms) and **caspofungin** (empiric antifungal therapy).", "intention": "therapeutic", "priority": 1}, {"action": "Obtain **urgent viral PCR testing** (CMV, EBV, HHV-6, adenovirus) and **fungal markers** (galactomannan, beta-D-glucan) from blood.", "intention": "diagnostic", "priority": 1}, {"action": "Perform **excisional biopsy of the left cervical lymph node** for histopathology, flow cytometry, and microbiological studies (including fungal and mycobacterial cultures).", "intention": "diagnostic", "priority": 1}, {"action": "Request **CT scan of the neck, chest, abdomen, and pelvis** with contrast to evaluate for lymphadenopathy, organomegaly, or other signs of lymphoma relapse or disseminated infection.", "intention": "diagnostic", "priority": 2}, {"action": "Hold **tenofovir** temporarily due to elevated creatinine and consider dose adjustment of other nephrotoxic medications (e.g., co-trimoxazole) if renal function worsens.", "intention": "supportive", "priority": 2}, {"action": "Administer **intravenous fluids** and monitor renal function closely, given the elevated creatinine and borderline hyponatremia.", "intention": "supportive", "priority": 2}, {"action": "Consult **infectious disease and hematology/oncology specialists** for further management, including consideration of antiviral therapy (e.g., ganciclovir for CMV) or adjustment of immunosuppressive regimen if indicated.", "intention": "supportive", "priority": 2}, {"action": "Monitor **vital signs and clinical status closely**, including repeat CBC, CRP, and renal/liver function tests within 24\u201348 hours.", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 2 Step 2] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected relapse. You can organize bone marrow and tissue sampling, comprehensive staging including whole-body imaging, and extended infectious and virologic workup. Multidisciplinary input is available. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 12 Round 2 Step 2] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following additional information: \n1) Results of the **viral PCR testing** (CMV, EBV, HHV-6, adenovirus) and **fungal markers** (galactomannan, beta-D-glucan) if available.\n2) **CT scan findings** of the neck, chest, abdomen, and pelvis, specifically noting the presence of lymphadenopathy, organomegaly, or other abnormalities.\n3) **Detailed physical examination findings** for signs of GVHD (e.g., skin rash, oral mucositis, diarrhea, or hepatic dysfunction).\n4) **Recent trends in fever pattern** (e.g., frequency, duration, response to antipyretics) and any new symptoms such as cough, diarrhea, or neurological changes.\n5) **Bone marrow biopsy results** if already performed, including morphology, flow cytometry, cytogenetics, and molecular studies."}}
+[Case 12 Round 2 Step 3] ENV: 'Please provide the following additional information: 
+                              1) Results of the **viral PCR testing** (CMV, EBV, HHV-6, adenovirus) and **fungal markers** (galactomannan, beta-D-glucan) if available.
+                              2) **CT scan findings** of the neck, chest, abdomen, and pelvis, specifically noting the presence of lymphadenopathy, organomegaly, or other abnormalities.
+                              3) **Detailed physical examination findings** for signs of GVHD (e.g., skin rash, oral mucositis, diarrhea, or hepatic dysfunction).
+                              4) **Recent trends in fever pattern** (e.g., frequency, duration, response to antipyretics) and any new symptoms such as cough, diarrhea, or neurological changes.
+                              5) **Bone marrow biopsy results** if already performed, including morphology, flow cytometry, cytogenetics, and molecular studies.' not available. Try 'infection_screening' instead.
+                              This request asks for multiple different data types. Please request each item separately. Relevant available items you can ask for now include: infection_screening (viral PCRs, fungal markers), ct_staging (CT chest/abdomen/pelvis — request a separate neck CT if desired), history_physical (detailed exam findings and symptom trends), and bone_marrow (biopsy morphology/flow/cytogenetics).
+[Case 12 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the **infection screening**, including viral PCR testing (CMV, EBV, HHV-6, adenovirus) and fungal markers (galactomannan, beta-D-glucan)."}}
+[Case 12 Round 2 Step 4] ENV: Infection Screening:
+                              Infection screening: CMV PCR negative; EBV PCR negative; HIV negative. Toxoplasma and syphilis serology negative. Hepatitis profile: anti-HBc positive, HBsAb negative, HBsAg negative, HBV DNA negative. No protective immune titers against hepatitis A or C detected.
+[Case 12 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Please provide the **CT staging results** from the chest, abdomen, and pelvis, focusing on the presence of lymphadenopathy, organomegaly, or other abnormalities (e.g., masses, fluid collections, or signs of infection)."}}
+[Case 12 Round 2 Step 5] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 2 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "**Post-transplant lymphoproliferative disorder (PTLD), likely EBV-negative, given the isolated cervical lymphadenopathy in the context of prior alloSCT and immunosuppression.**", "differentials": ["Relapsed lymphoma (e.g., Hodgkin or non-Hodgkin lymphoma)", "Reactive lymphadenopathy secondary to infection (e.g., bacterial, mycobacterial, or fungal, though less likely given negative initial screening)", "Secondary malignancy (e.g., solid tumor metastasis, though less likely given clinical context)", "Drug-induced lymphadenopathy (e.g., from anticonvulsants or antimicrobials, though less probable)"], "treatment_plan": [{"action": "Perform **excisional biopsy of the left cervical lymph node** for histopathology, immunohistochemistry, flow cytometry, and EBV-encoded RNA (EBER) in situ hybridization to confirm PTLD or lymphoma relapse.", "intention": "diagnostic", "priority": 1}, {"action": "Request **PET-CT scan** to assess metabolic activity of the cervical lymph node and evaluate for additional sites of disease not detected on conventional CT.", "intention": "diagnostic", "priority": 1}, {"action": "Initiate **reduction of immunosuppressive therapy** (e.g., taper or hold tenofovir, valganciclovir, or other agents if feasible) in consultation with hematology/oncology to restore immune surveillance against potential PTLD or lymphoma.", "intention": "therapeutic", "priority": 1}, {"action": "Monitor **vital signs and clinical status closely**, including repeat CBC, CRP, and renal/liver function tests every 24\u201348 hours to assess for disease progression or complications.", "intention": "supportive", "priority": 2}, {"action": "Consult **hematology/oncology and infectious disease specialists** to guide further management, including consideration of rituximab (if CD20+ PTLD) or chemotherapy (if lymphoma relapse).", "intention": "supportive", "priority": 2}, {"action": "Repeat **viral PCR testing (CMV, EBV, HHV-6)** in 3\u20135 days to rule out delayed reactivation, even if initial results were negative.", "intention": "diagnostic", "priority": 2}, {"action": "Perform **bone marrow biopsy** if lymph node biopsy is inconclusive or if there is suspicion of marrow involvement (e.g., cytopenias, elevated LDH).", "intention": "diagnostic", "priority": 3}]}}}
+[Case 12 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 12 Round 3 Step 6] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse conference (treatment planning after alloSCT)
+                              Capabilities: You now have access to detailed histopathology, immunophenotyping, molecular findings, chimerism data, and full staging, together with a complete treatment history including prior cellular therapies. You are expected to integrate these data to define relapse type, stage, and comorbidity risk and to formulate a realistic treatment and monitoring strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 12 Round 3 Step 6] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 3 Step 7] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following critical data to finalize the diagnosis and treatment plan:\n1) **Lymph node biopsy results**, including:\n   - Histopathology (e.g., morphology, presence of Reed-Sternberg cells, or atypical lymphoid proliferation)\n   - Immunohistochemistry (e.g., CD20, CD30, CD15, PAX5, EBER in situ hybridization for EBV)\n   - Flow cytometry findings (e.g., aberrant immunophenotype, clonality)\n   - Molecular studies (e.g., TCR/IGH gene rearrangements, MYC/BCL2/BCL6 rearrangements)\n2) **Bone marrow biopsy results**, if performed, including:\n   - Morphology and cellularity\n   - Flow cytometry and cytogenetics\n   - Chimerism analysis (donor vs. recipient cells)\n3) **PET-CT scan results**, if available, including:\n   - SUVmax of the cervical lymph node\n   - Presence of additional hypermetabolic lesions\n4) **Prior treatment history**, including:\n   - Details of the initial lymphoma (e.g., subtype, stage, prior therapies, response)\n   - Conditioning regimen and donor source for alloSCT\n   - Current immunosuppressive regimen and timeline of tapering\n5) **Performance status and comorbidities**, including:\n   - ECOG performance status\n   - Cardiac, pulmonary, and renal function (e.g., echocardiogram, PFTs, creatinine clearance)"}}
+[Case 12 Round 3 Step 7] ENV: Lymphoid Biopsy:
+                              Lymphoid tissue biopsy: Multiple fragments showed dense, sheet-like infiltrates of lymphoid-appearing cells with open chromatin and prominent nucleoli, sometimes central, eccentric, or multiple. Frequent mitotic and scattered apoptotic figures were present. The infiltrates extended to the subepithelial zone and occasionally formed intraepidermal aggregates. Immunohistochemistry demonstrated strong CD3 expression and weak but diffuse positivity for CD30 and MUM1. CD4 was variably expressed, mostly weak, while EMA was positive in scattered individual cells. The blasts were negative for CD8, CD20, PAX5, BCL6, CD10, TdT, CD56, CD138, and ALK1. The Ki-67 proliferation index was approximately 25, EBV in-situ hybridization negative. Morphologically, the infiltrate consisted of large blastoid cells with prominent nucleoli, occasional multinucleation, and some elongated nuclei, though classic hallmark cells were not identified. PD-L1 was expressed in about 10% of tumor cells. T-cell receptor gene rearrangement analysis revealed a monoclonal peak in the Jγ-fragment (80 bp), consistent with clonal T-cell expansion, while the Jβ-fragment demonstrated an oligoclonal pattern. ALK negative.
+[Case 12 Round 3 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "**Peripheral T-cell lymphoma, not otherwise specified (PTCL-NOS), post-allogeneic stem cell transplant (alloSCT) relapse**", "differentials": ["Anaplastic large cell lymphoma (ALK-negative), though less likely given the lack of hallmark cells and ALK1 negativity", "EBV-negative post-transplant lymphoproliferative disorder (PTLD) with T-cell phenotype, though less probable given the clonal T-cell receptor gene rearrangement and lack of EBV association", "Cutaneous T-cell lymphoma (e.g., mycosis fungoides or S\u00e9zary syndrome) with secondary nodal involvement, though less likely given the blastoid morphology and CD30 expression", "Reactive T-cell proliferation secondary to infection or drug reaction, though unlikely given the monoclonal T-cell receptor gene rearrangement"], "treatment_plan": [{"action": "Initiate **systemic therapy with brentuximab vedotin (anti-CD30 antibody-drug conjugate)** in combination with **CHP (cyclophosphamide, doxorubicin, prednisone)** as first-line treatment for CD30+ PTCL-NOS, given the patient's post-alloSCT status and CD30 expression.", "intention": "therapeutic", "priority": 1}, {"action": "Consult **hematology/oncology and transplant specialists** to discuss the feasibility of **donor lymphocyte infusion (DLI)** or **second alloSCT** as consolidative therapy, depending on response to initial treatment and donor availability.", "intention": "therapeutic", "priority": 1}, {"action": "Perform **PET-CT scan** (if not already done) to assess baseline metabolic activity and guide response evaluation during treatment.", "intention": "diagnostic", "priority": 1}, {"action": "Reduce or taper **immunosuppressive therapy** (e.g., valganciclovir, tenofovir) in consultation with the transplant team to enhance graft-versus-lymphoma (GVL) effect, while monitoring for signs of GVHD.", "intention": "therapeutic", "priority": 2}, {"action": "Monitor **clinical status and laboratory parameters** (CBC, CRP, LDH, renal/liver function) closely, with repeat imaging (PET-CT) after 2\u00133 cycles of therapy to assess response.", "intention": "supportive", "priority": 2}, {"action": "Consider **prophylactic antimicrobial therapy** (e.g., antiviral, antifungal, and *Pneumocystis jirovecii* prophylaxis) given the patient's immunocompromised status and risk of infection during chemotherapy.", "intention": "supportive", "priority": 2}, {"action": "Evaluate **performance status and organ function** (e.g., echocardiogram, PFTs) prior to initiating chemotherapy to assess tolerance and adjust dosing as needed.", "intention": "supportive", "priority": 3}, {"action": "Discuss **palliative care consultation** to address symptom management (e.g., pain, fatigue, nutritional support) and advance care planning, given the aggressive nature of PTCL-NOS and post-alloSCT relapse.", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 3 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}]}}
+[Case 12 Round 3 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }

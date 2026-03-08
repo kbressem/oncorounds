@@ -1,0 +1,128 @@
+[Case 2 Round 1 Step 0] ENV: Case 2:
+                             Initial presentation:
+                             - Age: 24
+                             - Sex: female
+                             - Chief complaint: New skin changes on the back and extremities
+                             - Vital signs: BP 120/75 mmHg, HR 116/min, T° 36.8 °C, respiratory rate 16/min.
+                             Setting: Outpatient/Day Unit (Initial Presentation)
+                             Capabilities: You are evaluating a clinically stable patient with new symptoms in an ambulatory or day-unit setting. You can perform a focused history and examination, obtain routine blood panels, and arrange standard non-invasive imaging as first-line tests. Invasive tissue sampling and specialized analyses usually require additional coordination and are not available in this round.
+                             Provide either a request for a single information item or solve.
+[Case 2 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Can you describe the characteristics of the skin changes, such as color, size, texture, and any associated symptoms like itching or pain?"}}
+[Case 2 Round 1 Step 0] ENV: History Physical:
+                             On June 4, 2025, the patient presented with new skin changes, first noticed by her partner on the back and now also on the extremities. She reported intermittent headaches and mild nausea, as well as chronic joint pain and stiffness. Otherwise, she was in good general condition, afebrile, and showed no signs of skin or mucosal GvHD. A marked psychological stress reaction was noted.
+                             Current medication: pantoprazole 40 mg 1-0-0, vitamin D 20,000 IE 1×/week, calcium 500 mg 1-0-0, posaconazole 300 mg 1×/d, ruxolitinib 10 mg 1-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg orally once daily, three times per week (Monday, Wednesday, Friday), steroid cream p.r.n.
+[Case 2 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please provide details on the appearance and distribution of the skin changes, including whether they are raised, flat, or have any specific patterns."}}
+[Case 2 Round 1 Step 1] ENV: 'history_physical' already provided.
+[Case 2 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Drug-induced skin reaction", "differentials": ["Psoriasis", "Eczema", "Lichen planus"], "treatment_plan": [{"action": "Discontinue ruxolitinib and posaconazole", "intention": "therapeutic", "priority": 1}, {"action": "Start oral antihistamines for symptomatic relief", "intention": "therapeutic", "priority": 2}, {"action": "Monitor skin changes and symptoms closely", "intention": "diagnostic", "priority": 2}, {"action": "Follow-up appointment in one week to reassess skin condition", "intention": "supportive", "priority": 3}]}}}
+[Case 2 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 2 Round 2 Step 2] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Workup)
+                             Capabilities: The patient is now admitted for further evaluation. You can organize targeted tissue sampling and a broader diagnostic workup, including advanced imaging and initial pathology assessments. Some specialized analyses may still be pending or require referral to external laboratories. They will be available in the next round.
+                             Request additional information or solve.
+[Case 2 Round 2 Step 2] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 2 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Please perform a skin biopsy of one of the affected areas for histopathological examination."}}
+[Case 2 Round 2 Step 3] ENV: Skin Biopsy:
+                             Skin biopsy (2025-06-07): The dermis and subcutis are diffusely infiltrated by atypical hematopoietic cells in a perivascular and interstitial distribution. The cells show irregular nuclear contours, vesicular chromatin, and occasional nucleoli. Mitotic figures are frequent. Immunohistochemistry: CD34-, CD33+, MPO+, Lysozyme and CD68+, CD117+, negative for CD20-, CD19-, CD3-. Molecular pathology: NPM1 mutation present in cutaneous infiltration.
+[Case 2 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Extramedullary acute myeloid leukemia (AML) with cutaneous involvement", "differentials": ["Leukemia cutis", "Sweet syndrome", "Cutaneous lymphoma"], "treatment_plan": [{"action": "Consult hematology-oncology for further management and potential bone marrow biopsy", "intention": "diagnostic", "priority": 1}, {"action": "Initiate systemic chemotherapy appropriate for AML", "intention": "therapeutic", "priority": 1}, {"action": "Monitor complete blood count (CBC) and peripheral blood smears regularly", "intention": "diagnostic", "priority": 2}, {"action": "Provide supportive care including pain management and psychological support", "intention": "supportive", "priority": 3}]}}}
+[Case 2 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 2 Round 3 Step 4] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Multidisciplinary Tumor Board (Definitive Characterization)
+                             Capabilities: You now have access to results from specialized tests with longer turnaround times, including detailed pathology, molecular profiling, and measurable residual disease assessments, as well as a complete overview of prior therapies. You are expected to integrate these data into a definitive diagnosis, risk assessment, and treatment strategy.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 2 Round 3 Step 4] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 2 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Leukemia cutis", "differentials": ["Chloroma", "Myeloid sarcoma"], "treatment_plan": [{"action": "Initiate induction chemotherapy with a standard AML regimen (e.g., 7+3 regimen: cytarabine and an anthracycline)", "intention": "therapeutic", "priority": 1}, {"action": "Consult with a hematologist-oncologist for potential bone marrow transplant evaluation", "intention": "diagnostic", "priority": 2}, {"action": "Regular monitoring of complete blood count (CBC) and peripheral blood smears", "intention": "diagnostic", "priority": 2}, {"action": "Provide supportive care including infection prophylaxis, psychological support, and pain management", "intention": "supportive", "priority": 3}]}}}
+[Case 2 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 2 Round 3 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }

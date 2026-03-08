@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "judge-output",
+    "description": "Schema for the evaluator's assessment of a candidate's clinical reasoning response",
+    "type": "object",
+    "required": [
+        "case_id",
+        "round",
+        "evaluation"
+    ],
+    "properties": {
+        "case_id": {
+            "type": "integer",
+            "description": "Unique identifier for the clinical case",
+            "minimum": 1
+        },
+        "round": {
+            "type": "integer",
+            "description": "Round number (1, 2, or 3)",
+            "minimum": 1,
+            "maximum": 3
+        },
+        "evaluation": {
+            "type": "object",
+            "description": "Evaluation results for each dimension",
+            "required": [
+                "working_diagnosis",
+                "differentials",
+                "treatment_plan"
+            ],
+            "properties": {
+                "working_diagnosis": {
+                    "type": "string",
+                    "description": "Evaluation of the candidate's primary diagnosis",
+                    "enum": [
+                        "correct",
+                        "partially_correct",
+                        "incorrect"
+                    ]
+                },
+                "differentials": {
+                    "type": "array",
+                    "description": "Evaluation of each differential diagnosis",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "correct",
+                            "partially_correct",
+                            "incorrect"
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "treatment_plan": {
+                    "type": "array",
+                    "description": "Evaluation of each treatment intervention",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "action",
+                            "intention",
+                            "priority"
+                        ],
+                        "properties": {
+                            "action": {
+                                "type": "string",
+                                "description": "Evaluation of the treatment action",
+                                "enum": [
+                                    "correct",
+                                    "partially_correct",
+                                    "incorrect"
+                                ]
+                            },
+                            "intention": {
+                                "type": "string",
+                                "description": "Evaluation of the stated intention (diagnostic/therapeutic/supportive)",
+                                "enum": [
+                                    "correct",
+                                    "partially_correct",
+                                    "incorrect"
+                                ]
+                            },
+                            "priority": {
+                                "type": "string",
+                                "description": "Evaluation of the priority level (1-3)",
+                                "enum": [
+                                    "correct",
+                                    "partially_correct",
+                                    "incorrect"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "minItems": 1
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

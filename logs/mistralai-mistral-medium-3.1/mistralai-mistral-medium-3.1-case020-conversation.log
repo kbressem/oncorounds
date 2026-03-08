@@ -1,0 +1,116 @@
+[Case 20 Round 1 Step 0] ENV: Case 20:
+                              Initial presentation:
+                              - Age: 77
+                              - Sex: male
+                              - Chief complaint: Progressive dyspnea, ascites, and a painful gluteal mass in a patient with CLL
+                              - Vital signs: BP 105/65 mmHg, HR 112/min, RR 22/min, Temp 37.7 °C, SpO₂ 92%
+                              Setting: Acute hematology intake
+                              Capabilities: Rapid bedside assessment with point-of-care imaging and routine laboratory panels is available, but invasive sampling or specialized molecular diagnostics are not yet ready.
+                              Provide either a request for a single information item or solve.
+[Case 20 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the complete blood count (CBC) and basic metabolic panel (BMP) to assess the patient's current hematologic status and organ function."}}
+[Case 20 Round 1 Step 0] ENV: Baseline Labs:
+                              Hb 9.2 g/dL, WBC 41 ×10⁹/L (82% lymphocytes), Plt 78 ×10⁹/L. Coagulation: aPTT 31 s, INR 1.1, fibrinogen 281 mg/dL, D-dimer 2987 µg/L FEU. Chemistry: Na 138 mmol/L, K 4.4 mmol/L, creatinine 1.4 mg/dL, AST 185 U/L, ALT 210 U/L, bilirubin 2.8 mg/dL, LDH 852 U/L, uric acid 7.8 mg/dL, albumin 2.8 g/dL, total protein 5.2 g/dL, NT-proBNP 780 pg/mL, Troponin T 0.02 ng/mL, IgG 359 mg/dL.
+[Case 20 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter transformation in a patient with chronic lymphocytic leukemia (CLL) with possible tumor lysis syndrome and liver involvement.", "differentials": ["Progression of CLL without Richter transformation", "Infection or sepsis", "Heart failure exacerbation"], "treatment_plan": [{"action": "Administer intravenous fluids and allopurinol", "intention": "supportive", "priority": 1}, {"action": "Perform point-of-care ultrasound to assess for pericardial effusion and hepatic involvement", "intention": "diagnostic", "priority": 2}, {"action": "Prepare for possible initiation of chemotherapy targeting aggressive lymphoma", "intention": "therapeutic", "priority": 3}]}}}
+[Case 20 Round 2 Step 1] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "partially_correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Inpatient diagnostic unit
+                              Capabilities: The patient can undergo targeted imaging, bone marrow or tissue sampling, and comprehensive flow cytometry while longer-turnaround molecular studies are still pending.
+                              Request additional information or solve.
+[Case 20 Round 2 Step 1] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 20 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the flow cytometry analysis and imaging studies, such as CT scans or PET-CT, to further evaluate the extent of disease and potential sites of transformation."}}
+[Case 20 Round 2 Step 2] ENV: Bone Marrow:
+                              Hypercellular marrow with replacement by small mature lymphocytes plus a second population of large atypical lymphoid cells. Flow: two B-cell clones – Population 1 CD19⁺/CD20^dim/CD5⁺/CD23⁺/kappa^dim (CLL-like); Population 2 CD19⁺/CD20⁺⁺/CD5⁺/CD22⁺/CD79b⁺/FMC7⁺/kappa-restricted/CD23⁻ consistent with Richter transformation. Plasma cells <1%.
+[Case 20 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter transformation in a patient with chronic lymphocytic leukemia (CLL) with involvement of the bone marrow.", "differentials": ["Diffuse large B-cell lymphoma (DLBCL) independent of CLL", "CLL progression without transformation", "Secondary malignancy"], "treatment_plan": [{"action": "Initiate chemotherapy targeting aggressive lymphoma, such as R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, and prednisone)", "intention": "therapeutic", "priority": 1}, {"action": "Monitor for tumor lysis syndrome and provide supportive care, including hydration and allopurinol", "intention": "supportive", "priority": 2}, {"action": "Perform a PET-CT scan to assess the extent of disease and involvement of other organs", "intention": "diagnostic", "priority": 3}]}}}
+[Case 20 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 20 Round 3 Step 3] ENV: Round 3 begins.
+                              Setting: Definitive staging and planning phase
+                              Capabilities: Full cytogenetic, molecular, and response assessments plus historical treatment data are accessible to guide transplant or cellular therapy planning.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 20 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 20 Round 3 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter syndrome with transformation to diffuse large B-cell lymphoma (DLBCL) in a patient with chronic lymphocytic leukemia (CLL), confirmed by bone marrow biopsy and flow cytometry.", "differentials": ["Prolymphocytic transformation of CLL", "Secondary acute myeloid leukemia (AML)", "Infectious or inflammatory process mimicking transformation"], "treatment_plan": [{"action": "Initiate targeted therapy with a regimen such as R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, and prednisone) or a more intensive regimen like R-EPOCH (rituximab, etoposide, prednisone, vincristine, cyclophosphamide, and doxorubicin) based on patient's performance status and comorbidities.", "intention": "therapeutic", "priority": 1}, {"action": "Conduct comprehensive molecular and cytogenetic testing to identify potential targeted therapy options, such as BTK inhibitors (e.g., ibrutinib) or BCL-2 inhibitors (e.g., venetoclax).", "intention": "diagnostic", "priority": 2}, {"action": "Assess for eligibility for clinical trials or novel therapies, including chimeric antigen receptor (CAR) T-cell therapy, given the aggressive nature of Richter syndrome.", "intention": "therapeutic", "priority": 3}, {"action": "Provide supportive care measures, including monitoring for tumor lysis syndrome, managing cytopenias, and ensuring adequate nutrition and hydration.", "intention": "supportive", "priority": 2}]}}}
+[Case 20 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}]}}
+[Case 20 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }

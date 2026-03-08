@@ -1,0 +1,158 @@
+[Case 17 Round 1 Step 0] ENV: Case 17:
+                              Initial presentation:
+                              - Age: 44
+                              - Sex: male
+                              - Chief complaint: Scheduled follow-up after alloSCT and CD19 CAR-T for B-ALL, with interest in outpatient treatment options
+                              - Vital signs: Temp 36.9 °C, BP not reported at this visit, HR not reported at this visit, RR not reported at this visit, SpO₂ not reported at this visit.
+                              Setting: Outpatient hematology/oncology follow-up after alloSCT and CAR-T
+                              Capabilities: You are evaluating a clinically stable patient in a routine follow-up setting after intensive leukemia therapy. You can review prior history and recent clinical course, perform a targeted examination, and request standard follow-up evaluations appropriate to an ambulatory visit. Decisions focus on surveillance and whether further workup for relapse or complications is indicated.
+                              Provide either a request for a single information item or solve.
+[Case 17 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Most recent minimal residual disease (MRD) status, donor chimerism, and complete blood count (CBC) results."}}
+[Case 17 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 10.6 g/dL, WBC 3.1 × 10⁹/L, Plt 98 × 10⁹/L; MCV 92 fL, MCH 29 pg.
+                              Differential: neutrophils 42%, lymphocytes 48%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: INR 1.1, aPTT 30 sec.
+                              Chemistry: Na 138 mmol/L, K 4.5 mmol/L, creatinine 1.4 mg/dL, BUN 19 mg/dL, AST 28 U/L, ALT 32 U/L, bilirubin 0.9 mg/dL, LDH 220 U/L, uric acid 5.2 mg/dL, CRP 0.6 mg/dL.
+                              Cardiac biomarkers: NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL.
+[Case 17 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Most recent minimal residual disease (MRD) status by flow cytometry or PCR, donor chimerism percentage in peripheral blood or bone marrow, and any recent bone marrow biopsy results or pathology report."}}
+[Case 17 Round 1 Step 1] ENV: 'Most recent minimal residual disease (MRD) status by flow cytometry or PCR, donor chimerism percentage in peripheral blood or bone marrow, and any recent bone marrow biopsy results or pathology report.' not available. Request a specific test or report.
+                              This request asks for bone marrow biopsy/flow results, MRD, and donor chimerism — those items are not available in round 1. Consider requesting labs (CBC/chemistry) or baseline imaging available in this round instead.
+[Case 17 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Recent imaging results, including PET-CT scan, CT chest/abdomen/pelvis, or echocardiogram."}}
+[Case 17 Round 1 Step 2] ENV: Baseline Imaging:
+                              2024-07-09: Abdominal ultrasound showed normal liver and spleen size, no lymphadenopathy, and no ascites.
+                              Echocardiography demonstrated preserved left ventricular function (LVEF 62%), without pericardial effusion.
+                              Sinus CT revealed bilateral maxillary sinus opacification with suspicion of fungal superinfection.
+[Case 17 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Post-allogeneic stem cell transplant and CD19 CAR-T therapy surveillance for B-ALL in clinical remission, with post-transplant cytopenias and suspected fungal sinusitis.", "differentials": ["B-ALL relapse", "Graft-versus-host disease (GVHD)", "Opportunistic infection or graft failure"], "treatment_plan": [{"action": "ENT consultation with consideration for sinus biopsy or endoscopy to evaluate for fungal infection", "intention": "diagnostic", "priority": 1}, {"action": "Initiate empiric antifungal therapy (e.g., voriconazole) pending ENT evaluation, given high-risk post-transplant status", "intention": "therapeutic", "priority": 1}, {"action": "Bone marrow biopsy with MRD assessment by flow cytometry/PCR and donor chimerism analysis", "intention": "diagnostic", "priority": 2}, {"action": "Transfuse PRBCs if Hb <8 g/dL or symptomatic anemia; platelets if <10k or bleeding", "intention": "supportive", "priority": 2}, {"action": "Repeat CBC and chemistry in 1-2 weeks; monitor NT-proBNP", "intention": "diagnostic", "priority": 3}]}}}
+[Case 17 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 17 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Hematology follow-up with bone marrow reassessment
+                              Capabilities: The patient is undergoing more detailed evaluation because of his leukemia history and evolving laboratory findings. You can organize marrow-based assessments and additional consultations to clarify disease status. Some specialized tests are still pending.
+                              Request additional information or solve.
+[Case 17 Round 2 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 17 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow biopsy results, including cellularity, blast percentage, flow cytometry for MRD, cytogenetics/FISH, and donor chimerism in myeloid and lymphoid lineages."}}
+[Case 17 Round 2 Step 4] ENV: Bone Marrow:
+                              Bone marrow biopsy (2024-07-09): The marrow was hypocellular (cellularity 25%) with therapy-related toxic changes. Trilineage hematopoiesis was present but displayed dysplastic features: megakaryopoiesis was reduced with small, hypolobulated forms; erythropoiesis showed megaloblastoid maturation; and granulopoiesis exhibited toxic granulation and nuclear irregularities. There was no blast excess (<5% by morphology).
+                              Flow cytometry revealed a normal distribution of myeloid and lymphoid populations with T-cells showing mild inversion of the CD4/CD8 ratio. A small blast population (0.1%) was detected, characterized by CD19-/CD22-, CD34^dim, CD33-, CD10-, CD20-, CD117+, CD5+, CD7+, CD56-, cyMPO-, cyTdT-, cyCD3-.
+[Case 17 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Donor chimerism analysis by STR or NGS in bone marrow (whole, myeloid, lymphoid lineages), cytogenetics (karyotype), and FISH panel for myeloid neoplasms (e.g., del(5q), -7, t(8;21), inv(16), t(15;17)) and B-ALL (e.g., BCR-ABL1, KMT2A)."}}
+[Case 17 Round 2 Step 5] ENV: Cytogenetics Chimerism:
+                              Karyotype: 46, XX.
+                              Chimerism: 0.06% recipient.
+[Case 17 Round 2 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "B-ALL in morphologic and flow cytometric remission post-alloSCT and CD19 CAR-T, with full donor chimerism, hypocellular marrow with trilineage dysplasia consistent with therapy-related changes, and mild cytopenias.", "differentials": ["Therapy-related myeloid neoplasm (MDS)", "Opportunistic fungal sinusitis", "Chronic immune dysregulation post-transplant"], "treatment_plan": [{"action": "ENT consultation for sinus evaluation, including nasal endoscopy and possible biopsy to rule out invasive fungal disease", "intention": "diagnostic", "priority": 1}, {"action": "Bone marrow next-generation sequencing (NGS) for myeloid mutation panel to assess for therapy-related myeloid neoplasm", "intention": "diagnostic", "priority": 1}, {"action": "Supportive care with transfusions for symptomatic anemia (Hb<8) or thrombocytopenia (<10k or bleeding)", "intention": "supportive", "priority": 2}, {"action": "Outpatient surveillance with CBC, chemistry, and chimerism/MRD monitoring every 1-3 months", "intention": "diagnostic", "priority": 2}, {"action": "Consider erythropoietin-stimulating agent (ESA) if anemia persists and appropriate per guidelines", "intention": "therapeutic", "priority": 3}]}}}
+[Case 17 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 17 Round 3 Step 6] ENV: Round 3 begins.
+                              Setting: Relapse and transplant planning conference in a heavily pretreated leukemia patient
+                              Capabilities: You now have results from bone marrow morphology, flow cytometry, clonality assays, and broad molecular profiling together with a comprehensive treatment history including alloSCT, bispecifics, inotuzumab, blinatumomab, and CD19 CAR-T. You are expected to interpret the pattern of MRD relapse, phenotypic evolution, and donor-derived CHIP, and to formulate a realistic outpatient-oriented salvage and transplant-bridging strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 17 Round 3 Step 6] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 17 Round 3 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed/refractory B-ALL with MRD-level disease showing CD19/CD22 antigen escape, phenotypic evolution to CD34+/CD117+ blasts with aberrant T-cell marker expression (CD5/CD7), in the setting of full donor chimerism and donor-derived clonal hematopoiesis (CHIP) with trilineage dysplasia.", "differentials": ["Donor-derived therapy-related myeloid neoplasm (t-MDS/AML)", "Lineage switch acute leukemia", "Post-transplant opportunistic infection contributing to cytopenias"], "treatment_plan": [{"action": "Bone marrow NGS for comprehensive myeloid/lymphoid mutation panel (e.g., TP53, RAS pathway, KMT2A, NPM1, FLT3) and ALL-specific fusions to guide targeted therapy", "intention": "diagnostic", "priority": 1}, {"action": "Initiate outpatient salvage chemotherapy or immunotherapy: consider venetoclax + navitoclax or menin inhibitor trial if KMT2A-rearranged, or glofitamab (CD20 bispecific) despite dim CD20, or donor lymphocyte infusion (DLI) for graft-versus-leukemia effect given excellent chimerism", "intention": "therapeutic", "priority": 1}, {"action": "Prophylactic antifungal therapy (voriconazole or posaconazole) for sinus opacification while awaiting ENT evaluation", "intention": "therapeutic", "priority": 2}, {"action": "Transfusion support for anemia/thrombocytopenia per thresholds (Hb <8 g/dL, Plt <10 \u00d710^9/L)", "intention": "supportive", "priority": 2}, {"action": "Serial MRD monitoring by flow/PCR every 1-3 months and chimerism assessment; cardiology follow-up for NT-proBNP elevation", "intention": "diagnostic", "priority": 3}]}}}
+[Case 17 Round 3 Step 7] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 17 Round 3 Step 7] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

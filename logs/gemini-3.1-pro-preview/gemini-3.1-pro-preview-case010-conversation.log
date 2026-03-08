@@ -1,0 +1,159 @@
+[Case 10 Round 1 Step 0] ENV: Case 10:
+                              Initial presentation:
+                              - Age: 21
+                              - Sex: female
+                              - Chief complaint: Post-induction consultation for T-ALL with prior sinus vein thrombosis and intracerebral hemorrhage
+                              - Vital signs: Blood pressure 122/74 mmHg, heart rate 96/min regular, respiratory rate 15/min, temperature 37.3 °C, oxygen saturation 97% on room air.
+                              Setting: Outpatient hematology clinic (post-induction consultation)
+                              Capabilities: You are evaluating a clinically stable patient after completion of induction therapy. You can review history and examination findings, request routine laboratory evaluations, and arrange standard imaging and specialist consultations appropriate to an ambulatory setting. More invasive procedures and specialized analyses usually require additional planning.
+                              Provide either a request for a single information item or solve.
+[Case 10 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "history of present illness"}}
+[Case 10 Round 1 Step 0] ENV: History Physical:
+                              2025-06-29: The patient presents following completion of induction chemotherapy for T-ALL, seeking discussion regarding further treatment options. During induction, she developed a sinus vein thrombosis complicated by a small left-hemispheric intracerebral hemorrhage. Neurological sequelae include mild right arm weakness and impaired fine motor skills, for which neurological rehabilitation is planned. She remains uncertain about continuing intensive therapy and expresses consideration of treatment discontinuation. On examination, her general condition is good; she is alert, oriented, and cooperative. Skin and mucous membranes are pale. Several puncture sites on the left hand show minor erythema and superficial inflammation, consistent with previous peripheral venous catheter insertions. No palpable lymphadenopathy or hepatosplenomegaly. Cardiopulmonary examination: Normal heart sounds, no murmurs; lungs clear to auscultation. Abdomen soft and non-tender. Neurological examination: Cranial nerves intact; mild weakness and reduced grip strength in the right arm, otherwise full strength with normal reflexes, preserved coordination, and intact sensation.
+                              Current medication: Levothyroxine 75 µg 1-0-0, leuprorelin monthly, enoxaparin 40 mg s.c. q12h, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), valaciclovir 500 mg 1-0-0, vitamin D supplementation. Self-medication with selenium and omega-3 fatty acids.
+[Case 10 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "bone marrow examination"}}
+[Case 10 Round 1 Step 1] ENV: 'bone_marrow' available in round 2.
+                              The case includes a bone marrow morphology/flow cytometry report, but that item is scheduled for a later round. Consider requesting available baseline data first (history/physical, CBC/chemistry, or staging imaging).
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 10 Round 1 Step 2] ENV: Cbc Chemistry:
+                              Hb 9.4 g/dL, WBC 3.3 ×10⁹/L, Plt 122 ×10⁹/L; ANC 2.4 ×10⁹/L, lymphocytes 0.6 ×10⁹/L, monocytes 0.3 ×10⁹/L; no peripheral blasts detected.
+                              Coagulation: INR 1.4, aPTT 31 sec, D-dimer 1850 µg/L FEU.
+                              Na 137 mmol/L, K 3.7 mmol/L, creatinine 1.1 mg/dL (eGFR 72 mL/min/1.73 m²), AST 86 U/L, ALT 91 U/L, bilirubin 1.2 mg/dL, LDH 285 U/L, uric acid 5.6 mg/dL.
+[Case 10 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "bone marrow aspirate"}}
+[Case 10 Round 1 Step 3] ENV: 'bone marrow aspirate' not available. Request a specific test or report.
+                              Bone marrow morphology/flow results are not available in Round 1 (these are released in Round 2). Consider requesting items available now such as CBC/chemistry, history & physical, or staging imaging (CT chest/abdomen or abdominal ultrasound).
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "CT chest and abdomen"}}
+[Case 10 Round 1 Step 4] ENV: Ct Thorax Abdomen:
+                              CT scan: No pathologic lymphadenopathy. Mild residual thymic tissue consistent with rebound hyperplasia in the anterior mediastinum. Lungs clear, no infiltrates or nodules. No organomegaly apart from hepatomegaly.
+[Case 10 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "bone_marrow"}}
+[Case 10 Round 1 Step 5] ENV: 'bone_marrow' available in round 2.
+                              The bone marrow report is part of a later round and is not available in Round 1. In this round you can request items such as CBC/chemistry, history and physical, or staging imaging (CT abdomen/chest or abdominal ultrasound).
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "MRI brain"}}
+[Case 10 Round 1 Step 6] ENV: 'extended_diagnostics' available in round 2.
+                              Brain imaging falls under extended diagnostics, which is not available in this round. Consider requesting items available now such as history/physical, CBC/chemistry, or CT chest/abdomen if relevant.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 1 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-cell acute lymphoblastic leukemia (T-ALL) post-induction, complicated by cerebral venous sinus thrombosis (CVST) and intracerebral hemorrhage", "differentials": ["Relapsed or refractory T-ALL", "Asparaginase-induced coagulopathy and thrombosis", "T-lymphoblastic lymphoma"], "treatment_plan": [{"action": "Bone marrow evaluation with flow cytometry for MRD assessment", "intention": "diagnostic", "priority": 1}, {"action": "Continue therapeutic enoxaparin for cerebral venous sinus thrombosis with close neurological monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Omit asparaginase in subsequent consolidation chemotherapy cycles", "intention": "therapeutic", "priority": 1}, {"action": "Psycho-oncologic counseling to discuss treatment goals, risks, and benefits of continuing therapy", "intention": "supportive", "priority": 1}, {"action": "Neurological rehabilitation and physical therapy for right upper extremity weakness", "intention": "supportive", "priority": 2}]}}}
+[Case 10 Round 1 Step 7] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 1 Step 7] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital hematology workup
+                              Capabilities: The patient is undergoing structured follow-up after induction and consolidation. You can organize marrow-based assessments, extended evaluations by consulting services, and additional imaging. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 10 Round 1 Step 7] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "bone marrow examination"}}
+[Case 10 Round 2 Step 8] ENV: Bone Marrow:
+                              The bone marrow was normocellular with increased erythropoiesis and granulopoiesis, and megakaryopoiesis showing occasional juvenile forms. There was no excess of blasts or plasma cells, and no morphologic evidence of relapse, dysplasia, or fibrosis. Flow cytometry demonstrated a reduced B-cell compartment with a predominantly immature phenotype (CD10⁺/CD19⁺). Granulopoiesis appeared relatively increased with a normal maturation pattern. Approximately 2% CD34⁺/CD33⁺ myeloid blasts were detected, without evidence of lymphoid blasts or aberrant antigen expression. Initial immunophenotype at first diagnosis was: ETP-ALL: CD7+, CD34+, CD38+, TdT+, partly positive for CD33+ and CD117+ no CD1a, sCD3-, CD5 or CD8.
+[Case 10 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "extended diagnostics"}}
+[Case 10 Round 2 Step 9] ENV: Extended Diagnostics:
+                              ENT evaluation: Normal findings; no sinus or airway pathology. Gynecologic examination: Unremarkable; Pap smear negative for intraepithelial lesion or malignancy, HPV PCR negative. Ophthalmology: Normal ocular status, no retinopathy or CNS involvement. Thyroid ultrasound: Homogeneous parenchyma, no nodules, and normal vascularity. Dental status: Intact, no caries or chronic infectious focus identified.
+                              Infection screen: Serum galactomannan <0.5; β-D-glucan not performed. CMV PCR negative. Rectal swab: Colonization with ESBL-producing Klebsiella pneumoniae (OXA-48 carbapenemase); MRSA negative, VRE positive. Immunology: ELISPOT negative.
+                              Cardiology: ECG demonstrated normal sinus rhythm. Pulmonary function testing: Normal diffusion capacity (DLCO 88% predicted) and FEV₁ 91% predicted.
+                              CSF analysis: Clear fluid, no elevated cell count, no malignant cells or blasts detected.
+                              Brain MRI (06/15/2025): Demonstrated a small left parietal post-hemorrhagic lesion with hemosiderin deposition, consistent with residual changes following prior intracerebral hemorrhage. No acute bleeding, no new ischemic or demyelinating lesions, and no evidence of CNS leukemic involvement or meningeosis. Ventricular system and midline structures unremarkable.
+[Case 10 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "molecular diagnostics"}}
+[Case 10 Round 2 Step 10] ENV: 'molecular_panel' available in round 3.
+                               Molecular/NGS results are not available in this round. You can request available diagnostics such as bone marrow morphology/flow cytometry or cytogenetics in round 2 instead.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 10 Round 2 Step 11] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Early T-cell precursor acute lymphoblastic leukemia (ETP-ALL) in complete remission", "differentials": ["Major depressive disorder", "Adjustment disorder", "Post-traumatic stress disorder"], "treatment_plan": [{"action": "Allogeneic hematopoietic stem cell transplantation", "intention": "therapeutic", "priority": 1}, {"action": "Psycho-oncological counseling", "intention": "supportive", "priority": 1}, {"action": "Physical therapy and neurological rehabilitation", "intention": "supportive", "priority": 2}]}}}
+[Case 10 Round 2 Step 11] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "correct"}]}}
+[Case 10 Round 2 Step 11] ENV: Round 3 begins.
+                               Setting: Specialist conference focusing on MRD status and transplant planning
+                               Capabilities: You now have access to specialized molecular assessments, measurable residual disease data, and a detailed treatment history. You are expected to integrate these findings with donor availability and comorbidities to define prognosis and formulate a definitive strategy, including potential allogeneic transplantation or trial participation.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 10 Round 2 Step 11] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 10 Round 3 Step 12] CANDIDATE: {"response": {"action": "request", "request": "molecular panel"}}
+[Case 10 Round 3 Step 12] ENV: Molecular Panel:
+                               Persistent IGH D1–7 J4 rearrangement and TCR D2–D3 rearrangement detectable at a ratio of 1E-01. NRAS mutation present.
+[Case 10 Round 3 Step 13] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Early T-cell precursor acute lymphoblastic leukemia (ETP-ALL) with positive measurable residual disease (MRD)", "differentials": ["Acute myeloid leukemia (AML) with minimal differentiation", "Mixed phenotype acute leukemia (MPAL)"], "treatment_plan": [{"action": "Salvage chemotherapy (e.g., venetoclax-based or nelarabine) to eradicate measurable residual disease", "intention": "therapeutic", "priority": 1}, {"action": "HLA typing and donor search for allogeneic hematopoietic stem cell transplantation", "intention": "diagnostic", "priority": 1}, {"action": "Consolidation with allogeneic hematopoietic stem cell transplantation (HSCT) once deep remission is achieved", "intention": "therapeutic", "priority": 1}]}}}
+[Case 10 Round 3 Step 13] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}]}}
+[Case 10 Round 3 Step 13] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       }
+                                     ]
+                                   }
+                                 }

@@ -1,0 +1,197 @@
+[Case 13 Round 1 Step 0] ENV: Case 13:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: male
+                              - Chief complaint: Follow-up in ongoing very good partial remission with dissatisfaction regarding continued therapy and treatment-related side effects
+                              - Vital signs: BP 162/88 mmHg, HR 92/min (irregular), RR 18/min, T 37.0 °C, SpO₂ 95 % (room air).
+                              Setting: Hematology outpatient clinic (follow-up during ongoing anti-myeloma therapy)
+                              Capabilities: You are evaluating a clinically stable patient receiving systemic therapy for plasma cell myeloma. You can review history, perform examination, request routine laboratory tests, and arrange standard imaging or specialist consultations as needed. Decisions about modifying systemic therapy are based on disease status, comorbidities, and patient preferences.
+                              Provide either a request for a single information item or solve.
+[Case 13 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following clinical information to further assess the patient's status and guide decision-making: (1) Current anti-myeloma therapy regimen, including duration and recent modifications; (2) Detailed description of treatment-related side effects, including severity, impact on quality of life, and any prior interventions; (3) Most recent laboratory results (e.g., CBC, renal function, calcium, M-protein levels, serum free light chains, and beta-2 microglobulin); (4) Results of recent imaging studies (e.g., skeletal survey, PET-CT, or MRI) to evaluate disease status; (5) Comorbidities, particularly cardiovascular risk factors given the elevated blood pressure and irregular heart rate; and (6) Patient's goals of care and preferences regarding treatment intensity or modifications."}}
+[Case 13 Round 1 Step 0] ENV: 'Please provide the following clinical information to further assess the patient's status and guide decision-making: (1) Current anti-myeloma therapy regimen, including duration and recent modifications; (2) Detailed description of treatment-related side effects, including severity, impact on quality of life, and any prior interventions; (3) Most recent laboratory results (e.g., CBC, renal function, calcium, M-protein levels, serum free light chains, and beta-2 microglobulin); (4) Results of recent imaging studies (e.g., skeletal survey, PET-CT, or MRI) to evaluate disease status; (5) Comorbidities, particularly cardiovascular risk factors given the elevated blood pressure and irregular heart rate; and (6) Patient's goals of care and preferences regarding treatment intensity or modifications.' not available. Request a specific test or report.
+                              This request asks for multiple distinct data elements in one query. Please request each item separately. For this case you can request: (1) current medications/treatment tolerance and goals of care via 'history_physical'; (2) recent labs via 'cbc_chemistry_immunology'; (3) skeletal imaging via 'skeletal_imaging'; (4) comorbidities/demographics via 'demographics'. Note that detailed prior myeloma treatment history and full treatment timeline are in 'treatment_history' (available in round 3).
+[Case 13 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Provide the most recent laboratory results, including complete blood count (CBC), renal function tests, calcium levels, M-protein quantification, serum free light chains, and beta-2 microglobulin (via 'cbc_chemistry_immunology')."}}
+[Case 13 Round 1 Step 1] ENV: Cbc Chemistry Immunology:
+                              Hb 9.2 g/dL, WBC 3.4 × 10⁹/L, Plt 92 × 10⁹/L, ANC 1.4 × 10⁹/L, lymphocytes 1.1 × 10⁹/L, monocytes 0.6 × 10⁹/L. Reticulocytes normal, no circulating plasma cells.
+                              Coagulation: INR 1.2, aPTT 34 s, fibrinogen 2.3 g/L, D-dimer 1.1 mg/L.
+                              Electrolytes and chemistry: Na 134 mmol/L, K 4.7 mmol/L, creatinine 1.8 mg/dL, BUN 28 mg/dL, uric acid 7.5 mg/dL, LDH 310 U/L, albumin 3.1 g/dL, total protein 6.2 g/dL, bilirubin 1.4 mg/dL, AST 78 U/L, ALT 94 U/L, GGT 212 U/L, ALP 185 U/L.
+                              IgA 41 mg/dL, IgG 292 mg/dL, IgM 27 mg/dL; κ FLC 6.2 mg/L, λ FLC 0.9 mg/L, κ/λ ratio 6.9; β₂-microglobulin 2.6 mg/L.
+                              Immunofixation: residual IgA κ band.
+                              CRP 8.9 mg/L, NT-proBNP 1180 pg/mL, Troponin T 0.012 ng/mL.
+                              Venous blood gas (room air): pO₂ 45 mmHg, pCO₂ 39 mmHg, pH 7.41.
+[Case 13 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Plasma cell myeloma in very good partial remission (VGPR) with treatment-related toxicities, including myelosuppression, renal impairment, hepatic dysfunction, and possible cardiovascular strain. The patient also exhibits mild hyponatremia and evidence of chronic inflammation.", "differentials": ["Myeloma progression (less likely given VGPR status but requires imaging confirmation)", "Therapy-related myelodysplastic syndrome or acute myeloid leukemia (consider if cytopenias persist or worsen)", "Drug-induced liver injury (e.g., from anti-myeloma therapy or supportive medications)", "Cardiac amyloidosis (given elevated NT-proBNP and history of plasma cell dyscrasia)"], "treatment_plan": [{"action": "Hold or dose-reduce current anti-myeloma therapy pending further evaluation of toxicities and patient preferences.", "intention": "therapeutic", "priority": 1}, {"action": "Request skeletal imaging (e.g., low-dose whole-body CT or PET-CT) to assess for myeloma progression or new lytic lesions.", "intention": "diagnostic", "priority": 1}, {"action": "Initiate supportive care measures: (1) Transfuse packed red blood cells for symptomatic anemia (Hb < 10 g/dL); (2) Administer granulocyte-colony stimulating factor (G-CSF) if febrile neutropenia develops; (3) Optimize fluid and electrolyte management (e.g., sodium correction, renal function monitoring).", "intention": "supportive", "priority": 1}, {"action": "Perform electrocardiogram (ECG) and echocardiogram to evaluate cardiac function, given irregular heart rate and elevated NT-proBNP.", "intention": "diagnostic", "priority": 2}, {"action": "Consult cardiology to assess cardiovascular risk and optimize blood pressure management (target BP < 140/90 mmHg).", "intention": "supportive", "priority": 2}, {"action": "Review liver function tests and consider hepatology consultation if transaminitis persists or worsens (AST/ALT > 3\u00d7 upper limit of normal).", "intention": "diagnostic", "priority": 2}, {"action": "Engage in shared decision-making with the patient to discuss treatment goals, quality of life, and potential modifications to therapy (e.g., switch to less toxic regimen, dose reduction, or treatment holiday).", "intention": "supportive", "priority": 3}, {"action": "Monitor closely with repeat CBC, chemistry, and immunofixation in 2\u20134 weeks to assess response to therapy adjustments.", "intention": "diagnostic", "priority": 3}]}}}
+[Case 13 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 13 Round 2 Step 2] ENV: Round 2 begins.
+                              Setting: Outpatient / day-hospital hematology assessment (disease status and comorbidity evaluation)
+                              Capabilities: You can organize bone marrow assessments, additional laboratory and imaging workup, and multidisciplinary evaluations to clarify disease activity and treatment tolerance. Some specialized test results may still be pending or require external processing.
+                              Request additional information or solve.
+[Case 13 Round 2 Step 2] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 13 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Provide the results of the skeletal imaging (e.g., low-dose whole-body CT or PET-CT) to evaluate for myeloma progression, new lytic lesions, or other bone-related complications."}}
+[Case 13 Round 2 Step 3] ENV: Skeletal Imaging:
+                              2024-07-27 CT skeleton: Multiple osteolytic lesions, overall unchanged from previous imaging. Several small, punched-out lesions in the calvarium (≤ 0.8 cm). Axial skeleton: thoracic (T7, 1.2 cm) and lumbar (L2, 1.0 cm) vertebral lytic lesions without cortical instability or collapse. Status post surgical (T7-T12) stabilization. Pelvic skeleton: 2.3 cm lytic lesion in the left os ilium with intact cortical margins. Appendicular skeleton: discrete, round lytic lesion (1.5 cm) in the proximal right femur, without signs of impending fracture. No new osteolyses or pathological fractures identified.
+[Case 13 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Plasma cell myeloma in very good partial remission (VGPR) with stable osteolytic disease, complicated by treatment-related toxicities (myelosuppression, renal impairment, hepatic dysfunction) and possible cardiovascular strain. The patient remains dissatisfied with ongoing therapy due to side effects.", "differentials": ["Therapy-related myelodysplastic syndrome (MDS) or acute myeloid leukemia (AML) (consider if cytopenias persist or worsen, though less likely given stable imaging and VGPR)", "Drug-induced liver injury (e.g., from proteasome inhibitors, immunomodulatory drugs, or supportive medications like bisphosphonates)", "Chronic kidney disease (CKD) secondary to myeloma or therapy (e.g., lenalidomide, bisphosphonates, or contrast agents)", "Cardiac dysfunction (e.g., hypertensive heart disease, ischemic cardiomyopathy, or less likely, cardiac amyloidosis given the absence of typical features)"], "treatment_plan": [{"action": "Modify anti-myeloma therapy: Consider dose reduction, treatment holiday, or switch to a less toxic regimen (e.g., from triplet to doublet therapy or single-agent maintenance) based on patient preferences and disease stability.", "intention": "therapeutic", "priority": 1}, {"action": "Initiate supportive care for cytopenias: (1) Transfuse packed red blood cells if symptomatic anemia persists (Hb < 10 g/dL); (2) Administer G-CSF only if febrile neutropenia develops (avoid routine use due to potential stimulation of myeloma cells); (3) Monitor platelet counts and transfuse if bleeding risk is high (Plt < 10 \u00d7 10\u2079/L).", "intention": "supportive", "priority": 1}, {"action": "Optimize renal function: (1) Ensure adequate hydration; (2) Avoid nephrotoxic drugs (e.g., NSAIDs, contrast agents); (3) Consider dose adjustment of renally cleared medications (e.g., lenalidomide, bisphosphonates); (4) Monitor creatinine and electrolytes closely.", "intention": "supportive", "priority": 1}, {"action": "Perform electrocardiogram (ECG) and echocardiogram to evaluate cardiac function, given irregular heart rate, elevated NT-proBNP, and hypertension. Rule out ischemic heart disease, hypertensive cardiomyopathy, or infiltrative processes.", "intention": "diagnostic", "priority": 2}, {"action": "Consult hepatology to evaluate transaminitis (AST/ALT > 3\u00d7 upper limit of normal) and consider liver biopsy if drug-induced liver injury is suspected or if abnormalities persist despite therapy adjustments.", "intention": "diagnostic", "priority": 2}, {"action": "Initiate antihypertensive therapy to achieve target BP < 140/90 mmHg, preferably with an angiotensin-converting enzyme (ACE) inhibitor or angiotensin II receptor blocker (ARB) to provide renal protection, unless contraindicated.", "intention": "therapeutic", "priority": 2}, {"action": "Engage in shared decision-making with the patient to discuss: (1) Goals of care and quality of life priorities; (2) Risks and benefits of continuing vs. modifying therapy; (3) Potential enrollment in clinical trials for less toxic or novel agents if available.", "intention": "supportive", "priority": 3}, {"action": "Repeat CBC, chemistry panel, and immunofixation in 4 weeks to assess response to therapy modifications and monitor for disease progression or improvement in toxicities.", "intention": "diagnostic", "priority": 3}, {"action": "Consider bone marrow biopsy if cytopenias worsen or if there is clinical suspicion for MDS/AML or myeloma progression (e.g., rising M-protein or new symptoms).", "intention": "diagnostic", "priority": 3}]}}}
+[Case 13 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 13 Round 3 Step 4] ENV: Round 3 begins.
+                              Setting: Specialist myeloma conference (advanced relapse and cellular therapy planning)
+                              Capabilities: You now have access to detailed bone marrow, cytogenetic, and molecular findings together with a comprehensive treatment history. You are expected to integrate these data with comorbidities, prior responses, and transplant options to define prognosis and propose a long-term strategy, including cellular therapies and possible allogeneic transplantation.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 13 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 13 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Plasma cell myeloma (IgA \u03ba subtype) in very good partial remission (VGPR) with stable osteolytic disease, complicated by treatment-related toxicities (myelosuppression, renal impairment, hepatic dysfunction, and cardiovascular strain). The patient exhibits dissatisfaction with ongoing therapy due to cumulative side effects and impaired quality of life.", "differentials": ["Therapy-related myeloid neoplasm (e.g., MDS/AML) \u2013 less likely given stable disease and VGPR, but requires monitoring for persistent cytopenias.", "Drug-induced organ toxicity (e.g., lenalidomide or proteasome inhibitor-induced renal/hepatic dysfunction).", "Hypertensive cardiovascular disease with secondary cardiac strain (elevated NT-proBNP, irregular heart rate)."], "treatment_plan": [{"action": "Discontinue current myeloma therapy temporarily to allow recovery from toxicities (e.g., cytopenias, transaminitis, renal impairment).", "intention": "therapeutic", "priority": 1}, {"action": "Initiate supportive care: (1) Transfuse packed red blood cells for symptomatic anemia (Hb < 10 g/dL); (2) Optimize renal function with hydration and avoidance of nephrotoxins; (3) Monitor liver enzymes and adjust hepatotoxic medications as needed.", "intention": "supportive", "priority": 1}, {"action": "Perform comprehensive cardiac evaluation (ECG, echocardiogram, cardiology consultation) to assess for hypertensive heart disease, ischemic cardiomyopathy, or infiltrative processes (e.g., amyloidosis). Initiate antihypertensive therapy (e.g., ACE inhibitor or ARB) to achieve BP < 140/90 mmHg.", "intention": "diagnostic", "priority": 1}, {"action": "Re-evaluate myeloma status with bone marrow biopsy (including cytogenetics/FISH) and PET-CT to confirm depth of remission and assess for high-risk features (e.g., del(17p), t(4;14), or TP53 mutations).", "intention": "diagnostic", "priority": 2}, {"action": "Engage in shared decision-making to discuss: (1) Patient\u2019s goals of care and tolerance for further therapy; (2) Potential for reduced-intensity maintenance (e.g., single-agent daratumumab or ixazomib) if toxicities improve; (3) Consideration of autologous stem cell transplant (ASCT) if eligible and willing, given stable VGPR and potential for deeper remission.", "intention": "supportive", "priority": 2}, {"action": "If high-risk cytogenetics or suboptimal response is identified, consider enrollment in a clinical trial for novel agents (e.g., bispecific antibodies, CAR-T cells) or allogeneic transplantation in select cases.", "intention": "therapeutic", "priority": 3}, {"action": "Monitor closely with monthly CBC, chemistry, and M-protein quantification. Repeat skeletal imaging and bone marrow biopsy if clinical or laboratory signs of progression emerge.", "intention": "diagnostic", "priority": 3}]}}}
+[Case 13 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 13 Round 3 Step 5] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

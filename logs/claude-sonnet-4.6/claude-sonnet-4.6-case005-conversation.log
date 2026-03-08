@@ -1,0 +1,241 @@
+[Case 5 Round 1 Step 0] ENV: Case 5:
+                             Initial presentation:
+                             - Age: 56
+                             - Sex: female
+                             - Chief complaint: Progressive fatigue, pallor, exertional dyspnea, and spontaneous bruising with petechiae
+                             - Vital signs: BP 124/78 mmHg, HR 99/min, T° 37.1 °C, RR 16/min, SpO₂ 96% on room air.
+                             Setting: Inpatient admission for newly detected blasts and cytopenias
+                             Capabilities: You are evaluating a hemodynamically stable patient with suspected acute hematologic malignancy in a hospital setting. You can perform a focused history and examination, obtain routine laboratory studies, and arrange standard non-invasive imaging appropriate for an initial inpatient assessment. Invasive diagnostic procedures and complex analyses require additional coordination but can be planned from this setting.
+                             Provide either a request for a single information item or solve.
+[Case 5 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 5 Round 1 Step 0] ENV: Cbc:
+                             CBC: Hb 7.9 g/dL, WBC 13.1 ×10⁹/L, Plt 18 ×10⁹/L; differential: 78% blasts, 10% monocytes, 8% neutrophils, 4% lymphocytes.
+[Case 5 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "peripheral blood smear morphology"}}
+[Case 5 Round 1 Step 1] ENV: 'cbc' already provided.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate with flow cytometry"}}
+[Case 5 Round 1 Step 2] ENV: 'bone_marrow' available in round 2.
+                             Bone marrow biopsy/aspirate results (morphology, blast percentage, immunophenotyping/flow) are documented in this case but are not yet available in round 1. Consider requesting items available now such as the CBC, chemistry, or history/physical exam information instead.
+                             (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "comprehensive metabolic panel and coagulation studies"}}
+[Case 5 Round 1 Step 3] ENV: Chemistry:
+                             Chemistry: Na 137 mmol/L, K 4.7 mmol/L, creatinine 1.2 mg/dL, BUN 20 mg/dL, AST 72 U/L, ALT 64 U/L, bilirubin 1.2 mg/dL, LDH 880 U/L, uric acid 7.9 mg/dL.
+[Case 5 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "coagulation studies (PT, PTT, fibrinogen, D-dimer)"}}
+[Case 5 Round 1 Step 4] ENV: Coagulation:
+                             Coagulation: aPTT 38 sec, INR 1.7.
+[Case 5 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 5 Round 1 Step 5] ENV: History Physical:
+                             2025-08-15: The patient presented with progressive fatigue, pallor, exertional dyspnea, and spontaneous bruising with petechiae. She reported a 2.5 kg unintentional weight loss over the past three months. No fever, night sweats, or chest pain were noted. Physical examination: The patient appeared pale, with scattered ecchymoses and petechiae on the extremities. Mild gingival hyperplasia was present, but no oral ulcers were observed. There was no palpable cervical or axillary lymphadenopathy. Abdominal examination revealed hepatomegaly (liver span 17 cm) and splenomegaly (14 cm). No focal neurological deficits were detected. Current medication: Ramipril 5 mg 1-0-0, pantoprazole 40 mg 1-0-0, calcium 500 mg 1-0-0, vitamin D 20,000 IU once weekly, posaconazole 300 mg 1-0-0, and ASA 100 mg 1-0-0.
+[Case 5 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate with flow cytometry"}}
+[Case 5 Round 1 Step 6] ENV: 'bone_marrow' available in round 2.
+                             Bone marrow biopsy/aspirate results including morphology and flow cytometry are in the case but are scheduled for a later round. Consider requesting labs or imaging available in this round (e.g., CBC, chemistry, or abdominal ultrasound).
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "abdominal ultrasound"}}
+[Case 5 Round 1 Step 7] ENV: Ultrasound Abdomen:
+                             Abdominal ultrasound: Demonstrated hepatosplenomegaly (liver 17 cm, spleen 14 cm) without ascites or detectable abdominal lymphadenopathy.
+[Case 5 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate with flow cytometry immunophenotyping"}}
+[Case 5 Round 1 Step 8] ENV: 'bone_marrow' available in round 2.
+                             Bone marrow biopsy/aspirate results (morphology, blast percent, immunophenotyping) are not yet available in this round. Consider requesting available baseline tests first (e.g., CBC, chemistry, coagulation, or history/physical).
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 1 Step 9] CANDIDATE: {"response": {"action": "request", "request": "chest X-ray"}}
+[Case 5 Round 1 Step 9] ENV: 'chest X-ray' not available. Request a specific test or report.
+                             This case does not include a chest X‑ray item. Consider requesting imaging available in this round (for example, echocardiography or abdominal ultrasound) or ask for another current-round item.
+                             (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 1 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Myeloid Leukemia (AML) with monocytic differentiation (FAB M4/M5), pending bone marrow confirmation and cytogenetics", "differentials": ["Acute Promyelocytic Leukemia (APL/AML-M3) \u2014 must be urgently excluded given coagulopathy", "Acute Myelomonocytic Leukemia (AML-M4)", "Acute Monocytic Leukemia (AML-M5)", "Blast phase of a pre-existing myeloproliferative neoplasm or MDS"], "treatment_plan": [{"action": "Urgent PML-RARA FISH/PCR to rule out APL \u2014 initiate ATRA empirically if APL cannot be excluded given coagulopathy (INR 1.7) and clinical urgency", "intention": "diagnostic", "priority": 1}, {"action": "Bone marrow biopsy and aspirate with morphology, immunophenotyping by flow cytometry, conventional cytogenetics (karyotype), and molecular studies (FLT3-ITD, NPM1, CEBPA, IDH1/2, KIT mutations)", "intention": "diagnostic", "priority": 1}, {"action": "Platelet transfusion to maintain platelets >20 \u00d710\u2079/L and pRBC transfusion to maintain Hb >8 g/dL; discontinue ASA given severe thrombocytopenia", "intention": "supportive", "priority": 1}, {"action": "Tumor lysis syndrome prophylaxis with IV hydration and rasburicase (given uric acid 7.9 mg/dL and high LDH 880 U/L) with close electrolyte monitoring", "intention": "supportive", "priority": 1}, {"action": "Induction chemotherapy with standard 7+3 regimen (cytarabine 100\u2013200 mg/m\u00b2 continuous infusion \u00d77 days + idarubicin 12 mg/m\u00b2 IV \u00d73 days) once APL excluded and cardiopulmonary fitness confirmed", "intention": "therapeutic", "priority": 2}, {"action": "Echocardiogram to assess baseline cardiac function prior to anthracycline-based induction chemotherapy", "intention": "diagnostic", "priority": 2}, {"action": "Central venous access placement (PICC or tunneled catheter) and formal HLA typing for potential allogeneic stem cell transplantation planning based on cytogenetic/molecular risk stratification", "intention": "therapeutic", "priority": 2}, {"action": "Coagulation factor support (FFP/cryoprecipitate) if DIC worsens; monitor fibrinogen, D-dimer, and coagulation parameters daily", "intention": "supportive", "priority": 2}, {"action": "Continue posaconazole antifungal prophylaxis and initiate antibacterial prophylaxis per institutional protocol; monitor for febrile neutropenia requiring empiric broad-spectrum antibiotics", "intention": "supportive", "priority": 3}]}}}
+[Case 5 Round 1 Step 10] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 5 Round 1 Step 10] ENV: Round 2 begins.
+                              Setting: Inpatient Ward (Definitive Hematologic Workup)
+                              Capabilities: The patient remains admitted for clarification of a suspected acute leukemia. You can organize bone marrow assessment, extended diagnostic workup, and baseline staging procedures. Interdisciplinary evaluations can be requested to exclude alternative primary malignancies or additional disease sites. Some specialized tests may not yet be available.
+                              Request additional information or solve.
+[Case 5 Round 1 Step 10] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 5 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate with morphology, immunophenotyping by flow cytometry"}}
+[Case 5 Round 2 Step 11] ENV: Bone Marrow:
+                              Morphology: Hypocellular bone marrow (20%) with approximately 80% infiltration by round to oval-shaped blasts showing open chromatin, prominent nucleoli, and deeply basophilic cytoplasm. Dysplastic megakaryocytes and granulopoiesis were noted. Residual hematopoiesis was markedly reduced with impaired erythropoiesis. No excess of plasma cells was seen. Flow cytometry: Blasts were positive for CD34, CD117, HLA-DR, CD13, and CD33, with aberrant expression of CD56. CD7 was negative. Plasma cells were polyclonal and accounted for <1% of total nucleated cells.
+                              Immunohistochemistry confirmed hypocellularity of the marrow. Reticulin staining demonstrated fibrosis grade MF-2. Infiltration by CD34+ blasts (70%) with co-expression of CD117 and CD33 was confirmed. No atypical or monoclonal plasma cell population was identified.
+[Case 5 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "conventional cytogenetics (karyotype) and FISH panel including PML-RARA"}}
+[Case 5 Round 2 Step 12] ENV: Cytogenetics:
+                              Preliminary cytogenetics
+                              47,XX,+1,del(17p13.1),-20,dup(1q)
+[Case 5 Round 2 Step 13] CANDIDATE: {"response": {"action": "request", "request": "molecular mutational analysis including TP53, NPM1, FLT3-ITD/TKD, CEBPA, IDH1/2, RUNX1, ASXL1"}}
+[Case 5 Round 2 Step 13] ENV: 'molecular mutational analysis including TP53, NPM1, FLT3-ITD/TKD, CEBPA, IDH1/2, RUNX1, ASXL1' not available. Request a specific test or report.
+                              Molecular profiling (NGS/mutation panel) is not available in this round. Consider requesting available items such as the bone marrow report or cytogenetics, which may help while awaiting molecular results.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 2 Step 14] CANDIDATE: {"response": {"action": "request", "request": "FISH panel including PML-RARA, TP53 (17p13.1), and MDS-related probes"}}
+[Case 5 Round 2 Step 14] ENV: 'cytogenetics' already provided.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 5 Round 2 Step 15] CANDIDATE: {"response": {"action": "request", "request": "echocardiography for baseline cardiac function assessment"}}
+[Case 5 Round 2 Step 15] ENV: Echocardiography:
+                              Echocardiogram: Showed normal left ventricular ejection fraction (LVEF 58%) and no significant valvular abnormalities.
+[Case 5 Round 2 Step 16] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "AML, myelodysplasia-related (AML-MR) with complex karyotype [47,XX,+1,del(17p13.1),-20,dup(1q)], MF-2 fibrosis, and del(17p13.1)/TP53 deletion \u2014 ELN 2022 Adverse Risk", "differentials": ["Acute Promyelocytic Leukemia (APL) \u2014 excluded by immunophenotype (CD34+, HLA-DR+) and absence of PML-RARA on cytogenetics", "Hypoplastic AML \u2014 partially consistent with hypocellular marrow (20%) and high blast infiltration", "Secondary AML evolving from previously undiagnosed MDS \u2014 supported by MDS-related cytogenetics, dysplasia, and MF-2 fibrosis"], "treatment_plan": [{"action": "Urgent molecular panel (NGS): TP53 mutation allelic fraction (to determine monoallelic vs biallelic loss), FLT3-ITD/TKD, NPM1, CEBPA, IDH1/2, RUNX1, ASXL1 \u2014 critical for TP53-directed treatment selection and precise WHO 2022 classification", "intention": "diagnostic", "priority": 1}, {"action": "Initiate CPX-351 (liposomal daunorubicin 44 mg/m\u00b2 + cytarabine 100 mg/m\u00b2) induction on days 1, 3, 5 \u2014 FDA-approved for AML with MDS-related changes and superior to 7+3 in this subtype; patient is eligible (age 56, LVEF 58%, adequate renal function)", "intention": "therapeutic", "priority": 1}, {"action": "Platelet transfusion to maintain platelets >20\u00d710\u2079/L (>50\u00d710\u2079/L peri-procedure); pRBC transfusion to maintain Hb >8 g/dL; FFP/cryoprecipitate for coagulopathy (INR 1.7); discontinue ASA", "intention": "supportive", "priority": 1}, {"action": "Tumor lysis syndrome prophylaxis with IV hydration and rasburicase (LDH 880 U/L, uric acid 7.9 mg/dL); daily electrolytes, renal function, and uric acid monitoring", "intention": "supportive", "priority": 1}, {"action": "Early HLA typing of patient and siblings for allogeneic stem cell transplantation planning \u2014 allo-SCT in CR1 is the standard recommendation for AML-MR with adverse-risk cytogenetics including del(17p)/TP53", "intention": "diagnostic", "priority": 2}, {"action": "Continue posaconazole antifungal prophylaxis; initiate antibacterial prophylaxis per institutional protocol; place central venous access (PICC or tunneled catheter) for induction chemotherapy", "intention": "supportive", "priority": 2}, {"action": "Assess for clinical trial enrollment \u2014 given del(17p13.1) TP53 deletion, consider APR-246 (eprenetapopt) + azacitidine or venetoclax-based combinations as alternative/salvage if CPX-351 not achievable", "intention": "therapeutic", "priority": 2}, {"action": "Reassess bone marrow response (Day 14 and Day 28 post-induction) with repeat BMA/biopsy including MRD assessment by flow cytometry; cytogenetic and molecular remission status will direct consolidation strategy", "intention": "diagnostic", "priority": 3}]}}}
+[Case 5 Round 2 Step 16] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 5 Round 2 Step 16] ENV: Round 3 begins.
+                              Setting: Inpatient Ward / Pre-transplant Treatment Strategy Discussion
+                              Capabilities: You now have access to results from specialized tests with longer turnaround times, including molecular profiling, detailed classification of the leukemia, and a comprehensive treatment history. You are expected to integrate these data with risk scores and transplant information to define prognosis and formulate a definitive treatment and transplant strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 5 Round 2 Step 16] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 5 Round 3 Step 17] CANDIDATE: {"response": {"action": "request", "request": "molecular profiling / NGS panel results including TP53, NPM1, FLT3, IDH1/2, RUNX1, ASXL1, SRSF2"}}
+[Case 5 Round 3 Step 17] ENV: Molecular Panel:
+                              CD138- fraction: Mutations in PTPN11 (VAF 11%), TP53 p.R248Q (VAF 28%); TP53 p.Y220C (VAF 12%). Negative for ASXL1, RUNX1, BCOR, CEBPA, DDX41, FLT3, IDH1/2, NPM1, SRSF2, STAG2, U2AF1, ZRSR2, KMT2A or MECOM rearrangements
+[Case 5 Round 3 Step 18] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "AML with biallelic TP53 mutations (WHO 2022) \u2014 del(17p13.1) providing the chromosomal second hit alongside somatic TP53 p.R248Q (VAF 28%) and p.Y220C (VAF 12%); complex karyotype [47,XX,+1,del(17p13.1),-20,dup(1q)]; MF-2 marrow fibrosis; co-mutation PTPN11 \u2014 ELN 2022 Adverse Risk (ultra-high risk)", "differentials": ["Hypoplastic/fibrotic AML evolving from undiagnosed MDS \u2014 supported by hypocellular marrow (20%), MF-2 fibrosis, multilineage dysplasia, and complex MDS-related karyotype prior to leukemic transformation", "Therapy-related myeloid neoplasm (t-AML/t-MDS) \u2014 patient on posaconazole suggesting prior immunosuppression/cytotoxic exposure; prior treatment history warrants review", "AML with myelodysplasia-related changes (AML-MR) \u2014 overlapping entity under older classification but superseded by TP53-defining category under WHO 2022 and ICC 2022"], "treatment_plan": [{"action": "Enroll in clinical trial for biallelic TP53-mutated AML as highest priority \u2014 recommended regimens include magrolimab (CD47 antibody) + azacitidine, or eprenetapopt (APR-246) + azacitidine; standard chemotherapy has profoundly poor outcomes in biallelic TP53 AML", "intention": "therapeutic", "priority": 1}, {"action": "If no trial available: azacitidine 75 mg/m\u00b2 SC/IV days 1\u20137 + venetoclax 400 mg PO days 1\u201328 per 28-day cycle as induction \u2014 best available standard option for TP53-mutated AML in transplant-eligible patients; hold venetoclax during severe infectious complications", "intention": "therapeutic", "priority": 1}, {"action": "Transfusion support: platelet transfusion to maintain >20\u00d710\u2079/L (>50\u00d710\u2079/L peri-procedure); pRBC to maintain Hb >8 g/dL; FFP/cryoprecipitate for ongoing coagulopathy (INR 1.7); discontinue ASA 100 mg given severe thrombocytopenia", "intention": "supportive", "priority": 1}, {"action": "Continue posaconazole antifungal prophylaxis; initiate antibacterial prophylaxis (fluoroquinolone) during neutropenia; central venous access (PICC or tunneled catheter); TLS prophylaxis with IV hydration and rasburicase given LDH 880 U/L and uric acid 7.9 mg/dL", "intention": "supportive", "priority": 1}, {"action": "Immediate HLA typing (patient and siblings) and initiation of unrelated donor/cord blood search \u2014 allogeneic SCT in CR1 is the only potentially curative strategy; transplant team should be involved immediately for pre-transplant workup given adverse-risk disease requiring early bridging", "intention": "therapeutic", "priority": 2}, {"action": "Bone marrow reassessment (aspirate, biopsy, flow cytometry MRD, cytogenetics) after cycle 1\u20132 of induction (Day 28\u201335) to evaluate morphologic and molecular remission \u2014 MRD negativity strongly predicts transplant outcomes in TP53-mutated AML", "intention": "diagnostic", "priority": 2}, {"action": "Early palliative care and goals-of-care discussion \u2014 given biallelic TP53 AML with complex karyotype and MF-2 fibrosis, median OS is typically <6 months with standard therapy; informed shared decision-making regarding transplant intent versus best supportive care is essential", "intention": "supportive", "priority": 2}, {"action": "Serial monitoring of PTPN11 VAF alongside TP53 VAFs as co-mutation markers of clonal dynamics and treatment response; PTPN11 mutations (RAS pathway) may confer additional resistance mechanisms and impact venetoclax efficacy", "intention": "diagnostic", "priority": 3}]}}}
+[Case 5 Round 3 Step 18] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "correct", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 5 Round 3 Step 18] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

@@ -1,0 +1,116 @@
+[Case 20 Round 1 Step 0] ENV: Case 20:
+                              Initial presentation:
+                              - Age: 77
+                              - Sex: male
+                              - Chief complaint: Progressive dyspnea, ascites, and a painful gluteal mass in a patient with CLL
+                              - Vital signs: BP 105/65 mmHg, HR 112/min, RR 22/min, Temp 37.7 °C, SpO₂ 92%
+                              Setting: Acute hematology intake
+                              Capabilities: Rapid bedside assessment with point-of-care imaging and routine laboratory panels is available, but invasive sampling or specialized molecular diagnostics are not yet ready.
+                              Provide either a request for a single information item or solve.
+[Case 20 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Point-of-care ultrasound of the gluteal mass to assess for fluid collection (abscess) versus solid mass."}}
+[Case 20 Round 1 Step 0] ENV: Initial Imaging:
+                              Chest X-ray: bilateral pleural effusions with basal atelectasis (right > left); Abdominal ultrasound: four-quadrant ascites, multiple enlarged paraaortic and mesenteric nodes up to 6.5 cm, bulky hepatic hilum conglomerate, hepatomegaly with nodular contour, splenomegaly 18.2 × 9.6 cm. Echocardiogram: LVEF 51% with RV dilatation and pulmonary hypertension.
+[Case 20 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Point-of-care ultrasound of the gluteal mass to determine if it is solid (suggesting lymphomatous involvement) or fluid-filled (suggesting abscess or hematoma)."}}
+[Case 20 Round 1 Step 1] ENV: 'initial_imaging' already provided.
+[Case 20 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter's transformation (histologic progression to aggressive lymphoma) in CLL, with systemic involvement including probable lymphomatous gluteal mass", "differentials": ["Infected gluteal mass (abscess) due to immunocompromise", "Metastatic disease from alternate primary", "Hematoma"], "treatment_plan": [{"action": "Initiate empiric broad-spectrum antibiotics (e.g., piperacillin-tazobactam) given fever, tachycardia, and painful mass to cover potential abscess while awaiting imaging results", "intention": "therapeutic", "priority": 1}, {"action": "Urgent CT-guided biopsy of gluteal mass when invasive capabilities become available", "intention": "diagnostic", "priority": 2}, {"action": "Prepare for urgent chemotherapy (e.g., R-CHOP) if Richter's confirmed", "intention": "therapeutic", "priority": 3}]}}}
+[Case 20 Round 2 Step 2] ENV: {"case_id": 20, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 2 Step 2] ENV: Round 2 begins.
+                              Setting: Inpatient diagnostic unit
+                              Capabilities: The patient can undergo targeted imaging, bone marrow or tissue sampling, and comprehensive flow cytometry while longer-turnaround molecular studies are still pending.
+                              Request additional information or solve.
+[Case 20 Round 2 Step 2] JUDGE: {
+                                  "case_id": 20,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 20 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter's transformation (DLBCL) in CLL with systemic lymphomatous involvement", "differentials": ["Infected gluteal mass (abscess)", "Lymphoma-related inflammation without superinfection", "Hematoma"], "treatment_plan": [{"action": "Immediate CT-guided biopsy of gluteal mass with flow cytometry", "intention": "diagnostic", "priority": 1}, {"action": "Withhold empiric antibiotics pending biopsy results (given lack of systemic signs of infection beyond fever which may reflect lymphoma)", "intention": "therapeutic", "priority": 2}, {"action": "Initiate supportive care for ascites/effusions (therapeutic paracentesis/thoracentesis)", "intention": "therapeutic", "priority": 3}]}}}
+[Case 20 Round 3 Step 3] ENV: {"case_id": 20, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 3 Step 3] ENV: Round 3 begins.
+                              Setting: Definitive staging and planning phase
+                              Capabilities: Full cytogenetic, molecular, and response assessments plus historical treatment data are accessible to guide transplant or cellular therapy planning.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 20 Round 3 Step 3] JUDGE: {
+                                  "case_id": 20,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 20 Round 3 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Richter's transformation to diffuse large B-cell lymphoma (DLBCL) with systemic lymphomatous involvement", "differentials": ["Concurrent bacterial infection (e.g., cellulitis/abscess superimposed on lymphomatous mass)", "Hepatic portal hypertension secondary to lymphomatous infiltration", "Autoimmune effusion syndrome in CLL"], "treatment_plan": [{"action": "Initiate R-CHOP chemotherapy with growth factor support (dose-modified for age/comorbidities)", "intention": "therapeutic", "priority": 1}, {"action": "Perform diagnostic paracentesis with cytology to confirm lymphomatous ascites", "intention": "diagnostic", "priority": 2}, {"action": "Start prophylactic antimicrobial therapy (e.g., fluoroquinolone, acyclovir) with fever workup", "intention": "supportive", "priority": 3}]}}}
+[Case 20 Round 3 Step 4] ENV: {"case_id": 20, "round": 3, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 3 Step 4] JUDGE: {
+                                  "case_id": 20,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

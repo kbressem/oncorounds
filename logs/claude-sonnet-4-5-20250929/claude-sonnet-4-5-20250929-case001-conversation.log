@@ -1,0 +1,235 @@
+[Case 1 Round 1 Step 0] ENV: Case 1:
+                             Initial presentation:
+                             - Age: 35
+                             - Sex: male
+                             - Chief complaint: Shortness of breath and palpitations
+                             - Vital signs: BP 98/60, HR 112/min, T° 37,8 °C, Respiratory rate: 21/min.
+                             Setting: Emergency Department (Presentation)
+                             Capabilities: Immediate assessment of acute physiology. You have access to point-of-care diagnostics, standard laboratory panels, bedside imaging, and emergency cross-sectional imaging (CT). Specialized tissue sampling (biopsies) or molecular diagnostics are not yet available.
+                             Provide either a request for a single information item or solve.
+[Case 1 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 1 Round 1 Step 1] ENV: History Physical:
+                             On May 26, 2025, the patient presented to the emergency department with shortness of breath and palpitations. He additionally reported swelling, redness, and hardening of the skin in the left elbow region. Other symptoms included difficulty sleeping, exertional dyspnea, and a mild unintentional weight loss. Chest pain was denied. On examination, the patient appeared pale with scattered petechiae on the legs, hematomas on the forearms, and white lesions on the oral mucosa. Hepatomegaly was noted, while no lymphadenopathy was present. The skin appeared dry, and the left antecubital region showed painful erythema with induration. Bilateral lower leg edema was present, while neurological status was unremarkable.
+                             Current medication: pantoprazole 40 mg 1-0-0, torsemide 5 mg 1-0-0, vitamin D 20.000 IE 1×/week, posaconazole 300 mg 1×/d, beclomethasone/formoterol inhaler p.r.n., dapagliflozin 10 mg 1-0-0.
+[Case 1 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 1 Round 1 Step 2] ENV: Cbc:
+                             CBC: Hb 8.3 g/dL, WBC 104 ×10⁹/L, Plt 12 ×10⁹/L; MCV normal, MCH normal; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes
+[Case 1 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "coagulation studies including PT, PTT, INR, fibrinogen, and D-dimer"}}
+[Case 1 Round 1 Step 3] ENV: Coagulation:
+                             Coagulation: aPTT 42 sec, INR 2.1, fibrinogen 2.1 g/L, D-dimer normal
+[Case 1 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "comprehensive metabolic panel including electrolytes, renal function, liver function, LDH, and uric acid"}}
+[Case 1 Round 1 Step 4] ENV: Chemistry:
+                             Chemistry: Na 135 mmol/L, K 5.3 mmol/L, creatinine 2.4 mg/dL, BUN 25 mg/dL, AST 132 U/L, ALT 163 U/L, bilirubin 2.4 mg/dL, LDH 1289 U/L, uric acid 12.9 mg/dL, Ca²⁺ 2.65 mmol/L, phosphate 4.2 mg/dL, lactate 4.3 mmol/L, CK 120 U/L, Troponin T 0.002 ng/mL, NT-proBNP 4612 pg/mL.
+[Case 1 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "chest X-ray"}}
+[Case 1 Round 1 Step 5] ENV: 'chest X-ray' not available. Try 'ct_chest' instead.
+                             This case does not include a chest X‑ray report. A thoracic CT (CT chest) is available in this round and may address pulmonary/thoracic concerns if that would help.
+[Case 1 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "ct_chest"}}
+[Case 1 Round 1 Step 6] ENV: Ct Chest:
+                             CT scan revealed a pulmonary segmental embolism in the right lower lobe, with partial occlusion of segmental branches. No central emboli were identified. The surrounding lung parenchyma showed no infarction or consolidation, and there was no pleural effusion or mediastinal lymphadenopathy.
+[Case 1 Round 1 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myelomonocytic leukemia (AML-M4) with tumor lysis syndrome, disseminated intravascular coagulation, pulmonary embolism, and infection", "differentials": ["Acute monocytic leukemia (AML-M5)", "Chronic myelomonocytic leukemia in blast crisis", "Acute myeloid leukemia with monocytic differentiation"], "treatment_plan": [{"action": "Aggressive IV hydration (150-200 mL/hr) and rasburicase 0.2 mg/kg for tumor lysis syndrome", "intention": "therapeutic", "priority": 1}, {"action": "Platelet transfusion to maintain platelets >20-30 \u00d7 10\u2079/L given active bleeding", "intention": "therapeutic", "priority": 1}, {"action": "Fresh frozen plasma and cryoprecipitate for coagulopathy/DIC", "intention": "therapeutic", "priority": 1}, {"action": "Broad-spectrum antibiotics (piperacillin-tazobactam or meropenem) for neutropenic fever and cellulitis", "intention": "therapeutic", "priority": 1}, {"action": "Hydroxyurea 50 mg/kg/day for cytoreduction and leukostasis prevention", "intention": "therapeutic", "priority": 1}, {"action": "Bone marrow biopsy with flow cytometry, cytogenetics, and molecular studies", "intention": "diagnostic", "priority": 2}, {"action": "Peripheral blood smear review and blood cultures", "intention": "diagnostic", "priority": 2}, {"action": "Echocardiogram to assess cardiac function", "intention": "diagnostic", "priority": 2}, {"action": "Red blood cell transfusion for symptomatic anemia", "intention": "supportive", "priority": 3}, {"action": "Continuous cardiac monitoring and electrolyte correction", "intention": "supportive", "priority": 3}]}}}
+[Case 1 Round 2 Step 7] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 1 Round 2 Step 7] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Day 1-7)
+                             Capabilities: The patient is admitted and stable enough for more detailed or invasive diagnostic procedures. You have access to tissue acquisition, comprehensive laboratory or microbiology workup, more detailed and focused imaging, and immunophenotyping. Long-term culture and molecular results are still pending processing.
+                             Request additional information or solve.
+[Case 1 Round 2 Step 7] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy with flow cytometry, cytogenetics, and molecular studies"}}
+[Case 1 Round 2 Step 8] ENV: 'bone marrow biopsy with flow cytometry, cytogenetics, and molecular studies' not available. Try 'bone_marrow' instead.
+                             The request asks for multiple separate reports. Bone marrow morphology, flow cytometry, and cytogenetics are available in this round; broad molecular/NGS panel results are not yet available. You can request the individual reports (e.g., "bone_marrow", "flow_cytometry", or "cytogenetics") now.
+[Case 1 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "bone_marrow"}}
+[Case 1 Round 2 Step 9] ENV: Bone Marrow:
+                             On repeat bone marrow examination, morphology revealed hypercellular bone marrow with diffuse infiltration by myeloid blasts (50%) and monocytic blasts (40%) with Auer rods. The blasts showed dysmorphic nuclei with nucleoli and occasional nuclear shadows. Residual hematopoiesis was markedly reduced but showed normal maturation.
+[Case 1 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "flow_cytometry"}}
+[Case 1 Round 2 Step 10] ENV: Flow Cytometry:
+                              Flow cytometry confirmed a blast population expressing CD34, CD117, HLA-DR, MPO, CD11b, CD13; but negative for CD33, CD7, CD56, TdT. In addition, a monocytic CD14+/CD64+ population with aberrant CD56 expression was detected.
+[Case 1 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics"}}
+[Case 1 Round 2 Step 11] ENV: Cytogenetics:
+                              Conventional cytogenetic analysis revealed 46,XY karyotype.
+[Case 1 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "molecular studies including FLT3-ITD, FLT3-TKD, NPM1, and CEBPA mutations"}}
+[Case 1 Round 2 Step 12] ENV: 'molecular_panel' available in round 3.
+                              Molecular/NGS panel results (FLT3, NPM1, CEBPA, etc.) are a requested item but are not available in this round. You can request marrow morphology, flow cytometry, or cytogenetics now if helpful for diagnosis/treatment planning.
+[Case 1 Round 2 Step 13] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myelomonocytic leukemia (AML with monocytic differentiation, FAB M4/M5) with normal cytogenetics and high-risk features including aberrant CD56 expression and hyperleukocytosis", "differentials": ["AML with monocytic differentiation with FLT3-ITD mutation (pending molecular studies)", "AML with NPM1 mutation (pending molecular studies)"], "treatment_plan": [{"action": "Standard 7+3 induction chemotherapy: cytarabine 100-200 mg/m\u00b2 continuous infusion days 1-7 plus daunorubicin 60-90 mg/m\u00b2 IV days 1-3", "intention": "therapeutic", "priority": 1}, {"action": "Continue rasburicase and aggressive IV hydration for ongoing tumor lysis syndrome management", "intention": "therapeutic", "priority": 1}, {"action": "Therapeutic anticoagulation with low molecular weight heparin for pulmonary embolism with platelet transfusion support", "intention": "therapeutic", "priority": 1}, {"action": "Continue hydroxyurea for cytoreduction until chemotherapy initiation", "intention": "therapeutic", "priority": 1}, {"action": "HLA typing for patient and siblings for potential allogeneic stem cell transplant evaluation given high-risk disease", "intention": "diagnostic", "priority": 2}, {"action": "Central venous catheter placement for chemotherapy administration and frequent blood draws", "intention": "therapeutic", "priority": 2}, {"action": "Continue broad-spectrum antibiotics and posaconazole antifungal prophylaxis", "intention": "therapeutic", "priority": 2}, {"action": "Continue platelet and red blood cell transfusion support, maintain platelets >10-20 \u00d7 10\u2079/L", "intention": "supportive", "priority": 3}, {"action": "Add trimethoprim-sulfamethoxazole for Pneumocystis jirovecii prophylaxis", "intention": "supportive", "priority": 3}]}}}
+[Case 1 Round 3 Step 13] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 1 Round 3 Step 13] ENV: Round 3 begins.
+                              Setting: Inpatient Ward (Day >7)
+                              Capabilities: Definitive diagnostic characterization phase. Results from long-turnaround tests are now available. You have access to cytogenetics, molecular panels, and Measurable Residual Disease (MRD) assessments. You may also request data on response to initial therapeutic interventions or prior therapy courses.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 1 Round 3 Step 13] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 1 Round 3 Step 14] CANDIDATE: {"response": {"action": "request", "request": "molecular_panel"}}
+[Case 1 Round 3 Step 14] ENV: Molecular Panel:
+                              Molecular analysis demonstrated an FLT3-ITD mutation with an allelic ratio of 1.32. No changes were seen in NPM1, IDH1/2, CEBPA,CBFB-MYH11 or RUNX1–RUNX1T1. Likewise, no changes were found in ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2, TP53, DNMT3A, TET2, WT1, NRAS, KRAS, KIT, PTPN11. No KMT2A rearrangements, inv(3)/MECOM or NUP98 fusions.
+[Case 1 Round 3 Step 15] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myelomonocytic leukemia (AML-M4) with FLT3-ITD mutation (high allelic ratio 1.32), normal cytogenetics, ELN adverse-risk category", "differentials": ["AML with monocytic differentiation and FLT3-ITD requiring allogeneic transplant in first remission", "High-risk AML with coagulopathy and hyperleukocytosis at presentation"], "treatment_plan": [{"action": "Induction chemotherapy: cytarabine 100-200 mg/m2 continuous infusion days 1-7 plus daunorubicin 60-90 mg/m2 IV days 1-3 with midostaurin 50 mg PO twice daily days 8-21", "intention": "therapeutic", "priority": 1}, {"action": "Continue rasburicase and aggressive IV hydration for tumor lysis syndrome", "intention": "therapeutic", "priority": 1}, {"action": "HLA typing of patient and family members for allogeneic stem cell transplant evaluation", "intention": "diagnostic", "priority": 1}, {"action": "Bone marrow biopsy on day 14-21 post-induction to assess response", "intention": "diagnostic", "priority": 2}, {"action": "Consolidation therapy with high-dose cytarabine plus midostaurin if achieving remission", "intention": "therapeutic", "priority": 2}, {"action": "Proceed to allogeneic stem cell transplant in first complete remission given adverse-risk disease", "intention": "therapeutic", "priority": 2}, {"action": "Continue broad-spectrum antibiotics and antifungal prophylaxis throughout neutropenia", "intention": "supportive", "priority": 3}, {"action": "Platelet and red blood cell transfusion support as needed", "intention": "supportive", "priority": 3}, {"action": "Growth factor support with G-CSF after count recovery post-chemotherapy", "intention": "supportive", "priority": 3}]}}}
+[Case 1 Round 3 Step 15] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 1 Round 3 Step 15] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

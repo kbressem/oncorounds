@@ -1,0 +1,135 @@
+[Case 2 Round 1 Step 0] ENV: Case 2:
+                             Initial presentation:
+                             - Age: 24
+                             - Sex: female
+                             - Chief complaint: New skin changes on the back and extremities
+                             - Vital signs: BP 120/75 mmHg, HR 116/min, T° 36.8 °C, respiratory rate 16/min.
+                             Setting: Outpatient/Day Unit (Initial Presentation)
+                             Capabilities: You are evaluating a clinically stable patient with new symptoms in an ambulatory or day-unit setting. You can perform a focused history and examination, obtain routine blood panels, and arrange standard non-invasive imaging as first-line tests. Invasive tissue sampling and specialized analyses usually require additional coordination and are not available in this round.
+                             Provide either a request for a single information item or solve.
+[Case 2 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "history_of_present_illness"}}
+[Case 2 Round 1 Step 0] ENV: History Physical:
+                             On June 4, 2025, the patient presented with new skin changes, first noticed by her partner on the back and now also on the extremities. She reported intermittent headaches and mild nausea, as well as chronic joint pain and stiffness. Otherwise, she was in good general condition, afebrile, and showed no signs of skin or mucosal GvHD. A marked psychological stress reaction was noted.
+                             Current medication: pantoprazole 40 mg 1-0-0, vitamin D 20,000 IE 1×/week, calcium 500 mg 1-0-0, posaconazole 300 mg 1×/d, ruxolitinib 10 mg 1-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg orally once daily, three times per week (Monday, Wednesday, Friday), steroid cream p.r.n.
+[Case 2 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "differential_diagnosis"}}
+[Case 2 Round 1 Step 1] ENV: 'differential_diagnosis' not available. Try 'history_physical' instead.
+                             This case does not include a standalone differential diagnosis item. You can request the history and physical or the concise disease status to support forming a differential.
+[Case 2 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "concise_disease_status"}}
+[Case 2 Round 1 Step 2] ENV: 'disease_status' available in round 3.
+                             This concise disease status summary is not available in round 1. Consider requesting demographics, history and physical, or baseline labs/imaging that are available in this round to build the clinical picture.
+[Case 2 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "baseline_labs"}}
+[Case 2 Round 1 Step 3] ENV: 'baseline_labs' not available. Try 'cbc' instead.
+                             ‘Baseline labs’ is ambiguous. You can request specific panels available in this round such as a CBC, a chemistry/metabolic panel, or coagulation studies. Which would you like first?
+[Case 2 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "cbc"}}
+[Case 2 Round 1 Step 4] ENV: Cbc:
+                             CBC: Hb 14.2 g/dL, WBC 6.8 ×10⁹/L, Plt 240 ×10⁹/L; MCV 89 fL, MCH 30 pg; differential: neutrophils 58%, lymphocytes 32%, monocytes 7%, eosinophils 2%, basophils 1%.
+[Case 2 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "chemistry_panel"}}
+[Case 2 Round 1 Step 5] ENV: Chemistry:
+                             Chemistry: Na 140 mmol/L, K 4.2 mmol/L, creatinine 1.2 mg/dL, BUN 14 mg/dL, AST 22 U/L, ALT 24 U/L, bilirubin 0.7 mg/dL, LDH 180 U/L, uric acid 5.0 mg/dL, Ca²⁺ 2.35 mmol/L, NT-proBNP 1250 pg/mL, Troponin T 0.024 ng/mL.
+[Case 2 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "imaging"}}
+[Case 2 Round 1 Step 6] ENV: 'imaging' not available. Try 'ultrasound_abdomen' instead.
+                             Please specify which imaging modality you want (e.g., abdominal ultrasound or cardiac echo). Available imaging in this round includes abdominal ultrasound and echocardiography.
+[Case 2 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "echocardiography"}}
+[Case 2 Round 1 Step 7] ENV: Echocardiography:
+                             Echocardiogram: Showed tissue thickening in the pericardium and septal hypertrophy, raising suspicion of an unclear mass lesion.
+[Case 2 Round 1 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hypereosinophilic syndrome or possibly a hematologic malignancy", "differentials": ["Chronic eosinophilic leukemia", "Lymphoma", "Other myeloproliferative neoplasms"], "treatment_plan": [{"action": "refer_to_specialist", "intention": "diagnostic", "priority": 1}, {"action": "order_additional_tests", "intention": "diagnostic", "priority": 2}]}}}
+[Case 2 Round 2 Step 8] ENV: {"case_id": 2, "round": 1, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 2 Round 2 Step 8] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Workup)
+                             Capabilities: The patient is now admitted for further evaluation. You can organize targeted tissue sampling and a broader diagnostic workup, including advanced imaging and initial pathology assessments. Some specialized analyses may still be pending or require referral to external laboratories. They will be available in the next round.
+                             Request additional information or solve.
+[Case 2 Round 2 Step 8] JUDGE: {
+                                 "case_id": 2,
+                                 "round": 1,
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "correct",
+                                     "partially_correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 2 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "biopsy"}}
+[Case 2 Round 2 Step 9] ENV: 'biopsy' not available. Try 'bone_marrow' instead.
+                             “Biopsy” is ambiguous—do you mean a bone marrow biopsy or a skin lesion biopsy? I can provide the bone marrow biopsy report (bone_marrow) or the skin biopsy report (skin_biopsy).
+[Case 2 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "bone_marrow"}}
+[Case 2 Round 2 Step 10] ENV: Bone Marrow:
+                              June 5, 2025: Morphology: Normocellular bone marrow with age-appropriate cellularity. Trilineage hematopoiesis present with some dysmorphic maturation in erythroid, myeloid, and megakaryocytic lineages, consistent with reactive changes after alloSCT. No excess blasts or abnormal infiltrates were observed.
+[Case 2 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "skin_biopsy"}}
+[Case 2 Round 2 Step 11] ENV: Skin Biopsy:
+                              Skin biopsy (2025-06-07): The dermis and subcutis are diffusely infiltrated by atypical hematopoietic cells in a perivascular and interstitial distribution. The cells show irregular nuclear contours, vesicular chromatin, and occasional nucleoli. Mitotic figures are frequent. Immunohistochemistry: CD34-, CD33+, MPO+, Lysozyme and CD68+, CD117+, negative for CD20-, CD19-, CD3-. Molecular pathology: NPM1 mutation present in cutaneous infiltration.
+[Case 2 Round 2 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Myeloid Leukemia (AML) with extramedullary disease", "differentials": ["Myelodysplastic syndrome", "Myeloproliferative neoplasm"], "treatment_plan": [{"action": "initiate_induction_chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "consider_allogenic_stem_cell_transplant", "intention": "therapeutic", "priority": 2}]}}}
+[Case 2 Round 3 Step 12] ENV: {"case_id": 2, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 2 Round 3 Step 12] ENV: Round 3 begins.
+                              Setting: Inpatient Ward / Multidisciplinary Tumor Board (Definitive Characterization)
+                              Capabilities: You now have access to results from specialized tests with longer turnaround times, including detailed pathology, molecular profiling, and measurable residual disease assessments, as well as a complete overview of prior therapies. You are expected to integrate these data into a definitive diagnosis, risk assessment, and treatment strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 2 Round 3 Step 12] JUDGE: {
+                                  "case_id": 2,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 2 Round 3 Step 13] CANDIDATE: {"response": {"action": "request", "request": "disease_status"}}
+[Case 2 Round 3 Step 13] ENV: Disease Status:
+                              Relapse type: Early post-transplant extramedullary relapse of NPM1+ AML.
+[Case 2 Round 3 Step 14] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Early post-transplant extramedullary relapse of NPM1+ Acute Myeloid Leukemia (AML)", "differentials": ["None"], "treatment_plan": [{"action": "initiate_salvage_chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "consider_donor_lymphocyte_infusion", "intention": "therapeutic", "priority": 2}, {"action": "evaluate_for_second_allogenic_stem_cell_transplant", "intention": "therapeutic", "priority": 3}]}}}
+[Case 2 Round 3 Step 14] ENV: {"case_id": 2, "round": 3, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 2 Round 3 Step 14] JUDGE: {
+                                  "case_id": 2,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

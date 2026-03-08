@@ -1,0 +1,194 @@
+[Case 8 Round 1 Step 0] ENV: Case 8:
+                             Initial presentation:
+                             - Age: 78
+                             - Sex: male
+                             - Chief complaint: Progressive fatigue, dyspnea on exertion, reduced appetite, and high fever with productive cough
+                             - Vital signs: BP 86/54 mmHg, HR 128/min regular, T° 39.2 °C, RR 28/min, O₂ saturation 89% on room air.
+                             Setting: Emergency Department / Acute Care (Initial Septic Presentation)
+                             Capabilities: You are assessing an acutely ill patient with sepsis in an acute-care environment. You can perform urgent clinical evaluation, obtain baseline investigations, and arrange emergent non-invasive imaging appropriate for the acute situation. Invasive procedures and complex diagnostic evaluations usually follow once the patient is at least partially stabilized.
+                             Provide either a request for a single information item or solve.
+[Case 8 Round 1 Step 0] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Septic shock secondary to community-acquired pneumonia", "differentials": ["Urinary tract infection", "Intra-abdominal infection", "Aspiration pneumonia"], "treatment_plan": [{"action": "Administer supplemental oxygen via nasal cannula or mask to maintain SpO2 >94%", "intention": "supportive", "priority": 1}, {"action": "Initiate intravenous fluid resuscitation with 30 mL/kg crystalloid (e.g., normal saline)", "intention": "therapeutic", "priority": 1}, {"action": "Obtain blood cultures (at least two sets) prior to antibiotics", "intention": "diagnostic", "priority": 1}, {"action": "Measure serum lactate level", "intention": "diagnostic", "priority": 1}, {"action": "Administer broad-spectrum intravenous antibiotics (e.g., ceftriaxone 1g and vancomycin)", "intention": "therapeutic", "priority": 1}, {"action": "Perform chest X-ray", "intention": "diagnostic", "priority": 2}, {"action": "Obtain complete blood count, basic metabolic panel, and C-reactive protein", "intention": "diagnostic", "priority": 2}, {"action": "Monitor vital signs closely and consider vasopressors if hypotension persists after fluid resuscitation", "intention": "supportive", "priority": 2}]}}}
+[Case 8 Round 2 Step 0] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 8 Round 2 Step 0] ENV: Round 2 begins.
+                             Setting: Inpatient Ward / Intensive Care Unit (Early Hematologic Workup)
+                             Capabilities: The patient is now hospitalized for ongoing management. You can organize invasive diagnostic procedures such as bone marrow assessment, extend laboratory and imaging evaluation, and obtain interdisciplinary consultations. Some specialized analyses may still be pending or require referral.
+                             Request additional information or solve.
+[Case 8 Round 2 Step 0] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 2 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the complete blood count (CBC), peripheral blood smear, and any available hematologic tests."}}
+[Case 8 Round 2 Step 1] ENV: Cbc:
+                             CBC: Hb 7.8 g/dL, WBC 1.1 ×10⁹/L, ANC 0.3 ×10⁹/L, Plt 18 ×10⁹/L; MCV normal, MCH normal; differential: 22% neutrophils, 10% monocytes, 60% lymphocytes, 8% blasts.
+[Case 8 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of bone marrow biopsy and flow cytometry, if available, or any additional hematologic investigations."}}
+[Case 8 Round 2 Step 2] ENV: Bone Marrow:
+                             Smears are of limited quality with low overall cellularity and very few spicules. Scattered blasts are present, accounting for approximately 10–15 % of nucleated cells. The blasts are medium to large in size with a high nuclear-to-cytoplasmic ratio, round to irregular nuclei, and finely dispersed chromatin. The cytoplasm is basophilic, occasionally containing azurophilic granules and rare vacuoles.
+                             Dysplastic changes are observed in the residual myeloid series with hypogranulation, while erythropoiesis is markedly reduced, showing occasional megaloblastoid forms. Megakaryopoiesis is sparse, with small hypolobated megakaryocytes.
+                             Flow cytometry demonstrated 23 % blasts expressing CD34⁺, CD117⁺, HLA-DR⁺, CD13⁺, CD33⁺, and CD38 (dim), with dim CD123 and weak MPO expression. There was no aberrant co-expression of CD7 or CD56
+[Case 8 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia with myelodysplasia-related changes presenting with septic shock secondary to pneumonia", "differentials": ["High-grade myelodysplastic syndrome", "Aplastic anemia", "Myeloproliferative neoplasm"], "treatment_plan": [{"action": "Continue broad-spectrum intravenous antibiotics and monitor for clinical response", "intention": "therapeutic", "priority": 1}, {"action": "Administer blood product transfusions (packed red blood cells for anemia, platelets for thrombocytopenia) as needed to maintain Hb >7 g/dL and platelets >10-20 \u00d710\u2079/L", "intention": "supportive", "priority": 1}, {"action": "Perform cytogenetic analysis and molecular testing (e.g., NGS for AML-related mutations) on bone marrow sample", "intention": "diagnostic", "priority": 1}, {"action": "Consult hematology/oncology for AML management and consideration of induction chemotherapy if patient stabilizes", "intention": "therapeutic", "priority": 2}, {"action": "Obtain infectious disease consultation for optimization of antimicrobial therapy", "intention": "diagnostic", "priority": 2}, {"action": "Monitor for complications of AML and sepsis, including bleeding and organ dysfunction", "intention": "supportive", "priority": 2}, {"action": "Consider growth factor support (e.g., G-CSF) to address neutropenia", "intention": "therapeutic", "priority": 3}]}}}
+[Case 8 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 8 Round 3 Step 3] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Hematology Consultation (Definitive Relapse Characterization and Planning)
+                             Capabilities: You now have access to the results of specialized tests with longer turnaround times, including mutational profiling, measurable residual disease characterization, and a detailed prior treatment history. You are expected to integrate these data with comorbidities and transplant history to define prognosis and formulate a realistic treatment and supportive care strategy.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 8 Round 3 Step 3] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 3 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Please provide the patient's prior treatment history, mutational profiling results, measurable residual disease characterization, comorbidities, and transplant history."}}
+[Case 8 Round 3 Step 4] ENV: Treatment History:
+                             07/25/2018: Diagnosis of AML with myelodysplasia-related changes (AML-MRC, WHO 2016). 08/03/2018: Induction I with CPX-351: Liposomal daunorubicin 44 mg/m² (≈ 90 mg/day) + cytarabine 100 mg/m² (≈ 205 mg/day) on days 1, 3, and 5. Total dose per course: daunorubicin ≈ 270 mg, cytarabine ≈ 615 mg. Result: hypocellular bone marrow without detectable residual AML (MLFS)
+                             10/21/2018 – Induction II with CPX-351: Same dosing as Induction I (days 1 and 3: daunorubicin ≈ 90 mg/day, cytarabine ≈ 205 mg/day). Result: CR with incomplete count recovery. 01/09/2019 – Allogeneic stem-cell transplantation (alloSCT): From a female HLA-identical unrelated donor after conditioning with fludarabine 30 mg/m² ≈ 61 mg/day i.v. (days -6 to -2), treosulfan 10 g/m² = 20.5 g/day i.v. (days –6 to –4), and rabbit-ATG 2.5 mg/kg (days -3 to 1). Donor/recipient CMV: negative/positive; both A Rh positive. Immunosuppression: cyclosporine 2.5 mg/kg BID (225 mg BID) starting day -3 and mycophenolate 1 g BID from day -1. 01/28/2019 (day +19): Bone marrow: complete molecular remission, donor chimerism 99.94%. 03/25/2020: EBV reactivation (152 copies/10⁵ cells), resolved spontaneously. 04/20/2020: Day +100 marrow: cytogenetic CR, donor chimerism 99.81%. 05/16/2020: Chimerism declined to 99.57% → DLI1 (1x10⁶ CD3⁺/kg) on 06/07/2020; DLI3 (5 x10⁶ CD3⁺/kg) on 07/07/2020; DLI3 (1x10⁷ CD3⁺/kg) on 08/10/2020 → donor chimerism 99.89%. 09/25/2020: DLI4 (5x10⁷ CD3⁺/kg). In October 2020, the patient developed acute gastrointestinal GvHD grade III. GvHD was treated with prednisolone 2 mg/kg (175 mg/day), followed by ruxolitinib 10 mg BID, etanercept 25 mg BIW x 4 doses, and vedolizumab 300 mg q14d → partial clinical resolution by 11/04/2020. 11/2020 – 08/2021: Serial marrows showed sustained CR, donor chimerism > 99.9%. 01/14/2023: Hematologic relapse: 14 % blasts by morphology, 27 % by FACS; mutations in ASXL1 (VAF 8 %), STAG2 (VAF 8 %), RAD21 (VAF 9 %), SRSF2 (VAF 8 %).
+                             Chimerism: donor 98.6 %, recipient 1.4 %. 01/23/2023 – Start of azacitidine/venetoclax: Azacitidine 75 mg/m² s.c. days 1-7 (total = 1100 mg). Venetoclax ramp-up with posaconazole co-medication: 10 mg (d1), 20 mg (d2), 50 mg (d3), then 70 mg/day from d4 onward. 02/22/2023: Bone marrow CR (4 % blasts by morphology, 1 % by FACS), full molecular clearance of mutations.
+                             CMV/EBV PCR negative. Continued azacitidine/venetoclax for 6 cycles, intervals gradually extended to 5 weeks, venetoclax duration shortened to 14 and then to 10 days per cycle due to cytopenia. 08/26/2023: Hospitalized for worsening Parkinsonian symptoms (bradykinesia, rigidity, tremor). No acute cause identified. Patient chose to stop azacitidine/venetoclax thereafter; neurological symptoms persisted. 01/12/2024: Bone marrow puncture: ongoing CR, donor chimerism 99.89 % (recipient 0.11 %).
+[Case 8 Round 3 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed acute myeloid leukemia with myelodysplasia-related changes, presenting with sepsis secondary to neutropenia and possible pneumonia", "differentials": ["High-risk myelodysplastic syndrome with excess blasts", "Aplastic anemia secondary to infection or drug effect", "Post-transplant lymphoproliferative disorder"], "treatment_plan": [{"action": "Continue broad-spectrum intravenous antibiotics and supportive care for sepsis, including IV fluids and monitoring in ICU if needed", "intention": "therapeutic", "priority": 1}, {"action": "Administer granulocyte colony-stimulating factor (G-CSF) to support neutrophil recovery", "intention": "supportive", "priority": 1}, {"action": "Transfuse packed red blood cells and platelets as needed to manage anemia and thrombocytopenia", "intention": "supportive", "priority": 1}, {"action": "Perform repeat mutational profiling (NGS) on current bone marrow sample to compare with prior relapse mutations", "intention": "diagnostic", "priority": 1}, {"action": "Obtain cytogenetic analysis and chimerism studies on bone marrow", "intention": "diagnostic", "priority": 2}, {"action": "Consult hematology/oncology for consideration of low-intensity therapy such as hypomethylating agent (e.g., azacitidine) with or without venetoclax, weighing patient's age, comorbidities (Parkinsonian symptoms), and prior treatment response", "intention": "therapeutic", "priority": 2}, {"action": "Discuss goals of care with patient and family, considering palliative care or hospice given poor prognosis and relapsed disease post-alloSCT", "intention": "supportive", "priority": 2}, {"action": "Monitor for graft-versus-host disease flare and adjust immunosuppression if necessary", "intention": "supportive", "priority": 3}, {"action": "Provide nutritional support and physical therapy for Parkinsonian symptoms", "intention": "supportive", "priority": 3}]}}}
+[Case 8 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 8 Round 3 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }

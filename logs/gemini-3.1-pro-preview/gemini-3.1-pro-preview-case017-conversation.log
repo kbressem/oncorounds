@@ -1,0 +1,46 @@
+[Case 17 Round 1 Step 0] ENV: Case 17:
+                              Initial presentation:
+                              - Age: 44
+                              - Sex: male
+                              - Chief complaint: Scheduled follow-up after alloSCT and CD19 CAR-T for B-ALL, with interest in outpatient treatment options
+                              - Vital signs: Temp 36.9 °C, BP not reported at this visit, HR not reported at this visit, RR not reported at this visit, SpO₂ not reported at this visit.
+                              Setting: Outpatient hematology/oncology follow-up after alloSCT and CAR-T
+                              Capabilities: You are evaluating a clinically stable patient in a routine follow-up setting after intensive leukemia therapy. You can review prior history and recent clinical course, perform a targeted examination, and request standard follow-up evaluations appropriate to an ambulatory visit. Decisions focus on surveillance and whether further workup for relapse or complications is indicated.
+                              Provide either a request for a single information item or solve.
+[Case 17 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "history of present illness"}}
+[Case 17 Round 1 Step 0] ENV: History Physical:
+                              2024-07-04: The patient presented for scheduled follow-up, reporting stable overall condition. He denied fever, night sweats, or weight loss. No exertional dyspnea, abdominal pain, or neurological complaints were reported. The patient informed the team that he had stopped some medications. He actively inquired about “next treatment options,” emphasizing his preference for outpatient-based regimens.
+                              Current medication: aciclovir 400 mg 1-0-1, posaconazole stopped, 1-0-0, cotrimoxazole 960 mg three times per week (taken irregularly), bisoprolol 2.5 mg 1-0-1, ramipril 5 mg 1-0-1, amlodipine 5 mg 1-0-1, atorvastatin 10 mg (stopped), folic acid 5 mg 1-0-0, magnesium 300 mg 1-0-0, and various nutritional supplements.
+[Case 17 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "past medical history"}}
+[Case 17 Round 1 Step 1] ENV: Demographics:
+                              Age: 44 years
+                              Sex: Male
+                              Performance status: ECOG 0
+                              Comorbidities: Arterial hypertension, hyperlipidemia, mild glucose intolerance. History of acute leukemia and allogeneic hematopoietic stem cell transplantation.
+                              Social history: Married, living with wife and 16-year-old daughter. Has three siblings; both parents are deceased. History of prior drug abuse. The patient maintains unusual lifestyle habits, including waking daily at 02:30 a.m. for cold-water swimming. Diet consists of multiple protein supplements (eight types) and approximately 15 hard-boiled eggs per week. Known for refusing inpatient treatment.
+                              Height: 181 cm; Weight: 84 kg
+[Case 17 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 17 Round 1 Step 2] ENV: Cbc Chemistry:
+                              Hb 10.6 g/dL, WBC 3.1 × 10⁹/L, Plt 98 × 10⁹/L; MCV 92 fL, MCH 29 pg.
+                              Differential: neutrophils 42%, lymphocytes 48%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: INR 1.1, aPTT 30 sec.
+                              Chemistry: Na 138 mmol/L, K 4.5 mmol/L, creatinine 1.4 mg/dL, BUN 19 mg/dL, AST 28 U/L, ALT 32 U/L, bilirubin 0.9 mg/dL, LDH 220 U/L, uric acid 5.2 mg/dL, CRP 0.6 mg/dL.
+                              Cardiac biomarkers: NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL.
+[Case 17 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "oncology history"}}
+[Case 17 Round 1 Step 3] ENV: 'history_physical' already provided.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy"}}
+[Case 17 Round 1 Step 4] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow biopsy results are part of this case but are not available in round 1. Consider requesting available items now such as the history & physical, CBC/chemistry, or baseline imaging to guide initial decisions.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "peripheral blood smear"}}
+[Case 17 Round 1 Step 5] ENV: 'peripheral blood smear' not available. Try 'cbc_chemistry' instead.
+                              This case doesn't list a separate peripheral smear item; peripheral smear findings are most closely represented by the CBC/chemistry category. Consider requesting the CBC/chemistry results.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "chimerism"}}
+[Case 17 Round 1 Step 6] ENV: 'cytogenetics_chimerism' available in round 2.
+                              Chimerism results are part of the cytogenetics/chimerism report, which is not available in this round. Consider requesting available items such as CBC/chemistry, history & physical, or baseline imaging instead.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 17 Round 1 Step 7] ENV: 'history_physical' already provided.
+                              (0 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)

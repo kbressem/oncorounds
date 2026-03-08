@@ -1,0 +1,113 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Can you provide the patient's complete blood count (CBC) and differential results?"}}
+[Case 12 Round 1 Step 0] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapse of lymphoma", "differentials": ["Infection", "Graft-versus-host disease (GVHD)", "Drug-induced cytopenia"], "treatment_plan": [{"action": "Administer broad-spectrum antibiotics", "intention": "therapeutic", "priority": 1}, {"action": "Perform CT scans of the chest, abdomen, and pelvis", "intention": "diagnostic", "priority": 2}, {"action": "Consult with hematology and infectious disease specialists", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 2 Step 1] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected relapse. You can organize bone marrow and tissue sampling, comprehensive staging including whole-body imaging, and extended infectious and virologic workup. Multidisciplinary input is available. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 12 Round 2 Step 1] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Can you provide the results of the CT scans of the chest, abdomen, and pelvis?"}}
+[Case 12 Round 2 Step 2] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Isolated lymph node relapse of lymphoma", "differentials": ["Infection", "Graft-versus-host disease (GVHD)"], "treatment_plan": [{"action": "Perform biopsy of the enlarged left cervical lymph node", "intention": "diagnostic", "priority": 1}, {"action": "Administer supportive care including fluids and electrolytes management", "intention": "supportive", "priority": 2}, {"action": "Consult with hematology and oncology specialists for further treatment planning", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 3] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse conference (treatment planning after alloSCT)
+                              Capabilities: You now have access to detailed histopathology, immunophenotyping, molecular findings, chimerism data, and full staging, together with a complete treatment history including prior cellular therapies. You are expected to integrate these data to define relapse type, stage, and comorbidity risk and to formulate a realistic treatment and monitoring strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 12 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 3 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Isolated lymph node relapse of classical Hodgkin lymphoma", "differentials": ["Infectious mononucleosis", "Non-Hodgkin lymphoma"], "treatment_plan": [{"action": "Initiate salvage chemotherapy with a regimen such as GDP (Gemcitabine, Dexamethasone, and Cisplatin)", "intention": "therapeutic", "priority": 1}, {"action": "Perform PET-CT scan to assess treatment response after 2 cycles of salvage chemotherapy", "intention": "diagnostic", "priority": 2}, {"action": "Plan for allogeneic stem cell transplantation if the patient achieves a complete or partial response to salvage chemotherapy", "intention": "therapeutic", "priority": 3}]}}}
+[Case 12 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

@@ -1,0 +1,154 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "How long ago was the allogeneic stem cell transplant performed?"}}
+[Case 12 Round 1 Step 0] ENV: 'How long ago was the allogeneic stem cell transplant performed?' not available. Request a specific test or report.
+                              The timing of prior autologous/allogeneic stem cell transplantation is part of the treatment history, which is not released in round 1. Consider requesting history_physical or demographics items that are available in this round.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "CMV and EBV PCR viral load testing"}}
+[Case 12 Round 1 Step 1] ENV: 'infection_screening' available in round 2.
+                              This case defines viral PCR testing (e.g., CMV/EBV) under infection_screening, but that item is not available in round 1. Consider requesting items available now such as cbc_chemistry_immunology or imaging (abdominal_ultrasound or ct_staging).
+[Case 12 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "cbc_chemistry_immunology"}}
+[Case 12 Round 1 Step 2] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "infection_screening"}}
+[Case 12 Round 1 Step 3] ENV: 'infection_screening' available in round 2.
+                              This item exists but is not available in round 1. Consider requesting labs or imaging available now (e.g., CBC/chemistry/immunology, abdominal ultrasound, or CT staging).
+[Case 12 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "abdominal_ultrasound"}}
+[Case 12 Round 1 Step 4] ENV: Abdominal Ultrasound:
+                              2025-04-22: Abdominal ultrasound: Mild hepatomegaly with diffuse hyperechogenicity, consistent with hepatic steatosis. Status post cholecystectomy, with mildly prominent intrahepatic bile ducts; common bile duct 9 mm. Spleen with small calcifications but normal in size. No retroperitoneal or mesenteric lymphadenopathy. Kidneys normal in size and morphology (left 11.2 cm, right 11.6 cm).
+[Case 12 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "ct_staging"}}
+[Case 12 Round 1 Step 5] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 1 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Chronic graft-versus-host disease (GVHD) with hepatic involvement", "differentials": ["Infection (e.g., viral reactivation)", "Lymphoma relapse", "Drug-induced liver injury"], "treatment_plan": [{"action": "Initiate empirical treatment for chronic GVHD with prednisone 1 mg/kg/day", "intention": "therapeutic", "priority": 1}, {"action": "Order CMV/EBV PCR testing (infection_screening)", "intention": "diagnostic", "priority": 2}, {"action": "Start IVIG replacement therapy (200-400 mg/kg monthly)", "intention": "supportive", "priority": 3}, {"action": "Monitor liver enzymes and coagulation parameters daily", "intention": "diagnostic", "priority": 3}]}}}
+[Case 12 Round 2 Step 6] ENV: {"case_id": 12, "round": 1, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 2 Step 6] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected relapse. You can organize bone marrow and tissue sampling, comprehensive staging including whole-body imaging, and extended infectious and virologic workup. Multidisciplinary input is available. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 12 Round 2 Step 6] JUDGE: {
+                                  "case_id": 12,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 2 Step 7] CANDIDATE: {"response": {"action": "request", "request": "infection_screening"}}
+[Case 12 Round 2 Step 7] ENV: Infection Screening:
+                              Infection screening: CMV PCR negative; EBV PCR negative; HIV negative. Toxoplasma and syphilis serology negative. Hepatitis profile: anti-HBc positive, HBsAb negative, HBsAg negative, HBV DNA negative. No protective immune titers against hepatitis A or C detected.
+[Case 12 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "lymph_node_biopsy"}}
+[Case 12 Round 2 Step 8] ENV: Lymphoid Biopsy:
+                              Lymphoid tissue biopsy: Multiple fragments showed dense, sheet-like infiltrates of lymphoid-appearing cells with open chromatin and prominent nucleoli, sometimes central, eccentric, or multiple. Frequent mitotic and scattered apoptotic figures were present. The infiltrates extended to the subepithelial zone and occasionally formed intraepidermal aggregates. Immunohistochemistry demonstrated strong CD3 expression and weak but diffuse positivity for CD30 and MUM1. CD4 was variably expressed, mostly weak, while EMA was positive in scattered individual cells. The blasts were negative for CD8, CD20, PAX5, BCL6, CD10, TdT, CD56, CD138, and ALK1. The Ki-67 proliferation index was approximately 25, EBV in-situ hybridization negative. Morphologically, the infiltrate consisted of large blastoid cells with prominent nucleoli, occasional multinucleation, and some elongated nuclei, though classic hallmark cells were not identified. PD-L1 was expressed in about 10% of tumor cells. T-cell receptor gene rearrangement analysis revealed a monoclonal peak in the Jγ-fragment (80 bp), consistent with clonal T-cell expansion, while the Jβ-fragment demonstrated an oligoclonal pattern. ALK negative.
+[Case 12 Round 2 Step 9] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed peripheral T-cell lymphoma (PTCL), likely mycosis fungoides/Sezary syndrome with transformation", "differentials": ["Chronic graft-versus-host disease (GVHD)", "Post-transplant lymphoproliferative disorder (PTLD)", "Drug-induced liver injury"], "treatment_plan": [{"action": "Complete staging with bone marrow biopsy and PET-CT", "intention": "diagnostic", "priority": 1}, {"action": "Initiate CHOP-based chemotherapy (cyclophosphamide, doxorubicin, vincristine, prednisone)", "intention": "therapeutic", "priority": 2}, {"action": "Consult transplant team for possible second allogeneic stem cell transplant evaluation", "intention": "therapeutic", "priority": 3}, {"action": "Monitor liver function and coagulation daily with vitamin K supplementation", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 3 Step 9] ENV: {"case_id": 12, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 9] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse conference (treatment planning after alloSCT)
+                              Capabilities: You now have access to detailed histopathology, immunophenotyping, molecular findings, chimerism data, and full staging, together with a complete treatment history including prior cellular therapies. You are expected to integrate these data to define relapse type, stage, and comorbidity risk and to formulate a realistic treatment and monitoring strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 12 Round 3 Step 9] JUDGE: {
+                                  "case_id": 12,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 3 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed and transformed mycosis fungoides (peripheral T-cell lymphoma with cutaneous origin)", "differentials": ["Peripheral T-cell lymphoma, not otherwise specified (PTCL-NOS)", "Angioimmunoblastic T-cell lymphoma (AITL)", "Drug-induced lymphoproliferative disorder"], "treatment_plan": [{"action": "Complete staging with PET-CT and bone marrow biopsy", "intention": "diagnostic", "priority": 1}, {"action": "Initiate CHOP chemotherapy (cyclophosphamide, doxorubicin, vincristine, prednisone) with G-CSF support", "intention": "therapeutic", "priority": 2}, {"action": "Obtain chimerism analysis to assess for mixed chimerism and consider donor lymphocyte infusion (DLI)", "intention": "therapeutic", "priority": 3}, {"action": "Monitor for tumor lysis syndrome with aggressive hydration and rasburicase", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 3 Step 10] ENV: {"case_id": 12, "round": 3, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 10] JUDGE: {
+                                   "case_id": 12,
+                                   "round": 3,
+                                   "evaluation": {
+                                     "working_diagnosis": "incorrect",
+                                     "differentials": [
+                                       "partially_correct",
+                                       "incorrect",
+                                       "partially_correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }

@@ -1,0 +1,128 @@
+[Case 11 Round 1 Step 0] ENV: Case 11:
+                              Initial presentation:
+                              - Age: 32
+                              - Sex: female
+                              - Chief complaint: Rapidly progressive swelling of the left cervical region with exertional dyspnea and intermittent inspiratory stridor
+                              - Vital signs: BP 108/68 mmHg, HR 118/min, RR 24/min with mild stridor, Temp 37.8 °C, SpO₂ 93% on room air.
+                              Setting: Acute hematology / emergency assessment for symptomatic cervical mass
+                              Capabilities: You are evaluating a patient with rapidly progressive neck swelling and early airway compromise in an acute-care setting. You can obtain detailed history and examination, request baseline laboratory evaluations, and arrange urgent non-invasive imaging and airway assessments. Invasive diagnostic procedures and complex therapeutic decisions typically follow once initial stabilization and basic staging are completed.
+                              Provide either a request for a single information item or solve.
+[Case 11 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "What is the patient's medical history, including any previous illnesses, allergies, or medications?"}}
+[Case 11 Round 1 Step 0] ENV: History Physical:
+                              Match 14th, 2025: The patient presents with rapidly progressive swelling of the left cervical region, associated with exertional dyspnea and intermittent inspiratory stridor. Over the preceding 4-6 weeks, she developed B-symptoms including nightly fevers (up to 39.7 °C), drenching night sweats, and unintentional weight loss of approximately 4 kg. While visiting Portugal, she was empirically treated for an upper respiratory tract infection for two weeks without clinical improvement. Given her close exposure to multiple household cats (seven in total), an infectious cause - specifically toxoplasmosis - was initially considered; however, serology remained negative for IgM on repeated testing.
+                              Physical examination:
+                              Tender, matted lymph node conglomerate along left cervical levels II-IV with mild accessory muscle use during respiration. Lungs with transmitted upper-airway sounds, no focal crackles. Cardiac auscultation regular, no murmurs. Abdomen soft, non-tender, no hepatosplenomegaly. Extremities without edema. Neurologic exam notable for left-sided ptosis and anisocoria (smaller left pupil), consistent with a Horner’s syndrome, otherwise nonfocal.
+                              Current medication: Pregabalin 75 mg BID, duloxetine 60 mg daily, amlodipine 5 mg daily, pantoprazole 40 mg daily, calcium carbonate 500 mg daily, and inhaled budesonide/formoterol 160/4.5 µg BID.
+[Case 11 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the baseline laboratory evaluations, including complete blood count, electrolyte panel, liver function tests, and any other relevant tests?"}}
+[Case 11 Round 1 Step 1] ENV: Cbc:
+                              CBC: Hb 12.8 g/dL, WBC 11.4 × 10⁹/L, Plt 296 × 10⁹/L; MCV 88 fL, MCH 29 pg; differential: neutrophils 70%, lymphocytes 19%, monocytes 8%, eosinophils 2%, basophils 1%.
+[Case 11 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the urgent non-invasive imaging, such as a CT scan of the neck and thorax, to evaluate the extent of the cervical mass and potential airway compromise?"}}
+[Case 11 Round 1 Step 2] ENV: Ct Staging:
+                              CT neck/chest/abdomen/pelvis showed bulky left cervical lymphadenopathy (levels II-IV) with confluent nodes up to 4.2 cm short axis, encasing the left carotid sheath. Bulky anterior mediastinal and paratracheal lymphadenopathy (largest 7.6 ×x4.8 cm) causing eccentric tracheal compression with luminal narrowing and mild rightward tracheal deviation. Multiple bilateral pulmonary round nodules (3-8 mm) without cavitation; no pleural effusion. No pathologic lymphadenopathy was seen below the diaphragm, liver and spleen were in normal size and attenuation.
+[Case 11 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Lymphoma", "differentials": ["Hodgkin lymphoma", "Non-Hodgkin lymphoma"], "treatment_plan": [{"action": "stabilize airway", "intention": "supportive", "priority": 1}, {"action": "tissue biopsy", "intention": "diagnostic", "priority": 2}, {"action": "consult oncology", "intention": "therapeutic", "priority": 3}]}}}
+[Case 11 Round 2 Step 3] ENV: {"case_id": 11, "round": 1, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (diagnostic clarification and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected lymphoma. You can organize tissue biopsies, bone marrow assessment, comprehensive staging including advanced imaging, and multidisciplinary consultations. Some specialized tests may still be in progress or pending external analysis.
+                              Request additional information or solve.
+[Case 11 Round 2 Step 3] JUDGE: {
+                                  "case_id": 11,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the tissue biopsy of the left cervical lymph node, and has a bone marrow biopsy and aspirate been performed to assess for marrow involvement?"}}
+[Case 11 Round 2 Step 4] ENV: Lymph Node Biopsy:
+                              Lymph node biopsy:
+                              Match 15th 2025: Sections showed a diffuse effacement of the nodal architecture by a polymorphous infiltrate of atypical large lymphoid cells arranged in a diffuse growth pattern. The tumor cells exhibited vesicular chromatin, prominent nucleoli, and moderate amounts of amphophilic cytoplasm. Occasional multinucleated forms and apoptotic bodies were observed.
+                              Immunohistochemistry:
+                              The neoplastic cells demonstrated strong nuclear expression of PAX5, partial membranous expression of CD20, and variable nuclear expression of BCL6 and MUM1, ranging from moderate to strong across different tumor areas. The proliferation index (Ki-67) was approximately 60–70%. BCL2 was strongly expressed in the majority of tumor cells. CD30 showed moderate positivity in approximately 40% of cells, while CD15 demonstrated focal, partial expression. CD10 expression was restricted to stromal and reactive elements only. EBER in situ hybridization was negative for Epstein–Barr virus.
+                              Immunostains confirmed B-cell lineage with strong expression of CD45 and CD79a. ALK1 was negative.
+[Case 11 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the bone marrow biopsy and aspirate, and have any additional tests such as flow cytometry, cytogenetic analysis, or molecular studies (e.g. PCR for immunoglobulin heavy chain gene rearrangement) been performed to further characterize the lymphoma?"}}
+[Case 11 Round 2 Step 5] ENV: Bone Marrow:
+                              Match 15th, 2025: The bone marrow was mildly hypocellular (cellularity approximately 40%) with preserved trilineage hematopoiesis. Myeloid and erythroid precursors were appropriately represented with normal maturation. Megakaryocytes were adequate in number and morphology. No increase in blasts was seen (1–2%). Flow cytometry demonstrated a normal distribution of myeloid, erythroid, and lymphoid populations without evidence of a clonal B-cell or T-cell population; no aberrant immunophenotype was identified. The trephine biopsy revealed seven marrow spaces with delicate, viable trabeculae. Marrow cellularity was mildly reduced (≈35%), consistent with age-related hypoplasia and therapy-associated changes. Fat distribution was irregular with pronounced marrow edema. Granulopoiesis was reduced but showed preserved maturation to segmented neutrophils. Erythropoiesis was also decreased, composed of small, dissociated erythroid foci with regular maturation and no significant atypia. The granulopoiesis-to-erythropoiesis ratio was approximately 1.5:1. Megakaryopoiesis was represented by isolated, normally lobulated megakaryocytes. Increased hemosiderin was present within reticulum cells. Reticulin staining showed a delicate fiber network (MF-0/1). Immunohistochemistry demonstrated scattered interstitial CD79a- and PAX5-positive B lymphocytes mixed with few CD3-positive T lymphocytes. No blast excess was observed, CD34- or CD117 positive precursors each <1%.
+[Case 11 Round 2 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Diffuse large B-cell lymphoma (DLBCL)", "differentials": ["None"], "treatment_plan": [{"action": "R-CHOP chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Consider radiation therapy for bulky disease", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care and monitoring for treatment response and potential toxicity", "intention": "supportive", "priority": 3}]}}}
+[Case 11 Round 3 Step 6] ENV: {"case_id": 11, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 3 Step 6] ENV: Round 3 begins.
+                              Setting: Specialist lymphoma conference (definitive diagnosis and treatment strategy)
+                              Capabilities: You now have access to definitive histopathology, cytogenetics, molecular studies, complete staging, and detailed prior treatment history. You are expected to integrate these data with comorbidities and donor availability to establish the final diagnosis, risk stratification, and a long-term treatment plan including systemic therapy and possible cellular therapies.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 11 Round 3 Step 6] JUDGE: {
+                                  "case_id": 11,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 3 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Double-expressor lymphoma (DEL), a subtype of diffuse large B-cell lymphoma (DLBCL) with co-expression of MYC and BCL2", "differentials": ["None"], "treatment_plan": [{"action": "Intensive chemotherapy with DA-R-EPOCH (dose-adjusted rituximab, etoposide, prednisone, vincristine, cyclophosphamide, and doxorubicin)", "intention": "therapeutic", "priority": 1}, {"action": "Consider consolidation with high-dose chemotherapy and autologous stem cell transplantation (ASCT) for eligible patients", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care, including growth factor support and infection prophylaxis, as well as close monitoring for treatment response and potential toxicity", "intention": "supportive", "priority": 3}]}}}
+[Case 11 Round 3 Step 7] ENV: {"case_id": 11, "round": 3, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 11 Round 3 Step 7] JUDGE: {
+                                  "case_id": 11,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

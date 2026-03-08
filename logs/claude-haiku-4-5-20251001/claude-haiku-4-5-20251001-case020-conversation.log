@@ -1,0 +1,191 @@
+[Case 20 Round 1 Step 0] ENV: Case 20:
+                              Initial presentation:
+                              - Age: 77
+                              - Sex: male
+                              - Chief complaint: Progressive dyspnea, ascites, and a painful gluteal mass in a patient with CLL
+                              - Vital signs: BP 105/65 mmHg, HR 112/min, RR 22/min, Temp 37.7 °C, SpO₂ 92%
+                              Setting: Acute hematology intake
+                              Capabilities: Rapid bedside assessment with point-of-care imaging and routine laboratory panels is available, but invasive sampling or specialized molecular diagnostics are not yet ready.
+                              Provide either a request for a single information item or solve.
+[Case 20 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 20 Round 1 Step 0] ENV: Baseline Labs:
+                              Hb 9.2 g/dL, WBC 41 ×10⁹/L (82% lymphocytes), Plt 78 ×10⁹/L. Coagulation: aPTT 31 s, INR 1.1, fibrinogen 281 mg/dL, D-dimer 2987 µg/L FEU. Chemistry: Na 138 mmol/L, K 4.4 mmol/L, creatinine 1.4 mg/dL, AST 185 U/L, ALT 210 U/L, bilirubin 2.8 mg/dL, LDH 852 U/L, uric acid 7.8 mg/dL, albumin 2.8 g/dL, total protein 5.2 g/dL, NT-proBNP 780 pg/mL, Troponin T 0.02 ng/mL, IgG 359 mg/dL.
+[Case 20 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "transthoracic echocardiography"}}
+[Case 20 Round 1 Step 1] ENV: Initial Imaging:
+                              Chest X-ray: bilateral pleural effusions with basal atelectasis (right > left); Abdominal ultrasound: four-quadrant ascites, multiple enlarged paraaortic and mesenteric nodes up to 6.5 cm, bulky hepatic hilum conglomerate, hepatomegaly with nodular contour, splenomegaly 18.2 × 9.6 cm. Echocardiogram: LVEF 51% with RV dilatation and pulmonary hypertension.
+[Case 20 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "physical examination with focused assessment of the gluteal mass, hepatosplenomegaly, and ascites"}}
+[Case 20 Round 1 Step 2] ENV: History Physical:
+                              2025-09-23: Presents with progressive dyspnea, abdominal distension, and painful swelling of the left gluteal region with induration over old scars from animal bites. Left leg edema present. Pulmonary exam: diminished breath sounds with basal crackles. Vital signs as listed. Current meds: beclometasone/formoterol inhaler, HCTZ, levothyroxine, vitamins, pantoprazole, amlodipine, aciclovir, allopurinol, bisoprolol, candesartan, atorvastatin, zanubrutinib 160 mg daily.
+[Case 20 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "ultrasound of the left gluteal region and soft tissues to characterize the mass"}}
+[Case 20 Round 1 Step 3] ENV: 'initial_imaging' already provided.
+[Case 20 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "blood cultures and lactate level"}}
+[Case 20 Round 1 Step 4] ENV: 'blood cultures and lactate level' not available. Try 'baseline_labs' instead.
+                              Lactate would be part of the baseline chemistry, which is available in this round, but blood culture results (microbiology) are not included in the case. You can request "baseline_labs" to get chemistry/CBC results (including lactate if present).
+[Case 20 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "CT chest and abdomen with pulmonary embolism protocol"}}
+[Case 20 Round 1 Step 5] ENV: 'extended_evaluations' available in round 2.
+                              CT chest/abdomen and PE-focused imaging fall under extended evaluations, which are not available in round 1. Consider requesting baseline labs or initial imaging (chest X-ray/ultrasound) which are available now.
+[Case 20 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "peripheral blood smear with morphologic assessment"}}
+[Case 20 Round 1 Step 6] ENV: 'peripheral blood smear with morphologic assessment' not available. Try 'baseline_labs' instead.
+                              This case does not include a standalone peripheral blood smear item. You can request baseline labs (CBC) which is available in this round and often accompanies smear findings.
+[Case 20 Round 1 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Chronic lymphocytic leukemia with progressive disease: bulky lymphadenopathy, hepatosplenomegaly, pleural effusions, ascites, and extramedullary involvement (gluteal mass). Secondary pulmonary hypertension and cardiac strain. Possible concurrent soft tissue infection.", "differentials": ["CLL with Richter transformation (lymphoma transformation)", "CLL with superimposed soft tissue infection/abscess in gluteal region", "Pulmonary embolism contributing to dyspnea and RV strain", "Malignant pericardial involvement"], "treatment_plan": [{"action": "Urgent pleural fluid analysis and therapeutic pleural drainage if compromise of gas exchange", "intention": "therapeutic", "priority": 1}, {"action": "Assess gluteal mass urgently: imaging characterization and possible needle biopsy to distinguish CLL extramedullary disease from infected hematoma/abscess; consider empiric broad-spectrum antibiotics if infection suspected", "intention": "diagnostic", "priority": 1}, {"action": "Ascitic fluid analysis to confirm malignant etiology", "intention": "diagnostic", "priority": 2}, {"action": "Evaluate for thromboembolism (DVT/PE) given elevated D-dimer, RV dilatation, and left leg edema", "intention": "diagnostic", "priority": 2}, {"action": "Optimize diuretic therapy for pulmonary edema and ascites; monitor fluid balance and electrolytes", "intention": "supportive", "priority": 2}, {"action": "Monitor troponin and NT-proBNP trends; consider cardiology consultation if myocarditis suspected", "intention": "diagnostic", "priority": 3}]}}}
+[Case 20 Round 2 Step 7] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 2 Step 7] ENV: Round 2 begins.
+                              Setting: Inpatient diagnostic unit
+                              Capabilities: The patient can undergo targeted imaging, bone marrow or tissue sampling, and comprehensive flow cytometry while longer-turnaround molecular studies are still pending.
+                              Request additional information or solve.
+[Case 20 Round 2 Step 7] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 20 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "comprehensive flow cytometry with assessment for clonal evolution or transformation"}}
+[Case 20 Round 2 Step 8] ENV: Bone Marrow:
+                              Hypercellular marrow with replacement by small mature lymphocytes plus a second population of large atypical lymphoid cells. Flow: two B-cell clones – Population 1 CD19⁺/CD20^dim/CD5⁺/CD23⁺/kappa^dim (CLL-like); Population 2 CD19⁺/CD20⁺⁺/CD5⁺/CD22⁺/CD79b⁺/FMC7⁺/kappa-restricted/CD23⁻ consistent with Richter transformation. Plasma cells <1%.
+[Case 20 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "CT abdomen and pelvis with IV contrast to stage disease and characterize the gluteal mass"}}
+[Case 20 Round 2 Step 9] ENV: Extended Evaluations:
+                              CT thorax (2025-09-26): segmental pulmonary embolism right lower lobe with infarction/infarct pneumonia; bilateral pleural effusions. PET-CT (2025-09-30): intensely FDG-avid nodal disease (cervical to pelvic), bulky retroperitoneal/hepatic nodes, avid gluteal mass, uptake in infarct zone. Gluteal biopsy (10-01): diffuse large B-cell lymphoma CD19⁺/CD20⁺/PAX5⁺/CD5⁺/CD23⁻, Ki-67 ~80%. Lumbar puncture: clear CSF, no malignant cells.
+[Case 20 Round 2 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Chronic lymphocytic leukemia with Richter transformation to diffuse large B-cell lymphoma (DLBCL, CD5-positive, Ki-67 ~80%), complicated by segmental pulmonary embolism with infarction and infarct pneumonia, bulky extranodal disease (hepatic, gluteal), secondary pulmonary hypertension, and right heart strain.", "differentials": ["Richter transformation with aggressive DLBCL phenotype (histologically confirmed)", "Pulmonary embolism with infarction and secondary pneumonia (imaging confirmed)", "Tumor lysis syndrome risk (high disease burden, DLBCL biology, elevated uric acid)", "Hepatic sinusoidal involvement/veno-occlusive disease contributing to ascites and portal hypertension"], "treatment_plan": [{"action": "Initiate therapeutic anticoagulation for confirmed segmental PE; consider IVC filter if contraindication to anticoagulation or recurrent thromboembolism", "intention": "therapeutic", "priority": 1}, {"action": "Broad-spectrum antibiotics for fever and infarct pneumonia; obtain sputum cultures if productive", "intention": "therapeutic", "priority": 1}, {"action": "Aggressive hydration, allopurinol, and monitor for tumor lysis syndrome given high disease burden and DLBCL transformation; consider rasburicase if urate rises significantly", "intention": "supportive", "priority": 1}, {"action": "Initiate chemotherapy (e.g., R-CHOP or rituximab-based regimen) after acute stabilization for transformed DLBCL; multidisciplinary discussion regarding intensity given age 77 and cardiac comorbidities", "intention": "therapeutic", "priority": 2}, {"action": "Diuretic optimization and consider cytoreduction of ascites and pleural effusions via paracentesis if respiratory compromise worsens", "intention": "supportive", "priority": 2}, {"action": "Serial cardiac monitoring (troponin, NT-proBNP); cardiology consultation for right heart strain and pulmonary hypertension management", "intention": "diagnostic", "priority": 2}, {"action": "Repeat metabolic panel and CBC after 24-48 hours to assess response to therapy and risk of tumor lysis complications", "intention": "diagnostic", "priority": 3}]}}}
+[Case 20 Round 3 Step 10] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 20 Round 3 Step 10] ENV: Round 3 begins.
+                               Setting: Definitive staging and planning phase
+                               Capabilities: Full cytogenetic, molecular, and response assessments plus historical treatment data are accessible to guide transplant or cellular therapy planning.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 20 Round 3 Step 10] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 20 Round 3 Step 11] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics and molecular markers (FISH panel: del(17p), del(11q), trisomy 12, mutational status including TP53, NOTCH1, SF3B1) for prognostic stratification and transplant candidacy"}}
+[Case 20 Round 3 Step 11] ENV: Molecular Profile:
+                               Sequencing: TP53 mutation VAF 68%, NOTCH1 frameshift VAF 42%, SF3B1 VAF 38%, BTK C481S resistance mutation; IgHV unmutated, ZAP-70 positive.
+[Case 20 Round 3 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Chronic lymphocytic leukemia with Richter transformation to diffuse large B-cell lymphoma (CD5-positive DLBCL, Ki-67 ~80%), high-risk molecular phenotype (TP53 mutation VAF 68%, unmutated IgHV, ZAP-70-positive, NOTCH1 and SF3B1 mutations), with BTK inhibitor resistance (C481S). Complicated by acute pulmonary embolism with segmental RLL infarction and infarct pneumonia, bulky extranodal disease, secondary pulmonary hypertension, and right heart strain.", "differentials": ["Richter transformation with TP53-mutated, high-grade DLBCL (confirmed)", "Transformed DLBCL refractory to prior BTK inhibitor therapy", "Thromboembolism in setting of malignancy with consumptive coagulopathy"], "treatment_plan": [{"action": "Initiate therapeutic anticoagulation (LMWH or unfractionated heparin, then transition to warfarin or DOAC if feasible) for segmental PE with infarction; assess candidacy for inferior vena cava filter if contraindication to anticoagulation emerges", "intention": "therapeutic", "priority": 1}, {"action": "Empiric broad-spectrum antibiotics and respiratory support for infarct pneumonia; obtain sputum culture and antimicrobial susceptibilities", "intention": "therapeutic", "priority": 1}, {"action": "Initiate intensive tumor lysis prophylaxis: aggressive IV hydration, allopurinol continuation, and rasburicase administration given high disease burden, DLBCL biology, and TP53 alterations", "intention": "supportive", "priority": 1}, {"action": "After acute stabilization (anticoagulation, infection control, TLS prophylaxis in place), initiate front-line chemotherapy (rituximab-CHOP or comparable intensive regimen) for Richter transformation; multidisciplinary evaluation of fitness for intensive therapy given age 77, cardiac comorbidities, and TP53/high-risk mutations", "intention": "therapeutic", "priority": 2}, {"action": "Early allogeneic hematopoietic stem cell transplantation evaluation in remission (if achieved) given TP53 mutation, BTK inhibitor resistance, and poor prognosis with chemotherapy alone; consider clinical trial enrollment for novel agents targeting high-risk CLL/DLBCL", "intention": "therapeutic", "priority": 2}, {"action": "Serial CBC, comprehensive metabolic panel, LDH, uric acid, and phosphorus monitoring every 12\u201324 hours during induction chemotherapy to assess response and detect tumor lysis syndrome", "intention": "diagnostic", "priority": 2}, {"action": "Cardiology consultation for right heart strain and pulmonary hypertension management; monitor NT-proBNP and troponin trends", "intention": "diagnostic", "priority": 3}]}}}
+[Case 20 Round 3 Step 12] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "partially_correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 20 Round 3 Step 12] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "partially_correct",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }

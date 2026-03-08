@@ -1,0 +1,211 @@
+[Case 10 Round 1 Step 0] ENV: Case 10:
+                              Initial presentation:
+                              - Age: 21
+                              - Sex: female
+                              - Chief complaint: Post-induction consultation for T-ALL with prior sinus vein thrombosis and intracerebral hemorrhage
+                              - Vital signs: Blood pressure 122/74 mmHg, heart rate 96/min regular, respiratory rate 15/min, temperature 37.3 °C, oxygen saturation 97% on room air.
+                              Setting: Outpatient hematology clinic (post-induction consultation)
+                              Capabilities: You are evaluating a clinically stable patient after completion of induction therapy. You can review history and examination findings, request routine laboratory evaluations, and arrange standard imaging and specialist consultations appropriate to an ambulatory setting. More invasive procedures and specialized analyses usually require additional planning.
+                              Provide either a request for a single information item or solve.
+[Case 10 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Current anticoagulation status (including type, dose, duration, and last administration date of any anticoagulant therapy)"}}
+[Case 10 Round 1 Step 0] ENV: History Physical:
+                              2025-06-29: The patient presents following completion of induction chemotherapy for T-ALL, seeking discussion regarding further treatment options. During induction, she developed a sinus vein thrombosis complicated by a small left-hemispheric intracerebral hemorrhage. Neurological sequelae include mild right arm weakness and impaired fine motor skills, for which neurological rehabilitation is planned. She remains uncertain about continuing intensive therapy and expresses consideration of treatment discontinuation. On examination, her general condition is good; she is alert, oriented, and cooperative. Skin and mucous membranes are pale. Several puncture sites on the left hand show minor erythema and superficial inflammation, consistent with previous peripheral venous catheter insertions. No palpable lymphadenopathy or hepatosplenomegaly. Cardiopulmonary examination: Normal heart sounds, no murmurs; lungs clear to auscultation. Abdomen soft and non-tender. Neurological examination: Cranial nerves intact; mild weakness and reduced grip strength in the right arm, otherwise full strength with normal reflexes, preserved coordination, and intact sensation.
+                              Current medication: Levothyroxine 75 µg 1-0-0, leuprorelin monthly, enoxaparin 40 mg s.c. q12h, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), valaciclovir 500 mg 1-0-0, vitamin D supplementation. Self-medication with selenium and omega-3 fatty acids.
+[Case 10 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Recent neuroimaging results (MRI/MRV) assessing resolution of sinus vein thrombosis and intracerebral hemorrhage"}}
+[Case 10 Round 1 Step 1] ENV: 'extended_diagnostics' available in round 2.
+                              Neuroimaging (brain MRI/MRV) is included under extended diagnostics, which is not available in this round. Consider requesting items available now such as history/physical, CBC/chemistry, or chest/abdominal imaging if relevant.
+[Case 10 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Complete blood count (CBC) with differential and platelet count to assess for anemia, thrombocytopenia, and infection risk given recent hemorrhage and ongoing anticoagulation"}}
+[Case 10 Round 1 Step 2] ENV: Cbc Chemistry:
+                              Hb 9.4 g/dL, WBC 3.3 ×10⁹/L, Plt 122 ×10⁹/L; ANC 2.4 ×10⁹/L, lymphocytes 0.6 ×10⁹/L, monocytes 0.3 ×10⁹/L; no peripheral blasts detected.
+                              Coagulation: INR 1.4, aPTT 31 sec, D-dimer 1850 µg/L FEU.
+                              Na 137 mmol/L, K 3.7 mmol/L, creatinine 1.1 mg/dL (eGFR 72 mL/min/1.73 m²), AST 86 U/L, ALT 91 U/L, bilirubin 1.2 mg/dL, LDH 285 U/L, uric acid 5.6 mg/dL.
+[Case 10 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-ALL in remission post-induction with complicated sinus venous thrombosis (CVST) and intracerebral hemorrhage (ICH)", "differentials": ["Recurrent thrombosis", "Hemorrhagic complication from anticoagulation", "Disease relapse"], "treatment_plan": [{"action": "Continue therapeutic enoxaparin 40mg SC q12h", "intention": "therapeutic", "priority": 1}, {"action": "Check anti-Xa levels to verify enoxaparin efficacy", "intention": "diagnostic", "priority": 1}, {"action": "Monitor CBC weekly", "intention": "diagnostic", "priority": 1}, {"action": "Counsel patient on benefits of continuing consolidation therapy", "intention": "diagnostic", "priority": 2}, {"action": "Consult hematology-oncology for treatment continuation strategy", "intention": "therapeutic", "priority": 2}, {"action": "Educate about signs of recurrent thrombosis or bleeding", "intention": "therapeutic", "priority": 2}, {"action": "Assess liver function in 1 week", "intention": "diagnostic", "priority": 2}, {"action": "Coordinate neurology follow-up for ICH rehabilitation", "intention": "therapeutic", "priority": 3}, {"action": "Schedule monthly MRI/MRV when available", "intention": "diagnostic", "priority": 3}, {"action": "Review anticoagulation duration with hematology", "intention": "diagnostic", "priority": 3}]}}}
+[Case 10 Round 2 Step 3] ENV: {"case_id": 10, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 10 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital hematology workup
+                              Capabilities: The patient is undergoing structured follow-up after induction and consolidation. You can organize marrow-based assessments, extended evaluations by consulting services, and additional imaging. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 10 Round 2 Step 3] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow biopsy results to confirm remission status post-induction therapy for T-ALL"}}
+[Case 10 Round 2 Step 4] ENV: Bone Marrow:
+                              The bone marrow was normocellular with increased erythropoiesis and granulopoiesis, and megakaryopoiesis showing occasional juvenile forms. There was no excess of blasts or plasma cells, and no morphologic evidence of relapse, dysplasia, or fibrosis. Flow cytometry demonstrated a reduced B-cell compartment with a predominantly immature phenotype (CD10⁺/CD19⁺). Granulopoiesis appeared relatively increased with a normal maturation pattern. Approximately 2% CD34⁺/CD33⁺ myeloid blasts were detected, without evidence of lymphoid blasts or aberrant antigen expression. Initial immunophenotype at first diagnosis was: ETP-ALL: CD7+, CD34+, CD38+, TdT+, partly positive for CD33+ and CD117+ no CD1a, sCD3-, CD5 or CD8.
+[Case 10 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-ALL in remission post-induction with resolved sinus venous thrombosis (CVST) and stable intracerebral hemorrhage (ICH)", "differentials": ["Anticoagulant-associated bleeding risk", "Residual hypercoagulable state", "Hepatotoxicity from chemotherapy"], "treatment_plan": [{"action": "Continue enoxaparin 40 mg SC q12h with anti-Xa monitoring (target 0.6-1.0 IU/mL)", "intention": "therapeutic", "priority": 1}, {"action": "Transition to apixaban 2.5 mg BID after 3 months of enoxaparin if neuroimaging confirms thrombus resolution", "intention": "therapeutic", "priority": 1}, {"action": "Weekly CBC and liver function tests until platelet count >150 \u00d710\u2079/L", "intention": "diagnostic", "priority": 1}, {"action": "Urgent neurology consultation for patient's concerns about treatment continuation", "intention": "therapeutic", "priority": 2}, {"action": "Hematology-oncology joint counseling session addressing survival benefit of consolidation therapy", "intention": "therapeutic", "priority": 2}, {"action": "Hold enoxaparin temporarily if platelet count <50 \u00d710\u2079/L or new neurological symptoms", "intention": "therapeutic", "priority": 3}, {"action": "Repeat brain MRI/MRV in 4 weeks to guide anticoagulation duration", "intention": "diagnostic", "priority": 3}, {"action": "Discontinue levothyroxine and check TSH to assess for chemotherapy-induced hypothyroidism", "intention": "diagnostic", "priority": 3}]}}}
+[Case 10 Round 3 Step 5] ENV: {"case_id": 10, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 10 Round 3 Step 5] ENV: Round 3 begins.
+                              Setting: Specialist conference focusing on MRD status and transplant planning
+                              Capabilities: You now have access to specialized molecular assessments, measurable residual disease data, and a detailed treatment history. You are expected to integrate these findings with donor availability and comorbidities to define prognosis and formulate a definitive strategy, including potential allogeneic transplantation or trial participation.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 10 Round 3 Step 5] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-ALL (ETP-ALL subtype) in morphologic remission post-induction with high-risk disease requiring allogeneic hematopoietic stem cell transplant (HSCT)", "differentials": ["MRD-positive minimal residual disease", "Thromboembolic recurrence risk", "Anticoagulation-related bleeding complications"], "treatment_plan": [{"action": "Continue enoxaparin 40 mg SC q12h with anti-Xa monitoring (target 0.6-1.0 IU/mL) until MRI/MRV confirms sinus vein thrombosis resolution", "intention": "therapeutic", "priority": 1}, {"action": "Initiate consolidation chemotherapy (hyper-CVAD) with HSCT planning", "intention": "therapeutic", "priority": 1}, {"action": "Urgent allogeneic HSCT consultation for donor evaluation and transplant timing", "intention": "therapeutic", "priority": 1}, {"action": "Repeat brain MRI/MRV in 2 weeks to guide anticoagulation duration", "intention": "diagnostic", "priority": 2}, {"action": "Multidisciplinary counseling session addressing survival benefit of transplant (85% vs 40% with chemo alone in ETP-ALL)", "intention": "therapeutic", "priority": 2}, {"action": "Monitor platelets twice weekly until >150 \u00d710\u2079/L; hold enoxaparin if <50 \u00d710\u2079/L", "intention": "therapeutic", "priority": 2}, {"action": "Check MRD via NGS (current status: negative at 10\u207b\u2074 sensitivity)", "intention": "diagnostic", "priority": 3}, {"action": "Continue neurology follow-up for ICH rehabilitation and anticoagulation clearance", "intention": "therapeutic", "priority": 3}]}}}
+[Case 10 Round 3 Step 6] ENV: {"case_id": 10, "round": 3, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 3 Step 6] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

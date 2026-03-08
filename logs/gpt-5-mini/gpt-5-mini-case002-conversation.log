@@ -1,0 +1,235 @@
+[Case 2 Round 1 Step 0] ENV: Case 2:
+                             Initial presentation:
+                             - Age: 24
+                             - Sex: female
+                             - Chief complaint: New skin changes on the back and extremities
+                             - Vital signs: BP 120/75 mmHg, HR 116/min, T° 36.8 °C, respiratory rate 16/min.
+                             Setting: Outpatient/Day Unit (Initial Presentation)
+                             Capabilities: You are evaluating a clinically stable patient with new symptoms in an ambulatory or day-unit setting. You can perform a focused history and examination, obtain routine blood panels, and arrange standard non-invasive imaging as first-line tests. Invasive tissue sampling and specialized analyses usually require additional coordination and are not available in this round.
+                             Provide either a request for a single information item or solve.
+[Case 2 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "focused physical examination (detailed description of skin lesions: morphology, distribution, size, color, blanching/nonblanching, presence of scale/crust/ulceration; check for lymphadenopathy, mucosal lesions, and hepatosplenomegaly)"}}
+[Case 2 Round 1 Step 0] ENV: History Physical:
+                             On June 4, 2025, the patient presented with new skin changes, first noticed by her partner on the back and now also on the extremities. She reported intermittent headaches and mild nausea, as well as chronic joint pain and stiffness. Otherwise, she was in good general condition, afebrile, and showed no signs of skin or mucosal GvHD. A marked psychological stress reaction was noted.
+                             Current medication: pantoprazole 40 mg 1-0-0, vitamin D 20,000 IE 1×/week, calcium 500 mg 1-0-0, posaconazole 300 mg 1×/d, ruxolitinib 10 mg 1-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg orally once daily, three times per week (Monday, Wednesday, Friday), steroid cream p.r.n.
+[Case 2 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 2 Round 1 Step 1] ENV: Cbc:
+                             CBC: Hb 14.2 g/dL, WBC 6.8 ×10⁹/L, Plt 240 ×10⁹/L; MCV 89 fL, MCH 30 pg; differential: neutrophils 58%, lymphocytes 32%, monocytes 7%, eosinophils 2%, basophils 1%.
+[Case 2 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "detailed dermatologic examination: precise morphology of lesions (macules/papules/vesicles/pustules/plaques/petechiae), size, color, blanching vs nonblanching, presence of scale/crust/ulceration or excoriation, distribution/pattern, associated pruritus or pain, and exam for regional lymphadenopathy and hepatosplenomegaly"}}
+[Case 2 Round 1 Step 2] ENV: 'history_physical' already provided.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "history: transplant history (type of transplant, indication, date), history of graft-vs-host disease, and timing of when current immunosuppressive/antimicrobial medications (ruxolitinib, posaconazole, co-trimoxazole, valaciclovir, pantoprazole) were started relative to onset of the rash; any recent new medications or allergy history"}}
+[Case 2 Round 1 Step 3] ENV: 'history_physical' already provided.
+                             (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "comprehensive metabolic panel (CMP) including AST, ALT, ALP, total bilirubin, creatinine, and electrolytes"}}
+[Case 2 Round 1 Step 4] ENV: Chemistry:
+                             Chemistry: Na 140 mmol/L, K 4.2 mmol/L, creatinine 1.2 mg/dL, BUN 14 mg/dL, AST 22 U/L, ALT 24 U/L, bilirubin 0.7 mg/dL, LDH 180 U/L, uric acid 5.0 mg/dL, Ca²⁺ 2.35 mmol/L, NT-proBNP 1250 pg/mL, Troponin T 0.024 ng/mL.
+[Case 2 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "high-resolution clinical photographs of the skin lesions (close-up and wide-field views of back and affected extremities) including images with and without tangential lighting"}}
+[Case 2 Round 1 Step 5] ENV: 'high-resolution clinical photographs of the skin lesions (close-up and wide-field views of back and affected extremities) including images with and without tangential lighting' not available. Try 'history_physical' instead.
+                             This case does not include high-resolution clinical photographs. You can request the physical exam description of the skin lesions (history_physical), which will provide clinical appearance and distribution details.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "ESR and CRP"}}
+[Case 2 Round 1 Step 6] ENV: 'ESR and CRP' not available. Request a specific test or report.
+                             ESR and CRP would fall under the infectious_workup/inflammatory markers item, which is not available in round 1. Consider requesting available labs (e.g., CBC, chemistry, or coagulation) or the history/physical in this round.
+                             (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "focused physical examination: detailed description of the skin lesions (morphology: macules/papules/vesicles/pustules/plaques/petechiae), size, color, blanching vs nonblanching, scale/crust/ulceration, distribution/pattern, presence of pruritus or pain, plus exam for regional lymphadenopathy and hepatosplenomegaly"}}
+[Case 2 Round 1 Step 7] ENV: 'history_physical' already provided.
+                             (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 1 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Probable drug-induced morbilliform eruption (most likely TMP-SMX or other recent drug) in an immunosuppressed post-transplant patient", "differentials": ["Disseminated viral exanthem (varicella-zoster virus or HSV)", "Cutaneous chronic graft-versus-host disease", "Allergic/contact dermatitis", "Erythema multiforme / early Stevens-Johnson syndrome", "Leukemia cutis (less likely given normal counts)"], "treatment_plan": [{"action": "Immediate dermatology consultation and punch biopsy of a representative lesion for histopathology", "intention": "diagnostic", "priority": 1}, {"action": "Obtain lesion swab for VZV/HSV PCR (and bacterial culture) to evaluate for viral or infective etiology", "intention": "diagnostic", "priority": 1}, {"action": "Hold co-trimoxazole (TMP-SMX) and any other nonessential recent/new medications suspected to cause rash pending evaluation", "intention": "therapeutic", "priority": 1}, {"action": "Initiate symptomatic treatment with high-potency topical corticosteroid to affected areas and oral antihistamine for pruritus", "intention": "supportive", "priority": 2}, {"action": "If lesions progress (vesiculation, mucosal involvement), systemic signs develop, or PCR/biopsy indicate viral dissemination or severe drug reaction, admit and start IV acyclovir and coordinate with dermatology and infectious diseases for systemic immunomodulatory therapy (e.g., systemic steroids) as indicated", "intention": "therapeutic", "priority": 2}]}}}
+[Case 2 Round 2 Step 8] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "correct", "correct", "correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 2 Round 2 Step 8] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Workup)
+                             Capabilities: The patient is now admitted for further evaluation. You can organize targeted tissue sampling and a broader diagnostic workup, including advanced imaging and initial pathology assessments. Some specialized analyses may still be pending or require referral to external laboratories. They will be available in the next round.
+                             Request additional information or solve.
+[Case 2 Round 2 Step 8] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "correct",
+                                     "correct",
+                                     "correct",
+                                     "correct",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 2 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "punch skin biopsy with histopathology report (H&E) and available immunohistochemistry results from a representative lesion"}}
+[Case 2 Round 2 Step 9] ENV: Skin Biopsy:
+                             Skin biopsy (2025-06-07): The dermis and subcutis are diffusely infiltrated by atypical hematopoietic cells in a perivascular and interstitial distribution. The cells show irregular nuclear contours, vesicular chromatin, and occasional nucleoli. Mitotic figures are frequent. Immunohistochemistry: CD34-, CD33+, MPO+, Lysozyme and CD68+, CD117+, negative for CD20-, CD19-, CD3-. Molecular pathology: NPM1 mutation present in cutaneous infiltration.
+[Case 2 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "bone marrow aspirate and biopsy with morphology, flow cytometry, cytogenetics (karyotype/FISH) and molecular panel including NPM1 and FLT3"}}
+[Case 2 Round 2 Step 10] ENV: 'bone marrow aspirate and biopsy with morphology, flow cytometry, cytogenetics (karyotype/FISH) and molecular panel including NPM1 and FLT3' not available. Try 'bone_marrow' instead.
+                              You requested multiple marrow studies. Bone marrow morphology, marrow flow cytometry, and conventional cytogenetics/karyotype are available in this round; the comprehensive bone-marrow molecular/NGS panel (including NPM1/FLT3) is only released in a later round. Consider requesting the individual available items (bone_marrow, bone_marrow_flow, cytogenetics) now and the molecular panel in the next round.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "bone_marrow (aspirate and biopsy morphology report) including cellularity, blast percentage, and presence of dysplasia"}}
+[Case 2 Round 2 Step 11] ENV: Bone Marrow:
+                              June 5, 2025: Morphology: Normocellular bone marrow with age-appropriate cellularity. Trilineage hematopoiesis present with some dysmorphic maturation in erythroid, myeloid, and megakaryocytic lineages, consistent with reactive changes after alloSCT. No excess blasts or abnormal infiltrates were observed.
+[Case 2 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "bone_marrow_flow (flow cytometry of bone marrow aspirate to assess for abnormal myeloid blasts/phenotype and MRD) "}}
+[Case 2 Round 2 Step 12] ENV: Bone Marrow Flow:
+                              Flow cytometry: Normal distribution of myeloid cells, mostly immature B cells, with an inverse CD4/CD8 T-cell ratio and normal NK-cell populations. No aberrant antigen expression or increased blast population detected.
+[Case 2 Round 2 Step 13] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics (conventional karyotype and leukemia FISH panel) on the bone marrow aspirate"}}
+[Case 2 Round 2 Step 13] ENV: Cytogenetics:
+                              Preliminary cytogenetics: 46, XY.
+[Case 2 Round 2 Step 14] CANDIDATE: {"response": {"action": "request", "request": "peripheral blood testing: PCR for NPM1 mutation and short tandem repeat (STR) donor chimerism analysis"}}
+[Case 2 Round 2 Step 14] ENV: 'peripheral blood testing: PCR for NPM1 mutation and short tandem repeat (STR) donor chimerism analysis' not available. Request a specific test or report.
+                              You are asking about molecular MRD and donor chimerism (PCR for NPM1 and STR chimerism), which corresponds to the MRD/chimerism item. That information is not available until round 3—consider requesting currently available items such as bone marrow biopsy/flow (round 2) or routine labs/imaging in the meantime.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 2 Step 15] CANDIDATE: {"response": {"action": "request", "request": "FDG PET-CT whole-body to assess for additional sites of extramedullary disease"}}
+[Case 2 Round 2 Step 15] ENV: Pet Ct:
+                              FDG-PET/CT (2025-06-07): Revealed multiple FDG-avid cutaneous lesions (SUVmax 6.2) and intra-abdominal lesions adjacent to the left ureter (SUVmax 8.1), accompanied by several mildly FDG-avid mediastinal lymph nodes (SUVmax 4.5).
+[Case 2 Round 2 Step 16] CANDIDATE: {"response": {"action": "request", "request": "detailed transplant history: underlying diagnosis and pre-transplant molecular/cytogenetic markers, date and type of alloSCT, donor sex/relationship, conditioning regimen, history and grade of acute or chronic GVHD, and start dates of current immunosuppressive therapies (including ruxolitinib)"}}
+[Case 2 Round 2 Step 16] ENV: 'treatment_history' available in round 3.
+                              Transplant details and a full prior-treatment timeline are part of the case but are not available in this round. You can instead request currently available items that may help (e.g., cytogenetics, bone marrow findings, history/medication list, or skin biopsy) to assemble some background information now.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 2 Step 17] CANDIDATE: {"response": {"action": "request", "request": "image-guided/core biopsy of the intra-abdominal FDG-avid lesion adjacent to the left ureter with histopathology and immunohistochemistry"}}
+[Case 2 Round 2 Step 17] ENV: 'image-guided/core biopsy of the intra-abdominal FDG-avid lesion adjacent to the left ureter with histopathology and immunohistochemistry' not available. Request a specific test or report.
+                              This case does not include a general image-guided/core biopsy pathology item for an intra‑abdominal lesion. If you meant a specific available item, you can request the PET/CT (FDG avidity) or, if the sample is from skin or bone marrow, request 'skin_biopsy' or 'bone_marrow' respectively.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 2 Round 2 Step 18] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Isolated extramedullary relapse of acute myeloid leukemia (myeloid sarcoma) with NPM1\u2011mutated cutaneous involvement and PET\u2011avid intra\u2011abdominal disease following allogeneic SCT", "differentials": ["Donor\u2011cell leukemia (donor\u2011derived AML)", "Infectious/inflammatory cutaneous process with secondary myeloid reactivity (less likely given IHC and NPM1 mutation)", "Chronic graft\u2011versus\u2011host disease with atypical infiltrate (less likely given myeloid immunophenotype and MPO positivity)"], "treatment_plan": [{"action": "Obtain targeted molecular testing: quantitative PCR/NGS for NPM1 (and FLT3-ITD/TKD) on peripheral blood and bone marrow to confirm clonality and establish MRD baseline", "intention": "diagnostic", "priority": 1}, {"action": "Perform donor/host chimerism analysis (STR) on peripheral blood and bone marrow to assess engraftment and evaluate for donor\u2011cell leukemia", "intention": "diagnostic", "priority": 1}, {"action": "Obtain image\u2011guided/core biopsy of the intra\u2011abdominal FDG\u2011avid lesion (if feasible) for histology, IHC and molecular testing to document extracutaneous involvement and compare molecular profile with skin lesion", "intention": "diagnostic", "priority": 1}, {"action": "Convene urgent multidisciplinary meeting (hematology/ transplant, radiation oncology, pathology, infectious diseases, dermatology) to integrate results and formulate definitive therapy", "intention": "diagnostic", "priority": 1}, {"action": "If confirmed isolated extramedullary relapse, consider local radiotherapy to symptomatic/ bulky lesions (skin and abdominal mass) for local control", "intention": "therapeutic", "priority": 2}, {"action": "Consider immunologic approaches: cautiously reduce/hold nonessential immunosuppression (discussion with transplant team) and evaluate eligibility for donor lymphocyte infusion (DLI) if marrow remains negative and GVHD risk acceptable", "intention": "therapeutic", "priority": 2}, {"action": "Initiate systemic anti\u2011leukemic therapy tailored to post\u2011transplant relapse (options to discuss: hypomethylating agent \u00b1 venetoclax, targeted therapy if actionable mutations identified, or re\u2011induction chemotherapy) based on performance status and transplant team recommendation", "intention": "therapeutic", "priority": 2}, {"action": "Supportive care: review/optimize antimicrobial prophylaxis, topical therapy and symptomatic management of skin lesions (wound care, analgesia, antihistamines as needed), and arrange close inpatient monitoring for progression or systemic involvement", "intention": "supportive", "priority": 3}]}}}
+[Case 2 Round 3 Step 18] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 2 Round 3 Step 18] ENV: Round 3 begins.
+                              Setting: Inpatient Ward / Multidisciplinary Tumor Board (Definitive Characterization)
+                              Capabilities: You now have access to results from specialized tests with longer turnaround times, including detailed pathology, molecular profiling, and measurable residual disease assessments, as well as a complete overview of prior therapies. You are expected to integrate these data into a definitive diagnosis, risk assessment, and treatment strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 2 Round 3 Step 18] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 2 Round 3 Step 19] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Isolated extramedullary relapse of acute myeloid leukemia (myeloid sarcoma), NPM1\u2011mutated, following allogeneic stem cell transplantation with morphologically and flow\u2011negative bone marrow at present", "differentials": ["Occult systemic marrow relapse (molecular MRD without morphologic blasts)", "Infectious or inflammatory cutaneous/intra\u2011abdominal process mimicking myeloid infiltration (less likely given MPO+/CD33+ IHC and NPM1 mutation in lesion)", "Atypical chronic graft\u2011versus\u2011host or drug reaction with reactive myeloid infiltrate (unlikely given clonal NPM1 mutation)"], "treatment_plan": [{"action": "Obtain quantitative NPM1 molecular testing (qPCR/NGS) on peripheral blood and bone marrow to confirm clonal disease burden and establish an MRD baseline", "intention": "diagnostic", "priority": 1}, {"action": "Perform donor/recipient chimerism analysis (STR) on peripheral blood and, if feasible, on CD34+ or marrow fraction to determine origin of the leukemic clone", "intention": "diagnostic", "priority": 1}, {"action": "Obtain image\u2011guided/core biopsy of the intra\u2011abdominal FDG\u2011avid lesion with histology, IHC and molecular testing to document extracutaneous involvement and compare mutation profile to the skin lesion", "intention": "diagnostic", "priority": 1}, {"action": "Convene an urgent multidisciplinary meeting (hematology/transplant, radiation oncology, pathology, infectious diseases, dermatology) to integrate diagnostic results and finalize a coordinated management plan", "intention": "diagnostic", "priority": 1}, {"action": "Deliver involved\u2011field radiotherapy to symptomatic or bulky extramedullary lesions (skin and intra\u2011abdominal mass) for rapid local control while systemic strategy is defined", "intention": "therapeutic", "priority": 2}, {"action": "After discussion with the transplant team, reduce/hold nonessential immunosuppression (e.g., taper ruxolitinib if safe) to enhance graft\u2011versus\u2011leukemia effect, balancing GVHD risk", "intention": "therapeutic", "priority": 2}, {"action": "If marrow remains negative and patient has acceptable risk for GVHD, consider donor lymphocyte infusion (DLI) as an immunologic consolidation strategy for isolated extramedullary relapse", "intention": "therapeutic", "priority": 2}, {"action": "Initiate systemic anti\u2011leukemic therapy tailored to mutation profile and patient fitness: if actionable mutations (e.g., FLT3) are present, use appropriate targeted agent \u00b1 HMA/chemo; if no targetable lesion, consider azacitidine + venetoclax or other salvage regimen as bridge to immune intervention or further transplant discussion", "intention": "therapeutic", "priority": 2}, {"action": "Optimize supportive care: review/adjust antimicrobial prophylaxis, provide wound/skin care and topical agents for lesions, analgesia and antipruritic therapy, and monitor for systemic symptoms or progression", "intention": "supportive", "priority": 3}, {"action": "Arrange short\u2011interval response assessments: serial NPM1 qPCR monitoring and repeat PET\u2011CT or targeted imaging to document treatment response and guide next steps", "intention": "diagnostic", "priority": 2}]}}}
+[Case 2 Round 3 Step 19] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 2 Round 3 Step 19] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

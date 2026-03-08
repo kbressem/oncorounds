@@ -1,0 +1,214 @@
+[Case 15 Round 1 Step 0] ENV: Case 15:
+                              Initial presentation:
+                              - Age: 75
+                              - Sex: male
+                              - Chief complaint: Increasing fatigue and worsening cytopenia in a patient with history of multiple myeloma and recent radical prostatectomy
+                              - Vital signs: Temp 36.9 °C, BP 128/74 mmHg, HR 92/min (regular), RR 18/min, SpO₂ 96% (room air).
+                              Setting: Outpatient hematology clinic (follow-up of a high-risk myeloma patient with new cytopenias)
+                              Capabilities: You are evaluating a clinically stable patient with a history of multiple myeloma and recent solid tumor surgery. You can review history and physical examination, obtain routine laboratory tests, and arrange standard non-invasive imaging and specialist consultations. Decisions about further invasive diagnostics or treatment changes are based on these findings.
+                              Provide either a request for a single information item or solve.
+[Case 15 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Please provide the most recent complete blood count (CBC) with differential, including hemoglobin, white blood cell count, platelet count, and any relevant red blood cell indices (e.g., MCV, RDW). Additionally, share the results of the patient's most recent serum protein electrophoresis (SPEP), immunofixation, and free light chain assay to assess the status of the multiple myeloma."}}
+[Case 15 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 8.1 g/dL, WBC 3.2 ×10⁹/L, Plt 33 ×10⁹/L; MCV 98 fL, MCH 34 pg; differential: neutrophils 38%, lymphocytes 42%, monocytes 17%, eosinophils 2%, basophils 1%.
+                              Coagulation: aPTT 31 sec, INR 1.1.
+                              Chemistry: Na 133 mmol/L, K 4.8 mmol/L, creatinine 1.6 mg/dL, BUN 29 mg/dL, AST 48 U/L, ALT 74 U/L, bilirubin 1.2 mg/dL, LDH 319 U/L, uric acid 6.6 mg/dL, Ca²⁺ 2.10 mmol/L, CRP 1.8 mg/dL, PCT <0.1 ng/mL.
+                              NT-proBNP 550 pg/mL, troponin T 0.0 ng/mL.
+                              HbA1c 8.2%, blood glucose 181 mg/dL.
+[Case 15 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the patient's most recent serum protein electrophoresis (SPEP), immunofixation, serum free light chain assay, and beta-2 microglobulin to evaluate the current status of multiple myeloma. Additionally, include any recent bone marrow biopsy results if available, particularly focusing on plasma cell percentage and cytogenetics."}}
+[Case 15 Round 1 Step 1] ENV: 'extended_diagnostics' available in round 2.
+                              Myeloma protein studies and marrow/cytogenetic data are collected in a later round. Consider requesting information available now (e.g., CBC/chemistry results or skeletal imaging) while you wait for bone marrow, cytogenetics, and SPEP/IF/FLC/beta-2-microglobulin data.
+[Case 15 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the patient's most recent skeletal survey or low-dose whole-body CT (if available) to assess for lytic lesions, fractures, or other bony abnormalities. Additionally, include any available peripheral blood smear findings to evaluate for rouleaux formation, plasma cells, or other morphological abnormalities."}}
+[Case 15 Round 1 Step 2] ENV: Ct Skeleton:
+                              2025-09-15: CT skeleton showed several osteolytic foci persisting in the thoracic spine and pelvis, consistent with known myeloma-related bone disease. New vertebral compression fractures were observed at T7, T9, and T11, with up to 30% loss of vertebral body height. Fracture margins appeared sharp, consistent with recent occurrence. Posterior wall involvement could not be excluded, especially at T9 and T11, where cortical irregularity was visible. Old compression fractures at T5 and T12 showed reparative changes.
+[Case 15 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Progressive multiple myeloma with myeloma-related cytopenias, recent pathological vertebral fractures, and possible early spinal instability.", "differentials": ["Myelodysplastic syndrome (MDS) secondary to prior chemotherapy or radiotherapy for myeloma", "Bone marrow infiltration by metastatic prostate cancer (though less likely given history of myeloma and typical myeloma bone lesions)", "Drug-induced cytopenias (e.g., from recent chemotherapy or other myelotoxic agents)", "Vitamin B12 or folate deficiency contributing to cytopenias and macrocytosis"], "treatment_plan": [{"action": "Urgent referral to spine surgery or orthopedic oncology for evaluation of new vertebral compression fractures, particularly T9 and T11, to assess for spinal instability or risk of neurological compromise.", "intention": "therapeutic", "priority": 1}, {"action": "Initiate intravenous bisphosphonate therapy (e.g., zoledronic acid) to reduce skeletal-related events and bone pain, with renal dose adjustment as needed.", "intention": "therapeutic", "priority": 1}, {"action": "Administer packed red blood cell transfusion to target hemoglobin > 8.5 g/dL, given symptomatic anemia and fatigue.", "intention": "supportive", "priority": 1}, {"action": "Initiate thrombopoietin receptor agonist (e.g., eltrombopag or romiplostim) for severe thrombocytopenia, pending hematology consultation.", "intention": "therapeutic", "priority": 2}, {"action": "Perform serum vitamin B12, folate, and copper levels to rule out reversible causes of cytopenias and macrocytosis.", "intention": "diagnostic", "priority": 2}, {"action": "Initiate systemic therapy for relapsed/refractory multiple myeloma (e.g., daratumumab-based regimen or carfilzomib-lenalidomide-dexamethasone), pending confirmation of myeloma progression with SPEP/IF/FLC and bone marrow biopsy results.", "intention": "therapeutic", "priority": 2}, {"action": "Monitor for signs of infection closely, given neutropenia, and consider prophylactic antibiotics (e.g., levofloxacin) if neutropenia worsens or persists.", "intention": "supportive", "priority": 2}, {"action": "Optimize diabetes management to improve HbA1c and blood glucose control, given elevated HbA1c and blood glucose levels.", "intention": "supportive", "priority": 3}]}}}
+[Case 15 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "incorrect", "partially_correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 15 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Hematology day unit / inpatient ward (evaluation of persistent cytopenias and bone disease)
+                              Capabilities: The patient is undergoing extended evaluation for persistent cytopenias and skeletal symptoms. You can organize bone marrow assessment, targeted imaging, and additional laboratory and virologic investigations. Multidisciplinary input is available. Some specialized results may still be pending.
+                              Request additional information or solve.
+[Case 15 Round 2 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 15 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following pending results: (1) Serum protein electrophoresis (SPEP) with immunofixation (IFE) and serum free light chain (FLC) assay to assess myeloma disease activity; (2) Bone marrow biopsy results, including plasma cell percentage, flow cytometry, cytogenetics, and fluorescence in situ hybridization (FISH) for high-risk myeloma features (e.g., del(17p), t(4;14), t(14;16)); (3) Peripheral blood smear findings to evaluate for plasma cells, dysplasia, or other abnormalities; (4) Viral serologies (e.g., HIV, hepatitis B/C, parvovirus B19, CMV, EBV) to rule out infectious causes of cytopenias."}}
+[Case 15 Round 2 Step 4] ENV: 'Please provide the following pending results: (1) Serum protein electrophoresis (SPEP) with immunofixation (IFE) and serum free light chain (FLC) assay to assess myeloma disease activity; (2) Bone marrow biopsy results, including plasma cell percentage, flow cytometry, cytogenetics, and fluorescence in situ hybridization (FISH) for high-risk myeloma features (e.g., del(17p), t(4;14), t(14;16)); (3) Peripheral blood smear findings to evaluate for plasma cells, dysplasia, or other abnormalities; (4) Viral serologies (e.g., HIV, hepatitis B/C, parvovirus B19, CMV, EBV) to rule out infectious causes of cytopenias.' not available. Try 'extended_diagnostics' instead.
+                              This request asks for several different reports. The case can provide myeloma protein studies and viral serologies together — request “extended_diagnostics.” Bone marrow biopsy results and plasma-cell burden are a separate item — request “bone_marrow.” Cytogenetics/FISH has its own item — request “cytogenetics_fish.” Peripheral blood smear findings are encompassed by the CBC/chemistry request — request “cbc_chemistry.”
+[Case 15 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the **extended_diagnostics**, including serum protein electrophoresis (SPEP) with immunofixation (IFE), serum free light chain (FLC) assay, beta-2 microglobulin, and viral serologies (HIV, hepatitis B/C, parvovirus B19, CMV, EBV)."}}
+[Case 15 Round 2 Step 5] ENV: Extended Diagnostics:
+                              MRI holospinal: Confirmed acute/subacute compression fractures at T7, T9, and T11 (hypointense T1 / hyperintense STIR signal). Posterior wall irregularities were present at T9 and T11, without significant retropulsion or spinal canal compromise. There was no spinal stenosis or epidural mass, and the spinal cord showed normal signal intensity without intramedullary lesion.
+                              Urology consultation: Post-prostatectomy status was reviewed. Clinical examination and urinalysis showed bland urine without hematuria, proteinuria, or infection. Persistent urinary incontinence was expected postoperatively; pelvic-floor training was recommended.
+                              Virology from bone-marrow aspirate: EBV DNA was positive (3 920 copies/mL). Parvovirus B19, VZV, and HSV-1/2 were negative.
+                              Peripheral blood: CMV PCR was negative; EBV PCR was positive at a lower copy number (< 250 copies/mL).
+                              Immunologic status: CD4⁺ T cells 320/µL, CD8⁺ T cells 720/µL.
+                              Serum free light chains: κ 21 mg/L, λ 12 mg/L; κ/λ ratio 1.75.
+                              Immunoglobulins: IgG 790 mg/dL, IgA 68 mg/dL, IgM 41 mg/dL.
+                              Immunofixation: Residual monoclonal IgG-κ trace band was detectable.
+[Case 15 Round 2 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Reactivated Epstein-Barr virus (EBV) infection contributing to pancytopenia in a patient with smoldering multiple myeloma (low disease burden) and recent pathological vertebral fractures.", "differentials": ["Myelodysplastic syndrome (MDS) secondary to prior myeloma therapy or EBV-associated bone marrow suppression", "Progression of multiple myeloma with bone marrow infiltration (less likely given low monoclonal protein and free light chain levels)", "Drug-induced cytopenias (e.g., from recent chemotherapy, bisphosphonates, or other medications)", "Secondary hemophagocytic lymphohistiocytosis (HLH) triggered by EBV reactivation"], "treatment_plan": [{"action": "Initiate antiviral therapy with valganciclovir or ganciclovir for EBV reactivation, given the elevated EBV DNA levels in bone marrow and peripheral blood, and monitor viral load closely.", "intention": "therapeutic", "priority": 1}, {"action": "Urgent neurosurgical/orthopedic spine consultation for evaluation and management of acute/subacute vertebral compression fractures at T7, T9, and T11, with consideration for vertebroplasty/kyphoplasty or spinal stabilization if clinically indicated.", "intention": "therapeutic", "priority": 1}, {"action": "Administer intravenous immunoglobulin (IVIG) to support immune function, particularly given the patient's hypogammaglobulinemia and EBV reactivation.", "intention": "supportive", "priority": 1}, {"action": "Transfuse packed red blood cells to target hemoglobin > 8.5 g/dL for symptomatic anemia, with consideration for platelet transfusion if active bleeding or severe thrombocytopenia (<10 \u00d710\u2079/L) develops.", "intention": "supportive", "priority": 2}, {"action": "Request soluble CD25 (IL-2 receptor) and ferritin levels to evaluate for possible hemophagocytic lymphohistiocytosis (HLH), given EBV reactivation and pancytopenia.", "intention": "diagnostic", "priority": 2}, {"action": "Initiate bisphosphonate therapy (e.g., zoledronic acid) with renal dose adjustment to manage myeloma-related bone disease and reduce fracture risk.", "intention": "therapeutic", "priority": 2}, {"action": "Monitor for signs of infection closely, given neutropenia and EBV reactivation, and consider prophylactic antibiotics (e.g., levofloxacin) if neutropenia worsens.", "intention": "supportive", "priority": 2}, {"action": "Repeat bone marrow biopsy with flow cytometry and cytogenetics if pancytopenia persists or worsens, to assess for MDS or progression of myeloma.", "intention": "diagnostic", "priority": 3}]}}}
+[Case 15 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 15 Round 3 Step 6] ENV: Round 3 begins.
+                              Setting: Specialist myeloma/MDS conference (combined plasma cell and myeloid disease management)
+                              Capabilities: You now have access to histology, cytogenetics, and molecular data from both plasma cell and non–plasma cell compartments, as well as a complete treatment history. You are expected to integrate these findings with comorbidities and risk scores to define final diagnoses, risk stratification, and a realistic treatment and supportive care strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 15 Round 3 Step 6] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 15 Round 3 Step 7] CANDIDATE: {"response": {"action": "request", "request": "Please provide the following final diagnostic results: (1) **Bone marrow biopsy** results, including plasma cell percentage, morphology, flow cytometry, and immunohistochemistry; (2) **Cytogenetics and FISH** for both plasma cell and myeloid compartments, including high-risk myeloma features (e.g., del(17p), t(4;14), t(14;16)) and MDS-related abnormalities (e.g., del(5q), monosomy 7, complex karyotype); (3) **Molecular testing** for myeloid mutations (e.g., TP53, ASXL1, RUNX1) if MDS is suspected; (4) **Treatment history**, including prior myeloma therapies, cumulative doses of alkylators (e.g., melphalan), and radiation exposure."}}
+[Case 15 Round 3 Step 7] ENV: Bone Marrow:
+                              Cytology: The aspirate smear was hypocellular for age (15%), showing markedly reduced trilineage hematopoiesis with dysplastic features in both erythroid and granulocytic lineages. Erythropoiesis displayed nuclear irregularities, multinuclearity, and occasional megaloblastoid forms. Granulopoiesis showed hypogranular myelocytes and pseudo–Pelger like neutrophils. Megakaryopoiesis was decreased, with a predominance of micromegakaryocytes and separated nuclei. Plasma cells were slightly increased, with a small atypical population (< 5%) showing eccentric nuclei, basophilic cytoplasm, and occasional perinuclear clearing. A focal blast component (around 5%) was present, composed of medium-sized cells with a high nuclear-to-cytoplasmic ratio, open chromatin, and indistinct nucleoli.
+                              Flow cytometry: An expanded but small monotypic plasma-cell population (<1%) was identified, expressing CD38⁺, CD138⁺, cytoplasmic κ light-chain restriction, aberrant CD56 positivity, and CD19 negativity. A blast population (4%) was detected, CD34⁺, CD117⁺, HLA-DR⁺, CD13⁺, CD33⁺, and negative for lymphoid markers (CD3⁻, CD19⁻, CD4⁻, CD8⁻, CD20⁻), consistent with myelodysplastic-type blasts. The T-cell compartment showed a normal polytypic pattern, and the NK-cell fraction was preserved.
+                              Histology: The trephine biopsy was hypocellular (15–20%) for age, with patchy hematopoietic activity and interstitial infiltration by atypical plasma cells (5%) showing irregular nuclei and mild atypia, arranged in small focal clusters. Trilineage hematopoiesis was markedly reduced, with dysplastic erythroid and myeloid maturation and decreased megakaryopoiesis with small, hypolobated forms. CD34 immunostaining highlighted scattered blast cells (5%) in focal groups. Reticulin staining revealed mild diffuse fibrosis (MF-1).
+[Case 15 Round 3 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Therapy-related myelodysplastic syndrome with excess blasts-1 (t-MDS-EB1) in a patient with smoldering multiple myeloma (low disease burden) and reactivated Epstein-Barr virus (EBV) infection, complicated by recent pathological vertebral fractures.", "differentials": ["De novo myelodysplastic syndrome with excess blasts (MDS-EB1) with concurrent monoclonal gammopathy of undetermined significance (MGUS)", "Myeloma progression with secondary bone marrow failure (less likely given low plasma cell burden and prominent myeloid dysplasia)", "Acute myeloid leukemia (AML) with myelodysplasia-related changes (AML-MRC), though blast percentage is currently below 20%", "EBV-associated bone marrow suppression with reactive dysplasia (less likely given persistent cytopenias and blast excess)"], "treatment_plan": [{"action": "Urgent hematology/oncology consultation for initiation of hypomethylating agent therapy (e.g., azacitidine or decitabine) for t-MDS-EB1, given the high risk of progression to AML and poor prognosis.", "intention": "therapeutic", "priority": 1}, {"action": "Neurosurgical/orthopedic evaluation for vertebroplasty or kyphoplasty of T7, T9, and T11 vertebral compression fractures to prevent spinal instability and neurological compromise.", "intention": "therapeutic", "priority": 1}, {"action": "Supportive care with packed red blood cell transfusions to maintain hemoglobin > 8.5 g/dL and platelet transfusions if active bleeding or severe thrombocytopenia (<10 \u00d710\u2079/L) occurs.", "intention": "supportive", "priority": 1}, {"action": "Initiate bisphosphonate therapy (e.g., zoledronic acid with renal dose adjustment) to manage myeloma-related bone disease and reduce fracture risk.", "intention": "therapeutic", "priority": 2}, {"action": "Monitor EBV viral load closely and consider rituximab if viral load rises or clinical symptoms of EBV reactivation (e.g., lymphadenopathy, fever) develop, given the patient's immunocompromised state.", "intention": "therapeutic", "priority": 2}, {"action": "Evaluate eligibility for allogeneic hematopoietic stem cell transplantation (HSCT) as a potentially curative option for t-MDS-EB1, given the patient's age and comorbidities. If eligible, proceed with donor search and pre-transplant workup.", "intention": "therapeutic", "priority": 2}, {"action": "Optimize diabetes management to improve glycemic control and reduce infection risk, given the elevated HbA1c and blood glucose levels.", "intention": "supportive", "priority": 3}, {"action": "Repeat bone marrow biopsy with cytogenetics and molecular testing after 3\u20134 cycles of hypomethylating agent therapy to assess response and guide further treatment decisions.", "intention": "diagnostic", "priority": 3}]}}}
+[Case 15 Round 3 Step 8] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "partially_correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 15 Round 3 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "partially_correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

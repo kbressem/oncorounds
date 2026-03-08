@@ -1,0 +1,118 @@
+[Case 10 Round 1 Step 0] ENV: Case 10:
+                              Initial presentation:
+                              - Age: 21
+                              - Sex: female
+                              - Chief complaint: Post-induction consultation for T-ALL with prior sinus vein thrombosis and intracerebral hemorrhage
+                              - Vital signs: Blood pressure 122/74 mmHg, heart rate 96/min regular, respiratory rate 15/min, temperature 37.3 °C, oxygen saturation 97% on room air.
+                              Setting: Outpatient hematology clinic (post-induction consultation)
+                              Capabilities: You are evaluating a clinically stable patient after completion of induction therapy. You can review history and examination findings, request routine laboratory evaluations, and arrange standard imaging and specialist consultations appropriate to an ambulatory setting. More invasive procedures and specialized analyses usually require additional planning.
+                              Provide either a request for a single information item or solve.
+[Case 10 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "What were the results of the patient's most recent complete blood count and coagulation profile?"}}
+[Case 10 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 9.4 g/dL, WBC 3.3 ×10⁹/L, Plt 122 ×10⁹/L; ANC 2.4 ×10⁹/L, lymphocytes 0.6 ×10⁹/L, monocytes 0.3 ×10⁹/L; no peripheral blasts detected.
+                              Coagulation: INR 1.4, aPTT 31 sec, D-dimer 1850 µg/L FEU.
+                              Na 137 mmol/L, K 3.7 mmol/L, creatinine 1.1 mg/dL (eGFR 72 mL/min/1.73 m²), AST 86 U/L, ALT 91 U/L, bilirubin 1.2 mg/dL, LDH 285 U/L, uric acid 5.6 mg/dL.
+[Case 10 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the bone marrow evaluation post-induction therapy?"}}
+[Case 10 Round 1 Step 1] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow morphology and flow cytometry at post-induction are in a later round. Consider requesting available items for this round such as CBC/chemistry, imaging, or history/physical exam instead.
+[Case 10 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "What imaging studies have been performed to evaluate the sinus vein thrombosis and intracerebral hemorrhage?"}}
+[Case 10 Round 1 Step 2] ENV: 'extended_diagnostics' available in round 2.
+                              Brain imaging is part of the extended diagnostics set, which becomes available in a later round. In this round you can request items such as the history/physical, CBC/chemistry, or CT chest/abdomen if helpful.
+[Case 10 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-cell acute lymphoblastic leukemia (T-ALL) in remission post-induction therapy with residual effects of sinus vein thrombosis and intracerebral hemorrhage", "differentials": ["Residual leukemia", "Coagulopathy due to prior hemorrhage and thrombosis", "Liver dysfunction due to chemotherapy"], "treatment_plan": [{"action": "Monitor complete blood count and coagulation profile regularly", "intention": "diagnostic", "priority": 1}, {"action": "Consult with neurology for management of sinus vein thrombosis and intracerebral hemorrhage", "intention": "supportive", "priority": 2}, {"action": "Evaluate liver function and manage potential chemotherapy-induced liver dysfunction", "intention": "therapeutic", "priority": 3}]}}}
+[Case 10 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital hematology workup
+                              Capabilities: The patient is undergoing structured follow-up after induction and consolidation. You can organize marrow-based assessments, extended evaluations by consulting services, and additional imaging. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 10 Round 2 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "What are the results of the bone marrow morphology and flow cytometry post-induction therapy?"}}
+[Case 10 Round 2 Step 4] ENV: Bone Marrow:
+                              The bone marrow was normocellular with increased erythropoiesis and granulopoiesis, and megakaryopoiesis showing occasional juvenile forms. There was no excess of blasts or plasma cells, and no morphologic evidence of relapse, dysplasia, or fibrosis. Flow cytometry demonstrated a reduced B-cell compartment with a predominantly immature phenotype (CD10⁺/CD19⁺). Granulopoiesis appeared relatively increased with a normal maturation pattern. Approximately 2% CD34⁺/CD33⁺ myeloid blasts were detected, without evidence of lymphoid blasts or aberrant antigen expression. Initial immunophenotype at first diagnosis was: ETP-ALL: CD7+, CD34+, CD38+, TdT+, partly positive for CD33+ and CD117+ no CD1a, sCD3-, CD5 or CD8.
+[Case 10 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-cell acute lymphoblastic leukemia (T-ALL) in remission post-induction therapy with residual bone marrow changes", "differentials": ["Residual leukemia", "Bone marrow recovery post-chemotherapy", "Myelodysplastic syndrome"], "treatment_plan": [{"action": "Continue regular monitoring of complete blood count and bone marrow evaluations", "intention": "diagnostic", "priority": 1}, {"action": "Consult with hematology for further management and potential consolidation therapy", "intention": "therapeutic", "priority": 2}, {"action": "Monitor liver function and manage any chemotherapy-induced liver dysfunction", "intention": "supportive", "priority": 3}]}}}
+[Case 10 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 10 Round 3 Step 5] ENV: Round 3 begins.
+                              Setting: Specialist conference focusing on MRD status and transplant planning
+                              Capabilities: You now have access to specialized molecular assessments, measurable residual disease data, and a detailed treatment history. You are expected to integrate these findings with donor availability and comorbidities to define prognosis and formulate a definitive strategy, including potential allogeneic transplantation or trial participation.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 10 Round 3 Step 5] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "T-cell acute lymphoblastic leukemia (T-ALL) in molecular remission post-induction therapy", "differentials": ["Minimal residual disease (MRD) positive status", "Early T-cell precursor acute lymphoblastic leukemia (ETP-ALL) relapse"], "treatment_plan": [{"action": "Assess measurable residual disease (MRD) status using advanced molecular techniques", "intention": "diagnostic", "priority": 1}, {"action": "Consult with transplant team to evaluate suitability for allogeneic stem cell transplantation", "intention": "therapeutic", "priority": 2}, {"action": "Monitor and manage potential complications from prior sinus vein thrombosis and intracerebral hemorrhage", "intention": "supportive", "priority": 3}]}}}
+[Case 10 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 10 Round 3 Step 6] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

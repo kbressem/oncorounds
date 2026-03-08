@@ -1,0 +1,184 @@
+[Case 19 Round 1 Step 0] ENV: Case 19:
+                              Initial presentation:
+                              - Age: 76
+                              - Sex: female
+                              - Chief complaint: Incidentally detected leukocytosis with blasts and pancytopenia during stroke-unit admission for traumatic intracerebral hemorrhage.
+                              - Vital signs: Temp 37.8 °C, BP 98/60 mmHg, HR 112/min (irregular), RR 21/min, SpO₂ 93% on room air.
+                              Setting: Acute stroke-unit admission with incidentally discovered cytopenia and evolving leukocytosis with circulating blasts.
+                              Capabilities: You can review clinical presentation, recent trauma and ICH, initial blood counts, chemistry, and baseline imaging. You should recognize hyperleukocytic acute leukemia with laboratory tumor lysis and coagulopathy in a frail patient and decide on immediate stabilization, diagnostic workup, and whether intensive induction is realistic.
+                              Provide either a request for a single information item or solve.
+[Case 19 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Coagulation panel (PT, INR, aPTT, fibrinogen, D-dimer) to assess for coagulopathy and potential DIC."}}
+[Case 19 Round 1 Step 0] ENV: Cbc Chemistry:
+                              CBC: Hb 8.6 g/dL, WBC 44 × 10⁹/L, Plt 12 × 10⁹/L; MCV 89 fL, MCH 29 pg; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes.
+                              Coagulation: aPTT 42 sec, INR 2.1, fibrinogen 333 mg/dL, AT3 77%, FXIII 54%.
+                              Na 124 mmol/L, K 5.1 mmol/L, creatinine 1.6 mg/dL, BUN 25 mg/dL, AST 132 U/L, ALT 163 U/L, bilirubin 2.4 mg/dL, LDH 1289 U/L, uric acid 9.9 mg/dL, Ca²⁺ 2.85 mmol/L, phosphate 4.2 mg/dL, lactate 5.3 mmol/L, CK 320 U/L, Troponin T 0.002 ng/mL, NT-proBNP 461 pg/mL.
+[Case 19 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Transfuse platelets and assess need for FFP/cryoprecipitate to correct INR and maintain hemostasis."}}
+[Case 19 Round 1 Step 1] ENV: 'Transfuse platelets and assess need for FFP/cryoprecipitate to correct INR and maintain hemostasis.' not available. Try 'cbc_chemistry' instead.
+                              This case doesn't provide transfusion orders as an info item. If you want the data needed to decide about platelets, FFP, or cryoprecipitate (e.g., platelet count, coagulation studies, organ function), request labs such as the CBC/chemistry or ask for the physical exam/bleeding assessment.
+[Case 19 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Physical examination for signs of active bleeding (e.g., petechiae, ecchymoses, ongoing intracranial hemorrhage, or other bleeding sites)."}}
+[Case 19 Round 1 Step 2] ENV: History Physical:
+                              On 2024-09-21, the patient was admitted to the stroke unit after a fall from a beer bench at the Oktoberfest, resulting in a head injury and transient speech arrest. Cranial CT revealed a small left frontal intracerebral hemorrhage (< 1.5 cm) without mass effect or midline shift, most likely traumatic.
+                              Neurologically, she presented with transient dysphasia, mild right-sided facial weakness, and a single generalized tonic-clonic seizure during admission. EEG showed no epileptiform discharges. Over subsequent days, neurological deficits regressed almost completely. She regained fluent speech and independent ambulation, with only mild residual word-finding difficulty. Cognitive testing demonstrated slowed processing speed and impaired short-term memory in the context of disrupted circadian rhythm and fragmented sleep.
+                              During hospitalization, routine laboratory testing incidentally revealed marked cytopenia (Hb 8.9 g/dL, Plt 82 × 10⁹/L, WBC 2.1 × 10⁹/L), prompting hematologic evaluation. Repeat testing showed rapidly rising leukocytosis (WBC 14.1 × 10⁹/L) with 25% circulating blasts. Clinically, the patient reported only fatigue, intermittent diarrhea secondary to short-bowel syndrome, and chronic reflux symptoms.
+                              Current medication: Levothyroxine 100 µg 1-0-0, pantoprazole 40 mg 1-0-0, ramipril 5 mg 1-0-1, bisoprolol 2.5 mg 1-0-1, atorvastatin 20 mg 0-0-1, magnesium supplementation 1-0-0, loperamide on demand, levetiracetam 500 mg 1-0-1, pregabalin 125 mg 1-0-1, Kreon 25 000 U 1-1-1.
+                              Vital signs: BP 98/60 mmHg, HR 112/min (irregular), Temp 37.8 °C, RR 21/min, SpO₂ 93% (room air).
+[Case 19 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow aspirate with flow cytometry and cytogenetic analysis to confirm leukemia subtype."}}
+[Case 19 Round 1 Step 3] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow aspirate with flow cytometry (and related cytogenetics) is in a later round. Consider requesting CBC/chemistry or baseline imaging available in this round instead.
+[Case 19 Round 1 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia presenting with hyperleukocytosis, blasts in peripheral blood, coagulopathy, and evolving tumor\u2011lysis syndrome", "differentials": ["Acute lymphoblastic leukemia (especially B\u2011cell ALL)", "Chronic myeloid leukemia in blastic phase", "MDS/MPN transformation", "Severe infection with reactive neutrophilia (unlikely given blasts)"], "treatment_plan": [{"action": "Administer platelet transfusion to raise count >50,000/\u00b5L (goal >100,000/\u00b5L because of recent intracranial hemorrhage)", "intention": "supportive", "priority": 1}, {"action": "Administer fresh frozen plasma (1\u20132 units) and cryoprecipitate as needed to correct INR >1.5 and maintain fibrinogen >150 mg/dL", "intention": "supportive", "priority": 1}, {"action": "Initiate aggressive IV hydration (3\u20134 L/24 h) with isotonic saline to reduce tumor lysis risk", "intention": "supportive", "priority": 1}, {"action": "Start allopurinol 300 mg PO/IV q6h and rasburicase 0.15 mg/kg IV q24h to treat hyperuricemia and prevent tumor lysis syndrome", "intention": "therapeutic", "priority": 1}, {"action": "Consider leukapheresis if WBC >100,000/\u00b5L or clinical hyperleukocytosis complications; otherwise give hydroxyurea 50 mg/kg IV q6h to reduce leukocyte count", "intention": "therapeutic", "priority": 2}, {"action": "Correct hypercalcemia with IV fluids, calcitonin 4\u20138 IU/kg q6h, and bisphosphonate (e.g., zoledronic acid 4 mg IV once) as indicated", "intention": "therapeutic", "priority": 2}, {"action": "Order bone marrow aspirate with flow cytometry and cytogenetics to confirm leukemia subtype and guide definitive therapy", "intention": "diagnostic", "priority": 2}, {"action": "Discuss goals of care with patient/family; evaluate suitability for intensive induction chemotherapy versus lower\u2011intensity regimens (e.g., low\u2011dose cytarabine, decitabine, or hypomethylating therapy). Provide palliative/supportive care plan if prognosis is poor", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 2 Step 4] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 19 Round 2 Step 4] ENV: Round 2 begins.
+                              Setting: Hematologic workup after bone marrow biopsy and cytogenetics.
+                              Capabilities: You now have full marrow morphology, flow cytometry defining an AML with monocytic component, and complex karyotype. You should classify the leukemia, integrate recent intracerebral hemorrhage and comorbidities, and select an induction concept (intensive vs lower-intensity) while considering bleeding risk.
+                              Request additional information or solve.
+[Case 19 Round 2 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia, monocytic subtype (FAB M4/M5) with complex karyotype", "differentials": ["Acute promyelocytic leukemia (APL, t(15;17))", "Chronic myeloid leukemia in blastic phase", "High\u2011risk myelodysplastic syndrome progressing to AML"], "treatment_plan": [{"action": "Aggressively correct coagulopathy prior to any cytotoxic therapy: transfuse platelets to >50,000/\u00b5L, administer 2\u20133 units FFP and cryoprecipitate to maintain INR <1.5 and fibrinogen >150 mg/dL", "intention": "supportive", "priority": 1}, {"action": "Implement tumor\u2011lysis prophylaxis: aggressive IV hydration (3\u20134 L/24 h isotonic saline), allopurinol 300 mg PO/IV q6h, and rasburicase 0.15 mg/kg IV q24h; correct hypercalcemia with IV fluids, calcitonin 4\u20138 IU/kg q6h, and zoledronic acid 4 mg IV", "intention": "supportive", "priority": 1}, {"action": "Initiate lower\u2011intensity induction: decitabine 20 mg/m\u00b2 IV daily days 1\u20135 of each 28\u2011day cycle, consider adding venetoclax 100 mg orally days 1\u201328 with a 4\u2011day ramp\u2011up in subsequent cycles as tolerated", "intention": "therapeutic", "priority": 1}, {"action": "Provide prophylactic broad\u2011spectrum antibiotics (e.g., ceftazidime 2 g IV q8h) during anticipated neutropenic period, and start oral G\u2011CSF (filgrastim 5 \u00b5g/kg SC daily) after day 9 of induction to shorten neutropenia duration", "intention": "supportive", "priority": 2}, {"action": "Reassess coagulation status and clinical stability after 1\u20132 induction cycles to determine if switch to high\u2011dose cytarabine + anthracycline (7+3) is feasible; if stable, consider switching", "intention": "diagnostic", "priority": 3}, {"action": "If remission achieved, proceed with allogeneic stem\u2011cell transplant evaluation; if not suitable, continue lower\u2011intensity therapy and palliative support plans", "intention": "therapeutic", "priority": 3}]}}}
+[Case 19 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 19 Round 3 Step 5] ENV: Round 3 begins.
+                              Setting: Post-NGS risk stratification and definitive treatment planning.
+                              Capabilities: You know the NGS profile including TP53, EZH2, and CBL mutations with low-level FLT3-TKD, confirming ELN 2024 adverse risk AML-pCT. You should finalize the non-transplant treatment strategy (including venetoclax-based low-intensity regimens), define consolidation, and outline supportive care, explicitly arguing against alloSCT.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 19 Round 3 Step 5] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia, monocytic subtype (FAB M4/M5) with complex karyotype and TP53, EZH2, CBL mutations, low\u2010level FLT3\u2011TKD, classified as ELN 2024 adverse risk AML (pCT)", "differentials": ["Acute promyelocytic leukemia (t(15;17))", "Chronic myeloid leukemia in blastic phase", "High\u2011risk MDS progressing to AML"], "treatment_plan": [{"action": "Transfuse platelets and FFP/cryoprecipitate to maintain platelet count >50,000/\u00b5L, INR <1.5, and fibrinogen >150 mg/dL to prevent recurrent hemorrhage", "intention": "supportive", "priority": 1}, {"action": "Provide aggressive tumor lysis prophylaxis: IV hydration 3\u20134 L/24 h isotonic saline, allopurinol 300 mg PO/IV q6h, rasburicase 0.15 mg/kg IV q24h; correct hypercalcemia with IV fluids, calcitonin 4\u20138 IU/kg q6h, and zoledronic acid 4 mg IV", "intention": "supportive", "priority": 1}, {"action": "Initiate low\u2011intensity induction with decitabine 20 mg/m\u00b2 IV days 1\u20135 plus venetoclax 100 mg PO with a 4\u2011day ramp (days 1\u20134) followed by 100 mg daily days 5\u201328 of a 28\u2011day cycle; continue until CR or intolerability", "intention": "therapeutic", "priority": 1}, {"action": "Administer broad\u2011spectrum IV antibiotics (e.g., cefepime 2 g IV q12h) during anticipated neutropenia; give subcutaneous G\u2011CSF (filgrastim 5 \u00b5g/kg) beginning on day 7 of induction to shorten neutropenia", "intention": "supportive", "priority": 2}, {"action": "After CR, perform flow\u2011based MRD assessment on day 28; if MRD negative, give 2 cycles of consolidation with decitabine 20 mg/m\u00b2 IV days 1\u20135 plus venetoclax 100 mg PO days 1\u201310 (or 14) of each 28\u2011day cycle; if MRD positive or high risk, transition to extended venetoclax maintenance 100 mg PO daily until 2 years or disease progression", "intention": "therapeutic", "priority": 2}, {"action": "Consult the transplant team to formalize eligibility assessment; due to age >75, recent intracerebral hemorrhage, severe cytopenias, complex karyotype with TP53 mutation and associated high transplant\u2011related mortality, a decision is made to forgo allogeneic stem\u2011cell transplantation and pursue the venetoclax\u2011based regimen as definitive therapy", "intention": "diagnostic", "priority": 3}, {"action": "Continuously monitor renal function, electrolytes, and hepatic enzymes; adjust drug dosages accordingly; provide prophylaxis for mucositis, diarrhea, and fungal infections per institutional guidelines", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 19 Round 3 Step 6] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

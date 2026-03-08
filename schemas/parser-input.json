@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "parser-input",
+    "type": "object",
+    "properties": {
+        "request": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A natural language request for information"
+        },
+        "current_round": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The current round number"
+        },
+        "available": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "valid_request_if": {
+                        "type": "string",
+                        "description": "A natural language string indicating a valid request for this information item. If provided helps to better match candidate requests to available information."
+                    },
+                    "info_item": {
+                        "type": "string",
+                        "description": "The name of the information item to be requested by the candidate."
+                    },
+                    "available_round": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "The round in which this item becomes available."
+                    }
+                },
+                "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "List of available information items that can be provided."
+        }
+    },
+    "required": [
+        "request",
+        "available"
+    ]
+}

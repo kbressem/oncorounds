@@ -1,0 +1,142 @@
+[Case 19 Round 1 Step 0] ENV: Case 19:
+                              Initial presentation:
+                              - Age: 76
+                              - Sex: female
+                              - Chief complaint: Incidentally detected leukocytosis with blasts and pancytopenia during stroke-unit admission for traumatic intracerebral hemorrhage.
+                              - Vital signs: Temp 37.8 °C, BP 98/60 mmHg, HR 112/min (irregular), RR 21/min, SpO₂ 93% on room air.
+                              Setting: Acute stroke-unit admission with incidentally discovered cytopenia and evolving leukocytosis with circulating blasts.
+                              Capabilities: You can review clinical presentation, recent trauma and ICH, initial blood counts, chemistry, and baseline imaging. You should recognize hyperleukocytic acute leukemia with laboratory tumor lysis and coagulopathy in a frail patient and decide on immediate stabilization, diagnostic workup, and whether intensive induction is realistic.
+                              Provide either a request for a single information item or solve.
+[Case 19 Round 1 Step 0] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute leukemia with tumor lysis syndrome and coagulopathy", "differentials": ["Myelodysplastic syndrome with progression to acute leukemia", "Acute myeloid leukemia", "Acute lymphoblastic leukemia"], "treatment_plan": [{"action": "Administer intravenous fluids and allopurinol", "intention": "therapeutic", "priority": 1}, {"action": "Transfuse blood products as needed for anemia and thrombocytopenia", "intention": "supportive", "priority": 1}, {"action": "Perform bone marrow biopsy and aspirate for definitive diagnosis", "intention": "diagnostic", "priority": 2}, {"action": "Consult hematology/oncology for potential induction chemotherapy", "intention": "therapeutic", "priority": 3}]}}}
+[Case 19 Round 2 Step 0] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 19 Round 2 Step 0] ENV: Round 2 begins.
+                              Setting: Hematologic workup after bone marrow biopsy and cytogenetics.
+                              Capabilities: You now have full marrow morphology, flow cytometry defining an AML with monocytic component, and complex karyotype. You should classify the leukemia, integrate recent intracerebral hemorrhage and comorbidities, and select an induction concept (intensive vs lower-intensity) while considering bleeding risk.
+                              Request additional information or solve.
+[Case 19 Round 2 Step 0] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 2 Step 1] CANDIDATE: {"response": {"action": "request", "request": "What are the patient's comorbidities and performance status?"}}
+[Case 19 Round 2 Step 1] ENV: Demographics:
+                              Age: 76 years
+                              Sex: Female
+                              Performance status: ECOG 2
+                              Comorbidities: B-NHL history, hypothyroidism, gastroesophageal reflux disease, diverticulosis of the sigmoid colon, small hiatal hernia, history of multiple abdominal surgeries with short bowel syndrome, multiple hepatic cysts, osteoporosis, polyneuropathy, non-smoker, moderate alcohol consumption.
+                              Social history: Husband deceased, no children, retired engineer. Remains physically active within limits of polyneuropathy and short-bowel symptoms.
+                              Height: 174 cm; Bodyweight: 58 kg.
+[Case 19 Round 2 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia (AML) with monocytic differentiation and complex karyotype", "differentials": ["Myelodysplastic syndrome with excess blasts", "Acute promyelocytic leukemia", "Acute lymphoblastic leukemia"], "treatment_plan": [{"action": "Initiate lower-intensity induction therapy with hypomethylating agents (e.g., azacitidine) in combination with venetoclax", "intention": "therapeutic", "priority": 1}, {"action": "Monitor and manage tumor lysis syndrome with hydration, allopurinol, and rasburicase as needed", "intention": "supportive", "priority": 1}, {"action": "Provide supportive care with transfusions of blood products as needed for anemia and thrombocytopenia", "intention": "supportive", "priority": 2}, {"action": "Regularly assess coagulation parameters and manage bleeding risk with platelet transfusions and potential use of antifibrinolytics", "intention": "supportive", "priority": 2}, {"action": "Consult with a multidisciplinary team to evaluate the patient's suitability for intensive induction therapy or clinical trials, considering her comorbidities and recent intracerebral hemorrhage", "intention": "diagnostic", "priority": 3}]}}}
+[Case 19 Round 3 Step 2] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 19 Round 3 Step 2] ENV: Round 3 begins.
+                              Setting: Post-NGS risk stratification and definitive treatment planning.
+                              Capabilities: You know the NGS profile including TP53, EZH2, and CBL mutations with low-level FLT3-TKD, confirming ELN 2024 adverse risk AML-pCT. You should finalize the non-transplant treatment strategy (including venetoclax-based low-intensity regimens), define consolidation, and outline supportive care, explicitly arguing against alloSCT.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 19 Round 3 Step 2] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 3 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Adverse risk Acute Myeloid Leukemia (AML) with monocytic differentiation, complex karyotype, and mutations in TP53, EZH2, and CBL, with low-level FLT3-TKD", "differentials": ["Myelodysplastic syndrome with excess blasts-2 (MDS-EB-2)", "Acute myeloid leukemia with myelodysplasia-related changes (AML-MRC)"], "treatment_plan": [{"action": "Initiate lower-intensity induction therapy with azacitidine and venetoclax", "intention": "therapeutic", "priority": 1}, {"action": "Monitor and manage tumor lysis syndrome with hydration, allopurinol, and rasburicase as needed", "intention": "supportive", "priority": 2}, {"action": "Provide supportive care with transfusions of blood products as needed for anemia and thrombocytopenia", "intention": "supportive", "priority": 2}, {"action": "Administer prophylactic antibiotics, antifungals, and antivirals to prevent infections", "intention": "supportive", "priority": 3}, {"action": "Consolidation therapy with continuation of azacitidine and venetoclax, aiming for at least 6 cycles or until disease progression or unacceptable toxicity", "intention": "therapeutic", "priority": 3}, {"action": "Regularly assess coagulation parameters and manage bleeding risk with platelet transfusions and potential use of antifibrinolytics", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 19 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

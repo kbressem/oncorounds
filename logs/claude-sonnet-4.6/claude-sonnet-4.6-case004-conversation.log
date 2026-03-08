@@ -1,0 +1,196 @@
+[Case 4 Round 1 Step 0] ENV: Case 4:
+                             Initial presentation:
+                             - Age: 56
+                             - Sex: female
+                             - Chief complaint: Fever, dry cough, progressive fatigue, and worsening joint pain and stiffness
+                             - Vital signs: BP 102/65 mmHg, HR 128/min, Temp 38.6 °C, RR 24/min, O₂ sat 87% (room air).
+                             Setting: Inpatient admission for acute respiratory symptoms in an immunocompromised post-transplant patient
+                             Capabilities: You are evaluating a clinically unstable patient with fever, hypoxemia, and respiratory symptoms in a hospital setting. You can obtain a focused history and examination, request routine blood evaluations, and arrange standard imaging appropriate for acute respiratory compromise. Invasive diagnostic procedures and complex analyses typically require further coordination.
+                             Provide either a request for a single information item or solve.
+[Case 4 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 4 Round 1 Step 0] ENV: History Physical:
+                             2025-04-04: The patient presented with fever (38.6 °C), dry cough, and progressive fatigue. She reported a 1-kg unintentional weight loss over the past three months and worsening joint pain and stiffness. Chest pain was denied. On examination, the patient appeared pale with sclerodermiform skin changes and retractions, whitish and irritated oral mucosa, and a cGvHD-typical exanthema characterized by lichenoid, erythematous lesions involving the trunk and extremities. Tachypnea at rest was noted. No neurological deficits were present.
+                             Current medication: levothyroxine 75 µg 1-0-0, ramipril 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, sertraline 100 mg 1-0-0, entecavir 0.5 mg 1-0-0, azithromycin 250 mg 3×/week, montelukast 10 mg 1-0-0, fluticasone inhaler 2x/day, valaciclovir 500 mg 1-0-0, cotrimoxazole forte 480 mg 1-0-0 (Mon/Wed/Fri), prednisolone 10 mg 1-0-0, isavuconazole 200 mg 1-0-0.
+[Case 4 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential"}}
+[Case 4 Round 1 Step 1] ENV: Cbc Coagulation:
+                             Hb 9.6 g/dL, WBC 2.8 × 10⁹/L, Plt 46 × 10⁹/L; ANC 1.2 × 10⁹/L, lymphocytes 1.0 × 10⁹/L, monocytes 0.5 × 10⁹/L; no peripheral blasts. INR 1.3, aPTT 33 s, fibrinogen 160 mg/dL, D-dimer 520 µg/L FEU.
+[Case 4 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "chest CT scan"}}
+[Case 4 Round 1 Step 2] ENV: Imaging Chest Ct:
+                             Chest CT (2025-04-05): Diffuse bilateral ground-glass opacities with one nodular lesion showing a halo sign in the right upper lobe. Additional findings suggestive of BOOP with patchy, peripheral, and peribronchovascular consolidations in a migratory pattern.
+[Case 4 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "serum galactomannan, beta-D-glucan, and CMV PCR"}}
+[Case 4 Round 1 Step 3] ENV: 'infectious_workup_and_pulmonary_function' available in round 2.
+                             The extended infectious workup (fungal markers such as galactomannan and beta-D-glucan, and viral PCRs) is part of a later round in this case. Consider requesting items available now such as CBC/coagulation, chemistry/inflammation, or chest CT.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 4 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "chemistry and inflammatory markers"}}
+[Case 4 Round 1 Step 4] ENV: Chemistry Inflammation:
+                             Na 134 mmol/L, K 4.9 mmol/L, creatinine 1.7 mg/dL (eGFR 42 mL/min/1.73 m²), AST 132 U/L, ALT 98 U/L, bilirubin 1.7 mg/dL, LDH 351 U/L, uric acid 7.9 mg/dL, CRP 5.1 mg/L. Troponin T 0.012 ng/mL.
+[Case 4 Round 1 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Invasive Pulmonary Aspergillosis (IPA) with concurrent pulmonary chronic Graft-versus-Host Disease (cGvHD; bronchiolitis obliterans/BOOP pattern) in post-allogeneic HSCT patient", "differentials": ["Pulmonary cGvHD (BOOP/COP pattern) as primary pulmonary complication", "CMV pneumonitis", "Pneumocystis jirovecii pneumonia (PCP) despite cotrimoxazole prophylaxis", "Breakthrough mucormycosis or other mold infection", "Cryptogenic organizing pneumonia (COP)"], "treatment_plan": [{"action": "Immediate high-flow supplemental oxygen and respiratory support (consider non-invasive ventilation or ICU transfer given O2 sat 87% on room air, RR 24, HR 128)", "intention": "supportive", "priority": 1}, {"action": "Escalate antifungal therapy for presumed breakthrough IPA (halo sign on CT): switch isavuconazole to voriconazole (IV, weight-based dosing with TDM) or add liposomal amphotericin B given clinical instability and possible azole failure", "intention": "therapeutic", "priority": 1}, {"action": "Urgent bronchoscopy with BAL for fungal culture, galactomannan, CMV PCR, PCP staining (Grocott), bacterial culture \u2014 to confirm IPA and rule out co-infections", "intention": "diagnostic", "priority": 1}, {"action": "Serum galactomannan, beta-D-glucan, CMV PCR, Aspergillus PCR (send urgently to lab)", "intention": "diagnostic", "priority": 2}, {"action": "Review and optimize cGvHD immunosuppression: given active infection, avoid further immunosuppression escalation; maintain current prednisolone 10 mg; consider pulmonary cGvHD-directed therapy (azithromycin/montelukast/fluticasone already in place) once infection is controlled", "intention": "therapeutic", "priority": 2}, {"action": "Renal protection: hold nephrotoxic agents if possible, monitor creatinine closely (eGFR 42), adjust dosing for renal function, consider nephrology input given creatinine 1.7", "intention": "supportive", "priority": 2}, {"action": "Monitor and manage hematologic status: thrombocytopenia (Plt 46) and anemia (Hb 9.6) \u2014 transfuse platelets if < 20 or active bleeding; consider RBC transfusion if Hb drops below 8 g/dL", "intention": "supportive", "priority": 2}, {"action": "Liver function monitoring and hepatology input for elevated AST/ALT/bilirubin (possible hepatic cGvHD vs. drug-induced liver injury vs. systemic infection)", "intention": "diagnostic", "priority": 3}]}}}
+[Case 4 Round 1 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "partially_correct", "correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 4 Round 1 Step 5] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Hematologic and Infectious Workup)
+                             Capabilities: The patient is hospitalized for further diagnostic clarification. You can organize invasive tissue sampling, a broader infectious workup, and detailed functional assessments. Interdisciplinary consultations can be requested. Some specialized test results may still be pending or require referral to external laboratories.
+                             Request additional information or solve.
+[Case 4 Round 1 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "correct",
+                                     "partially_correct",
+                                     "correct",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 4 Round 2 Step 6] CANDIDATE: {"response": {"action": "request", "request": "infectious workup and pulmonary function"}}
+[Case 4 Round 2 Step 6] ENV: Infectious Workup And Pulmonary Function:
+                             Serum galactomannan 1.1; β-D-glucan and blood cultures negative were negative. PCR from the peripheral blood was negative for EBV, CMV and ADV. Pulmonary function testing demonstrated a markedly reduced diffusion capacity (DLCO 62% predicted) and a moderate obstructive component (FEV₁ 56% predicted). Bronchoalveolar lavage grew ESBL-producing Klebsiella pneumoniae harboring an OXA-48 carbapenemase gene, and was PCR-positive for influenza A (Ct 17). Antimicrobial susceptibility testing showed resistance to piperacillin/tazobactam, all cephalosporins, and carbapenems (imipenem, meropenem, ertapenem). Last-resort antibiotics results were pending. Additionally, BAL galactomannan was elevated at 2.1. Serum ferritin was 2380 µg/L, PCT 1.24 ng/mL.
+[Case 4 Round 2 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Triple co-infection in post-allogeneic HSCT patient with pulmonary cGvHD (bronchiolitis obliterans/BOOP): (1) Confirmed breakthrough Invasive Pulmonary Aspergillosis (serum GM 1.1, BAL GM 2.1, halo sign on CT) on isavuconazole; (2) Carbapenem-resistant OXA-48 Klebsiella pneumoniae (CRKP) pneumonia; (3) Influenza A pneumonitis (Ct 17 = high viral load)", "differentials": ["Pulmonary cGvHD (bronchiolitis obliterans/BOOP) as primary driver of respiratory failure", "Hemophagocytic lymphohistiocytosis (HLH)/Macrophage activation syndrome \u2014 ferritin 2380, cytopenias, multi-organ involvement in HSCT context", "PCP pneumonia (Pneumocystis jirovecii) despite cotrimoxazole prophylaxis", "CMV pneumonitis (peripheral PCR negative but does not exclude tissue-limited disease)"], "treatment_plan": [{"action": "Initiate oseltamivir 75 mg BID (adjusted for eGFR 42 \u2192 30 mg BID) or IV peramivir 600 mg QD for Influenza A; extend duration to \u226510 days given immunocompromised state and high viral load (Ct 17); implement droplet precautions", "intention": "therapeutic", "priority": 1}, {"action": "Start ceftazidime-avibactam (CAZ-AVI) for OXA-48 carbapenem-resistant Klebsiella pneumoniae \u2014 dose-adjust for eGFR 42 (2.5g q8h extended infusion); await final susceptibility results for confirmatory guidance; consult infectious disease for combination therapy consideration (e.g., aztreonam-avibactam if needed)", "intention": "therapeutic", "priority": 1}, {"action": "Switch antifungal for breakthrough IPA: discontinue isavuconazole and initiate IV voriconazole (loading 6 mg/kg q12h x2 doses, then 4 mg/kg q12h) with therapeutic drug monitoring (target trough 1\u20135.5 \u00b5g/mL); if hepatotoxicity or renal concerns preclude voriconazole, use liposomal amphotericin B 3\u20135 mg/kg/day; monitor liver enzymes, renal function, and drug interactions", "intention": "therapeutic", "priority": 1}, {"action": "Escalate respiratory support \u2014 maintain O2 saturation >92%, consider non-invasive positive pressure ventilation (CPAP/BiPAP) or ICU transfer; minimize immunosuppression escalation while infections are uncontrolled", "intention": "supportive", "priority": 1}, {"action": "Strict contact and droplet precautions for CRKP and Influenza A; notify infection control for OXA-48 producing organism; screen close contacts as per institutional protocol", "intention": "supportive", "priority": 2}, {"action": "Workup for HLH/MAS: send sHLH score components \u2014 ferritin trend, soluble CD25 (sIL-2R), NK cell activity, triglycerides, fibrinogen, bone marrow biopsy if clinically indicated; ferritin 2380 with cytopenias warrants formal evaluation", "intention": "diagnostic", "priority": 2}, {"action": "Renal function monitoring and nephrology input: creatinine 1.7 (eGFR 42) with multiple nephrotoxic agents (amphotericin B if used, CAZ-AVI, renally-metabolized drugs) \u2014 daily creatinine, electrolytes; ensure adequate IV hydration; adjust all drug doses for renal clearance", "intention": "supportive", "priority": 2}, {"action": "Continue pulmonary cGvHD-directed regimen (azithromycin, montelukast, fluticasone inhaler) once acute infections stabilize; do NOT escalate systemic immunosuppression during active triple infection; re-evaluate prednisolone dose with multidisciplinary team", "intention": "therapeutic", "priority": 3}]}}}
+[Case 4 Round 2 Step 7] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 4 Round 2 Step 7] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Post-transplant Relapse and GvHD Management Conference
+                             Capabilities: You now have access to the results of specialized tests with longer turnaround times, including molecular profiling, chimerism studies, and a complete longitudinal treatment history. You are expected to integrate these data with comorbidity and GvHD status to define prognosis and to formulate a comprehensive treatment strategy, including systemic therapy for relapse and management options for chronic GvHD.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 4 Round 2 Step 7] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 4 Round 3 Step 8] CANDIDATE: {"response": {"action": "request", "request": "chimerism studies and molecular profiling"}}
+[Case 4 Round 3 Step 8] ENV: Mrd Status:
+                             Relapsed disease with persistent recipient chimerism (1.7%). Flow: CD34+, CD117+, CD13+, CD38+, CD123+, and CD45dim. TP53, SF3B1, DNMT3A mutations & complex karyotype.
+[Case 4 Round 3 Step 9] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "AML relapse post-allogeneic HSCT (TP53-mutated, SF3B1, DNMT3A mutations; complex karyotype; CD34+/CD117+/CD13+/CD123+/CD38+/CD45dim blast immunophenotype) with concomitant multi-organ chronic GvHD (pulmonary/skin/oral) and active triple infection (breakthrough IPA on isavuconazole, OXA-48-producing carbapenem-resistant Klebsiella pneumoniae, Influenza A)", "differentials": ["MDS transformation to AML (MDS-related AML: SF3B1/DNMT3A/TP53, complex karyotype with prior MDS history)", "Therapy-related myeloid neoplasm (t-MN) after prior cytotoxic conditioning regimen", "Primary/secondary graft failure with resurgent recipient hematopoiesis (as differential to frank relapse)"], "treatment_plan": [{"action": "Initiate azacitidine 75 mg/m\u00b2 SC/IV days 1\u20137 + venetoclax with mandatory dose reduction to 50\u201370 mg/day (due to strong CYP3A4 inhibition by voriconazole; standard 400 mg dose is contraindicated); monitor CBC closely for myelosuppression; this HMA-venetoclax combination is preferred for TP53-mutated AML relapse post-HSCT in a patient not eligible for intensive chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Maintain triple anti-infective coverage: voriconazole IV (IPA, with TDM; consider switching to liposomal amphotericin B to avoid CYP3A4 interaction if venetoclax dose reduction is insufficient), ceftazidime-avibactam for OXA-48 CRKP (dose-adjusted for eGFR 42), oseltamivir (dose-adjusted for renal function) for Influenza A \u2014 continue until clinical and microbiological resolution", "intention": "therapeutic", "priority": 1}, {"action": "Start ruxolitinib (JAK1/2 inhibitor, 10 mg BID titrated to response) for steroid-refractory/dependent multi-organ cGvHD (pulmonary BOOP, sclerodermiform skin, oral involvement); ruxolitinib is the preferred second-line agent for cGvHD per EMA/FDA approval and also preserves graft-versus-leukemia effect; taper prednisolone gradually once cGvHD responds", "intention": "therapeutic", "priority": 2}, {"action": "Evaluate for second allogeneic HSCT (if CR is achieved): assess donor availability, performance status recovery after infection clearance, and disease response after 2\u20134 cycles of azacitidine-venetoclax; note very high-risk features (TP53, complex karyotype) make durable remission without allo-HSCT unlikely", "intention": "therapeutic", "priority": 2}, {"action": "Initiate goals-of-care and palliative care consultation: given TP53-mutated/complex karyotype AML relapse post-allo-HSCT (median OS <6 months in this population), active multi-organ cGvHD, and concurrent triple infection \u2014 establish patient's treatment goals, resuscitation preferences, and advance directive documentation; integrate palliative support alongside curative-intent therapy", "intention": "supportive", "priority": 2}, {"action": "Continue pulmonary cGvHD supportive regimen (azithromycin 250 mg 3\u00d7/week, montelukast 10 mg, fluticasone inhaler BID) to preserve DLCO and FEV1; supplement with chest physiotherapy and escalate respiratory support as needed (target SpO2 >92%)", "intention": "supportive", "priority": 3}]}}}
+[Case 4 Round 3 Step 9] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 4 Round 3 Step 9] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }

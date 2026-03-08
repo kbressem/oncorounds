@@ -1,0 +1,256 @@
+[Case 17 Round 1 Step 0] ENV: Case 17:
+                              Initial presentation:
+                              - Age: 44
+                              - Sex: male
+                              - Chief complaint: Scheduled follow-up after alloSCT and CD19 CAR-T for B-ALL, with interest in outpatient treatment options
+                              - Vital signs: Temp 36.9 °C, BP not reported at this visit, HR not reported at this visit, RR not reported at this visit, SpO₂ not reported at this visit.
+                              Setting: Outpatient hematology/oncology follow-up after alloSCT and CAR-T
+                              Capabilities: You are evaluating a clinically stable patient in a routine follow-up setting after intensive leukemia therapy. You can review prior history and recent clinical course, perform a targeted examination, and request standard follow-up evaluations appropriate to an ambulatory visit. Decisions focus on surveillance and whether further workup for relapse or complications is indicated.
+                              Provide either a request for a single information item or solve.
+[Case 17 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "recent laboratory results including CBC, chemistry panel, and disease monitoring studies such as MRD or flow cytometry"}}
+[Case 17 Round 1 Step 0] ENV: Cbc Chemistry:
+                              Hb 10.6 g/dL, WBC 3.1 × 10⁹/L, Plt 98 × 10⁹/L; MCV 92 fL, MCH 29 pg.
+                              Differential: neutrophils 42%, lymphocytes 48%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: INR 1.1, aPTT 30 sec.
+                              Chemistry: Na 138 mmol/L, K 4.5 mmol/L, creatinine 1.4 mg/dL, BUN 19 mg/dL, AST 28 U/L, ALT 32 U/L, bilirubin 0.9 mg/dL, LDH 220 U/L, uric acid 5.2 mg/dL, CRP 0.6 mg/dL.
+                              Cardiac biomarkers: NT-proBNP 460 pg/mL, troponin T 0.012 ng/mL.
+[Case 17 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "treatment history including timing of alloSCT and CD19 CAR-T infusion, most recent disease response assessment (bone marrow MRD/flow cytometry), and current medications"}}
+[Case 17 Round 1 Step 1] ENV: 'treatment_history' available in round 3.
+                              This case includes a detailed prior treatment timeline (alloSCT and CAR-T) but that item is not released in round 1. You can instead request current medications or available labs/imaging in this round (e.g., history_physical or cbc_chemistry).
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "history and physical examination findings from this outpatient visit"}}
+[Case 17 Round 1 Step 2] ENV: History Physical:
+                              2024-07-04: The patient presented for scheduled follow-up, reporting stable overall condition. He denied fever, night sweats, or weight loss. No exertional dyspnea, abdominal pain, or neurological complaints were reported. The patient informed the team that he had stopped some medications. He actively inquired about “next treatment options,” emphasizing his preference for outpatient-based regimens.
+                              Current medication: aciclovir 400 mg 1-0-1, posaconazole stopped, 1-0-0, cotrimoxazole 960 mg three times per week (taken irregularly), bisoprolol 2.5 mg 1-0-1, ramipril 5 mg 1-0-1, amlodipine 5 mg 1-0-1, atorvastatin 10 mg (stopped), folic acid 5 mg 1-0-0, magnesium 300 mg 1-0-0, and various nutritional supplements.
+[Case 17 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "most recent bone marrow evaluation or MRD/flow cytometry results to assess disease status"}}
+[Case 17 Round 1 Step 3] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow morphology and flow cytometry are requested but are not available in round 1. Consider requesting current labs (CBC/chemistry) or baseline imaging that are available this round instead.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "recent imaging studies (chest X-ray or CT) and viral monitoring (CMV, EBV PCR) results"}}
+[Case 17 Round 1 Step 4] ENV: 'recent imaging studies (chest X-ray or CT) and viral monitoring (CMV, EBV PCR) results' not available. Try 'baseline_imaging' instead.
+                              I can provide recent imaging under 'baseline_imaging' (chest radiography/CT requests map best to that). Viral PCR monitoring (CMV/EBV) would fall under infection workup which is captured by 'extended_diagnostics' but that item is not available in this round.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "baseline imaging results (chest X-ray or CT)"}}
+[Case 17 Round 1 Step 5] ENV: Baseline Imaging:
+                              2024-07-09: Abdominal ultrasound showed normal liver and spleen size, no lymphadenopathy, and no ascites.
+                              Echocardiography demonstrated preserved left ventricular function (LVEF 62%), without pericardial effusion.
+                              Sinus CT revealed bilateral maxillary sinus opacification with suspicion of fungal superinfection.
+[Case 17 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "prior treatment records including dates of alloSCT and CAR-T infusion, and most recent disease response assessment"}}
+[Case 17 Round 1 Step 6] ENV: 'prior treatment records including dates of alloSCT and CAR-T infusion, and most recent disease response assessment' not available. Request a specific test or report.
+                              This case defines detailed prior treatment timelines (alloSCT, CAR‑T dates) under 'treatment_history', but that item is not available in round 1. Consider requesting current history/physical, demographics, or baseline labs/imaging which are available in this round.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "any available disease response data including prior MRD results, bone marrow reports, or recent relapse workup"}}
+[Case 17 Round 1 Step 7] ENV: 'mrd_status' available in round 3.
+                              MRD status and related disease-response reports are not available in round 1. Consider requesting items available this round such as CBC/chemistry, history/physical, or baseline imaging if helpful now.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "complete treatment timeline including dates of alloSCT and CAR-T infusion, and any prior disease response assessments"}}
+[Case 17 Round 1 Step 8] ENV: 'treatment_history' available in round 3.
+                              The case includes a detailed prior treatment timeline (alloSCT, CAR‑T, etc.), but that item is not available in round 1. Consider requesting available items in this round such as history/physical, demographics, or CBC/chemistry for immediate context.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 9] CANDIDATE: {"response": {"action": "request", "request": "extended diagnostics including CMV and EBV viral PCR monitoring"}}
+[Case 17 Round 1 Step 9] ENV: 'extended diagnostics including CMV and EBV viral PCR monitoring' not available. Request a specific test or report.
+                              Requests for infection workup (e.g., CMV/EBV PCR) fall under 'extended_diagnostics', which is not available in round 1. Consider requesting items available this round such as 'cbc_chemistry', 'history_physical', or 'baseline_imaging' instead.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 10] CANDIDATE: {"response": {"action": "request", "request": "sinus CT findings detail or ENT consultation report for evaluation of suspected fungal superinfection"}}
+[Case 17 Round 1 Step 10] ENV: 'baseline_imaging' already provided.
+                               (0 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 1 Step 11] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "B-ALL in remission post alloSCT and CD19 CAR-T with mild cytopenias and possible invasive fungal sinusitis", "differentials": ["Relapsed/refractory B-ALL", "Secondary MDS post-transplant", "Invasive fungal sinusitis (Aspergillus/Mucorales)", "Graft-versus-host disease"], "treatment_plan": [{"action": "Sinus CT with contrast for invasive fungal sinusitis evaluation and ENT consultation for biopsy", "intention": "diagnostic", "priority": 1}, {"action": "Obtain bone marrow evaluation with MRD/flow cytometry to confirm disease status", "intention": "diagnostic", "priority": 1}, {"action": "Re-initiate posaconazole prophylaxis for fungal infection", "intention": "therapeutic", "priority": 2}, {"action": "Monitor CMV and EBV PCR for viral reactivation given immunosuppression", "intention": "diagnostic", "priority": 2}, {"action": "Review medication adherence and re-counsel on importance of prophylaxis compliance", "intention": "supportive", "priority": 3}]}}}
+[Case 17 Round 1 Step 11] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct", "correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 17 Round 1 Step 11] ENV: Round 2 begins.
+                               Setting: Hematology follow-up with bone marrow reassessment
+                               Capabilities: The patient is undergoing more detailed evaluation because of his leukemia history and evolving laboratory findings. You can organize marrow-based assessments and additional consultations to clarify disease status. Some specialized tests are still pending.
+                               Request additional information or solve.
+[Case 17 Round 1 Step 11] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "correct",
+                                       "correct",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 17 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "bone marrow evaluation with morphology, flow cytometry, and MRD results"}}
+[Case 17 Round 2 Step 12] ENV: 'bone_marrow' already provided.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 13] CANDIDATE: {"response": {"action": "request", "request": "treatment history including dates of alloSCT and CAR-T infusion, and any prior disease response assessments"}}
+[Case 17 Round 2 Step 13] ENV: 'treatment_history' available in round 3.
+                               This case includes a detailed prior treatment timeline (alloSCT, CAR‑T, etc.), but those details are released in a later round. In the meantime, consider requesting current history/physical, bone marrow findings, or cytogenetics/chimerism which are available in this round.
+                               (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 14] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics and chimerism studies from most recent bone marrow evaluation"}}
+[Case 17 Round 2 Step 14] ENV: Cytogenetics Chimerism:
+                               Karyotype: 46, XX.
+                               Chimerism: 0.06% recipient.
+[Case 17 Round 2 Step 15] CANDIDATE: {"response": {"action": "request", "request": "bone marrow morphology and flow cytometry results for disease status assessment"}}
+[Case 17 Round 2 Step 15] ENV: 'bone_marrow' already provided.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 16] CANDIDATE: {"response": {"action": "request", "request": "complete treatment history including dates of alloSCT and CD19 CAR-T infusion, and response to therapy"}}
+[Case 17 Round 2 Step 16] ENV: 'complete treatment history including dates of alloSCT and CD19 CAR-T infusion, and response to therapy' not available. Request a specific test or report.
+                               The detailed prior leukemia treatment timeline (including alloSCT and CD19 CAR‑T dates and responses) is not available in this round. Consider requesting items available now such as bone_marrow, cytogenetics_chimerism, or extended_diagnostics while you wait for treatment history in a later round.
+                               (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 17] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy results including morphology, flow cytometry, and MRD status"}}
+[Case 17 Round 2 Step 17] ENV: 'bone_marrow' already provided.
+                               (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 18] CANDIDATE: {"response": {"action": "request", "request": "extended diagnostics including CMV and EBV PCR monitoring"}}
+[Case 17 Round 2 Step 18] ENV: Extended Diagnostics:
+                               ENT consultation (2024-07-13) with endoscopic sinus surgery revealed a fungal mass, which was excised completely. Culture grew Aspergillus fumigatus (azole-sensitive). Histology showed typical hyphae. Following infectious disease consultation, antifungal therapy was switched to isavuconazole for outpatient use, and liposomal amphotericin B was reserved for inpatient administration.
+                               Pulmonary function testing showed a mildly reduced DLCO (65% predicted).
+                               Blood cultures were negative.
+                               Viral PCR monitoring: CMV, EBV, and adenovirus all negative.
+                               Serology: HBV, HCV, and HIV negative.
+                               Immunologic profile: CD4⁺ 110/µL, CD8⁺ 320/µL (ratio 0.34); IgG 220 mg/dL.
+                               LP was performed: cerebrospinal fluid was clear and colorless. Cell count 2/µL; protein 42 mg/dL; glucose 68 mg/dL. Cytospin and morphology showed no blasts.
+                               FDG-PET/CT (2024-07-11) demonstrated no hypermetabolic lymphadenopathy or extranodal disease. There was intense FDG uptake in both maxillary sinuses. Previously noted abdominal subcutaneous nodules had resolved. No abnormal uptake was observed in the liver, spleen, bone marrow, or CNS. Mild symmetrical uptake in paraspinal and thigh muscles was attributed to recent physical activity.
+[Case 17 Round 2 Step 19] CANDIDATE: {"response": {"action": "request", "request": "treatment history including dates of alloSCT and CAR-T infusion, and most recent disease response assessment"}}
+[Case 17 Round 2 Step 19] ENV: 'treatment_history' available in round 3.
+                               The detailed treatment history (including alloSCT and CAR‑T dates) is recorded for round 3. For round 2, consider requesting items that are available now such as bone_marrow, cytogenetics_chimerism, or extended_diagnostics if helpful for immediate decision‑making.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 20] CANDIDATE: {"response": {"action": "request", "request": "complete treatment history including dates of alloSCT and CD19 CAR-T infusion, conditioning regimen, and response to therapy"}}
+[Case 17 Round 2 Step 20] ENV: 'complete treatment history including dates of alloSCT and CD19 CAR-T infusion, conditioning regimen, and response to therapy' not available. Request a specific test or report.
+                               This case’s detailed prior treatment summary (including alloSCT and CD19 CAR-T details) is scheduled for a later round. In the meantime you can request available items from this round such as the CBC/chemistry, history and physical, baseline imaging, or bone marrow report to help with interim assessment.
+                               (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 2 Step 21] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "B-ALL in complete molecular remission post alloSCT and CD19 CAR-T with invasive Aspergillus sinusitis (successfully resected, on isavuconazole)", "differentials": ["Residual invasive fungal sinusitis", "Chronic GVHD with immunologic dysfunction", "Relapsed B-ALL", "Secondary malignancy post-transplant"], "treatment_plan": [{"action": "Continue isavuconazole for invasive aspergillosis treatment with therapeutic drug monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Maintain regular surveillance for fungal infection recurrence with sinus evaluation and galactomannan testing", "intention": "diagnostic", "priority": 1}, {"action": "Monitor CMV and EBV PCR monthly for viral reactivation", "intention": "diagnostic", "priority": 2}, {"action": "Resume posaconazole prophylaxis once antifungal therapy completes", "intention": "therapeutic", "priority": 2}, {"action": "Follow CD4+ count and immunoglobulin levels for immune reconstitution", "intention": "diagnostic", "priority": 2}, {"action": "Repeat bone marrow with MRD in 3-6 months to confirm continued remission", "intention": "diagnostic", "priority": 3}, {"action": "Reinforce medication adherence including prophylaxis and antiviral prophylaxis", "intention": "supportive", "priority": 2}]}}}
+[Case 17 Round 2 Step 21] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "partially_correct", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 17 Round 2 Step 21] ENV: Round 3 begins.
+                               Setting: Relapse and transplant planning conference in a heavily pretreated leukemia patient
+                               Capabilities: You now have results from bone marrow morphology, flow cytometry, clonality assays, and broad molecular profiling together with a comprehensive treatment history including alloSCT, bispecifics, inotuzumab, blinatumomab, and CD19 CAR-T. You are expected to interpret the pattern of MRD relapse, phenotypic evolution, and donor-derived CHIP, and to formulate a realistic outpatient-oriented salvage and transplant-bridging strategy.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 17 Round 2 Step 21] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "partially_correct",
+                                     "differentials": [
+                                       "incorrect",
+                                       "correct",
+                                       "partially_correct",
+                                       "partially_correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 17 Round 3 Step 22] CANDIDATE: {"response": {"action": "request", "request": "complete treatment history including dates of alloSCT and CD19 CAR-T infusion, prior therapies, and disease response assessments"}}
+[Case 17 Round 3 Step 22] ENV: 'treatment_history' already provided.
+                               (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 3 Step 23] CANDIDATE: {"response": {"action": "request", "request": "bone marrow morphology, flow cytometry, and MRD results showing pattern of relapse and phenotypic evolution"}}
+[Case 17 Round 3 Step 23] ENV: 'bone_marrow' already provided.
+                               (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 3 Step 24] CANDIDATE: {"response": {"action": "request", "request": "detailed bone marrow relapse pattern including MRD level, phenotypic changes, and clonality studies"}}
+[Case 17 Round 3 Step 24] ENV: 'mrd_status' already provided.
+                               (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 3 Step 25] CANDIDATE: {"response": {"action": "request", "request": "full treatment history and disease response data including alloSCT date, CAR-T infusion date, and any prior relapse or MRD status"}}
+[Case 17 Round 3 Step 25] ENV: 'treatment_history' already provided.
+                               (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 17 Round 3 Step 26] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "B-ALL in complete remission post alloSCT and CD19 CAR-T with successfully treated invasive Aspergillus sinusitis (resected, on isavuconazole), showing excellent donor chimerism (99.94%) and no MRD", "differentials": ["Invasive fungal sinusitis (resolved)", "MRD-negative remission", "Chronic GVHD", "Secondary malignancy post-transplant"], "treatment_plan": [{"action": "Complete 12-16 week course of isavuconazole for invasive aspergillosis with therapeutic drug monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Continue outpatient surveillance with monthly CMV/EBV PCR monitoring", "intention": "diagnostic", "priority": 1}, {"action": "Re-initiate posaconazole prophylaxis after antifungal therapy completion", "intention": "therapeutic", "priority": 2}, {"action": "Monitor immune reconstitution with periodic CD4+ count and immunoglobulin levels", "intention": "diagnostic", "priority": 2}, {"action": "Repeat bone marrow with MRD testing in 3-6 months", "intention": "diagnostic", "priority": 2}, {"action": "Reinforce medication adherence and outpatient follow-up compliance", "intention": "supportive", "priority": 2}, {"action": "Consider prophylactic antiviral with aciclovir continued", "intention": "therapeutic", "priority": 3}]}}}
+[Case 17 Round 3 Step 26] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 17 Round 3 Step 26] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "incorrect",
+                                     "differentials": [
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }

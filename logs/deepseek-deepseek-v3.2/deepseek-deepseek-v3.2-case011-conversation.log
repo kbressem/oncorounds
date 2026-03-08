@@ -1,0 +1,136 @@
+[Case 11 Round 1 Step 0] ENV: Case 11:
+                              Initial presentation:
+                              - Age: 32
+                              - Sex: female
+                              - Chief complaint: Rapidly progressive swelling of the left cervical region with exertional dyspnea and intermittent inspiratory stridor
+                              - Vital signs: BP 108/68 mmHg, HR 118/min, RR 24/min with mild stridor, Temp 37.8 °C, SpO₂ 93% on room air.
+                              Setting: Acute hematology / emergency assessment for symptomatic cervical mass
+                              Capabilities: You are evaluating a patient with rapidly progressive neck swelling and early airway compromise in an acute-care setting. You can obtain detailed history and examination, request baseline laboratory evaluations, and arrange urgent non-invasive imaging and airway assessments. Invasive diagnostic procedures and complex therapeutic decisions typically follow once initial stabilization and basic staging are completed.
+                              Provide either a request for a single information item or solve.
+[Case 11 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 11 Round 1 Step 0] ENV: History Physical:
+                              Match 14th, 2025: The patient presents with rapidly progressive swelling of the left cervical region, associated with exertional dyspnea and intermittent inspiratory stridor. Over the preceding 4-6 weeks, she developed B-symptoms including nightly fevers (up to 39.7 °C), drenching night sweats, and unintentional weight loss of approximately 4 kg. While visiting Portugal, she was empirically treated for an upper respiratory tract infection for two weeks without clinical improvement. Given her close exposure to multiple household cats (seven in total), an infectious cause - specifically toxoplasmosis - was initially considered; however, serology remained negative for IgM on repeated testing.
+                              Physical examination:
+                              Tender, matted lymph node conglomerate along left cervical levels II-IV with mild accessory muscle use during respiration. Lungs with transmitted upper-airway sounds, no focal crackles. Cardiac auscultation regular, no murmurs. Abdomen soft, non-tender, no hepatosplenomegaly. Extremities without edema. Neurologic exam notable for left-sided ptosis and anisocoria (smaller left pupil), consistent with a Horner’s syndrome, otherwise nonfocal.
+                              Current medication: Pregabalin 75 mg BID, duloxetine 60 mg daily, amlodipine 5 mg daily, pantoprazole 40 mg daily, calcium carbonate 500 mg daily, and inhaled budesonide/formoterol 160/4.5 µg BID.
+[Case 11 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "CT scan of neck and chest"}}
+[Case 11 Round 1 Step 1] ENV: Ct Staging:
+                              CT neck/chest/abdomen/pelvis showed bulky left cervical lymphadenopathy (levels II-IV) with confluent nodes up to 4.2 cm short axis, encasing the left carotid sheath. Bulky anterior mediastinal and paratracheal lymphadenopathy (largest 7.6 ×x4.8 cm) causing eccentric tracheal compression with luminal narrowing and mild rightward tracheal deviation. Multiple bilateral pulmonary round nodules (3-8 mm) without cavitation; no pleural effusion. No pathologic lymphadenopathy was seen below the diaphragm, liver and spleen were in normal size and attenuation.
+[Case 11 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 11 Round 1 Step 2] ENV: Cbc:
+                              CBC: Hb 12.8 g/dL, WBC 11.4 × 10⁹/L, Plt 296 × 10⁹/L; MCV 88 fL, MCH 29 pg; differential: neutrophils 70%, lymphocytes 19%, monocytes 8%, eosinophils 2%, basophils 1%.
+[Case 11 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Non-Hodgkin lymphoma", "Metastatic malignancy (e.g., thyroid or lung carcinoma)", "Tuberculous lymphadenitis"], "treatment_plan": [{"action": "Urgent anesthesia or ENT consultation for airway assessment and possible securement due to stridor and tracheal compression", "intention": "supportive", "priority": 1}, {"action": "Administer supplemental oxygen and continuous pulse oximetry monitoring", "intention": "supportive", "priority": 1}, {"action": "Arrange for excisional biopsy of left cervical lymph node for histopathology, immunohistochemistry, and flow cytometry", "intention": "diagnostic", "priority": 2}, {"action": "Obtain lactate dehydrogenase (LDH), erythrocyte sedimentation rate (ESR), and comprehensive metabolic panel", "intention": "diagnostic", "priority": 3}], "working_diagnosis": "Suspected Hodgkin lymphoma (classical type) with bulky mediastinal disease and airway compromise"}}}
+[Case 11 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 2 Step 3] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (diagnostic clarification and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected lymphoma. You can organize tissue biopsies, bone marrow assessment, comprehensive staging including advanced imaging, and multidisciplinary consultations. Some specialized tests may still be in progress or pending external analysis.
+                              Request additional information or solve.
+[Case 11 Round 2 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "lymph node biopsy histopathology and immunohistochemistry results"}}
+[Case 11 Round 2 Step 4] ENV: Lymph Node Biopsy:
+                              Lymph node biopsy:
+                              Match 15th 2025: Sections showed a diffuse effacement of the nodal architecture by a polymorphous infiltrate of atypical large lymphoid cells arranged in a diffuse growth pattern. The tumor cells exhibited vesicular chromatin, prominent nucleoli, and moderate amounts of amphophilic cytoplasm. Occasional multinucleated forms and apoptotic bodies were observed.
+                              Immunohistochemistry:
+                              The neoplastic cells demonstrated strong nuclear expression of PAX5, partial membranous expression of CD20, and variable nuclear expression of BCL6 and MUM1, ranging from moderate to strong across different tumor areas. The proliferation index (Ki-67) was approximately 60–70%. BCL2 was strongly expressed in the majority of tumor cells. CD30 showed moderate positivity in approximately 40% of cells, while CD15 demonstrated focal, partial expression. CD10 expression was restricted to stromal and reactive elements only. EBER in situ hybridization was negative for Epstein–Barr virus.
+                              Immunostains confirmed B-cell lineage with strong expression of CD45 and CD79a. ALK1 was negative.
+[Case 11 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Classical Hodgkin lymphoma", "Diffuse large B-cell lymphoma, not otherwise specified", "Gray zone lymphoma with features between DLBCL and cHL"], "treatment_plan": [{"action": "Arrange for FDG-PET/CT scan to complete staging and assess metabolic activity", "intention": "diagnostic", "priority": 1}, {"action": "Perform bone marrow aspiration and biopsy for staging", "intention": "diagnostic", "priority": 2}, {"action": "Initiate chemotherapy for large B-cell lymphoma (e.g., R-CHOP or dose-adjusted R-EPOCH) after staging", "intention": "therapeutic", "priority": 3}], "working_diagnosis": "Primary mediastinal large B-cell lymphoma"}}}
+[Case 11 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "partially_correct", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 11 Round 3 Step 5] ENV: Round 3 begins.
+                              Setting: Specialist lymphoma conference (definitive diagnosis and treatment strategy)
+                              Capabilities: You now have access to definitive histopathology, cytogenetics, molecular studies, complete staging, and detailed prior treatment history. You are expected to integrate these data with comorbidities and donor availability to establish the final diagnosis, risk stratification, and a long-term treatment plan including systemic therapy and possible cellular therapies.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 11 Round 3 Step 5] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "partially_correct",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 3 Step 6] CANDIDATE: {"response": {"action": "request", "request": "FISH results for MYC, BCL2, BCL6 rearrangements and PD-L1 immunohistochemistry expression"}}
+[Case 11 Round 3 Step 6] ENV: 'FISH results for MYC, BCL2, BCL6 rearrangements and PD-L1 immunohistochemistry expression' not available. Try 'cytogenetics_fish' instead.
+                              You requested two different tests: FISH for MYC/BCL2/BCL6 rearrangements and PD-L1 immunohistochemistry. FISH results are available as 'cytogenetics_fish' (available this round). PD-L1 IHC would be part of the lymph node histology/immunophenotype ('lymph_node_biopsy'), which is also available this round — request them separately if you want both.
+[Case 11 Round 3 Step 7] CANDIDATE: {"response": {"action": "request", "request": "cytogenetics_fish"}}
+[Case 11 Round 3 Step 7] ENV: Cytogenetics Fish:
+                              Preliminary cytogenetics
+                              MYC rearrangement: positive (IGH::MYC fusion). BCL2 rearrangement: positive (IGH::BCL2 fusion). BCL6 rearrangement: negative.
+[Case 11 Round 3 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Diffuse large B-cell lymphoma, not otherwise specified", "Burkitt lymphoma", "Primary mediastinal large B-cell lymphoma"], "treatment_plan": [{"action": "Initiate intensive chemotherapy for double-hit lymphoma (e.g., dose-adjusted R-EPOCH regimen)", "intention": "therapeutic", "priority": 1}, {"action": "Perform lumbar puncture with cerebrospinal fluid analysis for cytology and flow cytometry to assess CNS involvement", "intention": "diagnostic", "priority": 2}, {"action": "Administer CNS prophylaxis with intrathecal chemotherapy or high-dose systemic methotrexate as per protocol", "intention": "therapeutic", "priority": 3}], "working_diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma)"}}}
+[Case 11 Round 3 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 11 Round 3 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

@@ -1,0 +1,139 @@
+[Case 16 Round 1 Step 0] ENV: Case 16:
+                              Initial presentation:
+                              - Age: 55
+                              - Sex: male
+                              - Chief complaint: Fever, night sweats, weight loss, abdominal pain, and dyspnea in a patient with prior follicular lymphoma and CAR-T therapy
+                              - Vital signs: Temperature 39.5 °C, blood pressure 105/65 mmHg, heart rate 132/min (irregularly irregular), respiratory rate 22/min, oxygen saturation 91% on room air.
+                              Setting: Acute hematology/oncology evaluation (urgent outpatient presentation)
+                              Capabilities: You are assessing a systemically unwell patient with prior lymphoma and recent cellular therapy who presents with fever, B-symptoms, and signs of organ involvement. You can take a detailed history, perform a focused examination, and arrange general blood tests and cross-sectional imaging appropriate to an urgent cancer assessment. Initial decisions focus on stabilizing the patient, clarifying the need for admission, and identifying major complications such as organ compromise.
+                              Provide either a request for a single information item or solve.
+[Case 16 Round 1 Step 0] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Sepsis with potential complications related to prior follicular lymphoma and CAR-T therapy", "differentials": ["Infection related to immunosuppression", "Lymphoma relapse", "Cytokine release syndrome (CRS) due to CAR-T therapy", "Organ compromise due to sepsis or lymphoma"], "treatment_plan": [{"action": "Administer broad-spectrum antibiotics", "intention": "therapeutic", "priority": 1}, {"action": "Fluid resuscitation and supportive care for hypotension and hypoxia", "intention": "supportive", "priority": 1}, {"action": "Obtain blood cultures, complete blood count, comprehensive metabolic panel, and lactate levels", "intention": "diagnostic", "priority": 2}, {"action": "Perform CT scans of the chest, abdomen, and pelvis to assess for infection sources and lymphoma involvement", "intention": "diagnostic", "priority": 2}, {"action": "Monitor for signs of cytokine release syndrome and manage accordingly", "intention": "therapeutic", "priority": 3}]}}}
+[Case 16 Round 2 Step 0] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 16 Round 2 Step 0] ENV: Round 2 begins.
+                              Setting: Inpatient lymphoma workup (staging and organ assessment)
+                              Capabilities: The patient is now admitted for further workup. You can obtain tissue samples from accessible sites, perform more detailed staging and organ assessment, and involve other specialties for management of organ compromise. Results from broader imaging and laboratory evaluations can be integrated, while some specialized tests may still be pending.
+                              Request additional information or solve.
+[Case 16 Round 2 Step 0] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 16 Round 2 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Please provide the results of the initial blood tests, CT scans, and any other imaging or laboratory evaluations performed so far."}}
+[Case 16 Round 2 Step 1] ENV: Cbc Chemistry:
+                              Hb 10.8 g/dL, WBC 24.2 × 10⁹/L, platelets 93 × 10⁹/L; MCV 91 fL, MCH 29 pg; differential: neutrophils 18%, lymphocytes 72%, monocytes 7%, eosinophils 2%, basophils 1%.
+                              Coagulation: aPTT 32 sec, INR 2.1.
+                              Chemistry: Na 133 mmol/L, K 5.8 mmol/L, creatinine 2.4 mg/dL, BUN 52 mg/dL, AST 68 U/L, ALT 74 U/L, bilirubin 2.2 mg/dL, LDH 1180 U/L, uric acid 9.6 mg/dL, Ca²⁺ 2.10 mmol/L, CRP 18.6 mg/dL, procalcitonin 2.2 ng/mL.
+                              Cardiac markers: NT-proBNP 2450 pg/mL, troponin T 0.034 ng/mL.
+[Case 16 Round 2 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Sepsis with potential complications related to prior follicular lymphoma and CAR-T therapy, including possible tumor lysis syndrome and organ dysfunction", "differentials": ["Infection related to immunosuppression", "Lymphoma relapse", "Cytokine release syndrome (CRS) due to CAR-T therapy", "Tumor lysis syndrome", "Organ compromise due to sepsis or lymphoma"], "treatment_plan": [{"action": "Continue broad-spectrum antibiotics and adjust based on culture results", "intention": "therapeutic", "priority": 1}, {"action": "Administer intravenous fluids and monitor electrolyte levels closely, considering potential tumor lysis syndrome", "intention": "supportive", "priority": 1}, {"action": "Perform bone marrow biopsy and additional imaging to assess for lymphoma relapse", "intention": "diagnostic", "priority": 2}, {"action": "Consult with cardiology for management of elevated NT-proBNP and troponin levels", "intention": "therapeutic", "priority": 2}, {"action": "Monitor and manage cytokine release syndrome if it occurs", "intention": "therapeutic", "priority": 3}]}}}
+[Case 16 Round 3 Step 2] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "partially_correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 16 Round 3 Step 2] ENV: Round 3 begins.
+                              Setting: Specialist lymphoma and cellular therapy conference
+                              Capabilities: You now have histology and molecular results from involved organs together with full staging and a detailed treatment history including prior chemoimmunotherapy, autologous transplantation, bispecific antibodies, and CAR-T therapy. You are expected to establish the lymphoma subtype, risk category, and a realistic systemic treatment plan that considers comorbidities, prior exposure, and the patient’s reluctance for prolonged inpatient stays.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 16 Round 3 Step 2] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 16 Round 3 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed follicular lymphoma with transformation to diffuse large B-cell lymphoma (DLBCL) and associated tumor lysis syndrome", "differentials": ["CAR-T cell-related toxicity", "Infectious complications", "Secondary malignancy"], "treatment_plan": [{"action": "Initiate tumor lysis syndrome prophylaxis with hydration, rasburicase, and monitoring of electrolyte levels", "intention": "supportive", "priority": 1}, {"action": "Administer systemic therapy with polatuzumab vedotin, bendamustine, and rituximab (Pola-BR) for relapsed/transformation DLBCL", "intention": "therapeutic", "priority": 1}, {"action": "Perform regular monitoring of cardiac function and manage with cardioprotective measures as needed", "intention": "supportive", "priority": 2}, {"action": "Plan for outpatient management and close follow-up to minimize inpatient stay, considering the patient's preference", "intention": "supportive", "priority": 3}]}}}
+[Case 16 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 16 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

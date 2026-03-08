@@ -1,0 +1,149 @@
+[Case 4 Round 1 Step 0] ENV: Case 4:
+                             Initial presentation:
+                             - Age: 56
+                             - Sex: female
+                             - Chief complaint: Fever, dry cough, progressive fatigue, and worsening joint pain and stiffness
+                             - Vital signs: BP 102/65 mmHg, HR 128/min, Temp 38.6 °C, RR 24/min, O₂ sat 87% (room air).
+                             Setting: Inpatient admission for acute respiratory symptoms in an immunocompromised post-transplant patient
+                             Capabilities: You are evaluating a clinically unstable patient with fever, hypoxemia, and respiratory symptoms in a hospital setting. You can obtain a focused history and examination, request routine blood evaluations, and arrange standard imaging appropriate for acute respiratory compromise. Invasive diagnostic procedures and complex analyses typically require further coordination.
+                             Provide either a request for a single information item or solve.
+[Case 4 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "What is the type of organ transplanted and the current immunosuppressive regimen?"}}
+[Case 4 Round 1 Step 0] ENV: History Physical:
+                             2025-04-04: The patient presented with fever (38.6 °C), dry cough, and progressive fatigue. She reported a 1-kg unintentional weight loss over the past three months and worsening joint pain and stiffness. Chest pain was denied. On examination, the patient appeared pale with sclerodermiform skin changes and retractions, whitish and irritated oral mucosa, and a cGvHD-typical exanthema characterized by lichenoid, erythematous lesions involving the trunk and extremities. Tachypnea at rest was noted. No neurological deficits were present.
+                             Current medication: levothyroxine 75 µg 1-0-0, ramipril 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, sertraline 100 mg 1-0-0, entecavir 0.5 mg 1-0-0, azithromycin 250 mg 3×/week, montelukast 10 mg 1-0-0, fluticasone inhaler 2x/day, valaciclovir 500 mg 1-0-0, cotrimoxazole forte 480 mg 1-0-0 (Mon/Wed/Fri), prednisolone 10 mg 1-0-0, isavuconazole 200 mg 1-0-0.
+[Case 4 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "What is the patient's transplant history, including the type of transplant, date, and donor source (e.g., allogeneic hematopoietic stem cell transplant), and has she been diagnosed with chronic graft-versus-host disease (cGvHD) previously?"}}
+[Case 4 Round 1 Step 1] ENV: 'What is the patient's transplant history, including the type of transplant, date, and donor source (e.g., allogeneic hematopoietic stem cell transplant), and has she been diagnosed with chronic graft-versus-host disease (cGvHD) previously?' not available. Request a specific test or report.
+                             This case includes a 'treatment_history' item (prior transplant course and GvHD history), but that information is not available in round 1. Consider requesting items available in this round such as history/physical, labs (CBC, chemistry), or chest imaging.
+[Case 4 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Obtain a chest CT scan to evaluate for interstitial lung disease, infection, or other pulmonary complications in the context of immunosuppression and suspected chronic graft-versus-host disease."}}
+[Case 4 Round 1 Step 2] ENV: Imaging Chest Ct:
+                             Chest CT (2025-04-05): Diffuse bilateral ground-glass opacities with one nodular lesion showing a halo sign in the right upper lobe. Additional findings suggestive of BOOP with patchy, peripheral, and peribronchovascular consolidations in a migratory pattern.
+[Case 4 Round 1 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Invasive pulmonary aspergillosis with possible organizing pneumonia (BOOP) in the setting of chronic graft-versus-host disease (cGvHD) and immunosuppression", "differentials": ["Pneumocystis pneumonia (PCP)", "Cytomegalovirus (CMV) pneumonitis", "Community-acquired bacterial pneumonia", "cGvHD-related interstitial lung disease"], "treatment_plan": [{"action": "Initiate broad-spectrum antifungal therapy with voriconazole or continue isavuconazole with therapeutic drug monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Start empiric coverage for Pneumocystis jirovecii with high-dose trimethoprim-sulfamethoxazole if not already at prophylactic dose", "intention": "therapeutic", "priority": 2}, {"action": "Obtain serum and bronchoalveolar lavage (BAL) testing for Aspergillus galactomannan, beta-D-glucan, and fungal cultures", "intention": "diagnostic", "priority": 1}, {"action": "Provide supplemental oxygen to maintain O2 saturation >90%", "intention": "supportive", "priority": 1}, {"action": "Consider corticosteroid adjustment (e.g., increase prednisolone dose) if organizing pneumonia component is prominent and infection is reasonably controlled", "intention": "therapeutic", "priority": 3}]}}}
+[Case 4 Round 2 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "correct", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 4 Round 2 Step 3] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Early Hematologic and Infectious Workup)
+                             Capabilities: The patient is hospitalized for further diagnostic clarification. You can organize invasive tissue sampling, a broader infectious workup, and detailed functional assessments. Interdisciplinary consultations can be requested. Some specialized test results may still be pending or require referral to external laboratories.
+                             Request additional information or solve.
+[Case 4 Round 2 Step 3] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "correct",
+                                     "correct",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 4 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Obtain bronchoalveolar lavage (BAL) for microbiological studies including Aspergillus galactomannan, beta-D-glucan, PCR for CMV and other respiratory viruses, and bacterial/fungal cultures."}}
+[Case 4 Round 2 Step 4] ENV: Infectious Workup And Pulmonary Function:
+                             Serum galactomannan 1.1; β-D-glucan and blood cultures negative were negative. PCR from the peripheral blood was negative for EBV, CMV and ADV. Pulmonary function testing demonstrated a markedly reduced diffusion capacity (DLCO 62% predicted) and a moderate obstructive component (FEV₁ 56% predicted). Bronchoalveolar lavage grew ESBL-producing Klebsiella pneumoniae harboring an OXA-48 carbapenemase gene, and was PCR-positive for influenza A (Ct 17). Antimicrobial susceptibility testing showed resistance to piperacillin/tazobactam, all cephalosporins, and carbapenems (imipenem, meropenem, ertapenem). Last-resort antibiotics results were pending. Additionally, BAL galactomannan was elevated at 2.1. Serum ferritin was 2380 µg/L, PCT 1.24 ng/mL.
+[Case 4 Round 2 Step 5] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Influenza A pneumonia with superimposed invasive pulmonary aspergillosis and carbapenem-resistant Klebsiella pneumoniae (OXA-48) co-infection in an immunocompromised patient with chronic graft-versus-host disease", "differentials": ["Viral-associated invasive fungal infection (IA-IV)", "cGvHD-related lung involvement (e.g., bronchiolitis obliterans or BOOP)", "Secondary hemophagocytic lymphohistiocytosis (HLH) given elevated ferritin"], "treatment_plan": [{"action": "Initiate or continue antifungal therapy with voriconazole (or isavuconazole if already therapeutic) for invasive aspergillosis, guided by therapeutic drug monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Start oseltamivir 75 mg twice daily for influenza A pneumonia", "intention": "therapeutic", "priority": 1}, {"action": "Initiate targeted antibiotic therapy based on susceptibility for OXA-48-producing Klebsiella pneumoniae (e.g., ceftazidime-avibactam if susceptible, or consider cefiderocol/colistin pending final susceptibilities)", "intention": "therapeutic", "priority": 1}, {"action": "Provide supplemental oxygen and monitor for respiratory deterioration; consider ICU transfer if worsening hypoxemia", "intention": "supportive", "priority": 2}, {"action": "Evaluate for secondary HLH with additional labs (e.g., triglycerides, fibrinogen, soluble CD25); consider adjunctive immunomodulation if criteria met", "intention": "diagnostic", "priority": 3}]}}}
+[Case 4 Round 3 Step 5] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 4 Round 3 Step 5] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Post-transplant Relapse and GvHD Management Conference
+                             Capabilities: You now have access to the results of specialized tests with longer turnaround times, including molecular profiling, chimerism studies, and a complete longitudinal treatment history. You are expected to integrate these data with comorbidity and GvHD status to define prognosis and to formulate a comprehensive treatment strategy, including systemic therapy for relapse and management options for chronic GvHD.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 4 Round 3 Step 5] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "correct",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 4 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Influenza A\u2013associated pulmonary aspergillosis (IAPA) with concurrent carbapenem-resistant Klebsiella pneumoniae (OXA-48) pneumonia in a patient with active chronic graft-versus-host disease (cGvHD) and underlying allogeneic hematopoietic stem cell transplant (allo-HSCT) status", "differentials": ["cGvHD-related bronchiolitis obliterans organizing pneumonia (BOOP)", "Post-viral organizing pneumonia", "Transplant-associated thrombotic microangiopathy (TA-TMA) with pulmonary involvement"], "treatment_plan": [{"action": "Continue oseltamivir 75 mg twice daily for 5 days for influenza A", "intention": "therapeutic", "priority": 1}, {"action": "Continue isavuconazole or switch to voriconazole with therapeutic drug monitoring for invasive pulmonary aspergillosis", "intention": "therapeutic", "priority": 1}, {"action": "Initiate ceftazidime-avibactam (if susceptible) or cefiderocol for OXA-48-producing Klebsiella pneumoniae per infectious disease guidance", "intention": "therapeutic", "priority": 1}, {"action": "Maintain current cGvHD immunosuppression (e.g., prednisolone) unless severe infection necessitates temporary reduction; avoid abrupt withdrawal", "intention": "supportive", "priority": 2}, {"action": "Provide supplemental oxygen and consider non-invasive ventilation support if respiratory status deteriorates", "intention": "supportive", "priority": 2}]}}}
+[Case 4 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 4 Round 3 Step 6] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     }
+                                   ]
+                                 }
+                               }

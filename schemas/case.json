@@ -1,0 +1,219 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "case",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "case_id": {
+            "type": "integer",
+            "description": "Unique identifier for the case"
+        },
+        "title": {
+            "type": "string",
+            "description": "Brief case title"
+        },
+        "patient": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "demographics": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "age": {
+                            "type": "integer"
+                        },
+                        "sex": {
+                            "type": "string",
+                            "enum": [
+                                "male",
+                                "female",
+                                "other",
+                                "unknown"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "age",
+                        "sex"
+                    ]
+                },
+                "chief_complaint": {
+                    "type": "string",
+                    "description": "Initial presenting complaint"
+                },
+                "vital_signs": {
+                    "type": "string",
+                    "description": "Initial vital signs"
+                }
+            },
+            "required": [
+                "demographics",
+                "chief_complaint",
+                "vital_signs"
+            ]
+        },
+        "round_guides": {
+            "type": "object",
+            "description": "Contextual guides describing the clinical setting and diagnostic capabilities for each round. Used to ground the model's expectations.",
+            "additionalProperties": false,
+            "properties": {
+                "1": {
+                    "$ref": "#/$defs/round_guide_def"
+                },
+                "2": {
+                    "$ref": "#/$defs/round_guide_def"
+                },
+                "3": {
+                    "$ref": "#/$defs/round_guide_def"
+                }
+            },
+            "required": [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        "info_items": {
+            "type": "object",
+            "description": "Available information items keyed by type (e.g., 'physical_exam', 'cbc', 'bone_marrow'). These will be requested by the candidate during the case. So the key should reflect the type of information being provided.",
+            "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "available_round": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 3,
+                        "description": "Round when this information becomes available"
+                    },
+                    "valid_request_if": {
+                        "type": "string",
+                        "description": "(Optional) A natural language string indicating a valid request for this information item. If provided helps to better match candidate requests to available information."
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Full text content of this information"
+                    }
+                },
+                "required": [
+                    "available_round",
+                    "content"
+                ]
+            }
+        },
+        "reference_standard": {
+            "type": "object",
+            "description": "Reference standard for evaluation, organized by round",
+            "additionalProperties": false,
+            "properties": {
+                "round_1": {
+                    "$ref": "#/$defs/round_reference"
+                },
+                "round_2": {
+                    "$ref": "#/$defs/round_reference"
+                },
+                "round_3": {
+                    "$ref": "#/$defs/round_reference"
+                }
+            },
+            "required": [
+                "round_1",
+                "round_2",
+                "round_3"
+            ]
+        }
+    },
+    "required": [
+        "case_id",
+        "title",
+        "patient",
+        "round_guides",
+        "info_items",
+        "reference_standard"
+    ],
+    "$defs": {
+        "round_guide_def": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "setting": {
+                    "type": "string",
+                    "description": "The clinical environment (e.g., Emergency Department, Inpatient Ward)."
+                },
+                "capabilities": {
+                    "type": "string",
+                    "description": "General description of available diagnostic resources (e.g., bedside imaging, molecular panels)."
+                }
+            },
+            "required": [
+                "setting",
+                "capabilities"
+            ]
+        },
+        "round_reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "working_diagnosis": {
+                    "type": "string",
+                    "description": "Primary reference diagnosis"
+                },
+                "differentials": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "description": "List of acceptable differential diagnoses"
+                },
+                "treatment_plan": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "action": {
+                                "type": "string",
+                                "description": "The treatment action to be taken."
+                            },
+                            "intention": {
+                                "type": "string",
+                                "description": "Intention of the action, must be one of: diagnostic, therapeutic, supportive",
+                                "enum": [
+                                    "diagnostic",
+                                    "therapeutic",
+                                    "supportive"
+                                ]
+                            },
+                            "priority": {
+                                "type": "integer",
+                                "description": "Priority of the action, with 1 being highest and 3 lowest",
+                                "minimum": 1,
+                                "maximum": 3
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "intention",
+                            "priority"
+                        ]
+                    }
+                },
+                "key_findings_quotes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of key quotes from the case that should be cited"
+                }
+            },
+            "required": [
+                "working_diagnosis",
+                "differentials",
+                "treatment_plan",
+                "key_findings_quotes"
+            ]
+        }
+    }
+}

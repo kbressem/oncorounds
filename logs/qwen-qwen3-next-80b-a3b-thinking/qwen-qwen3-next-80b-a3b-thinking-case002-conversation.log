@@ -1,0 +1,147 @@
+[Case 2 Round 1 Step 0] ENV: Case 2:
+                             Initial presentation:
+                             - Age: 24
+                             - Sex: female
+                             - Chief complaint: New skin changes on the back and extremities
+                             - Vital signs: BP 120/75 mmHg, HR 116/min, T° 36.8 °C, respiratory rate 16/min.
+                             Setting: Outpatient/Day Unit (Initial Presentation)
+                             Capabilities: You are evaluating a clinically stable patient with new symptoms in an ambulatory or day-unit setting. You can perform a focused history and examination, obtain routine blood panels, and arrange standard non-invasive imaging as first-line tests. Invasive tissue sampling and specialized analyses usually require additional coordination and are not available in this round.
+                             Provide either a request for a single information item or solve.
+[Case 2 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 2 Round 1 Step 0] ENV: History Physical:
+                             On June 4, 2025, the patient presented with new skin changes, first noticed by her partner on the back and now also on the extremities. She reported intermittent headaches and mild nausea, as well as chronic joint pain and stiffness. Otherwise, she was in good general condition, afebrile, and showed no signs of skin or mucosal GvHD. A marked psychological stress reaction was noted.
+                             Current medication: pantoprazole 40 mg 1-0-0, vitamin D 20,000 IE 1×/week, calcium 500 mg 1-0-0, posaconazole 300 mg 1×/d, ruxolitinib 10 mg 1-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg orally once daily, three times per week (Monday, Wednesday, Friday), steroid cream p.r.n.
+[Case 2 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 2 Round 1 Step 1] ENV: Cbc:
+                             CBC: Hb 14.2 g/dL, WBC 6.8 ×10⁹/L, Plt 240 ×10⁹/L; MCV 89 fL, MCH 30 pg; differential: neutrophils 58%, lymphocytes 32%, monocytes 7%, eosinophils 2%, basophils 1%.
+[Case 2 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "comprehensive metabolic panel"}}
+[Case 2 Round 1 Step 2] ENV: Chemistry:
+                             Chemistry: Na 140 mmol/L, K 4.2 mmol/L, creatinine 1.2 mg/dL, BUN 14 mg/dL, AST 22 U/L, ALT 24 U/L, bilirubin 0.7 mg/dL, LDH 180 U/L, uric acid 5.0 mg/dL, Ca²⁺ 2.35 mmol/L, NT-proBNP 1250 pg/mL, Troponin T 0.024 ng/mL.
+[Case 2 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "echocardiogram"}}
+[Case 2 Round 1 Step 3] ENV: Echocardiography:
+                             Echocardiogram: Showed tissue thickening in the pericardium and septal hypertrophy, raising suspicion of an unclear mass lesion.
+[Case 2 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "chest CT scan"}}
+[Case 2 Round 1 Step 4] ENV: 'chest CT scan' not available. Try 'pet_ct' instead.
+                             This case does not include a dedicated chest CT. A related imaging item is PET/CT (FDG-PET/CT) which may address thoracic disease—consider requesting that (note PET/CT becomes available in a later round) or ask for other currently available data (history, labs, or ultrasound).
+[Case 2 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "serum ACE level"}}
+[Case 2 Round 1 Step 5] ENV: 'serum ACE level' not available. Try 'infectious_workup' instead.
+                             This case does not list a serum ACE result specifically. If you want inflammatory or infection-related testing, consider requesting 'infectious_workup' (or for routine blood chemistries, request 'chemistry').
+[Case 2 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "pet_ct"}}
+[Case 2 Round 1 Step 6] ENV: 'pet_ct' available in round 2.
+                             The PET-CT item exists but is not available in this round. Consider requesting imaging or labs that are available in round 1 (e.g., CT/MRI is not listed but you can request available labs like CBC, chemistry, or abdominal ultrasound).
+[Case 2 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "inflammatory markers"}}
+[Case 2 Round 1 Step 7] ENV: 'infectious_workup' available in round 2.
+                             Inflammatory markers are part of the infectious_workup, which is released in a later round. Consider requesting labs or imaging available this round (e.g., cbc, chemistry, or coagulation).
+[Case 2 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "chest X-ray"}}
+[Case 2 Round 1 Step 8] ENV: 'chest X-ray' not available. Request a specific test or report.
+                             This case does not include a chest X‑ray report. You can request items available in round 1 such as CBC, chemistry, coagulation, history/physical, echocardiography, or abdominal ultrasound instead.
+[Case 2 Round 1 Step 9] CANDIDATE: {"response": {"action": "request", "request": "abdominal ultrasound"}}
+[Case 2 Round 1 Step 9] ENV: Ultrasound Abdomen:
+                             Abdominal ultrasound (June 5, 2025): Multiple rounded lesions (2–3 cm) adjacent to the left ureter with associated hydronephrosis grade II. Liver and spleen were normal in size.
+[Case 2 Round 1 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Post-transplant lymphoproliferative disorder (PTLD)", "differentials": ["Diffuse large B-cell lymphoma", "Cardiac sarcoidosis"], "treatment_plan": [{"action": "PET-CT scan for staging and systemic evaluation", "intention": "diagnostic", "priority": 1}, {"action": "Discontinue immunosuppressive therapy (e.g., ruxolitinib)", "intention": "therapeutic", "priority": 1}, {"action": "Cardiology consultation for cardiac mass management", "intention": "supportive", "priority": 2}, {"action": "Hematology-oncology consultation for lymphoma workup", "intention": "supportive", "priority": 2}]}}}
+[Case 2 Round 2 Step 10] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}]}}
+[Case 2 Round 2 Step 10] ENV: Round 2 begins.
+                              Setting: Inpatient Ward (Early Workup)
+                              Capabilities: The patient is now admitted for further evaluation. You can organize targeted tissue sampling and a broader diagnostic workup, including advanced imaging and initial pathology assessments. Some specialized analyses may still be pending or require referral to external laboratories. They will be available in the next round.
+                              Request additional information or solve.
+[Case 2 Round 2 Step 10] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 2 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "pet_ct"}}
+[Case 2 Round 2 Step 11] ENV: Pet Ct:
+                              FDG-PET/CT (2025-06-07): Revealed multiple FDG-avid cutaneous lesions (SUVmax 6.2) and intra-abdominal lesions adjacent to the left ureter (SUVmax 8.1), accompanied by several mildly FDG-avid mediastinal lymph nodes (SUVmax 4.5).
+[Case 2 Round 2 Step 12] CANDIDATE: {"response": {"action": "request", "request": "skin biopsy"}}
+[Case 2 Round 2 Step 12] ENV: Skin Biopsy:
+                              Skin biopsy (2025-06-07): The dermis and subcutis are diffusely infiltrated by atypical hematopoietic cells in a perivascular and interstitial distribution. The cells show irregular nuclear contours, vesicular chromatin, and occasional nucleoli. Mitotic figures are frequent. Immunohistochemistry: CD34-, CD33+, MPO+, Lysozyme and CD68+, CD117+, negative for CD20-, CD19-, CD3-. Molecular pathology: NPM1 mutation present in cutaneous infiltration.
+[Case 2 Round 2 Step 13] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia with NPM1 mutation and cutaneous involvement", "differentials": ["Myeloid sarcoma"], "treatment_plan": [{"action": "Bone marrow biopsy", "intention": "diagnostic", "priority": 1}, {"action": "Discontinue ruxolitinib", "intention": "therapeutic", "priority": 1}, {"action": "Initiate AML induction chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Cardiology consultation for cardiac mass management", "intention": "supportive", "priority": 2}]}}}
+[Case 2 Round 3 Step 13] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "correct"}]}}
+[Case 2 Round 3 Step 13] ENV: Round 3 begins.
+                              Setting: Inpatient Ward / Multidisciplinary Tumor Board (Definitive Characterization)
+                              Capabilities: You now have access to results from specialized tests with longer turnaround times, including detailed pathology, molecular profiling, and measurable residual disease assessments, as well as a complete overview of prior therapies. You are expected to integrate these data into a definitive diagnosis, risk assessment, and treatment strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 2 Round 3 Step 13] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 2 Round 3 Step 14] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myeloid leukemia with NPM1 mutation and extramedullary disease", "differentials": ["Myeloid sarcoma"], "treatment_plan": [{"action": "Discontinue ruxolitinib", "intention": "therapeutic", "priority": 1}, {"action": "Initiate standard induction chemotherapy (e.g., cytarabine + daunorubicin)", "intention": "therapeutic", "priority": 1}, {"action": "Cardiology consultation for cardiac mass management", "intention": "supportive", "priority": 2}]}}}
+[Case 2 Round 3 Step 14] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 2 Round 3 Step 14] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }

@@ -1,0 +1,235 @@
+[Case 7 Round 1 Step 0] ENV: Case 7:
+                             Initial presentation:
+                             - Age: 70
+                             - Sex: male
+                             - Chief complaint: New nodular lesion on the left ankle with swelling and discoloration
+                             - Vital signs: BP 128/76 mmHg, HR 82/min (regular), T° 36.8 °C, RR 16/min, SpO₂ 96% on room air.
+                             Setting: Outpatient clinic (initial presentation with localized nodular lesion)
+                             Capabilities: You are evaluating a clinically stable patient in an ambulatory setting. You can obtain a focused history and examination, request standard laboratory tests, and arrange initial non-invasive imaging appropriate for a first diagnostic assessment. Invasive tissue sampling and more complex diagnostic procedures usually require additional planning.
+                             Provide either a request for a single information item or solve.
+[Case 7 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "focused history including duration of lesion, progression, associated symptoms (pain, bleeding), past medical history, medications, travel history, ethnicity/ancestry, and review of systems"}}
+[Case 7 Round 1 Step 0] ENV: History Physical:
+                             January 15, 2025: The patient presented to the clinic with a newly developed nodular lesion on the left ankle, measuring approximately 3-4 cm in diameter, associated with swelling and dark brown discoloration. He reported mild localized pain at the site but was otherwise in good general condition. The patient described intermittent low-grade fevers at night but denied night sweats or significant weight loss. Chronic headaches were noted, unchanged in character or intensity over several years.
+                             Physical examination: Single firm, slightly tender, nodular lesion (3-4 cm) on the left ankle with dark brown pigmentation and mild surrounding edema. No additional cutaneous lesions were observed. No palpable lymphadenopathy. Abdomen soft and non-tender, no hepatosplenomegaly. Lungs clear on auscultation, heart sounds regular, no peripheral edema.
+                             Neurological examination: Patient alert and fully oriented. Cranial nerves II–XII intact: pupils equal and reactive, extraocular movements full, visual fields intact, facial sensation and symmetry normal, palate elevation symmetrical, tongue midline, and hearing preserved. Motor exam: Normal tone and bulk, 5/5 strength in all extremities. Reflexes: 2+ and symmetric. Sensation: Intact to light touch, pinprick, vibration, and proprioception throughout. Coordination: Normal finger-to-nose and heel-to-shin testing.
+                             Current medication: Amlodipine 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-1, atorvastatin 20 mg 0-0-1, pantoprazole 40 mg 1-0-0, vitamin D 20,000 IU weekly, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), metformin 1000 mg 1-0-0, apixaban 5 mg 1-0-1.
+[Case 7 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "HIV serology (HIV-1/2 Ab/Ag), CD4 count, and HIV viral load \u2014 given the current prophylactic regimen (co-trimoxazole Mon/Wed/Fri + valaciclovir) strongly suggesting underlying immunocompromise"}}
+[Case 7 Round 1 Step 1] ENV: 'HIV serology (HIV-1/2 Ab/Ag), CD4 count, and HIV viral load — given the current prophylactic regimen (co-trimoxazole Mon/Wed/Fri + valaciclovir) strongly suggesting underlying immunocompromise' not available. Request a specific test or report.
+                             This request maps to the extended infection/serology screen, which is not available in Round 1. Consider requesting available items now—e.g., history/medication list, CBC, chemistry, or abdominal ultrasound—to help assess immune status and infectious risk.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 7 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count (CBC) with differential"}}
+[Case 7 Round 1 Step 2] ENV: Cbc:
+                             CBC: Hb 10.7 g/dL, WBC 2.7 ×10⁹/L, ANC 1.7 ×10⁹/L, Plt 103 ×10⁹/L; MCV normal, MCH normal; differential: 63% neutrophils, 10% monocytes, 25% lymphocytes, 2% nuclear debris.
+[Case 7 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "basic metabolic panel / chemistry (renal function, liver enzymes, LDH, uric acid, albumin)"}}
+[Case 7 Round 1 Step 3] ENV: Chemistry:
+                             Na 126 mmol/L, K 4.1 mmol/L, creatinine 1.2 mg/dL, BUN 23 mg/dL, AST 76 U/L, ALT 86 U/L, bilirubin 1.3 mg/dL, LDH 260 U/L, uric acid 7.2 mg/dL, Ca²⁺ 2.55 mmol/L, phosphate 3.4 mg/dL, lactate 1.3 mmol/L, CK 89 U/L, Troponin T 0.012 ng/mL, NT-proBNP 235 pg/mL.
+[Case 7 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "chest X-ray (posteroanterior and lateral views)"}}
+[Case 7 Round 1 Step 4] ENV: 'chest X-ray (posteroanterior and lateral views)' not available. Request a specific test or report.
+                             This case does not include a chest X‑ray report. You can instead request available items such as abdominal_ultrasound or echocardiography if relevant.
+                             (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 7 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "abdominal ultrasound"}}
+[Case 7 Round 1 Step 5] ENV: Abdominal Ultrasound:
+                             January 15, 2025 – Abdominal ultrasound: Normal-sized liver and spleen, no hepatosplenomegaly, no retroperitoneal or mesenteric lymphadenopathy.
+[Case 7 Round 1 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Kaposi's Sarcoma (HIV-associated, epidemic type) \u2014 dark brown nodular lesion on the ankle in an immunocompromised patient on PCP and HSV prophylaxis (consistent with CD4 <200 cells/\u00b5L), pancytopenia, and hyponatremia all fitting advanced HIV disease with KS as AIDS-defining illness", "differentials": ["Bacillary angiomatosis (Bartonella spp.) \u2014 can mimic KS in HIV patients and must be excluded", "Cutaneous angiosarcoma \u2014 rare vascular malignancy of the elderly", "Cutaneous T-cell lymphoma (mycosis fungoides/S\u00e9zary syndrome)", "Amelanotic or pigmented melanoma", "Dermatofibrosarcoma protuberans"], "treatment_plan": [{"action": "Punch or excisional skin biopsy of the ankle lesion for histopathology (H&E) and immunohistochemistry \u2014 confirm KS (HHV-8/LANA-1 staining, CD31, CD34) and exclude differential diagnoses", "intention": "diagnostic", "priority": 1}, {"action": "HIV-1/2 serology, CD4+ T-cell count, and HIV plasma viral load \u2014 quantify immunosuppression and confirm HIV status driving prophylactic regimen", "intention": "diagnostic", "priority": 1}, {"action": "HHV-8 serology and PCR (blood) \u2014 supports KS diagnosis and monitors viral burden", "intention": "diagnostic", "priority": 1}, {"action": "CT scan of chest, abdomen, and pelvis with contrast \u2014 KS staging (T classification: skin, oral cavity, lymph nodes, viscera) and evaluation of possible pulmonary or GI involvement", "intention": "diagnostic", "priority": 2}, {"action": "Optimize or initiate/intensify combination antiretroviral therapy (cART) \u2014 restoration of immune function is the cornerstone of HIV-associated KS management and alone induces regression in limited disease", "intention": "therapeutic", "priority": 1}, {"action": "Infectious disease / HIV specialist referral for comprehensive ART management and coordination of KS therapy", "intention": "therapeutic", "priority": 1}, {"action": "If confirmed KS with localized limited disease (T0, good risk): consider local therapy options \u2014 intralesional vinblastine, local radiotherapy, or cryotherapy in addition to cART", "intention": "therapeutic", "priority": 2}, {"action": "If advanced/visceral KS (T1, poor risk) or rapid progression: systemic liposomal doxorubicin (pegylated, e.g., Caelyx/Doxil) as first-line chemotherapy alongside cART", "intention": "therapeutic", "priority": 2}, {"action": "Correct hyponatremia (Na 126 mmol/L) \u2014 assess for SIADH (common in HIV/CNS disease), adrenal insufficiency (rule out CMV adrenalitis), or hypothyroidism; supplement as indicated", "intention": "supportive", "priority": 2}, {"action": "Monitor CBC, renal and hepatic function, and LDH regularly \u2014 baseline pancytopenia and transaminase elevation require close follow-up, especially if systemic chemotherapy is initiated", "intention": "supportive", "priority": 3}]}}}
+[Case 7 Round 1 Step 6] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "correct", "correct", "correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 7 Round 1 Step 6] ENV: Round 2 begins.
+                             Setting: Inpatient or day-hospital workup (histologic and staging evaluation)
+                             Capabilities: The patient is now undergoing further diagnostic clarification. You can organize tissue sampling, detailed histopathology and immunophenotyping, comprehensive staging procedures, and extended evaluations by consulting services. Some specialized results may still be in progress.
+                             Request additional information or solve.
+[Case 7 Round 1 Step 6] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "correct",
+                                     "correct",
+                                     "correct",
+                                     "correct",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 7 Round 2 Step 7] CANDIDATE: {"response": {"action": "request", "request": "skin punch biopsy histopathology and immunohistochemistry results from the left ankle lesion"}}
+[Case 7 Round 2 Step 7] ENV: Soft Tissue Biopsy:
+                             Core biopsy from the soft tissue mass of the left ankle revealed a diffuse, dense infiltrate of atypical lymphoid cells, completely effacing the normal tissue architecture. The infiltrate was composed of large lymphoid cells with round to oval nuclei, vesicular chromatin, and prominent nucleoli, exhibiting moderate basophilic cytoplasm, frequent mitoses, and scattered apoptotic bodies. No follicular, nodular, or germinal center pattern was identified.
+                             Immunohistochemistry:
+                             Tumor cells showed strong diffuse positivity for CD19, CD79a, and PAX5, but were negative for CD20, consistent with CD20-negative high-grade B-cell lymphoma. Cells were positive for CD10 and BCL6, but negative for MUM1/IRF4, CD3, CD5, CD30, CD15, and cyclin D1. BCL2 was positive, and MYC was expressed in approximately 50% of tumor cells. Ki-67 proliferation index was around 80%.
+                             EBER in situ hybridization was negative.
+[Case 7 Round 2 Step 8] CANDIDATE: {"response": {"action": "request", "request": "FISH studies on biopsy tissue for MYC, BCL2, and BCL6 gene rearrangements (to classify high-grade B-cell lymphoma subtype)"}}
+[Case 7 Round 2 Step 8] ENV: Cytogenetics:
+                             FISH: IGH::MYC and IGH::BCL2 rearrangements
+[Case 7 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "PET-CT scan (whole body) for staging and extent of disease"}}
+[Case 7 Round 2 Step 9] ENV: Pet Ct:
+                             January 21, 2025: FDG PET-CT: Demonstrated a solitary, intensely FDG-avid soft-tissue lesion at the left ankle (SUVmax 11.4; Deauville score 5), correlating with the clinically visible nodule. No lymphadenopathy, bone marrow uptake, or visceral involvement. Mild calcification of the aortic valve leaflets was incidentally noted, consistent with early aortic sclerosis. Mild centrilobular pulmonary emphysema was also present.
+                             Lumbar puncture and CSF analysis: Clear cerebrospinal fluid; cytology and flow cytometry negative for malignant lymphoid cells.
+[Case 7 Round 2 Step 10] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (Double-Hit Lymphoma), CD20-negative, GCB subtype (CD10+/BCL6+/MUM1\u2212), Stage IE (single extranodal site, left ankle) \u2014 CNS-negative", "differentials": ["Triple-hit lymphoma (MYC/BCL2/BCL6 rearrangements) \u2014 BCL6 FISH pending", "Transformed follicular lymphoma with double-hit genetics", "Burkitt lymphoma (excluded by morphology, IHC pattern, and Ki-67 <95%)", "Diffuse large B-cell lymphoma, NOS (no double-hit, lower grade)"], "treatment_plan": [{"action": "HIV-1/2 serology, CD4+ T-cell count, and HIV plasma viral load \u2014 mandatory before initiating chemotherapy; patient is on PCP and HSV prophylaxis consistent with advanced immunosuppression; HIV-associated DHL may require modified dosing and intensified prophylaxis", "intention": "diagnostic", "priority": 1}, {"action": "Echocardiography \u2014 baseline cardiac function assessment (LVEF) required prior to anthracycline-containing regimen; aortic sclerosis on PET-CT and concurrent bisoprolol/apixaban suggest underlying cardiac disease", "intention": "diagnostic", "priority": 1}, {"action": "BCL6 FISH on biopsy tissue \u2014 exclude triple-hit lymphoma (MYC/BCL2/BCL6), which carries even worse prognosis and may further influence treatment intensity", "intention": "diagnostic", "priority": 1}, {"action": "Intensive induction chemotherapy with DA-EPOCH (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin) \u2014 rituximab omitted given CD20-negative tumor; DA-EPOCH preferred over R-CHOP for double-hit lymphoma; alternatively consider anti-CD19-directed therapy (e.g., tafasitamab) in place of anti-CD20", "intention": "therapeutic", "priority": 1}, {"action": "Intrathecal methotrexate CNS prophylaxis (or high-dose systemic MTX) \u2014 double-hit lymphoma carries significant CNS relapse risk (>10%); CSF cytology currently negative but prophylaxis is standard", "intention": "therapeutic", "priority": 2}, {"action": "Multidisciplinary tumor board review involving hematology-oncology, radiation oncology, and infectious disease \u2014 Stage IE localized DHL may benefit from consolidation involved-field radiotherapy (IFRT) to the left ankle after chemotherapy; infectious disease input required for management in the setting of immunocompromise", "intention": "therapeutic", "priority": 2}, {"action": "Anticoagulation management \u2014 apixaban must be held or bridged around invasive procedures and carefully managed during myelosuppressive chemotherapy-induced thrombocytopenia; hematology review of risk-benefit", "intention": "supportive", "priority": 2}, {"action": "Correct hyponatremia (Na 126 mmol/L) \u2014 evaluate for SIADH versus adrenal insufficiency (possible in immunocompromised state); fluid restriction or cautious saline supplementation as indicated before chemotherapy initiation", "intention": "supportive", "priority": 2}, {"action": "Continue co-trimoxazole and valaciclovir prophylaxis throughout chemotherapy \u2014 intensify antimicrobial prophylaxis per institutional protocol for immunocompromised patients receiving high-grade B-cell lymphoma regimens; add antifungal prophylaxis (e.g., fluconazole) during neutropenic phases", "intention": "supportive", "priority": 3}]}}}
+[Case 7 Round 2 Step 10] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 7 Round 2 Step 10] ENV: Round 3 begins.
+                              Setting: Specialist conference (definitive diagnosis and treatment planning)
+                              Capabilities: You now have access to definitive pathology, molecular findings, prior treatment history, and full staging results. You are expected to integrate these data with comorbidity and transplant scores to establish the final diagnosis, characterize risk, and propose an evidence-based treatment and follow-up strategy.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 7 Round 2 Step 10] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 7 Round 3 Step 11] CANDIDATE: {"response": {"action": "request", "request": "HIV-1/2 serology, CD4+ T-cell count, and HIV plasma viral load"}}
+[Case 7 Round 3 Step 11] ENV: Extended Diagnostics:
+                              ECG: Atrial fibrillation with a controlled ventricular rate (87/min). Pulmonary function testing: FEV₁ 82% of predicted, DLCO 78% of predicted. Serology: CMV IgG negative, EBV IgG positive, HIV negative, hepatitis B surface antigen negative (HBsAb positive), hepatitis C antibody negative.
+                              Dental, urological, and dermatological evaluations completed: no infectious foci identified.
+                              Infection screen: CRP 4.3 mg/L, PCT <0.1 ng/mL, blood cultures negative, serum galactomannan negative. CT paranasal sinuses: Normal mucosa, no sinus pathology or infiltration detected.
+[Case 7 Round 3 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH, 'Double-Hit Lymphoma'), CD20-negative, GCB subtype (CD10+/BCL6+/MUM1\u2212), Stage IE (single extranodal lesion, left ankle; SUVmax 11.4), EBER-negative, HIV-negative \u2014 high-risk molecular profile with localized disease and no CNS involvement", "differentials": ["HGBL with triple-hit rearrangements (MYC/BCL2/BCL6) \u2014 excluded by FISH demonstrating only IGH::MYC and IGH::BCL2, no BCL6 rearrangement", "Burkitt lymphoma \u2014 excluded by IHC profile (BCL2+, MUM1\u2212, Ki-67 ~80% not ~100%) and morphology", "DLBCL, NOS with MYC/BCL2 double-expressor phenotype (without rearrangements) \u2014 excluded by confirmed FISH rearrangements qualifying as true DHL", "Plasmablastic lymphoma (CD20-negative) \u2014 excluded by PAX5+, CD79a+, EBER-negative, HIV-negative"], "treatment_plan": [{"action": "Echocardiography with left ventricular ejection fraction (LVEF) assessment \u2014 mandatory baseline cardiac evaluation before initiating anthracycline-containing regimen (doxorubicin in DA-EPOCH); patient has atrial fibrillation, aortic sclerosis, and is on bisoprolol", "intention": "diagnostic", "priority": 1}, {"action": "Dose-adjusted EPOCH (DA-EPOCH): etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin \u2014 6 cycles; rituximab omitted given confirmed CD20-negative tumor; DA-EPOCH is preferred over CHOP-based therapy for double-hit lymphoma based on institutional and retrospective data", "intention": "therapeutic", "priority": 1}, {"action": "G-CSF (pegfilgrastim or filgrastim) with each cycle of DA-EPOCH \u2014 myeloid growth factor support is standard with this regimen; especially important given pre-existing pancytopenia (Hb 10.7, WBC 2.7, Plt 103)", "intention": "supportive", "priority": 1}, {"action": "Consolidation involved-site radiotherapy (ISRT) to the left ankle after achieving complete metabolic response (CMR) \u2014 Stage IE localized HGBL-DH with a single extranodal site is an appropriate candidate for combined modality therapy; ISRT improves local control in limited-stage aggressive lymphoma", "intention": "therapeutic", "priority": 2}, {"action": "Interim PET-CT (after 2\u20134 cycles of DA-EPOCH) with Deauville score assessment \u2014 to evaluate early metabolic response and guide further treatment decisions", "intention": "diagnostic", "priority": 2}, {"action": "Anticoagulation management during treatment: temporary hold or dose reduction of apixaban during DA-EPOCH-induced thrombocytopenic nadirs (platelet-guided: hold if <50\u00d710\u2079/L); coordinate AF anticoagulation strategy with cardiology to balance thromboembolism and bleeding risk", "intention": "supportive", "priority": 2}, {"action": "End-of-treatment PET-CT (after completion of all systemic therapy and ISRT) to confirm complete metabolic remission using Lugano/Deauville criteria and guide surveillance planning", "intention": "diagnostic", "priority": 3}]}}}
+[Case 7 Round 3 Step 12] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect", "partially_correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 7 Round 3 Step 12] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

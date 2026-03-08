@@ -1,0 +1,149 @@
+[Case 8 Round 1 Step 0] ENV: Case 8:
+                             Initial presentation:
+                             - Age: 78
+                             - Sex: male
+                             - Chief complaint: Progressive fatigue, dyspnea on exertion, reduced appetite, and high fever with productive cough
+                             - Vital signs: BP 86/54 mmHg, HR 128/min regular, T° 39.2 °C, RR 28/min, O₂ saturation 89% on room air.
+                             Setting: Emergency Department / Acute Care (Initial Septic Presentation)
+                             Capabilities: You are assessing an acutely ill patient with sepsis in an acute-care environment. You can perform urgent clinical evaluation, obtain baseline investigations, and arrange emergent non-invasive imaging appropriate for the acute situation. Invasive procedures and complex diagnostic evaluations usually follow once the patient is at least partially stabilized.
+                             Provide either a request for a single information item or solve.
+[Case 8 Round 1 Step 0] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Septic Shock secondary to Community-Acquired Pneumonia (CAP). The patient meets Sepsis-3 criteria with suspected infection, acute organ dysfunction (hypotension, hypoxia), and a SOFA score likely >2.", "differentials": ["Aspiration Pneumonia", "Acute Decompensated Heart Failure (secondary to sepsis)", "Influenza or Viral Pneumonia", "Urinary Tract Infection with bacteremia"], "treatment_plan": [{"action": "Resuscitation/Monitoring", "intention": "therapeutic", "priority": 1}, {"action": "Supplemental Oxygen", "intention": "therapeutic", "priority": 1}, {"action": "Lactate", "intention": "diagnostic", "priority": 1}, {"action": "Blood Cultures", "intention": "diagnostic", "priority": 1}, {"action": "Broad-spectrum Antibiotics", "intention": "therapeutic", "priority": 1}]}}}
+[Case 8 Round 2 Step 0] ENV: {"case_id": 8, "round": 1, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}]}}
+[Case 8 Round 2 Step 0] ENV: Round 2 begins.
+                             Setting: Inpatient Ward / Intensive Care Unit (Early Hematologic Workup)
+                             Capabilities: The patient is now hospitalized for ongoing management. You can organize invasive diagnostic procedures such as bone marrow assessment, extend laboratory and imaging evaluation, and obtain interdisciplinary consultations. Some specialized analyses may still be pending or require referral.
+                             Request additional information or solve.
+[Case 8 Round 2 Step 0] JUDGE: {
+                                 "case_id": 8,
+                                 "round": 1,
+                                 "evaluation": {
+                                   "working_diagnosis": "incorrect",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 2 Step 1] CANDIDATE: {"response": {"action": "request", "request": "Complete Blood Count (CBC) with differential and Peripheral Blood Smear analysis"}}
+[Case 8 Round 2 Step 1] ENV: Cbc:
+                             CBC: Hb 7.8 g/dL, WBC 1.1 ×10⁹/L, ANC 0.3 ×10⁹/L, Plt 18 ×10⁹/L; MCV normal, MCH normal; differential: 22% neutrophils, 10% monocytes, 60% lymphocytes, 8% blasts.
+[Case 8 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Results of Bone Marrow Aspiration, Biopsy, Cytogenetics, and Flow Cytometry"}}
+[Case 8 Round 2 Step 2] ENV: Bone Marrow:
+                             Smears are of limited quality with low overall cellularity and very few spicules. Scattered blasts are present, accounting for approximately 10–15 % of nucleated cells. The blasts are medium to large in size with a high nuclear-to-cytoplasmic ratio, round to irregular nuclei, and finely dispersed chromatin. The cytoplasm is basophilic, occasionally containing azurophilic granules and rare vacuoles.
+                             Dysplastic changes are observed in the residual myeloid series with hypogranulation, while erythropoiesis is markedly reduced, showing occasional megaloblastoid forms. Megakaryopoiesis is sparse, with small hypolobated megakaryocytes.
+                             Flow cytometry demonstrated 23 % blasts expressing CD34⁺, CD117⁺, HLA-DR⁺, CD13⁺, CD33⁺, and CD38 (dim), with dim CD123 and weak MPO expression. There was no aberrant co-expression of CD7 or CD56
+[Case 8 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Cytogenetic analysis (Karyotype) and Molecular profiling (Myeloid gene panel, e.g., NPM1, FLT3, TP53, ASXL1)"}}
+[Case 8 Round 2 Step 3] ENV: Cytogenetics:
+                             46,XX[15]/46,XY[5]
+[Case 8 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute Myeloid Leukemia (AML) with myelodysplasia-related changes (or Hypocellular AML). The patient has pancytopenia with 23% blasts in the bone marrow by flow cytometry (meeting WHO criteria for AML \u226520%). The marrow hypocellularity and dysplastic features suggest an underlying myelodysplastic syndrome (MDS). The cytogenetic finding of 46,XX[15]/46,XY[5] in a phenotypic male indicates mixed chimerism, highly suggestive of a prior allogeneic hematopoietic stem cell transplant from a female donor, suggesting this is either relapse or donor-derived leukemia.", "differentials": ["Myelodysplastic Syndrome with Excess Blasts-2 (MDS-EB2)", "Severe Aplastic Anemia with paroxysmal nocturnal hemoglobinuria (PNH) clone (less likely given blast %)"], "treatment_plan": [{"action": "Transfusion Support", "intention": "therapeutic", "priority": 1}, {"action": "Infectious Disease Consultation / continued Antimicrobial Therapy", "intention": "therapeutic", "priority": 1}, {"action": "Hematology Oncology Consultation for Induction Chemotherapy or Hypomethylating Agents", "intention": "therapeutic", "priority": 1}, {"action": "Molecular Genetic Testing (NPM1, FLT3-ITD, TP53)", "intention": "diagnostic", "priority": 2}]}}}
+[Case 8 Round 3 Step 4] ENV: {"case_id": 8, "round": 2, "evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 8 Round 3 Step 4] ENV: Round 3 begins.
+                             Setting: Inpatient Ward / Hematology Consultation (Definitive Relapse Characterization and Planning)
+                             Capabilities: You now have access to the results of specialized tests with longer turnaround times, including mutational profiling, measurable residual disease characterization, and a detailed prior treatment history. You are expected to integrate these data with comorbidities and transplant history to define prognosis and formulate a realistic treatment and supportive care strategy.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 8 Round 3 Step 4] JUDGE: {
+                                 "case_id": 8,
+                                 "round": 2,
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 8 Round 3 Step 5] CANDIDATE: {"response": {"action": "request", "request": "Results of the Next-Generation Sequencing (NGS) molecular panel (targeting mutations such as TP53, NPM1, FLT3, IDH1/2) and the detailed history of prior Hematopoietic Stem Cell Transplantation (indication, donor relation, and conditioning regimen)."}}
+[Case 8 Round 3 Step 5] ENV: Molecular Panel:
+                             Mutations detected in ASXL1 (VAF 12%), DNMT3A (VAF 10%), SRSF2 (VAF 8%), STAG2 (VAF 7%), and RAD21 (VAF 6%). No pathogenic variants identified in FLT3-ITD/TKD, NPM1, CEBPA, IDH1, IDH2, TP53, RUNX1, NRAS, KRAS, TET2, EZH2, BCOR, BCORL1, U2AF1, ZRSR2, SF3B1, SETBP1, ETV6, CBL, KIT. No KMT2Ar.
+[Case 8 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Relapsed Acute Myeloid Leukemia (AML) with myelodysplasia-related gene mutations (ASXL1, SRSF2, STAG2, RAD21, DNMT3A) in a patient with prior allogeneic Hematopoietic Stem Cell Transplant (evidence of female donor chimerism: 46,XX[15]/46,XY[5]). The disease is classified as Adverse Risk per ELN 2022 guidelines and exhibits a hypocellular marrow morphology.", "differentials": ["Donor-Derived Leukemia (if 46,XX cells harbor mutations)", "Therapy-Related Myeloid Neoplasm (if prior chemotherapy was mutagenic)"], "treatment_plan": [{"action": "Broad-spectrum Antimicrobial Therapy", "intention": "therapeutic", "priority": 1}, {"action": "Transfusion Support (Packed RBCs and Platelets)", "intention": "therapeutic", "priority": 1}, {"action": "Azacitidine", "intention": "therapeutic", "priority": 2}, {"action": "Venetoclax", "intention": "therapeutic", "priority": 2}, {"action": "Goals of Care Discussion regarding Palliative vs. Curative intent", "intention": "therapeutic", "priority": 1}]}}}
+[Case 8 Round 3 Step 6] ENV: {"case_id": 8, "round": 3, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}]}}
+[Case 8 Round 3 Step 6] JUDGE: {
+                                 "case_id": 8,
+                                 "round": 3,
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "correct"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     }
+                                   ]
+                                 }
+                               }

@@ -1,0 +1,214 @@
+[Case 18 Round 1 Step 0] ENV: Case 18:
+                              Initial presentation:
+                              - Age: 34
+                              - Sex: female
+                              - Chief complaint: Follow-up for transfusion-dependent pancytopenia with persistent severe neutropenia and sequelae of disseminated fusariosis
+                              - Vital signs: Temp 37.7 °C, BP 104/66 mmHg, HR 102/min (regular), RR 18/min, SpO₂ 94% on room air.
+                              Setting: Outpatient hematology follow-up in a patient with longstanding PNH/aplastic marrow failure and recent disseminated fungal infection
+                              Capabilities: You are seeing a profoundly cytopenic, heavily transfusion-dependent patient in the outpatient clinic. You can review symptoms, exam, current medications, cytopenia pattern, and recent cross-sectional imaging. You decide on urgency and scope of inpatient versus outpatient diagnostics and whether to proceed to repeat bone marrow evaluation and extended infectious work-up.
+                              Provide either a request for a single information item or solve.
+[Case 18 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "review of systems and current symptoms"}}
+[Case 18 Round 1 Step 0] ENV: History Physical:
+                              2024-09-15: The patient presented for follow-up with increasing transfusion requirements, requiring RBC transfusions weekly and platelet transfusions up to 3–4 times per week. ANC remained critically low at 0.1–0.2 × 10⁹/L. She reported skin lesions that showed gradual healing with postinflammatory hyperpigmentation and impaired vision with persistent blurriness and reduced acuity. She reported intermittent cough with occasional blood-streaked sputum and chronic nasal congestion.
+                              Her general condition was poor with pronounced fatigue, weakness, and emotional distress. She appeared tearful and anxious during consultation, expressing significant fear of renewed long hospital stays, remembering the prolonged summer admission for disseminated fusariosis. ECOG performance status was 1.
+                              Current medication: pegcetacoplan 1080 mg s.c. twice weekly, eltrombopag 150 mg 1-0-0, ciclosporin A 150 mg 1-0-1, voriconazole 200 mg 1-0-1, terbinafine 250 mg 1-0-0, valaciclovir 500 mg 1-0-1, cotrimoxazole 960 mg 1-0-0 (Mo/Wed/Fri), sitagliptin 100 mg 1-0-0, pregabalin 75 mg 1-0-1, sertraline 50 mg 1-0-0, pantoprazole 40 mg 1-0-0, filgrastim 30 Mio IU s.c. 2–3×/week as needed, epoetin alfa 40,000 IU s.c. once weekly, lorazepam 1 mg on demand for anxiety or insomnia.
+                              Vital signs: temperature 37.7 °C, blood pressure 104/66 mmHg, heart rate 102/min (regular), respiratory rate 18/min, oxygen saturation 94% on room air.
+[Case 18 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 18 Round 1 Step 1] ENV: 'history_physical' already provided.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 18 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 18 Round 1 Step 2] ENV: Cbc Chemistry:
+                              CBC: Hb 7.8 g/dL, WBC 0.9 × 10⁹/L, ANC 0.15 × 10⁹/L, Plt 18 × 10⁹/L; MCV 95 fL, MCH 31 pg.
+                              Differential: neutrophils 11%, lymphocytes 64%, monocytes 19%, eosinophils 4%, basophils 2%.
+                              Reticulocytes: 12 × 10⁹/L.
+                              Coagulation: aPTT 35 sec, INR 1.3.
+                              Chemistry: Na 134 mmol/L, K 4.6 mmol/L, creatinine 1.4 mg/dL, BUN 28 mg/dL, AST 41 U/L, ALT 44 U/L, bilirubin 1.6 mg/dL, LDH 328 U/L, uric acid 6.2 mg/dL, CRP 10.8 mg/dL, haptoglobin 21 mg/dL, ferritin 4950 ng/mL.
+                              Immunology: CD4⁺ 380/µL, CD8⁺ 590/µL (CD4/CD8 ratio 0.64). Immunoglobulins: IgG 840 mg/dL (normal), IgA 68 mg/dL, IgM 42 mg/dL.
+[Case 18 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "chest CT scan"}}
+[Case 18 Round 1 Step 3] ENV: Baseline Imaging:
+                              2024-09-18 Abdominal ultrasound: Normal-sized liver (14.8 cm) with homogeneous echotexture, no focal lesions. Intra- and extrahepatic bile ducts not dilated (DHC 5 mm). Gallbladder poorly visualized (postprandial). Spleen 11.2 × 4.6 cm, regular margins, no focal lesions. Kidneys normal in size and morphology (left 10.8 cm, right 11.1 cm) with preserved corticomedullary differentiation. No hydronephrosis, no lymphadenopathy, no ascites.
+                              2024-09-18 Echocardiogram: Sinus rhythm, preserved LV ejection fraction (55%), normal RV function, no relevant valvular disease or pericardial effusion.
+                              2024-09-19 CT of the paranasal sinuses: Mucosal thickening in both maxillary sinuses (right > left) and ethmoidal cells, consistent with chronic fungal sinusitis. No fluid levels, bone erosion, or orbital involvement.
+                              2024-09-20 CT thorax: Multiple bilateral pulmonary nodules (1–1.5 cm), partly cavitary with halo sign, consistent with residual pulmonary fungal lesions. No pleural effusion or mediastinal lymphadenopathy.
+[Case 18 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate results"}}
+[Case 18 Round 1 Step 4] ENV: 'bone_marrow' available in round 2.
+                              Bone marrow biopsy/aspirate results are part of the bone_marrow item, which is not available in this round. Consider requesting current CBC/chemistry or baseline imaging, which are available now.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 18 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "flow cytometry for PNH clone size"}}
+[Case 18 Round 1 Step 5] ENV: 'extended_diagnostics' available in round 2.
+                              PNH clone quantification is part of extended diagnostics, which is not available in this round. You can request current labs (CBC/chemistry), baseline imaging, or the bone marrow report in a later round instead.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 18 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "galactomannan and beta-D-glucan levels"}}
+[Case 18 Round 1 Step 6] ENV: 'extended_diagnostics' available in round 2.
+                              Requests for fungal antigen testing (galactomannan, beta-D-glucan) are part of the extended infectious work-up in this case, which becomes available in a later round. Consider requesting items available now such as CBC/chemistry or baseline imaging if needed.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 18 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "ophthalmology examination findings"}}
+[Case 18 Round 1 Step 7] ENV: 'history_physical' already provided.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 18 Round 1 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Severe aplastic anemia/PNH overlap syndrome with refractory cytopenias and persistent disseminated fusariosis despite antifungal therapy", "differentials": ["Myelodysplastic syndrome (clonal evolution from AA/PNH)", "Progression of PNH clone with worsening hemolysis contributing to anemia", "Drug-induced myelosuppression (voriconazole, cyclosporine)"], "treatment_plan": [{"action": "Refer urgently for allogeneic hematopoietic stem cell transplantation evaluation - only curative option for refractory severe aplastic anemia/PNH", "intention": "therapeutic", "priority": 1}, {"action": "Bone marrow biopsy and aspirate with cytogenetics and flow cytometry to exclude MDS transformation and quantify PNH clone", "intention": "diagnostic", "priority": 1}, {"action": "Infectious disease consultation for optimization of antifungal therapy given persistent pulmonary and sinus fungal burden - consider addition of liposomal amphotericin B or posaconazole switch", "intention": "therapeutic", "priority": 2}, {"action": "Continue current transfusion support (RBC and platelets) with irradiated, leukoreduced products", "intention": "supportive", "priority": 1}, {"action": "Initiate iron chelation therapy given severe transfusional iron overload (ferritin 4950 ng/mL)", "intention": "therapeutic", "priority": 2}, {"action": "Ophthalmology follow-up for fungal endophthalmitis monitoring given persistent visual symptoms", "intention": "diagnostic", "priority": 2}]}}}
+[Case 18 Round 2 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 18 Round 2 Step 8] ENV: Round 2 begins.
+                              Setting: Post–bone marrow work-up visit with new cytogenetic data
+                              Capabilities: You now have bone marrow morphology, flow cytometry, histology, and karyotype results. You can integrate hypocellular marrow findings, monosomy 7, and the known PNH clone, and reassess the diagnosis and risk profile. You decide whether standard immunosuppression remains appropriate or whether clonal evolution mandates a change in strategy and transplant planning.
+                              Request additional information or solve.
+[Case 18 Round 2 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 18 Round 2 Step 9] CANDIDATE: {"response": {"action": "request", "request": "bone marrow biopsy and aspirate with cytogenetics"}}
+[Case 18 Round 2 Step 9] ENV: Bone Marrow:
+                              2024-09-22: Bone marrow aspiration showed marked reduction of granulopoiesis and virtually absent megakaryopoiesis. Erythropoiesis was markedly reduced with dysplastic features including nuclear irregularities, megaloblastoid changes, and occasional binucleated forms. Myelopoiesis was strongly suppressed with left shift, hypogranular neutrophils, and pseudo–Pelger-like forms. Plasma cells were slightly increased but morphologically unremarkable. No blast excess (<5%).
+                              Flow cytometry demonstrated a very low cellularity sample with predominance of T-lymphocytes and an inverted CD4/CD8 ratio (0.6). A minimal residual population of myeloid precursors was present without aberrant antigen expression. No evidence of clonal B-lymphocytes, plasma cell dyscrasia, or blast population was detected.
+                              Histology (biopsy) revealed hypocellular marrow spaces (cellularity <10%) largely replaced by adipose tissue. Sparse hematopoietic islands showed residual erythroid precursors with dysplasia, isolated myeloid elements, and almost no megakaryocytes. Small foci of reactive lymphoid infiltrates were present. Iron stain showed increased iron stores and occasional ring sideroblasts (<5%). Reticulin stain showed no marrow fibrosis (MF-0).
+[Case 18 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "karyotype and cytogenetic analysis results"}}
+[Case 18 Round 2 Step 10] ENV: Cytogenetics:
+                               Preliminary cytogenetics: 46,XX[2] / 45,XX,-7[18].
+[Case 18 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "PNH clone flow cytometry quantification"}}
+[Case 18 Round 2 Step 11] ENV: Extended Diagnostics:
+                               Serology for hepatitis B and C was negative (HBsAg, anti-HBc, and anti-HCV all negative), with protective anti-HBs positivity. HIV-1/2 Ab/Ag screening was negative. CMV and EBV serology showed past infection (IgG positive, IgM negative), and PCR assays for CMV-DNA and EBV-DNA were undetectable.
+                               Microbiology: Blood cultures remained negative. Sputum cultures showed no bacterial or fungal growth. The nasopharyngeal viral PCR panel was negative for influenza A/B, RSV, SARS-CoV-2, adenovirus, metapneumovirus, rhinovirus, and parainfluenza. A wound swab from a healing skin lesion grew Klebsiella pneumoniae (KPC producing) and Enterococcus faecium (VRE), but no fungi.
+                               Flow cytometry from peripheral blood demonstrated a PNH clone: granulocytes 68% FLAER⁻/CD24⁻, monocytes 72% FLAER⁻/CD14⁻, and RBCs 46% CD59-deficient (31% type III, 15% type II populations).
+                               2024-09-20 PET-CT revealed FDG-avid bilateral pulmonary nodules up to 1.6 cm, suspicious of known fungal manifestations. No FDG uptake was detected in skin lesions, and there was no evidence of involvement of abdominal organs, bones, or CNS.
+                               2024-09-21 cMRI: showed no evidence of intracranial fungal infection. No parenchymal lesions or leptomeningeal enhancement.
+[Case 18 Round 2 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hypoplastic myelodysplastic syndrome with monosomy 7 (high-risk cytogenetics) arising from clonal evolution of PNH/aplastic anemia overlap syndrome, with persistent disseminated fusariosis", "differentials": ["Therapy-related MDS secondary to prior immunosuppressive therapy", "Primary severe aplastic anemia with secondary MDS transformation"], "treatment_plan": [{"action": "Urgent HLA typing of patient and initiation of donor search (matched sibling or unrelated donor) for allogeneic hematopoietic stem cell transplantation - only curative option for high-risk hypoplastic MDS with monosomy 7", "intention": "therapeutic", "priority": 1}, {"action": "Discontinue cyclosporine as immunosuppressive therapy is no longer appropriate given clonal evolution with monosomy 7", "intention": "therapeutic", "priority": 1}, {"action": "Continue aggressive antifungal therapy with voriconazole and terbinafine with goal of achieving fungal infection control prior to transplant conditioning", "intention": "therapeutic", "priority": 1}, {"action": "Continue pegcetacoplan for complement inhibition given persistent large PNH clone (68-72%)", "intention": "therapeutic", "priority": 2}, {"action": "Continue transfusion support with irradiated, CMV-negative, leukoreduced blood products to maintain hemoglobin >7 g/dL and platelets >10-20 \u00d7 10\u2079/L", "intention": "supportive", "priority": 1}, {"action": "Multidisciplinary case conference including transplant team and infectious disease to determine optimal timing of HSCT given active fungal infection", "intention": "diagnostic", "priority": 2}]}}}
+[Case 18 Round 3 Step 12] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 18 Round 3 Step 12] ENV: Round 3 begins.
+                               Setting: High-risk marrow failure and MDS transplant-planning discussion in the context of invasive fungal disease
+                               Capabilities: You have full information including NGS (TET2, DNMT3A), detailed PNH clone quantification, prior IST response, and the course of disseminated fusariosis with ocular and pulmonary involvement. You must define the final diagnosis, antifungal strategy, and an allogeneic SCT plan, balancing curative intent against infectious risk and the patient's reluctance toward prolonged hospitalization.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 18 Round 3 Step 12] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "partially_correct",
+                                     "differentials": [
+                                       "incorrect",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 18 Round 3 Step 13] CANDIDATE: {"response": {"action": "request", "request": "NGS molecular panel results and prior immunosuppressive therapy response history"}}
+[Case 18 Round 3 Step 13] ENV: Molecular Panel:
+                               Mutations detected in TET2 (VAF 21%) and DNMT3A (VAF 12%). No pathogenic variants detected in TP53, RUNX1, ASXL1, IDH1, IDH2, FLT3, NPM1, SRSF2, U2AF1, ZRSR2, STAG2, CEBPA, MECOM.
+[Case 18 Round 3 Step 14] CANDIDATE: {"response": {"action": "request", "request": "prior immunosuppressive therapy response history and detailed fusariosis treatment course"}}
+[Case 18 Round 3 Step 14] ENV: Treatment History:
+                               The patient had a long-standing history of unexplained cytopenia since her late 20s. In 2018, a PNH clone was detected in the peripheral blood (granulocytes 28%, monocytes 31%, RBCs 12% by FLAER/flow cytometry). Because of worsening intravascular hemolysis, eculizumab was initiated on 2018-07-12 (600 mg IV weekly ×4, then 900 mg IV q2w). Hemoglobin initially stabilized at 9–10 g/dL, but LDH and bilirubin remained elevated.
+                               On 2019-11-30, the patient developed increasing fatigue and one episode of breakthrough hemolysis before scheduled infusion (Hb 6.6 g/dL), associated to viral infection. Due to dissatisfaction with frequent hospital visits, treatment was switched to ravulizumab (loading dose 2700 mg IV, followed by 3300 mg IV q8w). Under ravulizumab, hemolysis parameters improved, but fatigue and reticulocytosis persisted, with LDH up to 650 U/L. Haptoglobin remained <10 mg/dL and hemoglobin 8–10 g/dL.
+                               In 2021, she enrolled in a clinical trial and switched to pegcetacoplan (1080 mg SC twice weekly) after an 8-week overlap with ravulizumab. Complement blockade normalized LDH and bilirubin, and transfusion requirements temporarily decreased. However, progressive pancytopenia developed while hemolysis markers remained controlled. By 2023-04-24, blood counts showed Hb 7.5 g/dL, Plt 25 × 10⁹/L, ANC 0.6 × 10⁹/L. Supportive therapy with filgrastim (30 Mio IU SC q2–3d) and epoetin alfa (40,000 IU SC weekly) was initiated. Transfusion frequency increased to 2 RBC units every 2–3 weeks and platelet transfusions twice weekly. Viral reactivation (CMV, EBV, parvovirus B19, adenovirus) was excluded. Cytogenetics revealed monosomy 7 in 9/20 metaphases.
+                               Because of worsening cytopenia, repeat bone marrow biopsies were performed. The patient was counseled regarding allogeneic stem cell transplantation (alloSCT) but remained reluctant, citing childcare responsibilities. A matched unrelated donor was identified; both siblings were HLA-haploidentical and healthy. A repeat bone marrow biopsy on 2023-08-12 showed very severe aplastic anemia (vSAA): cellularity <10%, absent granulopoiesis and megakaryopoiesis, sparse residual erythropoiesis, and small lymphoid aggregates. Flow cytometry confirmed absence of blasts or lymphoproliferative disease. Peripheral blood criteria fulfilled vSAA (ANC 0.12 × 10⁹/L, Plt 17 × 10⁹/L, reticulocytes 18 ‰).
+                               On 2023-11-11, immunosuppressive therapy was initiated with horse anti-thymocyte globulin (ATG) 40 mg/kg/day IV ×4 days, Cyclosporine A 5 mg/kg/day PO (target trough 200–300 ng/mL) and Eltrombopag 150 mg PO daily. Prednisolone 1 mg/kg was added with taper over 28 days. The course was complicated by severe sepsis due to Candida albicans, requiring ICU admission with vasopressor support (norepinephrine up to 1.2 µg/kg/min), non-invasive ventilation, and broad-spectrum antifungal therapy (liposomal amphotericin B 5 mg/kg/day IV + anidulafungin 100 mg IV daily). HSV stomatitis with viremia was detected and treated with acyclovir 10 mg/kg IV q8h for 14 days. She developed acute kidney injury (creatinine peak 3.1 mg/dL) requiring temporary dialysis and pneumonia treated empirically with meropenem 1 g IV q8h and linezolid 600 mg IV q12h. The patient gradually improved, was weaned off catecholamines and NIV, and was discharged from ICU on 2023-12-15. She continued cyclosporine (target trough 250 ng/mL) and eltrombopag 150 mg daily and was discharged home on 2023-12-23.
+                               During outpatient follow-up, no further severe infections occurred, but there was no hematologic recovery: Hb 6.8–7.5 g/dL, Plt 10–15 × 10⁹/L, ANC 0.1–0.2 × 10⁹/L, reticulocytes around 20 ‰. Transfusion dependence persisted (every 3 weeks.
+                               By 2024-06, she developed multiple painful erythematous skin lesions with central necrosis, fever up to 39.5 °C, and cough. CT chest revealed several pulmonary nodules (0.5–1.5 cm, some with halo sign). Skin biopsy showed epidermal ulceration and dermal angioinvasion by septate, hyaline hyphae, consistent with angioinvasive fusariosis. Species identification by TEF1 sequencing confirmed Fusarium petrophilum. The patient was hospitalized and started on liposomal amphotericin B 10 mg/kg/day IV (750 mg/day), voriconazole 6 mg/kg IV on day 1 then 4 mg/kg IV bid, and terbinafine 250 mg PO daily. Empiric piperacillin/tazobactam 4.5 g IV q8h was given for 7 days; blood cultures remained negative. Gradual clinical improvement occurred, though hospitalization was prolonged.
+                               On 2024-07-02, ophthalmologic assessment revealed bilateral chorioretinal infiltrates consistent with Fusarium endophthalmitis. She received repeated intravitreal injections of amphotericin B and voriconazole, alongside systemic therapy. Visual acuity stabilized at 0.7 bilaterally, with residual blurring. The patient was discharged on oral voriconazole 200 mg bid and terbinafine 250 mg daily, with improving skin and ocular findings.
+[Case 18 Round 3 Step 15] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hypoplastic myelodysplastic syndrome with monosomy 7 (90% of metaphases) and somatic mutations (TET2, DNMT3A), arising from clonal evolution of PNH/very severe aplastic anemia overlap syndrome, refractory to ATG-based immunosuppressive therapy, with persistent disseminated fusariosis (Fusarium petrophilum) involving lungs, sinuses, and eyes under secondary prophylaxis", "differentials": ["Severe aplastic anemia with MDS transformation and secondary clonal hematopoiesis", "PNH with progressive bone marrow failure and emergence of MDS clone"], "treatment_plan": [{"action": "Proceed urgently with allogeneic hematopoietic stem cell transplantation using the identified matched unrelated donor (or haploidentical sibling if MUD unavailable) - only curative option for high-risk hypoplastic MDS with monosomy 7 and failed IST", "intention": "therapeutic", "priority": 1}, {"action": "Continue dual antifungal therapy with voriconazole 200 mg twice daily plus terbinafine 250 mg daily targeting Fusarium petrophilum, with goal of achieving maximal fungal control prior to transplant conditioning", "intention": "therapeutic", "priority": 1}, {"action": "Discontinue cyclosporine as immunosuppressive therapy is no longer indicated given clonal evolution to MDS with high-risk cytogenetics and demonstrated IST failure", "intention": "therapeutic", "priority": 2}, {"action": "Continue pegcetacoplan for complement inhibition of large PNH clone (68-72%) until transplant conditioning begins", "intention": "supportive", "priority": 2}, {"action": "Continue transfusion support with irradiated, leukoreduced blood products maintaining hemoglobin above 7 g/dL and platelets above 10 \u00d7 10\u2079/L for bleeding prevention", "intention": "supportive", "priority": 1}, {"action": "Multidisciplinary transplant planning conference with infectious disease, ophthalmology, and psychosocial support to optimize timing of HSCT while addressing patient concerns about prolonged hospitalization and childcare responsibilities", "intention": "therapeutic", "priority": 2}]}}}
+[Case 18 Round 3 Step 15] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 18 Round 3 Step 15] JUDGE: {
+                                   "evaluation": {
+                                     "working_diagnosis": "correct",
+                                     "differentials": [
+                                       "correct",
+                                       "correct"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "incorrect",
+                                         "priority": "partially_correct"
+                                       }
+                                     ]
+                                   }
+                                 }

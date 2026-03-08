@@ -1,0 +1,151 @@
+[Case 1 Round 1 Step 0] ENV: Case 1:
+                             Initial presentation:
+                             - Age: 35
+                             - Sex: male
+                             - Chief complaint: Shortness of breath and palpitations
+                             - Vital signs: BP 98/60, HR 112/min, T° 37,8 °C, Respiratory rate: 21/min.
+                             Setting: Emergency Department (Presentation)
+                             Capabilities: Immediate assessment of acute physiology. You have access to point-of-care diagnostics, standard laboratory panels, bedside imaging, and emergency cross-sectional imaging (CT). Specialized tissue sampling (biopsies) or molecular diagnostics are not yet available.
+                             Provide either a request for a single information item or solve.
+[Case 1 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "physical examination"}}
+[Case 1 Round 1 Step 0] ENV: History Physical:
+                             On May 26, 2025, the patient presented to the emergency department with shortness of breath and palpitations. He additionally reported swelling, redness, and hardening of the skin in the left elbow region. Other symptoms included difficulty sleeping, exertional dyspnea, and a mild unintentional weight loss. Chest pain was denied. On examination, the patient appeared pale with scattered petechiae on the legs, hematomas on the forearms, and white lesions on the oral mucosa. Hepatomegaly was noted, while no lymphadenopathy was present. The skin appeared dry, and the left antecubital region showed painful erythema with induration. Bilateral lower leg edema was present, while neurological status was unremarkable.
+                             Current medication: pantoprazole 40 mg 1-0-0, torsemide 5 mg 1-0-0, vitamin D 20.000 IE 1×/week, posaconazole 300 mg 1×/d, beclomethasone/formoterol inhaler p.r.n., dapagliflozin 10 mg 1-0-0.
+[Case 1 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count"}}
+[Case 1 Round 1 Step 1] ENV: Cbc:
+                             CBC: Hb 8.3 g/dL, WBC 104 ×10⁹/L, Plt 12 ×10⁹/L; MCV normal, MCH normal; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes
+[Case 1 Round 1 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Acute lymphoblastic leukemia", "Chronic myelomonocytic leukemia", "Myelodysplastic syndrome with excess blasts", "Severe infection or leukemoid reaction"], "treatment_plan": [{"action": "Platelet transfusion for severe thrombocytopenia", "intention": "therapeutic", "priority": 1}, {"action": "Intravenous hydration and allopurinol for tumor lysis prophylaxis", "intention": "therapeutic", "priority": 1}, {"action": "Urgent hematology consultation for bone marrow biopsy and definitive diagnosis", "intention": "diagnostic", "priority": 1}, {"action": "Assess for leukostasis and consider leukapheresis if indicated", "intention": "therapeutic", "priority": 2}, {"action": "Broad-spectrum antibiotics pending cultures given fever and immunocompromised state", "intention": "therapeutic", "priority": 2}], "working_diagnosis": "Acute myeloid leukemia (suspected)"}}}
+[Case 1 Round 2 Step 2] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "partially_correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}]}}
+[Case 1 Round 2 Step 2] ENV: Round 2 begins.
+                             Setting: Inpatient Ward (Day 1-7)
+                             Capabilities: The patient is admitted and stable enough for more detailed or invasive diagnostic procedures. You have access to tissue acquisition, comprehensive laboratory or microbiology workup, more detailed and focused imaging, and immunophenotyping. Long-term culture and molecular results are still pending processing.
+                             Request additional information or solve.
+[Case 1 Round 2 Step 2] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "correct",
+                                     "incorrect",
+                                     "partially_correct",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "bone marrow aspirate and biopsy with flow cytometry immunophenotyping"}}
+[Case 1 Round 2 Step 3] ENV: Flow Cytometry:
+                             Flow cytometry confirmed a blast population expressing CD34, CD117, HLA-DR, MPO, CD11b, CD13; but negative for CD33, CD7, CD56, TdT. In addition, a monocytic CD14+/CD64+ population with aberrant CD56 expression was detected.
+[Case 1 Round 2 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Chronic myelomonocytic leukemia (CMML)", "Myelodysplastic syndrome with excess blasts (MDS-EB)", "Myeloid sarcoma with bone marrow involvement", "Acute lymphoblastic leukemia (although flow cytometry argues against)"], "treatment_plan": [{"action": "Initiate induction chemotherapy for AML (e.g., 7+3 regimen with cytarabine and anthracycline)", "intention": "therapeutic", "priority": 1}, {"action": "Continue platelet transfusion support for severe thrombocytopenia", "intention": "therapeutic", "priority": 1}, {"action": "Perform cytogenetic and molecular testing on bone marrow sample for risk stratification", "intention": "diagnostic", "priority": 2}, {"action": "Lumbar puncture to assess for central nervous system involvement given monocytic phenotype", "intention": "diagnostic", "priority": 3}, {"action": "Continue broad-spectrum antibiotics and antifungal prophylaxis (posaconazole)", "intention": "therapeutic", "priority": 2}], "working_diagnosis": "Acute myeloid leukemia with monocytic differentiation (likely AML-M4 or M5)"}}}
+[Case 1 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 1 Round 3 Step 4] ENV: Round 3 begins.
+                             Setting: Inpatient Ward (Day >7)
+                             Capabilities: Definitive diagnostic characterization phase. Results from long-turnaround tests are now available. You have access to cytogenetics, molecular panels, and Measurable Residual Disease (MRD) assessments. You may also request data on response to initial therapeutic interventions or prior therapy courses.
+                             Request additional information or solve.
+                             Final round - provide definitive diagnosis and treatment plan.
+[Case 1 Round 3 Step 4] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "incorrect",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     },
+                                     {
+                                       "action": "correct",
+                                       "intention": "incorrect",
+                                       "priority": "partially_correct"
+                                     }
+                                   ]
+                                 }
+                               }
+[Case 1 Round 3 Step 5] CANDIDATE: {"response": {"action": "request", "request": "cytogenetic analysis and molecular mutation panel results (including NPM1, FLT3, CEBPA, etc.)"}}
+[Case 1 Round 3 Step 5] ENV: Molecular Panel:
+                             Molecular analysis demonstrated an FLT3-ITD mutation with an allelic ratio of 1.32. No changes were seen in NPM1, IDH1/2, CEBPA,CBFB-MYH11 or RUNX1–RUNX1T1. Likewise, no changes were found in ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2, TP53, DNMT3A, TET2, WT1, NRAS, KRAS, KIT, PTPN11. No KMT2A rearrangements, inv(3)/MECOM or NUP98 fusions.
+[Case 1 Round 3 Step 6] CANDIDATE: {"response": {"action": "solve", "solve": {"differentials": ["Acute promyelocytic leukemia (ruled out by negative PML-RARA and molecular profile)", "Myelodysplastic syndrome with excess blasts (ruled out by high blast percentage and acute presentation)", "Chronic myelomonocytic leukemia (ruled out by high blast count and acute symptoms)", "Mixed phenotype acute leukemia (ruled out by flow cytometry showing myeloid lineage without lymphoid markers)"], "treatment_plan": [{"action": "Initiate induction chemotherapy with cytarabine and daunorubicin (7+3 regimen) plus midostaurin (FLT3 inhibitor) for FLT3-ITD mutated AML", "intention": "therapeutic", "priority": 1}, {"action": "Provide aggressive supportive care including platelet and red blood cell transfusions for cytopenias, and intravenous hydration with allopurinol for tumor lysis prophylaxis", "intention": "supportive", "priority": 1}, {"action": "Continue and adjust antimicrobial prophylaxis with posaconazole and broad-spectrum antibiotics given fever and immunocompromised state", "intention": "therapeutic", "priority": 2}, {"action": "Perform repeat bone marrow biopsy after induction to assess for complete remission and measurable residual disease (MRD) by flow cytometry and molecular testing", "intention": "diagnostic", "priority": 2}, {"action": "Consult with hematology and transplant teams for evaluation of allogeneic stem cell transplantation in first remission due to high-risk FLT3-ITD mutation", "intention": "therapeutic", "priority": 3}], "working_diagnosis": "Acute myeloid leukemia (AML) with monocytic differentiation and FLT3-ITD mutation (consistent with AML-M4 or M5 per FAB classification)"}}}
+[Case 1 Round 3 Step 6] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 1 Round 3 Step 6] JUDGE: {
+                                 "evaluation": {
+                                   "working_diagnosis": "partially_correct",
+                                   "differentials": [
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect",
+                                     "incorrect"
+                                   ],
+                                   "treatment_plan": [
+                                     {
+                                       "action": "incorrect",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "incorrect",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "partially_correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "correct"
+                                     },
+                                     {
+                                       "action": "partially_correct",
+                                       "intention": "correct",
+                                       "priority": "incorrect"
+                                     }
+                                   ]
+                                 }
+                               }

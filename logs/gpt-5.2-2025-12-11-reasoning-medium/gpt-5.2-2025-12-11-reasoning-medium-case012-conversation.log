@@ -1,0 +1,48 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "detailed history (lymphoma subtype/status, alloSCT date/donor/conditioning, prior infections, GVHD, current immunosuppression/medications, fever pattern, B symptoms, exposures, travel, sick contacts)"}}
+[Case 12 Round 1 Step 0] ENV: History Physical:
+                              2025-04-22: The patient presented with recurrent fevers up to 38.7 °C, progressive fatigue, and reduced physical capacity. She reported intermittent night sweats during the previous week and mild, unintentional weight loss of 1.5 kg over the past month. On examination: pale conjunctivae, mild tachycardia, and a single firm, tender left-sided cervical lymph node (approx. 1.5 cm). Lungs were clear to auscultation; cardiac examination showed a regular rhythm without murmurs. Abdomen was soft and non-tender. No peripheral edema. Surgical scars from prior cholecystectomy were well healed. Neurological exam unremarkable, with no recurrence of seizure activity, however the patient reported gait disturbance and impaired mobility.
+                              Current medication:
+                              Apixaban 5 mg 1-0-1, levetiracetam 500 mg 1-0-1, ramipril 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, atorvastatin 20 mg 0-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), tenofovir 245 mg 0-1-0, pregabalin 150 mg 1-0-1, sitagliptin 100 mg 1-0-0, metformin 1000 mg 1-0-1.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "complete blood count with differential (CBC/diff)"}}
+[Case 12 Round 1 Step 1] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "plasma EBV DNA quantitative PCR (viral load)"}}
+[Case 12 Round 1 Step 2] ENV: 'infection_screening' available in round 2.
+                              Plasma viral PCRs (including EBV quantitative PCR) are part of the infection screening dataset, which is not available in this round. Consider requesting available items such as CBC/chemistry/immunology, imaging (CT or abdominal ultrasound), or history/physical exam in the current round.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 12 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "CT scan of neck/chest/abdomen/pelvis (preferably non-contrast given creatinine 1.8) to assess lymphadenopathy/organ involvement"}}
+[Case 12 Round 1 Step 3] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "infection screening dataset (blood cultures and viral PCRs including EBV/CMV/HHV-6/adenovirus, plus relevant serologies as available)"}}
+[Case 12 Round 1 Step 4] ENV: 'infection_screening' available in round 2.
+                              This case includes an infectious workup item (viral PCRs and serologies) but it is not available in round 1. Consider requesting labs available now such as CBC/chemistry/immunology or history/physical to help assess infection risk while you wait.
+                              (4 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 12 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "detailed oncologic/transplant history (original lymphoma diagnosis and treatments, alloSCT date/type/donor/conditioning, current/previous GVHD, current immunosuppression, prior post-transplant complications/infections, and last disease assessment)"}}
+[Case 12 Round 1 Step 5] ENV: 'detailed oncologic/transplant history (original lymphoma diagnosis and treatments, alloSCT date/type/donor/conditioning, current/previous GVHD, current immunosuppression, prior post-transplant complications/infections, and last disease assessment)' not available. Request a specific test or report.
+                              This case's detailed prior lymphoma and transplant treatment history is not available in round 1. In this round, you can request current history/physical, demographics, labs (CBC/chemistry/immunology), and imaging such as CT or abdominal ultrasound to help initial management decisions.
+                              (3 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 12 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "FDG PET-CT (whole-body) to assess for metabolically active disease beyond the single cervical node"}}
+[Case 12 Round 1 Step 6] ENV: 'pet_ct' available in round 2.
+                              FDG PET/CT is listed for this case but becomes available in a later round. In the current round you could request CT staging (chest/abdomen/pelvis) or initial labs (CBC/chemistry) to help assess extent of disease now.
+                              (2 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 12 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "ultrasound of the left cervical lymph node (size/morphology, vascularity, presence of additional nodes)"}}
+[Case 12 Round 1 Step 7] ENV: 'ultrasound of the left cervical lymph node (size/morphology, vascularity, presence of additional nodes)' not available. Request a specific test or report.
+                              This case does not include a neck/cervical lymph node ultrasound. You can instead request cross-sectional CT staging (chest/abdomen/pelvis) for imaging available in this round, or request a lymph node biopsy or PET/CT in later rounds for further evaluation.
+                              (1 invalid request remaining before case is cancelled. Consider solving with available information or requesting a different item.)
+[Case 12 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "excisional biopsy of the left cervical lymph node with full pathology (histology, immunohistochemistry, flow cytometry) and EBER (EBV-encoded RNA) in-situ hybridization"}}
+[Case 12 Round 1 Step 8] ENV: 'lymphoid_biopsy' available in round 2.
+                              Lymph node histology, immunophenotyping, flow cytometry, and EBER in‑situ hybridization are part of the lymphoid_biopsy item, but that item is not yet available in this round. Consider requesting available items such as the history/physical, CBC/chemistry, or CT staging while you wait.
+                              (0 invalid requests remaining before case is cancelled. Consider solving with available information or requesting a different item.)

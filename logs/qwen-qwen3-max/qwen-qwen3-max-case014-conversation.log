@@ -1,0 +1,131 @@
+[Case 14 Round 1 Step 0] ENV: Case 14:
+                              Initial presentation:
+                              - Age: 27
+                              - Sex: female
+                              - Chief complaint: Worsening cytopenia, dyspnea, and pleuritic chest pain in a post-alloSCT patient
+                              - Vital signs: BP 105/70 mmHg, HR 110/min, RR 18/min, T° 37.9 °C, SpO₂ 91% on room air.
+                              Setting: Acute hematology / transplant follow-up (post-alloSCT with new respiratory symptoms)
+                              Capabilities: You are evaluating a clinically fragile, immunocompromised patient after allogeneic stem cell transplantation who presents with new respiratory symptoms and cytopenias. You can obtain a focused history and examination, request routine laboratory testing, and arrange appropriate non-invasive imaging and specialist assessments. Invasive procedures and systemic treatment decisions are guided by these initial findings and the patient’s clinical stability.
+                              Provide either a request for a single information item or solve.
+[Case 14 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Obtain a high-resolution chest CT scan to evaluate for pulmonary complications such as infection, diffuse alveolar hemorrhage, or veno-occlusive disease in this post-alloSCT patient with new respiratory symptoms and cytopenias."}}
+[Case 14 Round 1 Step 0] ENV: Ct Thorax Pns:
+                              CT thorax/PNH: Progression of a left-sided pleura-near fungal lesion (3.2 cm, cavitary with halo sign) and several smaller bilateral nodules. Mediastinum without lymphadenopathy. Chronic sinusitis with mucosal thickening in the ethmoidal and maxillary sinuses.
+[Case 14 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Invasive pulmonary aspergillosis", "differentials": ["Other invasive mold infections (e.g., mucormycosis)", "Nocardiosis", "Post-transplant lymphoproliferative disorder (PTLD)", "Disseminated candidiasis with pulmonary involvement"], "treatment_plan": [{"action": "Initiate intravenous voriconazole", "intention": "therapeutic", "priority": 1}, {"action": "Send serum and bronchoalveolar lavage (BAL) for galactomannan, fungal cultures, and Aspergillus PCR", "intention": "diagnostic", "priority": 2}, {"action": "Administer supplemental oxygen to maintain SpO\u2082 \u226592% and monitor respiratory status closely", "intention": "supportive", "priority": 2}, {"action": "Consult infectious disease and transplant teams for management coordination", "intention": "supportive", "priority": 3}]}}}
+[Case 14 Round 2 Step 1] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 14 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and infectious evaluation after alloSCT)
+                              Capabilities: The patient is admitted for clarification of suspected relapse and concurrent infection. You can organize bone marrow assessment, extended laboratory and microbiologic workup, advanced imaging, and multidisciplinary consultations. Some specialized molecular or cytogenetic tests may still be pending.
+                              Request additional information or solve.
+[Case 14 Round 2 Step 1] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 14 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Obtain peripheral blood and bone marrow aspirate for morphology, flow cytometry, and chimerism studies to assess for hematologic relapse, and send serum beta-D-glucan and additional fungal biomarkers to further characterize the fungal infection."}}
+[Case 14 Round 2 Step 2] ENV: Bone Marrow:
+                              Cytology: Hypocellular marrow (cellularity 25%). Megakaryopoiesis markedly reduced, consisting mainly of juvenile forms with nuclear budding and fragmentation. The erythropoiesis-to-granulopoiesis ratio is shifted toward erythropoiesis, which displays dysplastic features with frequent mitotic figures. Granulopoiesis shows toxic granulation and matures to segmented forms. Increased numbers of macrophages and plasma cells are present but not expanded. Approximately 10% blasts with deeply basophilic cytoplasm, prominent nucleoli, and occasional Auer rods.
+                              Flow cytometry: B-cell compartment depleted, relative increase in NK/T cells, and reduced granulocytes. No plasma cell expansion. Blasts comprise 13% of nucleated cells, positive for CD34, CD117, CD123 HLA-DR, CD13, and negative for CD33, CD7 and CD56.
+                              Histology: Hypocellular marrow with dysplastic changes in all hematopoietic lineages. Reticulin staining shows focal fibrosis (MF-1). CD34 immunohistochemistry demonstrates focal infiltration by blasts up to 15%.
+[Case 14 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hematologic relapse of acute myeloid leukemia (AML) post-alloSCT with concurrent invasive pulmonary aspergillosis", "differentials": ["Invasive fungal infection (e.g., aspergillosis) without relapse", "Graft failure with dysplastic hematopoiesis", "Post-transplant lymphoproliferative disorder (PTLD) with marrow involvement", "Idiopathic cytopenia of undetermined significance (ICUS) post-transplant"], "treatment_plan": [{"action": "Initiate intravenous voriconazole for invasive pulmonary aspergillosis", "intention": "therapeutic", "priority": 1}, {"action": "Begin urgent hematology/oncology and transplant team consultation for relapse management (e.g., donor lymphocyte infusion, hypomethylating agents, or re-induction)", "intention": "therapeutic", "priority": 1}, {"action": "Obtain serum galactomannan, beta-D-glucan, and consider bronchoalveolar lavage for fungal studies if clinically stable", "intention": "diagnostic", "priority": 2}, {"action": "Provide supportive care including transfusion support, antimicrobial prophylaxis, and oxygen supplementation as needed", "intention": "supportive", "priority": 2}]}}}
+[Case 14 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}]}}
+[Case 14 Round 3 Step 3] ENV: Round 3 begins.
+                              Setting: Post-transplant relapse and infection conference
+                              Capabilities: You now have access to bone marrow morphology and flow cytometry, full cytogenetics and molecular profiling, detailed infectious workup, and a complete longitudinal treatment history including two allogeneic transplants and prior FLT3 inhibitor therapy. You are expected to integrate these data to define the relapse type and risk, and to formulate a realistic treatment and supportive care plan that addresses both leukemia and active infections.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 14 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 14 Round 3 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hematologic relapse of FLT3-ITD-positive acute myeloid leukemia post-alloSCT with concurrent invasive pulmonary aspergillosis", "differentials": ["Mixed infection (fungal and viral) mimicking relapse", "Donor-derived leukemia", "Secondary myelodysplastic syndrome post-transplant", "Drug-induced bone marrow suppression with opportunistic infection"], "treatment_plan": [{"action": "Initiate or resume targeted therapy with a second-generation FLT3 inhibitor (e.g., gilteritinib)", "intention": "therapeutic", "priority": 1}, {"action": "Continue or initiate antifungal therapy with voriconazole or isavuconazole, guided by therapeutic drug monitoring and fungal biomarkers", "intention": "therapeutic", "priority": 1}, {"action": "Assess donor chimerism and consider donor lymphocyte infusion (DLI) only if infection is controlled and no evidence of graft-versus-host disease", "intention": "therapeutic", "priority": 2}, {"action": "Provide aggressive supportive care: transfusion support, prophylactic antimicrobials, and oxygen therapy as needed, with close monitoring for immune reconstitution and infection progression", "intention": "supportive", "priority": 2}]}}}
+[Case 14 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "partially_correct", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 14 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }

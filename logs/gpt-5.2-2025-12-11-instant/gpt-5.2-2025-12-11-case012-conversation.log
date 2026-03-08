@@ -1,0 +1,195 @@
+[Case 12 Round 1 Step 0] ENV: Case 12:
+                              Initial presentation:
+                              - Age: 67
+                              - Sex: female
+                              - Chief complaint: Recurrent fever, progressive fatigue, and reduced physical capacity
+                              - Vital signs: BP 112/68 mmHg, HR 94/min, Temp 37.2 °C, RR 18/min, O₂ sat 95% (room air)
+                              Setting: Hematology clinic / day unit (evaluation of febrile patient after prior lymphoma and alloSCT)
+                              Capabilities: You are assessing a clinically stable but symptomatic patient with prior lymphoma and transplantation. You can take a detailed history and perform physical examination, request baseline blood tests, and arrange standard non-invasive imaging and specialist assessments appropriate for this level of care. Decisions about invasive procedures and systemic treatment changes are typically based on these initial findings.
+                              Provide either a request for a single information item or solve.
+[Case 12 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Detailed history (including lymphoma subtype/treatment timeline, allogeneic SCT details, current immunosuppression/GVHD status, infection exposures, symptom chronology, B symptoms, focal symptoms, medications/prophylaxis)"}}
+[Case 12 Round 1 Step 0] ENV: 'treatment_history' available in round 3.
+                              The detailed prior lymphoma treatments and alloSCT timeline (treatment_history) are not available in round 1. For now, request 'history_physical' to obtain symptom chronology, B symptoms, focal findings, current medications/prophylaxis, and physical exam; you can request treatment_history in a later round.
+[Case 12 Round 1 Step 1] CANDIDATE: {"response": {"action": "request", "request": "history_physical"}}
+[Case 12 Round 1 Step 1] ENV: History Physical:
+                              2025-04-22: The patient presented with recurrent fevers up to 38.7 °C, progressive fatigue, and reduced physical capacity. She reported intermittent night sweats during the previous week and mild, unintentional weight loss of 1.5 kg over the past month. On examination: pale conjunctivae, mild tachycardia, and a single firm, tender left-sided cervical lymph node (approx. 1.5 cm). Lungs were clear to auscultation; cardiac examination showed a regular rhythm without murmurs. Abdomen was soft and non-tender. No peripheral edema. Surgical scars from prior cholecystectomy were well healed. Neurological exam unremarkable, with no recurrence of seizure activity, however the patient reported gait disturbance and impaired mobility.
+                              Current medication:
+                              Apixaban 5 mg 1-0-1, levetiracetam 500 mg 1-0-1, ramipril 5 mg 1-0-0, bisoprolol 2.5 mg 1-0-0, atorvastatin 20 mg 0-0-1, valaciclovir 500 mg 1-0-1, co-trimoxazole 960 mg 1-0-0 (Mon/Wed/Fri), tenofovir 245 mg 0-1-0, pregabalin 150 mg 1-0-1, sitagliptin 100 mg 1-0-0, metformin 1000 mg 1-0-1.
+[Case 12 Round 1 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Baseline blood tests: CBC with differential + reticulocytes and peripheral smear"}}
+[Case 12 Round 1 Step 2] ENV: Cbc Chemistry Immunology:
+                              CBC: Hb 9.4 g/dL, WBC 3.3 × 10⁹/L, ANC 1.6 × 10⁹/L, Plt 172 × 10⁹/L; MCV 91 fL, MCH 30 pg.
+                              Differential: neutrophils 50%, lymphocytes 26%, monocytes 14%, eosinophils 8%, basophils 2%.
+                              Coagulation: aPTT 34 sec, INR 1.4.
+                              Chemistry: Na 133 mmol/L, K 4.3 mmol/L, creatinine 1.8 mg/dL, BUN 31 mg/dL, AST 65 U/L, ALT 72 U/L, bilirubin 1.2 mg/dL, LDH 210 U/L, uric acid 6.8 mg/dL, CRP 7.2 mg/dL.
+                              Immunology: CD4 185/µL, CD8 430/µL, CD4/CD8 ratio 0.4. Immunoglobulins: IgG 370 mg/dL, IgA 52 mg/dL, IgM 29 mg/dL.
+[Case 12 Round 1 Step 3] CANDIDATE: {"response": {"action": "request", "request": "FDG PET-CT (or CT neck/chest/abdomen/pelvis with contrast if PET-CT unavailable) to assess for lymphoma relapse vs infection/PTLD and stage disease"}}
+[Case 12 Round 1 Step 3] ENV: 'pet_ct' available in round 2.
+                              FDG PET/CT is requested but is not available in round 1. You may instead request CT staging of chest/abdomen/pelvis (available in this round) to assess extent of disease.
+[Case 12 Round 1 Step 4] CANDIDATE: {"response": {"action": "request", "request": "CT chest/abdomen/pelvis with contrast (staging)"}}
+[Case 12 Round 1 Step 4] ENV: Ct Staging:
+                              2025-04-24: CT staging: Single enlarged left cervical lymph node (1.8 cm); no additional mediastinal, abdominal, or pelvic lymphadenopathy. Lungs clear, without infiltrates or nodules.
+[Case 12 Round 1 Step 5] CANDIDATE: {"response": {"action": "request", "request": "treatment_history"}}
+[Case 12 Round 1 Step 5] ENV: 'treatment_history' available in round 3.
+                              This item is not available in round 1. In this round you can request demographics, history/physical, CBC/chemistry, echocardiogram, CT staging, or abdominal ultrasound.
+[Case 12 Round 1 Step 6] CANDIDATE: {"response": {"action": "request", "request": "Abdominal ultrasound (liver/spleen size, focal lesions, biliary dilation, ascites)"}}
+[Case 12 Round 1 Step 6] ENV: Abdominal Ultrasound:
+                              2025-04-22: Abdominal ultrasound: Mild hepatomegaly with diffuse hyperechogenicity, consistent with hepatic steatosis. Status post cholecystectomy, with mildly prominent intrahepatic bile ducts; common bile duct 9 mm. Spleen with small calcifications but normal in size. No retroperitoneal or mesenteric lymphadenopathy. Kidneys normal in size and morphology (left 11.2 cm, right 11.6 cm).
+[Case 12 Round 1 Step 7] CANDIDATE: {"response": {"action": "request", "request": "pet_ct"}}
+[Case 12 Round 1 Step 7] ENV: 'pet_ct' available in round 2.
+                              FDG PET/CT is recorded for this case but is not available in round 1. Consider requesting CT staging (cross-sectional CT of chest/abdomen/pelvis) or other imaging available in this round.
+[Case 12 Round 1 Step 8] CANDIDATE: {"response": {"action": "request", "request": "Echocardiogram (to assess cardiac function/endocarditis surrogate findings in a febrile post-transplant patient with tachycardia)"}}
+[Case 12 Round 1 Step 8] ENV: Echocardiogram:
+                              2025-04-24:  Echocardiogram: Sinus rhythm, mildly reduced LVEF 48%, no pericardial effusion or significant valvular disease.
+[Case 12 Round 1 Step 9] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Probable localized post-transplant lymphoproliferative disorder (PTLD)/lymphoma relapse presenting as isolated left cervical lymphadenopathy with B symptoms in an immunocompromised post-alloSCT patient", "differentials": ["Infectious cervical lymphadenitis (bacterial/viral including EBV/CMV; atypical mycobacterial)", "Secondary malignancy (e.g., head/neck squamous cell carcinoma with nodal metastasis)", "Chronic GVHD/inflammatory lymphadenopathy", "Drug fever/other occult infection (e.g., endocarditis\u2014less likely with normal echo)"], "treatment_plan": [{"action": "Urgent tissue diagnosis of the left cervical lymph node (excisional biopsy preferred; core needle if not feasible) with histopathology, flow cytometry, EBV-encoded RNA (EBER) ISH, and microbiology stains/cultures as indicated", "intention": "diagnostic", "priority": 1}, {"action": "Infectious workup now: blood cultures (peripheral \u00b1 from line), EBV and CMV PCR in blood, and targeted serologies/NAAT based on symptoms; review/adjust antimicrobial prophylaxis only after results unless clinically deteriorating", "intention": "diagnostic", "priority": 1}, {"action": "Supportive care while awaiting diagnosis: manage anemia/cytopenias (transfuse PRBC if symptomatic), assess and address hypogammaglobulinemia (consider IVIG given IgG 370 mg/dL with recurrent fever/infection risk), optimize renal function and review nephrotoxic meds; continue current prophylaxis and close monitoring with low threshold for admission if fever recurs", "intention": "supportive", "priority": 2}, {"action": "If PTLD confirmed and EBV-driven: initiate stepwise therapy\u2014reduce immunosuppression if applicable (coordinate with transplant team), then rituximab-based therapy for CD20+ disease; consider chemoimmunotherapy or cellular therapy per subtype and patient fitness; obtain baseline PET/CT for staging once available", "intention": "therapeutic", "priority": 3}]}}}
+[Case 12 Round 2 Step 9] ENV: {"case_id": 12, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["correct", "incorrect", "incorrect", "correct"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 12 Round 2 Step 9] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (relapse workup and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected relapse. You can organize bone marrow and tissue sampling, comprehensive staging including whole-body imaging, and extended infectious and virologic workup. Multidisciplinary input is available. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 12 Round 2 Step 9] JUDGE: {
+                                  "case_id": 12,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 12 Round 2 Step 10] CANDIDATE: {"response": {"action": "request", "request": "pet_ct"}}
+[Case 12 Round 2 Step 10] ENV: Pet Ct:
+                               2025-04-27: PET/CT: Demonstrated a single hypermetabolic cervical lymph node (SUVmax 14.2) corresponding to the clinically palpable lesion. No additional metabolically active foci were detected in mediastinal, abdominal, or extranodal regions. Diffuse bone marrow activity was present. There was no hepatosplenomegaly, and pulmonary parenchyma was free of abnormal uptake.
+[Case 12 Round 2 Step 11] CANDIDATE: {"response": {"action": "request", "request": "Left cervical lymph node biopsy pathology report (including histology, immunohistochemistry/flow, and EBER/EBV status)"}}
+[Case 12 Round 2 Step 11] ENV: Lymphoid Biopsy:
+                               Lymphoid tissue biopsy: Multiple fragments showed dense, sheet-like infiltrates of lymphoid-appearing cells with open chromatin and prominent nucleoli, sometimes central, eccentric, or multiple. Frequent mitotic and scattered apoptotic figures were present. The infiltrates extended to the subepithelial zone and occasionally formed intraepidermal aggregates. Immunohistochemistry demonstrated strong CD3 expression and weak but diffuse positivity for CD30 and MUM1. CD4 was variably expressed, mostly weak, while EMA was positive in scattered individual cells. The blasts were negative for CD8, CD20, PAX5, BCL6, CD10, TdT, CD56, CD138, and ALK1. The Ki-67 proliferation index was approximately 25, EBV in-situ hybridization negative. Morphologically, the infiltrate consisted of large blastoid cells with prominent nucleoli, occasional multinucleation, and some elongated nuclei, though classic hallmark cells were not identified. PD-L1 was expressed in about 10% of tumor cells. T-cell receptor gene rearrangement analysis revealed a monoclonal peak in the Jγ-fragment (80 bp), consistent with clonal T-cell expansion, while the Jβ-fragment demonstrated an oligoclonal pattern. ALK negative.
+[Case 12 Round 2 Step 12] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "ALK-negative, EBV-negative systemic anaplastic large cell lymphoma (T-cell lymphoma) presenting as localized cervical nodal disease after alloSCT (post-transplant T-cell lymphoma/relapse)", "differentials": ["Primary cutaneous CD30+ T-cell lymphoproliferative disorder (lymphomatoid papulosis / primary cutaneous ALCL) with nodal involvement", "Peripheral T-cell lymphoma, NOS with CD30 expression", "Transformed mycosis fungoides (CD30+)", "Infectious/reactive lymphadenitis (less likely given clonal TCR rearrangement and blastoid histology)"], "treatment_plan": [{"action": "Complete staging to guide intent: bone marrow biopsy/aspirate with flow and TCR clonality (given diffuse marrow uptake) and baseline labs (LDH, hepatitis/HIV) plus performance status assessment", "intention": "diagnostic", "priority": 1}, {"action": "Multidisciplinary treatment planning for ALK-negative systemic ALCL: initiate anthracycline-based therapy with CD30 targeting (e.g., brentuximab vedotin + CHP if feasible) with tumor-lysis prophylaxis and inpatient monitoring; consider dose adjustments given LVEF 48%/renal dysfunction and cardio-oncology input", "intention": "therapeutic", "priority": 1}, {"action": "If truly stage I (single nodal site) and patient achieves response to systemic therapy, add involved-site radiotherapy to the cervical node for consolidation; if unfit for intensive therapy, consider brentuximab vedotin monotherapy or other less intensive regimens", "intention": "therapeutic", "priority": 2}, {"action": "Post-alloSCT considerations: coordinate with transplant team regarding any ongoing immunosuppression (reduce if present), assess chimerism and consider donor lymphocyte infusion only in selected cases; evaluate for eligibility for clinical trial or (if relapse/refractory) allogeneic-directed salvage approaches", "intention": "therapeutic", "priority": 3}, {"action": "Supportive care: antimicrobial prophylaxis per institutional guidelines given CD4 185 and hypogammaglobulinemia; consider IVIG if recurrent/severe infections; manage anemia and renal dysfunction; continue apixaban with peri-procedural holds as needed", "intention": "supportive", "priority": 2}]}}}
+[Case 12 Round 3 Step 12] ENV: {"case_id": 12, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 12 Round 3 Step 12] ENV: Round 3 begins.
+                               Setting: Post-transplant relapse conference (treatment planning after alloSCT)
+                               Capabilities: You now have access to detailed histopathology, immunophenotyping, molecular findings, chimerism data, and full staging, together with a complete treatment history including prior cellular therapies. You are expected to integrate these data to define relapse type, stage, and comorbidity risk and to formulate a realistic treatment and monitoring strategy.
+                               Request additional information or solve.
+                               Final round - provide definitive diagnosis and treatment plan.
+[Case 12 Round 3 Step 12] JUDGE: {
+                                   "case_id": 12,
+                                   "round": 2,
+                                   "evaluation": {
+                                     "working_diagnosis": "partially_correct",
+                                     "differentials": [
+                                       "incorrect",
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       }
+                                     ]
+                                   }
+                                 }
+[Case 12 Round 3 Step 13] CANDIDATE: {"response": {"action": "request", "request": "treatment_history"}}
+[Case 12 Round 3 Step 13] ENV: Treatment History:
+                               2017-02-03: Initial diagnosis of anaplastic large-cell lymphoma, ALK-negative, Ann Arbor stage IV, with extensive nodal and extranodal involvement. Nodal disease included cervical, mediastinal, axillary, retroperitoneal, mesenteric, and inguinal lymphadenopathy (several conglomerates > 5 cm).
+                               Extranodal sites: liver (multiple parenchymal lesions, largest 3.8 cm), gallbladder (diffuse wall infiltration confirmed histologically at cholecystectomy), omentum, and lungs (multiple bilateral nodules ≤ 1.5 cm).
+                               2017-02-15  to 2017-04-20: Six cycles of CHOEP (cyclophosphamide 750 mg/m² i.v. day 1; doxorubicin 50 mg/m² i.v. day 1; vincristine 1.4 mg/m² [max 2 mg] i.v. day 1; etoposide 100 mg/m² i.v. days 1–3; prednisone 100 mg p.o. days 1–5). Cycle 5 was replaced by a single course of DHAP (cisplatin 100 mg/m² i.v. day 1; cytarabine 2000 mg/m² q12h day 2; dexamethasone 40 mg p.o. days 1–4) for stem-cell mobilization and harvest. CT after cycle 6 showed a partial remission.
+                               2017-06-18 High-dose BEAM conditioning (carmustine 300 mg/m² day –7; etoposide 200 mg/m² days –6 to –3; cytarabine 200 mg/m² days –6 to –3; melphalan 140 mg/m² day –2) followed by autologous SCT.
+                               Neutrophil engraftment: day +11; platelet engraftment: day +14. Complications: febrile neutropenia and grade 2 mucositis, both resolved with supportive care.
+                               2017-07-30: PET/CT: complete metabolic remission.
+                               2018-09-04: Relapse (Stage IVB): cervical, mediastinal, retroperitoneal, mesenteric, and inguinal lymphadenopathy with bone-marrow, pulmonary, and hepatic involvement; ECOG 2-3.
+                               2019-09-20: First cycle GemOx at 50 % dose (gemcitabine 500 mg/m² day 1; oxaliplatin 50 mg/m² day 2) → mixed response with hepatic progression.
+                               2019-09-28: Brentuximab vedotin 1.8 mg/kg i.v. q3w + CHOEP 75 % dose → discontinued after 3 cycles due to pneumonia, Candida albicans sepsis, and clinical deterioration. CT showed complete response.
+                               2020-02-15: Progressive disease, treated with ICE + brentuximab-vedotin (ifosfamide 5000 mg/m² day 2; carboplatin AUC 5 day 2; etoposide 100 mg/m² days 1–3; brentuximab 1.8 mg/kg q3w). Therapy stopped early for infection, but interim staging showed CR.
+                               2021-04-27: Cervical lymph-node excision (level V left) confirmed ALK-negative ALCL relapse, staging showed extensive lymphadnnopathy.
+                               2021-05-01: Prednisone pre-phase (100 mg p.o. daily) initiated; complicated by tumor-lysis syndrome with acute renal failure (creatinine 2.9 mg/dL, recovered).
+                               2021-05-09 to 2021-09-01 - Brentuximab vedotin 1.8 mg/kg q3w × 5 cycles in palliative intent, however clinical performance status rapidly improved. Donor-search initiated.
+                               2021-05-12 CT: complete remission.
+                               2022-01-04 — Allogeneic SCT from haploidentical family donor after conditioning with fludarabine 30 mg/m² days –6 to –2, cyclophosphamide 14.5 mg/kg days –6 and –5,
+                               and TBI 2 Gy day –1. Post-transplant cyclophosphamide 50 mg/kg days +3 and +4, followed by tacrolimus + mycophenolate for GvHD prophylaxis. Post-transplant course: septic shock requiring ICU care, vasopressors, mechanical ventilation x 3 weeks, fungal pneumonia, and Candida albicans sepsis. Antimicrobial regimen: meropenem 1 g q8h + linezolid 600 mg q12h; antifungals: liposomal amphotericin B 5 mg/kg/day for 3 days, then caspofungin 70mg for 1 day followed by 50 mg/day x 3 weeks. Complications: severe muscle wasting, weight loss to 53 kg, critical-illness and brentuximab-associated polyneuropathy, and steroid-induced diabetes mellitus. Despite complications, 2022-04 PET/CT showed complete metabolic remission. Further follow-ups without major incidences.
+[Case 12 Round 3 Step 14] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Late relapse of ALK-negative systemic anaplastic large cell lymphoma (CD30+ T-cell lymphoma), EBV/EBER-negative, presenting as isolated PET-avid left cervical nodal disease after haploidentical alloSCT (post-alloSCT relapse, likely limited stage pending marrow confirmation)", "differentials": ["Peripheral T-cell lymphoma, NOS with CD30 expression (less likely given prior known ALK\u2212 ALCL and current phenotype)", "Primary cutaneous CD30+ T-cell lymphoproliferative disorder with secondary nodal involvement (less likely without convincing primary skin disease)", "Reactive/infectious lymphadenitis (unlikely with blastoid morphology and clonal TCR rearrangement)"], "treatment_plan": [{"action": "Confirm extent and transplant context: bone marrow aspirate/biopsy with flow/TCR clonality and donor chimerism (given diffuse marrow uptake and cytopenias); document current whole-blood/T-cell chimerism and check EBV/CMV PCR and blood cultures if febrile", "intention": "diagnostic", "priority": 1}, {"action": "Curative-intent systemic therapy for relapsed CD30+ ALCL after prior BV exposure: start brentuximab vedotin\u2013based regimen if responsive and tolerable (e.g., BV+CHP/CHOP or BV monotherapy if frail), with cardio-oncology input given LVEF 48% and careful renal-dose considerations; tumor-lysis prophylaxis and inpatient monitoring given prior TLS/AKI", "intention": "therapeutic", "priority": 1}, {"action": "Local consolidation for presumed limited-stage relapse: involved-site radiotherapy to the left cervical nodal region after systemic therapy/response assessment (or definitive RT if systemic therapy contraindicated)", "intention": "therapeutic", "priority": 2}, {"action": "If refractory/early progression: proceed to salvage options such as clinical trial, pralatrexate, romidepsin/belinostat, or combination regimens; consider cellular approaches (e.g., investigational CD30 CAR-T) rather than DLI (generally limited role in aggressive T-cell lymphoma and higher GVHD risk)", "intention": "therapeutic", "priority": 2}, {"action": "Supportive/complication management during therapy: continue PJP/HSV prophylaxis; manage hypogammaglobulinemia/infection risk (IVIG only if recurrent/severe infections), transfuse as needed, neuropathy mitigation (given prior BV-related polyneuropathy), and coordinate anticoagulation holds around procedures/LP/biopsy as applicable", "intention": "supportive", "priority": 3}]}}}
+[Case 12 Round 3 Step 14] ENV: {"case_id": 12, "round": 3, "evaluation": {"working_diagnosis": "incorrect", "differentials": ["correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 12 Round 3 Step 14] JUDGE: {
+                                   "case_id": 12,
+                                   "round": 3,
+                                   "evaluation": {
+                                     "working_diagnosis": "incorrect",
+                                     "differentials": [
+                                       "correct",
+                                       "incorrect",
+                                       "incorrect"
+                                     ],
+                                     "treatment_plan": [
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "incorrect",
+                                         "priority": "incorrect"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       },
+                                       {
+                                         "action": "partially_correct",
+                                         "intention": "correct",
+                                         "priority": "partially_correct"
+                                       },
+                                       {
+                                         "action": "incorrect",
+                                         "intention": "correct",
+                                         "priority": "correct"
+                                       }
+                                     ]
+                                   }
+                                 }

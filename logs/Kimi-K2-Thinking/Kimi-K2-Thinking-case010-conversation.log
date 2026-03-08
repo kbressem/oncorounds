@@ -1,0 +1,194 @@
+[Case 10 Round 1 Step 0] ENV: Case 10:
+                              Initial presentation:
+                              - Age: 21
+                              - Sex: female
+                              - Chief complaint: Post-induction consultation for T-ALL with prior sinus vein thrombosis and intracerebral hemorrhage
+                              - Vital signs: Blood pressure 122/74 mmHg, heart rate 96/min regular, respiratory rate 15/min, temperature 37.3 °C, oxygen saturation 97% on room air.
+                              Setting: Outpatient hematology clinic (post-induction consultation)
+                              Capabilities: You are evaluating a clinically stable patient after completion of induction therapy. You can review history and examination findings, request routine laboratory evaluations, and arrange standard imaging and specialist consultations appropriate to an ambulatory setting. More invasive procedures and specialized analyses usually require additional planning.
+                              Provide either a request for a single information item or solve.
+[Case 10 Round 1 Step 0] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "21-year-old female with T-ALL, status post induction chemotherapy, with a history of a severe treatment-related complication (cerebral sinus vein thrombosis and intracerebral hemorrhage), now presenting for post-induction assessment. The primary goals are to evaluate treatment response and to manage the complex sequelae of thrombosis and hemorrhage.", "differentials": ["Treatment-related hypercoagulability (L-asparaginase, central venous catheter) as cause of thrombosis", "Leukemia-related hypercoagulable state", "Residual or recurrent disease causing cytopenias or symptoms", "Hemorrhagic transformation of venous infarct vs. primary intracerebral hemorrhage complication"], "treatment_plan": [{"action": "Review History and Perform Physical Examination", "intention": "diagnostic", "priority": 1}, {"action": "Obtain and review detailed documentation of the index neurological event", "intention": "diagnostic", "priority": 1}, {"action": "Order routine post-induction laboratories", "intention": "diagnostic", "priority": 2}, {"action": "Arrange mandatory post-induction disease assessment", "intention": "diagnostic", "priority": 1}, {"action": "Arrange critical neuroradiological follow-up", "intention": "diagnostic", "priority": 1}, {"action": "Review and finalize antithrombotic strategy", "intention": "therapeutic", "priority": 1}, {"action": "Transition to consolidation therapy", "intention": "therapeutic", "priority": 2}, {"action": "Provide comprehensive supportive care", "intention": "therapeutic", "priority": 2}]}}}
+[Case 10 Round 2 Step 0] ENV: {"case_id": 10, "round": 1, "evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "incorrect", "partially_correct", "incorrect"], "treatment_plan": [{"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}]}}
+[Case 10 Round 2 Step 0] ENV: Round 2 begins.
+                              Setting: Inpatient or day-hospital hematology workup
+                              Capabilities: The patient is undergoing structured follow-up after induction and consolidation. You can organize marrow-based assessments, extended evaluations by consulting services, and additional imaging. Some specialized test results may still be pending.
+                              Request additional information or solve.
+[Case 10 Round 2 Step 0] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 1,
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "partially_correct",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 2 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "21-year-old female with T-ALL s/p induction/consolidation therapy, complicated by treatment-associated cerebral sinus venous thrombosis (CSVT) and intracerebral hemorrhage (ICH). At critical decision juncture requiring simultaneous assessment of disease response and neurological recovery to determine safest therapeutic path forward.", "differentials": ["MRD-negative remission with stable neurological recovery (proceed to modified consolidation/allogeneic transplant)", "MRD-positive persistent disease necessitating intensification with blinatumomab/inotuzumab bridge to urgent transplant", "Active/residual CSVT or ICH requiring further neurosurgical/neurological management and contraindicating immediate cytotoxic therapy", "Therapy-related myelosuppression/infection (differentiate from leukemia recurrence)"], "treatment_plan": [{"action": "Immediate disease re-staging with bone marrow aspirate/biopsy including comprehensive immunophenotyping and MRD assessment by multi-parameter flow cytometry (sensitivity 10^-4) and PCR for clonal TCR rearrangements; CSF analysis ONLY if neuroimaging shows complete resolution of hemorrhage and thrombosis", "intention": "diagnostic", "priority": 1}, {"action": "Urgent neuroimaging with brain MRI/MRV to evaluate evolution of CSVT and ICH; assess for residual thrombus, hemorrhagic transformation, mass effect, or hydrocephalus; obtain prior imaging for direct comparison", "intention": "diagnostic", "priority": 1}, {"action": "Formal multidisciplinary consultation with Neurosurgery, Neurology, and Thrombosis/Hematology services to: (1) determine safety of resuming anticoagulation if CSVT persists, (2) assess bleed risk with forthcoming thrombocytopenia, (3) clear for CNS-directed therapy", "intention": "diagnostic", "priority": 1}, {"action": "If MRD-negative AND neurologically cleared: proceed to modified consolidation using a CBF-based protocol (e.g., hyper-CVAD) with CRITICAL MODIFICATIONS: (a) eliminate L-asparaginase permanently, (b) reduce intrathecal methotrexate dose/frequency or substitute with liposomal cytarabine, (c) delay CNS irradiation if planned, (d) maintain platelets >50,000/\u00b5L during consolidation", "intention": "therapeutic", "priority": 2}, {"action": "If MRD-positive: initiate blinatumomab or inotuzumab ozogamicin bridge to urgent allogeneic HCT evaluation (preferably haploidentical or matched unrelated donor) given high-risk profile", "intention": "therapeutic", "priority": 1}, {"action": "For CSVT management: if imaging shows persistent thrombosis, resume therapeutic anticoagulation (LMWH) ONLY when platelet count >50,000/\u00b5L for 48 hours and no active bleeding; consider IVC filter if recurrent thrombosis and absolute contraindication to anticoagulation", "intention": "therapeutic", "priority": 2}, {"action": "Comprehensive supportive care: (a) prophylactic antimicrobials per ID guidelines for immunosuppression, (b) filgrastim support to maintain ANC >1000, (c) aggressive transfusion support maintaining platelets >50,000/\u00b5L during active anticoagulation or intracranial lesion healing, (d) seizure prophylaxis if indicated by neurosurgery, (e) serial neurological exams with low threshold for repeat imaging", "intention": "therapeutic", "priority": 2}, {"action": "Long-term planning: regardless of MRD status, strong consideration for allogeneic HCT in first CR given severe treatment-related neurotoxicity representing high-risk feature; initiate donor search if not already performed; fertility preservation counseling if not previously addressed", "intention": "therapeutic", "priority": 3}]}}}
+[Case 10 Round 3 Step 1] ENV: {"case_id": 10, "round": 2, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "incorrect", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "incorrect"}]}}
+[Case 10 Round 3 Step 1] ENV: Round 3 begins.
+                              Setting: Specialist conference focusing on MRD status and transplant planning
+                              Capabilities: You now have access to specialized molecular assessments, measurable residual disease data, and a detailed treatment history. You are expected to integrate these findings with donor availability and comorbidities to define prognosis and formulate a definitive strategy, including potential allogeneic transplantation or trial participation.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 10 Round 3 Step 1] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 2,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 10 Round 3 Step 2] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "21\u2011year\u2011old female with T\u2011cell acute lymphoblastic leukemia (T\u2011ALL) in morphologic remission after induction therapy, complicated by treatment\u2011related cerebral sinus venous thrombosis (CSVT) and intracerebral hemorrhage (ICH). The critical next steps are to determine measurable residual disease (MRD) status and to confirm neurological recovery before defining definitive consolidation and transplant strategy.", "differentials": ["MRD\u2011negative remission with resolved neuro\u2011imaging (proceed to low\u2011intensity consolidation\u202f+\u202fconsider allogeneic transplant if donor available)", "MRD\u2011positive persistent disease (requires blinatumomab/inotuzumab bridge and urgent allogeneic transplant)", "Ongoing/residual CSVT or ICH (delay further cytotoxic therapy until neurosurgical/neurology clearance and safe anticoagulation can be re\u2011established)", "Therapy\u2011related cytopenias/infection mimicking relapse (must confirm marrow status before intensification)"], "treatment_plan": [{"action": "Confirm MRD status with bone\u2011marrow aspirate/biopsy (multi\u2011parameter flow cytometry sensitivity \u226410\u207b\u2074, PCR for clonal TCR rearrangements) and obtain CSF cytology; review all molecular genetics (e.g., NOTCH1, FBXW7, PTEN) to refine risk", "intention": "diagnostic", "priority": 1}, {"action": "Obtain repeat brain MRI/MRV to document resolution of thrombosis and hemorrhage; coordinate formal Neurosurgery/Neurology review to assess safety of resuming anticoagulation and of intrathecal therapy", "intention": "diagnostic", "priority": 1}, {"action": "If MRD negative AND neuro\u2011imaging stable/cleared: (a) omit L\u2011asparaginase permanently, (b) give modified consolidation\u202f\u2013\u202fexample: high\u2011dose methotrexate (3\u202fg/m\u00b2) \u00d7\u202f2 cycles + high\u2011dose cytarabine (3\u202fg/m\u00b2 q12\u202fh, days 1\u20112) \u00d7\u202f2 cycles, (c) reduce intrathecal treatment to essential doses only, (d) consider CNS irradiation only if CNS disease was present at diagnosis; proceed to allogeneic transplant if a matched sibling or \u22658/8 matched unrelated donor is available, given the high\u2011risk nature of the CSVT/ICH complication", "intention": "therapeutic", "priority": 2}, {"action": "If MRD positive (any level): initiate blinatumomab 28\u2011\u00b5g/day continuous infusion (or inotuzumab ozogamicin if blinatumomab unavailable) to achieve MRD negativity; then proceed to allogeneic HCT as soon as a suitable donor (preferably a matched sibling or 8/8 MUD; haploidentical if no other) is identified", "intention": "therapeutic", "priority": 1}, {"action": "If CSVT/ICH persists: hold cytotoxic therapy and anticoagulation; continue only supportive care until neuroimaging shows stability/resolution; once platelet count >50\u202f000/\u00b5L for \u226548\u202fh and no active bleeding, restart therapeutic\u2011dose LMWH (or DOAC if platelet\u2011stable) under close radiologic surveillance", "intention": "therapeutic", "priority": 1}, {"action": "Aggressive supportive care throughout: G\u2011CSF to maintain ANC\u202f>\u202f1\u202f000/\u00b5L, prophylactic levofloxacin + acyclovir (or per institutional guidelines), platelet transfusion threshold \u226550\u202f000/\u00b5L while on anticoagulation or until intracranial lesion healed, seizure prophylaxis if Neurosurgery advises, serial neurologic exams, low threshold for repeat imaging", "intention": "therapeutic", "priority": 2}, {"action": "Oncofertility counseling and, if not previously done, expedited referral for oocyte cryopreservation before any myelosuppressive consolidation", "intention": "therapeutic", "priority": 3}, {"action": "If no suitable donor and MRD negative, consider enrollment in a clinical trial of novel T\u2011ALL\u2011directed agents (e.g., CAR\u2011T cells, JAK/STAT inhibitors, \u03b3\u2011secretase inhibitors for NOTCH1\u2011mutated disease) or maintenance\u2011style therapy with close MRD monitoring every 3\u202fmonths", "intention": "therapeutic", "priority": 3}]}}}
+[Case 10 Round 3 Step 2] ENV: {"case_id": 10, "round": 3, "evaluation": {"working_diagnosis": "partially_correct", "differentials": ["incorrect", "correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 10 Round 3 Step 2] JUDGE: {
+                                  "case_id": 10,
+                                  "round": 3,
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }

@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "candidate-output",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "response": {
+            "type": "object",
+            "anyOf": [
+                {
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "const": "request"
+                        },
+                        "request": {
+                            "type": "string",
+                            "description": "A natural language request from the candidate for specific clinical information or tests."
+                        }
+                    },
+                    "required": [
+                        "action",
+                        "request"
+                    ],
+                    "additionalProperties": false
+                },
+                {
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "const": "solve"
+                        },
+                        "solve": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "working_diagnosis": {
+                                    "type": "string",
+                                    "description": "The most likely diagnosis based on the provided information."
+                                },
+                                "differentials": {
+                                    "type": "array",
+                                    "description": "A list of alternative diagnoses to consider. Name at least one.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 1
+                                },
+                                "treatment_plan": {
+                                    "type": "array",
+                                    "description": "A list of recommended treatment actions, each with its intention and priority.",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "action": {
+                                                "type": "string",
+                                                "description": "The treatment action to be taken."
+                                            },
+                                            "intention": {
+                                                "type": "string",
+                                                "description": "The intention behind the treatment action. Must be one of: therapeutic, diagnostic, supportive.",
+                                                "enum": [
+                                                    "therapeutic",
+                                                    "diagnostic",
+                                                    "supportive"
+                                                ]
+                                            },
+                                            "priority": {
+                                                "type": "integer",
+                                                "description": "The priority of the treatment action, with 1 being the highest priority and 3 the lowest.",
+                                                "minimum": 1,
+                                                "maximum": 3
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "action",
+                                            "intention",
+                                            "priority"
+                                        ]
+                                    },
+                                    "minItems": 1
+                                }
+                            },
+                            "required": [
+                                "working_diagnosis",
+                                "differentials",
+                                "treatment_plan"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "action",
+                        "solve"
+                    ],
+                    "additionalProperties": false
+                }
+            ]
+        }
+    },
+    "required": [
+        "response"
+    ]
+}

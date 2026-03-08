@@ -1,0 +1,145 @@
+[Case 11 Round 1 Step 0] ENV: Case 11:
+                              Initial presentation:
+                              - Age: 32
+                              - Sex: female
+                              - Chief complaint: Rapidly progressive swelling of the left cervical region with exertional dyspnea and intermittent inspiratory stridor
+                              - Vital signs: BP 108/68 mmHg, HR 118/min, RR 24/min with mild stridor, Temp 37.8 °C, SpO₂ 93% on room air.
+                              Setting: Acute hematology / emergency assessment for symptomatic cervical mass
+                              Capabilities: You are evaluating a patient with rapidly progressive neck swelling and early airway compromise in an acute-care setting. You can obtain detailed history and examination, request baseline laboratory evaluations, and arrange urgent non-invasive imaging and airway assessments. Invasive diagnostic procedures and complex therapeutic decisions typically follow once initial stabilization and basic staging are completed.
+                              Provide either a request for a single information item or solve.
+[Case 11 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "Urgent contrast-enhanced CT scan of the neck and upper thorax to assess the size, location, and extent of the cervical mass and evaluate for airway compression or mediastinal involvement."}}
+[Case 11 Round 1 Step 0] ENV: Ct Staging:
+                              CT neck/chest/abdomen/pelvis showed bulky left cervical lymphadenopathy (levels II-IV) with confluent nodes up to 4.2 cm short axis, encasing the left carotid sheath. Bulky anterior mediastinal and paratracheal lymphadenopathy (largest 7.6 ×x4.8 cm) causing eccentric tracheal compression with luminal narrowing and mild rightward tracheal deviation. Multiple bilateral pulmonary round nodules (3-8 mm) without cavitation; no pleural effusion. No pathologic lymphadenopathy was seen below the diaphragm, liver and spleen were in normal size and attenuation.
+[Case 11 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hodgkin lymphoma (nodular sclerosis subtype likely) with bulky mediastinal and cervical lymphadenopathy causing airway compromise", "differentials": ["Diffuse large B-cell lymphoma (DLBCL)", "Metastatic carcinoma (e.g., nasopharyngeal, thyroid, or lung)", "Granulomatous disease (e.g., tuberculosis or sarcoidosis)"], "treatment_plan": [{"action": "Secure airway with close monitoring in a high-dependency unit; consider emergent ENT or anesthesia consultation for possible intubation or tracheostomy if stridor worsens", "intention": "supportive", "priority": 1}, {"action": "Initiate high-dose corticosteroids (e.g., dexamethasone 10 mg IV) after tissue diagnosis is secured or if clinical suspicion is very high and airway is deteriorating", "intention": "therapeutic", "priority": 2}, {"action": "Proceed with urgent ultrasound-guided core needle biopsy of accessible left cervical lymph node for histopathology, immunohistochemistry, and molecular studies", "intention": "diagnostic", "priority": 1}, {"action": "Arrange for expedited hematology/oncology consultation and preparation for potential urgent chemotherapy if diagnosis confirmed", "intention": "therapeutic", "priority": 2}, {"action": "Obtain baseline labs including CBC, LDH, renal and liver function tests, HIV, and EBV serology", "intention": "diagnostic", "priority": 3}]}}}
+[Case 11 Round 2 Step 1] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["correct", "correct", "partially_correct"], "treatment_plan": [{"action": "partially_correct", "intention": "incorrect", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 11 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Inpatient hematology ward (diagnostic clarification and staging)
+                              Capabilities: The patient is admitted for further evaluation of suspected lymphoma. You can organize tissue biopsies, bone marrow assessment, comprehensive staging including advanced imaging, and multidisciplinary consultations. Some specialized tests may still be in progress or pending external analysis.
+                              Request additional information or solve.
+[Case 11 Round 2 Step 1] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "correct",
+                                      "correct",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Results of the ultrasound-guided core needle biopsy of the left cervical lymph node, including histopathology, immunohistochemistry, and flow cytometry findings."}}
+[Case 11 Round 2 Step 2] ENV: Lymph Node Biopsy:
+                              Lymph node biopsy:
+                              Match 15th 2025: Sections showed a diffuse effacement of the nodal architecture by a polymorphous infiltrate of atypical large lymphoid cells arranged in a diffuse growth pattern. The tumor cells exhibited vesicular chromatin, prominent nucleoli, and moderate amounts of amphophilic cytoplasm. Occasional multinucleated forms and apoptotic bodies were observed.
+                              Immunohistochemistry:
+                              The neoplastic cells demonstrated strong nuclear expression of PAX5, partial membranous expression of CD20, and variable nuclear expression of BCL6 and MUM1, ranging from moderate to strong across different tumor areas. The proliferation index (Ki-67) was approximately 60–70%. BCL2 was strongly expressed in the majority of tumor cells. CD30 showed moderate positivity in approximately 40% of cells, while CD15 demonstrated focal, partial expression. CD10 expression was restricted to stromal and reactive elements only. EBER in situ hybridization was negative for Epstein–Barr virus.
+                              Immunostains confirmed B-cell lineage with strong expression of CD45 and CD79a. ALK1 was negative.
+[Case 11 Round 2 Step 3] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Diffuse large B-cell lymphoma (DLBCL), non-germinal center B-cell-like (non-GCB) subtype by Hans algorithm", "differentials": ["Hodgkin lymphoma, mixed cellularity or nodular sclerosis", "Primary mediastinal large B-cell lymphoma (PMBL)", "Anaplastic large cell lymphoma (ALCL), ALK-negative"], "treatment_plan": [{"action": "Initiate urgent multidisciplinary discussion including hematology, oncology, and radiology to confirm diagnosis and plan for R-CHOP chemotherapy", "intention": "therapeutic", "priority": 1}, {"action": "Perform echocardiogram to assess left ventricular ejection fraction prior to anthracycline-based chemotherapy", "intention": "diagnostic", "priority": 2}, {"action": "Arrange for bone marrow biopsy and aspirate to complete staging", "intention": "diagnostic", "priority": 2}, {"action": "Continue close airway monitoring in a high-dependency setting until tumor burden is reduced with therapy", "intention": "supportive", "priority": 1}, {"action": "Obtain serum LDH, beta-2 microglobulin, and repeat CBC with differential for IPI risk stratification", "intention": "diagnostic", "priority": 3}]}}}
+[Case 11 Round 3 Step 3] ENV: {"evaluation": {"working_diagnosis": "partially_correct", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 11 Round 3 Step 3] ENV: Round 3 begins.
+                              Setting: Specialist lymphoma conference (definitive diagnosis and treatment strategy)
+                              Capabilities: You now have access to definitive histopathology, cytogenetics, molecular studies, complete staging, and detailed prior treatment history. You are expected to integrate these data with comorbidities and donor availability to establish the final diagnosis, risk stratification, and a long-term treatment plan including systemic therapy and possible cellular therapies.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 11 Round 3 Step 3] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "partially_correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 11 Round 3 Step 4] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Primary mediastinal large B-cell lymphoma (PMBL)", "differentials": ["Diffuse large B-cell lymphoma, non-GCB subtype", "Nodular sclerosis classical Hodgkin lymphoma", "Gray zone lymphoma (B-cell lymphoma with features intermediate between DLBCL and classical Hodgkin lymphoma)"], "treatment_plan": [{"action": "Initiate dose-adjusted R-EPOCH (rituximab, etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin) chemotherapy regimen", "intention": "therapeutic", "priority": 1}, {"action": "Perform baseline cardiac imaging (e.g., echocardiogram or MUGA scan) and pulmonary function tests prior to chemotherapy", "intention": "diagnostic", "priority": 2}, {"action": "Arrange for interim PET-CT after 2\u20134 cycles to assess treatment response and guide further therapy", "intention": "diagnostic", "priority": 2}, {"action": "Consult radiation oncology for consideration of involved-site radiotherapy based on response to systemic therapy", "intention": "therapeutic", "priority": 3}, {"action": "Provide supportive care including corticosteroids only if clinically indicated for airway compromise, with caution due to potential diagnostic masking", "intention": "supportive", "priority": 1}]}}}
+[Case 11 Round 3 Step 4] ENV: {"evaluation": {"working_diagnosis": "incorrect", "differentials": ["partially_correct", "incorrect", "incorrect"], "treatment_plan": [{"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}]}}
+[Case 11 Round 3 Step 4] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "incorrect",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "incorrect"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      }
+                                    ]
+                                  }
+                                }

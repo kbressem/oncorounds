@@ -1,0 +1,228 @@
+[Case 19 Round 1 Step 0] ENV: Case 19:
+                              Initial presentation:
+                              - Age: 76
+                              - Sex: female
+                              - Chief complaint: Incidentally detected leukocytosis with blasts and pancytopenia during stroke-unit admission for traumatic intracerebral hemorrhage.
+                              - Vital signs: Temp 37.8 °C, BP 98/60 mmHg, HR 112/min (irregular), RR 21/min, SpO₂ 93% on room air.
+                              Setting: Acute stroke-unit admission with incidentally discovered cytopenia and evolving leukocytosis with circulating blasts.
+                              Capabilities: You can review clinical presentation, recent trauma and ICH, initial blood counts, chemistry, and baseline imaging. You should recognize hyperleukocytic acute leukemia with laboratory tumor lysis and coagulopathy in a frail patient and decide on immediate stabilization, diagnostic workup, and whether intensive induction is realistic.
+                              Provide either a request for a single information item or solve.
+[Case 19 Round 1 Step 0] CANDIDATE: {"response": {"action": "request", "request": "initial complete blood count (CBC) with differential and peripheral smear, serum chemistry panel including electrolytes, renal function, LDH, uric acid, coagulation profile (PT/INR, aPTT, fibrinogen, D-dimer), and baseline head imaging for the intracerebral hemorrhage."}}
+[Case 19 Round 1 Step 0] ENV: Cbc Chemistry:
+                              CBC: Hb 8.6 g/dL, WBC 44 × 10⁹/L, Plt 12 × 10⁹/L; MCV 89 fL, MCH 29 pg; differential: 30% blasts, 60% monocytes, 8% neutrophils, 2% lymphocytes.
+                              Coagulation: aPTT 42 sec, INR 2.1, fibrinogen 333 mg/dL, AT3 77%, FXIII 54%.
+                              Na 124 mmol/L, K 5.1 mmol/L, creatinine 1.6 mg/dL, BUN 25 mg/dL, AST 132 U/L, ALT 163 U/L, bilirubin 2.4 mg/dL, LDH 1289 U/L, uric acid 9.9 mg/dL, Ca²⁺ 2.85 mmol/L, phosphate 4.2 mg/dL, lactate 5.3 mmol/L, CK 320 U/L, Troponin T 0.002 ng/mL, NT-proBNP 461 pg/mL.
+[Case 19 Round 1 Step 1] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Hyperleukocytic acute myeloid leukemia (AML) with monocytic differentiation, complicated by tumor lysis syndrome (TLS), coagulopathy/DIC, acute kidney injury, and traumatic intracerebral hemorrhage", "differentials": ["Chronic myelomonocytic leukemia (CMML) blast crisis", "Acute promyelocytic leukemia (APL)", "Acute lymphoblastic leukemia (ALL)"], "treatment_plan": [{"action": "Administer rasburicase 0.2 mg/kg IV (or weight-based dose) for TLS prophylaxis/treatment", "intention": "therapeutic", "priority": 1}, {"action": "Initiate hydroxyurea 1-3 g/day orally or IV for cytoreduction of hyperleukocytosis", "intention": "therapeutic", "priority": 1}, {"action": "Neurosurgical and hematology consults for ICH management and leukemia workup", "intention": "diagnostic", "priority": 1}, {"action": "Transfuse platelets to maintain >50 \u00d7 10\u2079/L and PRBCs to Hb >8 g/dL if symptomatic, cautiously due to ICH", "intention": "supportive", "priority": 1}, {"action": "Reverse coagulopathy with 4-factor PCC (target INR <1.4), consider FFP/cryoprecipitate if needed; avoid heparin unless confirmed HIT", "intention": "therapeutic", "priority": 1}, {"action": "Provide supplemental oxygen to maintain SpO\u2082 >94%; monitor for transfusion-associated circulatory overload", "intention": "supportive", "priority": 1}, {"action": "IV fluids at renal dose (e.g., D5W with electrolytes) for TLS, monitor Na, K, uric acid, phos closely; consider hemodialysis if refractory TLS/AKI", "intention": "supportive", "priority": 2}, {"action": "Perform urgent peripheral blood flow cytometry, cytogenetics/FISH (including PML-RARA), and molecular studies (e.g., NPM1, FLT3)", "intention": "diagnostic", "priority": 2}, {"action": "Bone marrow aspiration and biopsy if patient stabilizes enough for procedure", "intention": "diagnostic", "priority": 3}, {"action": "Low-intensity therapy (e.g., HMA like decitabine) or supportive/palliative care only; intensive induction chemotherapy not recommended due to age, frailty, and ICH", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 2 Step 1] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "partially_correct", "correct"], "treatment_plan": [{"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}]}}
+[Case 19 Round 2 Step 1] ENV: Round 2 begins.
+                              Setting: Hematologic workup after bone marrow biopsy and cytogenetics.
+                              Capabilities: You now have full marrow morphology, flow cytometry defining an AML with monocytic component, and complex karyotype. You should classify the leukemia, integrate recent intracerebral hemorrhage and comorbidities, and select an induction concept (intensive vs lower-intensity) while considering bleeding risk.
+                              Request additional information or solve.
+[Case 19 Round 2 Step 1] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "partially_correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 2 Step 2] CANDIDATE: {"response": {"action": "request", "request": "Bone marrow aspiration and biopsy morphology with percent blasts, flow cytometry immunophenotype, cytogenetics (karyotype), FISH panel results (including relevant AML probes), and molecular studies (NPM1, FLT3, IDH1/2, TP53 if available). Also, update on repeat CBC, chemistry (including uric acid, LDH, electrolytes), coagulation profile, and head imaging for ICH evolution."}}
+[Case 19 Round 2 Step 2] ENV: Bone Marrow:
+                              The bone marrow was hypercellular (80%), showing extensive blast infiltration (35% of nucleated cells). The blasts were medium to large in size, with irregular nuclear contours, open chromatin, and prominent nucleoli. Auer rods were occasionally seen. Cytoplasm was moderately abundant, with fine azurophilic granules and sporadic pseudopodia. A second population of promonocytes and immature monocytoid cells was abundant, characterized by irregularly folded nuclei and basophilic cytoplasm. Residual trilineage hematopoiesis was markedly reduced; megakaryocytes were rare and predominantly dysplastic (micromegakaryocytes, hypolobated forms). Erythropoiesis was markedly suppressed with megaloblastoid changes, and granulocytic dysplasia was evident (hypogranulated and pseudo–Pelger-Huët forms). No significant lymphoid or plasma-cell increase was observed.
+                              Flow cytometry revealed a blast population (CD34⁺/CD33⁺) co-expressing CD117, HLA-DR, CD13, CD33, MPO, and showing aberrant CD19 positivity; negative for CD23, cyCD3, CD20.
+                              A second population consisted of CD34^dim/CD33⁺ cells with CD117⁺, CD64⁺, CD11c⁺, partial CD14^dim, CD7⁺, and CD56⁺. Among lymphocytes, T cells accounted for 73% (CD3⁺), with CD4⁺ 43% and CD8⁺ 35% (CD4/CD8 = 1.2), without aberrant expression. B cells represented 12% (CD19⁺/CD20⁺, polyclonal with balanced κ/λ). NK cells comprised 15% (CD16⁺/CD56⁺).
+                              Histology confirmed a hypercellular marrow (>80%) with diffuse and interstitial infiltration by blasts of immature monocytic morphology, largely replacing normal architecture. Scattered small lymphoid aggregates were present but not dominant. Reticulin staining demonstrated a mild-to-moderate increase in fibers (MF-2). Immunohistochemistry confirmed blast positivity for CD34, CD117, MPO, CD68 (subset), CD7 (partial), and CD56 (strong membranous).
+[Case 19 Round 2 Step 3] CANDIDATE: {"response": {"action": "request", "request": "Cytogenetics (karyotype), FISH panel results (e.g., for PML-RARA, CBFB-MYH11, RUNX1-RUNX1T1, KMT2A, etc.), molecular studies (NPM1, FLT3-ITD/TKD, IDH1/2, TP53, CEBPA), and updates on repeat CBC with differential, chemistry (uric acid, LDH, electrolytes, renal function), coagulation profile, vital signs, and head imaging for ICH evolution/stability."}}
+[Case 19 Round 2 Step 3] ENV: Cytogenetics Chimerism:
+                              Karyotype: 46,XX,del(3)(q26q29),der(3)ins(3;12)(q26;p13),del(11)(q11q25),der(12)t(11;12)(q11;p13),der(13)t(12;13)(p13;p13)[20].
+[Case 19 Round 2 Step 4] CANDIDATE: {"response": {"action": "request", "request": "Molecular studies results (NPM1, FLT3-ITD/TKD, IDH1/2, TP53, CEBPA, ASXL1, RUNX1 if available), FISH panel if performed, repeat CBC with differential, chemistry panel (including uric acid, LDH, electrolytes, renal function, lactate), coagulation profile, vital signs, ECG for arrhythmia clarification, echocardiogram or clinical assessment of cardiac function, and serial head imaging (CT/MRI) to assess ICH stability or progression."}}
+[Case 19 Round 2 Step 4] ENV: 'Molecular studies results (NPM1, FLT3-ITD/TKD, IDH1/2, TP53, CEBPA, ASXL1, RUNX1 if available), FISH panel if performed, repeat CBC with differential, chemistry panel (including uric acid, LDH, electrolytes, renal function, lactate), coagulation profile, vital signs, ECG for arrhythmia clarification, echocardiogram or clinical assessment of cardiac function, and serial head imaging (CT/MRI) to assess ICH stability or progression.' not available. Request a specific test or report.
+                              This case’s molecular NGS panel (NGS/ELN-relevant mutations) is not yet available in round 2. You can instead request currently available items such as cytogenetics/FISH (cytogenetics_chimerism), bone marrow studies (bone_marrow), repeat CBC/chemistry (cbc_chemistry), and serial neuroimaging (extended_diagnostics) to address urgent clinical questions now.
+[Case 19 Round 2 Step 5] CANDIDATE: {"response": {"action": "request", "request": "repeat CBC with differential and chemistry panel including uric acid, LDH, electrolytes, renal function, lactate (cbc_chemistry), and serial head imaging to assess ICH stability or progression (extended_diagnostics)."}}
+[Case 19 Round 2 Step 5] ENV: 'cbc_chemistry' already provided.
+[Case 19 Round 2 Step 6] CANDIDATE: {"response": {"action": "request", "request": "serial neuroimaging (extended_diagnostics) to assess ICH stability or progression."}}
+[Case 19 Round 2 Step 6] ENV: Extended Diagnostics:
+                              Infection screen: CRP 7.2 mg/L, PCT 0.4 ng/mL. Blood cultures remained negative. Serum galactomannan negative. Baseline chest CT showed no pulmonary infiltrates. Nasopharyngeal PCR positive for enterovirus and rhinovirus. Rectal/skin surveillance swabs positive for ESBL-producing Klebsiella pneumoniae with OXA-48 carbapenemase; VRE and MRSA not detected.
+                              Cranial MRI (2024-09-28): Confirmed cortical microhemorrhage (1.1 cm) with mild perifocal edema, no new bleeding or ischemia, no contrast-enhancing or leptomeningeal lesions, no cerebral venous sinus thrombosis.
+[Case 19 Round 2 Step 7] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "Acute myelomonocytic leukemia (AML, WHO/ICC 5th/FAB M4) with myelodysplasia-related cytogenetic changes (complex karyotype, adverse ELN risk), confirmed by 35% marrow blasts/promonocytes, monocytic morphology/flow (CD64/CD11c/CD14), multilineage dysplasia, in frail elderly patient with recent traumatic ICH (stable), TLS, coagulopathy/DIC, AKI, and colonization with MDROs", "differentials": ["Acute monocytic leukemia (AML-M5)", "CMML-2 (AML progression)", "TP53-mutated AML (pending molecular confirmation)"], "treatment_plan": [{"action": "Hematology/oncology and neurosurgery multidisciplinary discussion for risk-adapted therapy selection", "intention": "diagnostic", "priority": 1}, {"action": "Continue hydroxyurea (1-2 g/day) or low-dose cytarabine for leukocytosis control if WBC >50 \u00d7 10\u2079/L or symptomatic", "intention": "therapeutic", "priority": 1}, {"action": "Transfuse platelets to keep >30-50 \u00d7 10\u2079/L (higher if ICH active), RBCs if Hb <7-8 g/dL or symptomatic; strict neurological monitoring", "intention": "supportive", "priority": 1}, {"action": "Optimize coagulopathy: vitamin K 10 mg IV, FFP/cryo if fibrinogen <150 mg/dL or active bleed; monitor INR/aPTT/D-dimer daily; avoid LMWH unless thrombotic", "intention": "therapeutic", "priority": 1}, {"action": "Continue TLS management: rasburicase/allopurinol if uric acid elevated, hyperhydration, monitor electrolytes/renal function closely", "intention": "therapeutic", "priority": 1}, {"action": "Initiate lower-intensity induction with hypomethylating agent (HMA: decitabine 20 mg/m\u00b2 IV d1-5 q28d or azacitidine 75 mg/m\u00b2 SC/IV d1-7 q28d) \u00b1 venetoclax (ramp-up dosing) given age/comorbidities/bleeding risk; defer intensive chemotherapy", "intention": "therapeutic", "priority": 2}, {"action": "Urgent NGS molecular panel for targetable mutations (FLT3, IDH1/2, TP53, etc.) to guide therapy additions (e.g., gilteritinib, ivosidenib)", "intention": "diagnostic", "priority": 2}, {"action": "Infection prophylaxis: levofloxacin (if not colonized), acyclovir, posaconazole/micafungin; contact precautions for OXA-48 Kp; monitor for enterovirus/rhinovirus symptoms", "intention": "supportive", "priority": 2}, {"action": "Cardiac evaluation (echo, rate control for AFib if confirmed) and frailty assessment (e.g., CGA) to confirm HMA/Venetoclax candidacy", "intention": "diagnostic", "priority": 2}, {"action": "Palliative care involvement early for goals-of-care discussion given poor-risk features, age, ICH", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 3 Step 7] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["partially_correct", "incorrect", "partially_correct"], "treatment_plan": [{"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "incorrect", "priority": "correct"}, {"action": "partially_correct", "intention": "incorrect", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "partially_correct", "intention": "correct", "priority": "incorrect"}]}}
+[Case 19 Round 3 Step 7] ENV: Round 3 begins.
+                              Setting: Post-NGS risk stratification and definitive treatment planning.
+                              Capabilities: You know the NGS profile including TP53, EZH2, and CBL mutations with low-level FLT3-TKD, confirming ELN 2024 adverse risk AML-pCT. You should finalize the non-transplant treatment strategy (including venetoclax-based low-intensity regimens), define consolidation, and outline supportive care, explicitly arguing against alloSCT.
+                              Request additional information or solve.
+                              Final round - provide definitive diagnosis and treatment plan.
+[Case 19 Round 3 Step 7] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "partially_correct",
+                                      "incorrect",
+                                      "partially_correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "incorrect",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "incorrect"
+                                      }
+                                    ]
+                                  }
+                                }
+[Case 19 Round 3 Step 8] CANDIDATE: {"response": {"action": "solve", "solve": {"working_diagnosis": "ELN 2024 adverse-risk acute myelomonocytic leukemia (AML, FAB M4/ICC AML with mutated TP53) with complex karyotype [del(3q), der(3;12), del(11q), der(12;11), der(12;13)], TP53/EZH2/CBL mutations, low allelic ratio FLT3-TKD, multilineage dysplasia/monocytic differentiation, in frail 76yo female with stable traumatic ICH, prior TLS (resolved), coagulopathy/DIC, AKI (improving), AFib, and MDRO colonization", "differentials": ["Acute monoblastic leukemia (AML M5)", "TP53-mutated myelodysplastic syndrome with excess blasts-2 (MDS-EB2 progressing to AML)", "Therapy-related AML (if prior chemo/radiation exposure)"], "treatment_plan": [{"action": "Multidisciplinary team (hematology, neuro, palliative) goals-of-care discussion: recommend low-intensity venetoclax + HMA over intensive chemo or SCT due to age>75, frailty, recent ICH/bleed risk, adverse genetics (TP53mt VAF>10% expected poor response), life expectancy <12mo even with SCT", "intention": "diagnostic", "priority": 1}, {"action": "Induction: Venetoclax (ramp-up 100/200/400mg d1-4 then 400mg d5-28) + azacitidine 75mg/m\u00b2 SC/IV d1-7 q28d or decitabine 20mg/m\u00b2 IV d1-5 q28d; hold venetoclax d1-3 cycle 1 for TLS risk; outpatient if stable", "intention": "therapeutic", "priority": 1}, {"action": "Supportive transfusions: platelets >30-50x10\u2079/L (higher if neuro s/s), Hb >7-8g/dL; monitor neuro status q6-8h initially", "intention": "supportive", "priority": 1}, {"action": "Coagulopathy: continue vit K, FFP/cryo/PRBC if needed; daily coags; no prophylactic anticoagulation", "intention": "supportive", "priority": 1}, {"action": "Infection prophylaxis: posaconazole 300mg QD (or micafungin), acyclovir 400mg BID, levofloxacin 500mg QD (despite OXA-48 colonization, monitor); contact isolation", "intention": "supportive", "priority": 1}, {"action": "Consolidation/maintenance: continue ven+HMA to MRD negativity or max benefit (up to 24 cycles); no alloSCT recommended (NMA/NMA-like SCT CR rates <30%, TRM>40% in >70yo TP53mt, no OS benefit per ELN/international data)", "intention": "therapeutic", "priority": 2}, {"action": "Monitor response: MRD by flow q2 cycles, NGS at CR; add gilteritinib if FLT3 high VAF expansion (low now)", "intention": "diagnostic", "priority": 2}, {"action": "Cardiac: beta-blocker/digoxin for AFib rate control if confirmed (echo pending), avoid venetoclax dose interruption", "intention": "supportive", "priority": 2}, {"action": "Palliative care integration from outset for symptom mgmt, hospice transition if no response by cycle 2-3", "intention": "supportive", "priority": 3}]}}}
+[Case 19 Round 3 Step 8] ENV: {"evaluation": {"working_diagnosis": "correct", "differentials": ["incorrect", "correct", "correct"], "treatment_plan": [{"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "correct"}, {"action": "correct", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "correct", "priority": "correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "partially_correct", "intention": "correct", "priority": "partially_correct"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "incorrect", "intention": "incorrect", "priority": "incorrect"}, {"action": "correct", "intention": "correct", "priority": "partially_correct"}]}}
+[Case 19 Round 3 Step 8] JUDGE: {
+                                  "evaluation": {
+                                    "working_diagnosis": "correct",
+                                    "differentials": [
+                                      "incorrect",
+                                      "correct",
+                                      "correct"
+                                    ],
+                                    "treatment_plan": [
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "correct",
+                                        "priority": "correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "partially_correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "incorrect",
+                                        "intention": "incorrect",
+                                        "priority": "incorrect"
+                                      },
+                                      {
+                                        "action": "correct",
+                                        "intention": "correct",
+                                        "priority": "partially_correct"
+                                      }
+                                    ]
+                                  }
+                                }
